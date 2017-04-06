@@ -28,11 +28,9 @@ import RxSwift
 import RxCocoa
 import RxAlamofire
 
-fileprivate let defaultTimeoutInterval = 20.0
+public let defaultTimeoutInterval = 20.0
 
 open class DefaultNetworkService: NetworkService {
-
-    static let sharedInstance = DefaultNetworkService()
 
     static let retryLimit = 3
 
@@ -40,57 +38,32 @@ open class DefaultNetworkService: NetworkService {
         fatalError("base url should be overrided")
     }
 
-    private override init(sessionManager: Alamofire.SessionManager) {
+    public override init(sessionManager: SessionManager) {
         super.init(sessionManager: sessionManager)
 
         bindActivityIndicator()
     }
 
-    public convenience init() {
+    // MARK: - Default Values
+
+    open class func serverTrustPolicies() -> [String: ServerTrustPolicy] {
+        return [
+            DefaultNetworkService.baseUrl(): .disableEvaluation
+        ]
+    }
+
+    open class func configuration() -> URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = defaultTimeoutInterval
 
-        let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            DefaultNetworkService.baseUrl(): .disableEvaluation
-        ]
-
-        let sessionManager = SessionManager(configuration: configuration,
-                                            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
-
-        self.init(sessionManager: sessionManager)
+        return configuration
     }
 
-    // MARK: - Internal methods
-
-//    func request<T: ImmutableMappable>(with parameters: ApiRequestParameters) -> Observable<T> {
-//        let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
-//
-//        return apiResponseRequest
-//            .handleConnectionErrors()
-//            .map {
-//                if $0.model.errorCode == 0 {
-//                    return try T(JSON: try cast($0.model.result) as [String: Any])
-//                } else {
-//                    throw ApiError(apiResponse: $0.model)
-//                }
-//            }
-//            .handleGeneralApiErrors()
-//    }
-//
-//    func requestForResult(with parameters: ApiRequestParameters) -> Observable<Bool> {
-//        let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
-//
-//        return apiResponseRequest
-//            .handleConnectionErrors()
-//            .map {
-//                if $0.model.errorCode == 0 {
-//                    return true
-//                } else {
-//                    throw ApiError(apiResponse: $0.model)
-//                }
-//            }
-//            .handleGeneralApiErrors()
-//    }
+    open class func sessionManager() -> SessionManager {
+        let sessionManager = SessionManager(configuration: configuration(),
+                                            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies()))
+        return sessionManager
+    }
 
 }
 
