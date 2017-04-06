@@ -25,6 +25,10 @@ import LeadKit
 
 open class BaseUserService {
 
+    public init() {
+        // Can be overrided
+    }
+
     open var userLogin: String {
         guard let defaultsLogin = UserDefaults.standard.userLogin else {
             assertionFailure("userLogin is nil. Use isLoggedIn before read userLogin")

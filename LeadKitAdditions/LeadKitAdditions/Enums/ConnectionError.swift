@@ -22,7 +22,7 @@
 
 import Foundation
 
-enum ConnectionError: LocalizedError {
+public enum ConnectionError: LocalizedError {
 
     case noConnection
 

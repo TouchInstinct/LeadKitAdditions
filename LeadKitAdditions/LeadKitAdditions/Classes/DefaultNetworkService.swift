@@ -46,7 +46,7 @@ open class DefaultNetworkService: NetworkService {
         bindActivityIndicator()
     }
 
-    private convenience init() {
+    public convenience init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = defaultTimeoutInterval
 
