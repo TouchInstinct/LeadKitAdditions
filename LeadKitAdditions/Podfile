@@ -1,0 +1,21 @@
+source "https://github.com/CocoaPods/Specs.git"
+source "https://github.com/TouchInstinct/Podspecs.git"
+
+platform :ios, '9.0'
+
+target 'LeadKitAdditions' do
+  use_frameworks!
+
+  pod "CocoaLumberjack/Swift", '~> 3.1.0'
+  pod "RxSwift", '3.2.0'
+  pod "RxCocoa", '3.2.0'
+  pod "RxAlamofire", '3.0.0'
+  pod "ObjectMapper", '~> 2.1'
+  pod "Toast-Swift", '~> 2.0.0'
+  pod "LeadKit"
+  pod "TableKit"
+
+end
+
+# If you have slow HDD
+ENV['COCOAPODS_DISABLE_STATS'] = "true"
