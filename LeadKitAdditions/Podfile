@@ -6,14 +6,8 @@ platform :ios, '9.0'
 target 'LeadKitAdditions' do
   use_frameworks!
 
-  pod "CocoaLumberjack/Swift", '~> 3.1.0'
-  pod "RxSwift", '3.2.0'
-  pod "RxCocoa", '3.2.0'
-  pod "RxAlamofire", '3.0.0'
-  pod "ObjectMapper", '~> 2.1'
-  pod "Toast-Swift", '~> 2.0.0'
-  pod "LeadKit"
-  pod "TableKit"
+  pod 'LeadKit', :git => 'https://github.com/TouchInstinct/LeadKit.git', :branch => 'fix/sharedApplication', :commit => 'fd0eb18b8a6680ff16bbb1668d1ae0d29f29fad7'
+  pod 'TableKit'
 
 end
 

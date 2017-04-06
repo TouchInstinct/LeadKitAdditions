@@ -53,7 +53,7 @@ public extension Observable {
     }
 
     public func retryWithinErrors(_ errorTypes: [Error.Type] = [ConnectionError.self],
-                           retryLimit: Int = SberCardsNetworkService.retryLimit)
+                                  retryLimit: Int = DefaultNetworkService.retryLimit)
         -> Observable<Observable.E> {
 
             return observeOn(CurrentThreadScheduler.instance)

@@ -26,7 +26,7 @@ public enum ApiError: Error {
 
     case error(code: Int, message: String)
     case none
-    
+
 }
 
 extension ApiError: LocalizedError {
@@ -47,5 +47,5 @@ extension ApiError: LocalizedError {
             return nil
         }
     }
-    
+
 }

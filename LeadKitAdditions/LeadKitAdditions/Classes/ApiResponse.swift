@@ -40,5 +40,5 @@ public protocol ApiResponseProtocol: ImmutableMappable {
 
     var errorCode: Int { get }
     var errorMessage: String? { get }
-    
+
 }

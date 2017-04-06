@@ -62,35 +62,35 @@ open class DefaultNetworkService: NetworkService {
 
     // MARK: - Internal methods
 
-    func request<T: ImmutableMappable>(with parameters: ApiRequestParameters) -> Observable<T> {
-        let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
-
-        return apiResponseRequest
-            .handleConnectionErrors()
-            .map {
-                if $0.model.errorCode == 0 {
-                    return try T(JSON: try cast($0.model.result) as [String: Any])
-                } else {
-                    throw ApiError(apiResponse: $0.model)
-                }
-            }
-            .handleGeneralApiErrors()
-    }
-
-    func requestForResult(with parameters: ApiRequestParameters) -> Observable<Bool> {
-        let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
-
-        return apiResponseRequest
-            .handleConnectionErrors()
-            .map {
-                if $0.model.errorCode == 0 {
-                    return true
-                } else {
-                    throw ApiError(apiResponse: $0.model)
-                }
-            }
-            .handleGeneralApiErrors()
-    }
+//    func request<T: ImmutableMappable>(with parameters: ApiRequestParameters) -> Observable<T> {
+//        let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
+//
+//        return apiResponseRequest
+//            .handleConnectionErrors()
+//            .map {
+//                if $0.model.errorCode == 0 {
+//                    return try T(JSON: try cast($0.model.result) as [String: Any])
+//                } else {
+//                    throw ApiError(apiResponse: $0.model)
+//                }
+//            }
+//            .handleGeneralApiErrors()
+//    }
+//
+//    func requestForResult(with parameters: ApiRequestParameters) -> Observable<Bool> {
+//        let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
+//
+//        return apiResponseRequest
+//            .handleConnectionErrors()
+//            .map {
+//                if $0.model.errorCode == 0 {
+//                    return true
+//                } else {
+//                    throw ApiError(apiResponse: $0.model)
+//                }
+//            }
+//            .handleGeneralApiErrors()
+//    }
 
 }
 
@@ -98,11 +98,11 @@ extension ApiRequestParameters {
 
     init(url: String, parameters: [String: Any] = [:]) {
 
-        self.init(url: URLSessionConfiguration.baseUrl() + url,
+        self.init(url: DefaultNetworkService.baseUrl() + url,
                   method: .post,
                   parameters: parameters,
                   encoding: JSONEncoding.default,
                   headers: nil)
     }
-    
+
 }

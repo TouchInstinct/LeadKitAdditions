@@ -25,5 +25,5 @@ import Foundation
 enum ConnectionError: LocalizedError {
 
     case noConnection
-    
+
 }
