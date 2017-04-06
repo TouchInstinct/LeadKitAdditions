@@ -15,6 +15,8 @@
 		CAE698FF1E969352000394B0 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698FD1E969352000394B0 /* ApiResponse.swift */; };
 		CAE699041E9693F4000394B0 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699021E9693F4000394B0 /* ConnectionError.swift */; };
 		CAE699081E96956D000394B0 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699061E96956D000394B0 /* ApiError.swift */; };
+		CAE6990E1E969C66000394B0 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */; };
+		CAE699121E969D2B000394B0 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CAE698FD1E969352000394B0 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResponse.swift; path = Classes/ApiResponse.swift; sourceTree = "<group>"; };
 		CAE699021E9693F4000394B0 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionError.swift; path = Enums/ConnectionError.swift; sourceTree = "<group>"; };
 		CAE699061E96956D000394B0 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = Enums/ApiError.swift; sourceTree = "<group>"; };
+		CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Observable+Extensions.swift"; path = "Extensions/Observable+Extensions.swift"; sourceTree = "<group>"; };
+		CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultNetworkService.swift; path = Classes/DefaultNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			children = (
 				CAE698EF1E968BA6000394B0 /* BaseDateFormatter.swift */,
 				CAE698FD1E969352000394B0 /* ApiResponse.swift */,
+				CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE698F91E968F78000394B0 /* UserDefaults+UserService.swift */,
+				CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -275,7 +281,9 @@
 				CAE698FF1E969352000394B0 /* ApiResponse.swift in Sources */,
 				CAE698F11E968BA6000394B0 /* BaseDateFormatter.swift in Sources */,
 				CAE699041E9693F4000394B0 /* ConnectionError.swift in Sources */,
+				CAE6990E1E969C66000394B0 /* Observable+Extensions.swift in Sources */,
 				CAE698F61E968E3D000394B0 /* BaseUserService.swift in Sources */,
+				CAE699121E969D2B000394B0 /* DefaultNetworkService.swift in Sources */,
 				CAE699081E96956D000394B0 /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
