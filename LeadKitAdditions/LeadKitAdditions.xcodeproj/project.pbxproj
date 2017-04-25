@@ -21,6 +21,13 @@
 		EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */; };
 		EF05EDD21EAF9CF100CAE7B6 /* CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = EF05EDD01EAF9CF100CAE7B6 /* CommonCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF05EDDA1EAF9D4A00CAE7B6 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */; };
+		EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */; };
+		EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */; };
+		EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */; };
+		EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */; };
+		EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */; };
+		EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +53,13 @@
 		EF05EDD61EAF9D2900CAE7B6 /* CommonCrypto.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CommonCrypto.xcconfig; sourceTree = "<group>"; };
 		EF05EDD71EAF9D2900CAE7B6 /* iphoneos.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
 		EF05EDD81EAF9D2900CAE7B6 /* iphonesimulator.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
+		EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewController.swift; sourceTree = "<group>"; };
+		EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewModel.swift; sourceTree = "<group>"; };
+		EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeConfiguration.swift; sourceTree = "<group>"; };
+		EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeValidationResult.swift; sourceTree = "<group>"; };
+		EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolderProtocol.swift; sourceTree = "<group>"; };
+		EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeError.swift; sourceTree = "<group>"; };
+		EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,7 @@
 		CAE698E51E968820000394B0 /* LeadKitAdditions */ = {
 			isa = PBXGroup;
 			children = (
+				EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */,
 				CAE698EE1E968B72000394B0 /* Classes */,
 				CAE699011E9693DE000394B0 /* Enums */,
 				CAE698F81E968F56000394B0 /* Extensions */,
@@ -157,6 +172,52 @@
 				EF05EDD81EAF9D2900CAE7B6 /* iphonesimulator.modulemap */,
 			);
 			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
+		EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDDC1EAFA72600CAE7B6 /* PassCode */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF05EDDC1EAFA72600CAE7B6 /* PassCode */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDDD1EAFA72600CAE7B6 /* Model */,
+				EF05EDDE1EAFA72600CAE7B6 /* View */,
+				EF05EDDF1EAFA72600CAE7B6 /* ViewModel */,
+			);
+			path = PassCode;
+			sourceTree = "<group>";
+		};
+		EF05EDDD1EAFA72600CAE7B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */,
+				EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */,
+				EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */,
+				EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */,
+				EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF05EDDE1EAFA72600CAE7B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF05EDDF1EAFA72600CAE7B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F8A65FEC7C0EB4B93746E50F /* Pods */ = {
@@ -352,15 +413,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */,
+				EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */,
 				EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */,
+				EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */,
 				EF05EDC21EAF706200CAE7B6 /* DefaultNetworkService.swift in Sources */,
 				EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */,
+				EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */,
+				EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */,
 				EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */,
 				EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */,
 				EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */,
+				EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */,
 				EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */,
+				EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */,
 				EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */,
 				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
+				EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
