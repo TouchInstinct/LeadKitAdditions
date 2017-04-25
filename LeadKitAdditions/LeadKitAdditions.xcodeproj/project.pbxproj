@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		7A94B4A5956B82BE1CEBA873 /* Pods_LeadKitAdditions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7F57C5E5275C4D8DC71992 /* Pods_LeadKitAdditions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAE698F11E968BA6000394B0 /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698EF1E968BA6000394B0 /* BaseDateFormatter.swift */; };
-		CAE698F61E968E3D000394B0 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698F41E968E3D000394B0 /* BaseUserService.swift */; };
-		CAE698FB1E968F78000394B0 /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698F91E968F78000394B0 /* UserDefaults+UserService.swift */; };
-		CAE698FF1E969352000394B0 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698FD1E969352000394B0 /* ApiResponse.swift */; };
-		CAE699041E9693F4000394B0 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699021E9693F4000394B0 /* ConnectionError.swift */; };
-		CAE699081E96956D000394B0 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699061E96956D000394B0 /* ApiError.swift */; };
-		CAE6990E1E969C66000394B0 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */; };
-		CAE699121E969D2B000394B0 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */; };
+		EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */; };
+		EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */; };
+		EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */; };
+		EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB91EAF705500CAE7B6 /* ApiError.swift */; };
+		EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */; };
+		EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */; };
+		EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */; };
+		EF05EDC21EAF706200CAE7B6 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBF1EAF706200CAE7B6 /* DefaultNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,14 +26,14 @@
 		CAE698E31E968820000394B0 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE698E61E968820000394B0 /* LeadKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadKitAdditions.h; sourceTree = "<group>"; };
 		CAE698E71E968820000394B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAE698EF1E968BA6000394B0 /* BaseDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDateFormatter.swift; path = Classes/BaseDateFormatter.swift; sourceTree = "<group>"; };
-		CAE698F41E968E3D000394B0 /* BaseUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseUserService.swift; path = Services/BaseUserService.swift; sourceTree = "<group>"; };
-		CAE698F91E968F78000394B0 /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDefaults+UserService.swift"; path = "Extensions/UserDefaults+UserService.swift"; sourceTree = "<group>"; };
-		CAE698FD1E969352000394B0 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResponse.swift; path = Classes/ApiResponse.swift; sourceTree = "<group>"; };
-		CAE699021E9693F4000394B0 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionError.swift; path = Enums/ConnectionError.swift; sourceTree = "<group>"; };
-		CAE699061E96956D000394B0 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = Enums/ApiError.swift; sourceTree = "<group>"; };
-		CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Observable+Extensions.swift"; path = "Extensions/Observable+Extensions.swift"; sourceTree = "<group>"; };
-		CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultNetworkService.swift; path = Classes/DefaultNetworkService.swift; sourceTree = "<group>"; };
+		EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUserService.swift; sourceTree = "<group>"; };
+		EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserService.swift"; sourceTree = "<group>"; };
+		EF05EDB91EAF705500CAE7B6 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDateFormatter.swift; sourceTree = "<group>"; };
+		EF05EDBF1EAF706200CAE7B6 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +77,12 @@
 		CAE698E51E968820000394B0 /* LeadKitAdditions */ = {
 			isa = PBXGroup;
 			children = (
+				CAE698EE1E968B72000394B0 /* Classes */,
 				CAE699011E9693DE000394B0 /* Enums */,
 				CAE698F81E968F56000394B0 /* Extensions */,
-				CAE698F31E968E28000394B0 /* Services */,
-				CAE698EE1E968B72000394B0 /* Classes */,
-				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
 				CAE698E71E968820000394B0 /* Info.plist */,
+				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
+				CAE698F31E968E28000394B0 /* Services */,
 			);
 			path = LeadKitAdditions;
 			sourceTree = "<group>";
@@ -90,37 +90,37 @@
 		CAE698EE1E968B72000394B0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CAE698EF1E968BA6000394B0 /* BaseDateFormatter.swift */,
-				CAE698FD1E969352000394B0 /* ApiResponse.swift */,
-				CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */,
+				EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */,
+				EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */,
+				EF05EDBF1EAF706200CAE7B6 /* DefaultNetworkService.swift */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		CAE698F31E968E28000394B0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CAE698F41E968E3D000394B0 /* BaseUserService.swift */,
+				EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */,
 			);
-			name = Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CAE698F81E968F56000394B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CAE698F91E968F78000394B0 /* UserDefaults+UserService.swift */,
-				CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */,
+				EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */,
+				EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CAE699011E9693DE000394B0 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				CAE699021E9693F4000394B0 /* ConnectionError.swift */,
-				CAE699061E96956D000394B0 /* ApiError.swift */,
+				EF05EDB91EAF705500CAE7B6 /* ApiError.swift */,
+				EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */,
 			);
-			name = Enums;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		F8A65FEC7C0EB4B93746E50F /* Pods */ = {
@@ -267,7 +267,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -277,14 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE698FB1E968F78000394B0 /* UserDefaults+UserService.swift in Sources */,
-				CAE698FF1E969352000394B0 /* ApiResponse.swift in Sources */,
-				CAE698F11E968BA6000394B0 /* BaseDateFormatter.swift in Sources */,
-				CAE699041E9693F4000394B0 /* ConnectionError.swift in Sources */,
-				CAE6990E1E969C66000394B0 /* Observable+Extensions.swift in Sources */,
-				CAE698F61E968E3D000394B0 /* BaseUserService.swift in Sources */,
-				CAE699121E969D2B000394B0 /* DefaultNetworkService.swift in Sources */,
-				CAE699081E96956D000394B0 /* ApiError.swift in Sources */,
+				EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */,
+				EF05EDC21EAF706200CAE7B6 /* DefaultNetworkService.swift in Sources */,
+				EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */,
+				EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */,
+				EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */,
+				EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */,
+				EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */,
+				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
