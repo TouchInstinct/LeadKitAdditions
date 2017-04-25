@@ -19,6 +19,8 @@
 		EF05EDC21EAF706200CAE7B6 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBF1EAF706200CAE7B6 /* DefaultNetworkService.swift */; };
 		EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */; };
 		EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */; };
+		EF05EDD21EAF9CF100CAE7B6 /* CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = EF05EDD01EAF9CF100CAE7B6 /* CommonCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF05EDDA1EAF9D4A00CAE7B6 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,12 @@
 		EF05EDBF1EAF706200CAE7B6 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
 		EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDService.swift; sourceTree = "<group>"; };
 		EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeService.swift; sourceTree = "<group>"; };
+		EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF05EDD01EAF9CF100CAE7B6 /* CommonCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCrypto.h; sourceTree = "<group>"; };
+		EF05EDD11EAF9CF100CAE7B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF05EDD61EAF9D2900CAE7B6 /* CommonCrypto.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CommonCrypto.xcconfig; sourceTree = "<group>"; };
+		EF05EDD71EAF9D2900CAE7B6 /* iphoneos.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
+		EF05EDD81EAF9D2900CAE7B6 /* iphonesimulator.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +53,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF05EDDA1EAF9D4A00CAE7B6 /* CommonCrypto.framework in Frameworks */,
 				7A94B4A5956B82BE1CEBA873 /* Pods_LeadKitAdditions.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDCA1EAF9CF100CAE7B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE698E51E968820000394B0 /* LeadKitAdditions */,
+				EF05EDCF1EAF9CF100CAE7B6 /* CommonCrypto */,
 				CAE698E41E968820000394B0 /* Products */,
 				F8A65FEC7C0EB4B93746E50F /* Pods */,
 				A3117951840B8B7D2E7A8A80 /* Frameworks */,
@@ -74,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE698E31E968820000394B0 /* LeadKitAdditions.framework */,
+				EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +147,18 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		EF05EDCF1EAF9CF100CAE7B6 /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDD01EAF9CF100CAE7B6 /* CommonCrypto.h */,
+				EF05EDD61EAF9D2900CAE7B6 /* CommonCrypto.xcconfig */,
+				EF05EDD11EAF9CF100CAE7B6 /* Info.plist */,
+				EF05EDD71EAF9D2900CAE7B6 /* iphoneos.modulemap */,
+				EF05EDD81EAF9D2900CAE7B6 /* iphonesimulator.modulemap */,
+			);
+			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
 		F8A65FEC7C0EB4B93746E50F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +176,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDCB1EAF9CF100CAE7B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF05EDD21EAF9CF100CAE7B6 /* CommonCrypto.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +212,24 @@
 			productReference = CAE698E31E968820000394B0 /* LeadKitAdditions.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EF05EDCD1EAF9CF100CAE7B6 /* CommonCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF05EDD31EAF9CF100CAE7B6 /* Build configuration list for PBXNativeTarget "CommonCrypto" */;
+			buildPhases = (
+				EF05EDC91EAF9CF100CAE7B6 /* Sources */,
+				EF05EDCA1EAF9CF100CAE7B6 /* Frameworks */,
+				EF05EDCB1EAF9CF100CAE7B6 /* Headers */,
+				EF05EDCC1EAF9CF100CAE7B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommonCrypto;
+			productName = CommonCrypto;
+			productReference = EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,6 +242,10 @@
 					CAE698E21E968820000394B0 = {
 						CreatedOnToolsVersion = 8.3;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
+					};
+					EF05EDCD1EAF9CF100CAE7B6 = {
+						CreatedOnToolsVersion = 8.3.1;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -203,12 +263,20 @@
 			projectRoot = "";
 			targets = (
 				CAE698E21E968820000394B0 /* LeadKitAdditions */,
+				EF05EDCD1EAF9CF100CAE7B6 /* CommonCrypto */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CAE698E11E968820000394B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDCC1EAF9CF100CAE7B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,6 +361,13 @@
 				EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */,
 				EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */,
 				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDC91EAF9CF100CAE7B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +524,52 @@
 			};
 			name = Release;
 		};
+		EF05EDD41EAF9CF100CAE7B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphoneos.modulemap;
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphonesimulator.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchin.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EF05EDD51EAF9CF100CAE7B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphoneos.modulemap;
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphonesimulator.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchin.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -469,6 +590,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EF05EDD31EAF9CF100CAE7B6 /* Build configuration list for PBXNativeTarget "CommonCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF05EDD41EAF9CF100CAE7B6 /* Debug */,
+				EF05EDD51EAF9CF100CAE7B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,10 @@
+//
+//  CommonCrypto.xcconfig
+//  Chat
+//
+//  Created by Alexey Gerasimov on 17/08/16.
+//  Copyright © 2016 Touch Instinct. All rights reserved.
+//
+
+MODULEMAP_FILE[sdk=iphoneos*] = $(SRCROOT)/CommonCrypto/iphoneos.modulemap
+MODULEMAP_FILE[sdk=iphonesimulator*] = $(SRCROOT)/CommonCrypto/iphonesimulator.modulemap
