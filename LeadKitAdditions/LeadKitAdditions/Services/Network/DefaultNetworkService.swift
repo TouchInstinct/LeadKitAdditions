@@ -50,7 +50,7 @@ open class DefaultNetworkService: NetworkService {
 
     open class var serverTrustPolicies: [String: ServerTrustPolicy] {
         return [
-            DefaultNetworkService.baseUrl: .disableEvaluation
+            baseUrl: .disableEvaluation
         ]
     }
 
@@ -67,13 +67,17 @@ open class DefaultNetworkService: NetworkService {
         return sessionManager
     }
 
+    public static func apiRequestParameters(url: String, parameters: [String: Any] = [:]) -> ApiRequestParameters {
+        return ApiRequestParameters(baseUrl: baseUrl, url: url, parameters: parameters)
+    }
+
 }
 
-extension ApiRequestParameters {
+private extension ApiRequestParameters {
 
-    init(url: String, parameters: [String: Any] = [:]) {
+    init(baseUrl: String, url: String, parameters: [String: Any] = [:]) {
 
-        self.init(url: DefaultNetworkService.baseUrl + url,
+        self.init(url: baseUrl + url,
                   method: .post,
                   parameters: parameters,
                   encoding: JSONEncoding.default,
