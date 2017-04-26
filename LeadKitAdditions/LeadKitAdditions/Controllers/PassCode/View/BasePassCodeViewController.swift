@@ -159,19 +159,19 @@ open class BasePassCodeViewController: UIViewController {
     }
 
     // override to change Images
-    func imageFor(type: PinImageType) -> UIImage {
+    open func imageFor(type: PinImageType) -> UIImage {
         assertionFailure("You should override this method: imageFor(type: PinImageType)")
         return UIImage()
     }
 
     // override to change error text
-    func errorDescription(for error: PassCodeError) -> String {
+    open func errorDescription(for error: PassCodeError) -> String {
         assertionFailure("You should override this method: errorDescription(for error: PassCodeError)")
         return ""
     }
 
     // override to change action title text
-    func actionTitle(for passCodeControllerState: PassCodeControllerState) -> String {
+    open func actionTitle(for passCodeControllerState: PassCodeControllerState) -> String {
         assertionFailure("You should override this method: actionTitle(for passCodeControllerState: PassCodeControllerState)")
         return ""
     }
