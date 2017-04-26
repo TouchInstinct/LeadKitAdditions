@@ -30,7 +30,7 @@ import RxAlamofire
 open class SimpleNetworkService: DefaultNetworkService {
 
     // Singleton
-    static let shared = SimpleNetworkService()
+    public static let shared = SimpleNetworkService()
 
     public convenience init() {
         self.init(sessionManager: SimpleNetworkService.sessionManager)
