@@ -29,12 +29,6 @@ import RxAlamofire
 
 open class SimpleNetworkService: DefaultNetworkService {
 
-    public convenience init() {
-        self.init(sessionManager: SimpleNetworkService.sessionManager)
-    }
-
-    // MARK: - Public methods
-
     open func request<T: ImmutableMappable>(with parameters: ApiRequestParameters) -> Observable<T> {
         let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
 
