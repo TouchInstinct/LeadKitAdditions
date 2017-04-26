@@ -33,40 +33,44 @@ open class BaseDateFormatter {
 
     private static let apiFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
+        dateFormatter.locale = usedLocale
         dateFormatter.dateFormat = BaseDateFormatter.apiDateTimeFormat
         return dateFormatter
     }()
 
     private static let apiDateWithoutTimeFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
+        dateFormatter.locale = usedLocale
         dateFormatter.dateFormat = BaseDateFormatter.apiDateWithoutTimeFormat
         return dateFormatter
     }()
 
     private static let hourAndMinuteFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
-        dateFormater.locale = Locale.current
+        dateFormater.locale = usedLocale
         dateFormater.dateFormat = BaseDateFormatter.hourAndMinuteDateTimeFormat
         return dateFormater
     }()
 
     private static let dayAndMonthFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
-        dateFormater.locale = Locale.current
+        dateFormater.locale = usedLocale
         dateFormater.dateFormat = BaseDateFormatter.dayAndMonthDateTimeFormat
         return dateFormater
     }()
 
     private static let dayMonthYearFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
-        dateFormater.locale = Locale.current
+        dateFormater.locale = usedLocale
         dateFormater.dateFormat = BaseDateFormatter.dayMonthYearDateTimeFormat
         return dateFormater
     }()
 
-    // MARK: Internal functions
+    // MARK: Public interface
+
+    open class var usedLocale: Locale {
+        return .current
+    }
 
     public static func backendDate(fromStrDate strDate: String) -> Date? {
         return BaseDateFormatter.apiFormatter.date(from: strDate)

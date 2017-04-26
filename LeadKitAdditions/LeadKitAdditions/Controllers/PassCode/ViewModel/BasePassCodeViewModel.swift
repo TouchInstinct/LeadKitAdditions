@@ -56,9 +56,9 @@ open class BasePassCodeViewModel: BaseViewModel {
         return PassCodeHolderBuilder.build(with: self.controllerType)
     }()
 
-    init(controllerType: PassCodeControllerType,
-         passCodeConfiguration: PassCodeConfiguration,
-         touchIdService: TouchIDService? = nil) {
+    public init(controllerType: PassCodeControllerType,
+                passCodeConfiguration: PassCodeConfiguration,
+                touchIdService: TouchIDService? = nil) {
 
         self.controllerType = controllerType
         self.passCodeConfiguration = passCodeConfiguration
