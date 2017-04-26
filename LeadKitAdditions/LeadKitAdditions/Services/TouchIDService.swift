@@ -30,6 +30,8 @@ public class TouchIDService {
         return LAContext()
     }()
 
+    public init() {}
+
     public var canAuthenticateByTouchId: Bool {
         return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
