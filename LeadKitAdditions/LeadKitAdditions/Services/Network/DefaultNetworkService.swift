@@ -28,14 +28,16 @@ import RxSwift
 import RxCocoa
 import RxAlamofire
 
-public let defaultTimeoutInterval = 20.0
-
 open class DefaultNetworkService: NetworkService {
 
     static let retryLimit = 3
 
-    open class func baseUrl() -> String {
-        fatalError("base url should be overrided")
+    open class var baseUrl: String {
+        fatalError("You should override this var: baseUrl")
+    }
+
+    open class var defaultTimeoutInterval: TimeInterval {
+        fatalError("You should override this var: defaultTimeoutInterval")
     }
 
     public override init(sessionManager: SessionManager) {
@@ -46,22 +48,22 @@ open class DefaultNetworkService: NetworkService {
 
     // MARK: - Default Values
 
-    open class func serverTrustPolicies() -> [String: ServerTrustPolicy] {
+    open class var serverTrustPolicies: [String: ServerTrustPolicy] {
         return [
-            DefaultNetworkService.baseUrl(): .disableEvaluation
+            DefaultNetworkService.baseUrl: .disableEvaluation
         ]
     }
 
-    open class func configuration() -> URLSessionConfiguration {
+    open class var configuration: URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = defaultTimeoutInterval
 
         return configuration
     }
 
-    open class func sessionManager() -> SessionManager {
-        let sessionManager = SessionManager(configuration: configuration(),
-                                            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies()))
+    open class var sessionManager: SessionManager {
+        let sessionManager = SessionManager(configuration: configuration,
+                                            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
         return sessionManager
     }
 
@@ -71,7 +73,7 @@ extension ApiRequestParameters {
 
     init(url: String, parameters: [String: Any] = [:]) {
 
-        self.init(url: DefaultNetworkService.baseUrl() + url,
+        self.init(url: DefaultNetworkService.baseUrl + url,
                   method: .post,
                   parameters: parameters,
                   encoding: JSONEncoding.default,

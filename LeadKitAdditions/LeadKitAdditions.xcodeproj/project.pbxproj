@@ -9,14 +9,28 @@
 /* Begin PBXBuildFile section */
 		7A94B4A5956B82BE1CEBA873 /* Pods_LeadKitAdditions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7F57C5E5275C4D8DC71992 /* Pods_LeadKitAdditions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAE698F11E968BA6000394B0 /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698EF1E968BA6000394B0 /* BaseDateFormatter.swift */; };
-		CAE698F61E968E3D000394B0 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698F41E968E3D000394B0 /* BaseUserService.swift */; };
-		CAE698FB1E968F78000394B0 /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698F91E968F78000394B0 /* UserDefaults+UserService.swift */; };
-		CAE698FF1E969352000394B0 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE698FD1E969352000394B0 /* ApiResponse.swift */; };
-		CAE699041E9693F4000394B0 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699021E9693F4000394B0 /* ConnectionError.swift */; };
-		CAE699081E96956D000394B0 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699061E96956D000394B0 /* ApiError.swift */; };
-		CAE6990E1E969C66000394B0 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */; };
-		CAE699121E969D2B000394B0 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */; };
+		EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */; };
+		EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */; };
+		EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */; };
+		EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB91EAF705500CAE7B6 /* ApiError.swift */; };
+		EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */; };
+		EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */; };
+		EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */; };
+		EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */; };
+		EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */; };
+		EF05EDD21EAF9CF100CAE7B6 /* CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = EF05EDD01EAF9CF100CAE7B6 /* CommonCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF05EDDA1EAF9D4A00CAE7B6 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */; };
+		EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */; };
+		EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */; };
+		EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */; };
+		EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */; };
+		EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */; };
+		EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */; };
+		EF05EDF61EB0D4C300CAE7B6 /* BarButtonLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF51EB0D4C300CAE7B6 /* BarButtonLoadingService.swift */; };
+		EF05EDF81EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */; };
+		EF05EDFC1EB0D77400CAE7B6 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */; };
+		EF05EDFD1EB0D77400CAE7B6 /* SimpleNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* SimpleNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,14 +40,32 @@
 		CAE698E31E968820000394B0 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE698E61E968820000394B0 /* LeadKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadKitAdditions.h; sourceTree = "<group>"; };
 		CAE698E71E968820000394B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAE698EF1E968BA6000394B0 /* BaseDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseDateFormatter.swift; path = Classes/BaseDateFormatter.swift; sourceTree = "<group>"; };
-		CAE698F41E968E3D000394B0 /* BaseUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseUserService.swift; path = Services/BaseUserService.swift; sourceTree = "<group>"; };
-		CAE698F91E968F78000394B0 /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UserDefaults+UserService.swift"; path = "Extensions/UserDefaults+UserService.swift"; sourceTree = "<group>"; };
-		CAE698FD1E969352000394B0 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResponse.swift; path = Classes/ApiResponse.swift; sourceTree = "<group>"; };
-		CAE699021E9693F4000394B0 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionError.swift; path = Enums/ConnectionError.swift; sourceTree = "<group>"; };
-		CAE699061E96956D000394B0 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiError.swift; path = Enums/ApiError.swift; sourceTree = "<group>"; };
-		CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Observable+Extensions.swift"; path = "Extensions/Observable+Extensions.swift"; sourceTree = "<group>"; };
-		CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultNetworkService.swift; path = Classes/DefaultNetworkService.swift; sourceTree = "<group>"; };
+		EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUserService.swift; sourceTree = "<group>"; };
+		EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserService.swift"; sourceTree = "<group>"; };
+		EF05EDB91EAF705500CAE7B6 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDateFormatter.swift; sourceTree = "<group>"; };
+		EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDService.swift; sourceTree = "<group>"; };
+		EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeService.swift; sourceTree = "<group>"; };
+		EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF05EDD01EAF9CF100CAE7B6 /* CommonCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCrypto.h; sourceTree = "<group>"; };
+		EF05EDD11EAF9CF100CAE7B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF05EDD61EAF9D2900CAE7B6 /* CommonCrypto.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CommonCrypto.xcconfig; sourceTree = "<group>"; };
+		EF05EDD71EAF9D2900CAE7B6 /* iphoneos.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
+		EF05EDD81EAF9D2900CAE7B6 /* iphonesimulator.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
+		EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewController.swift; sourceTree = "<group>"; };
+		EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewModel.swift; sourceTree = "<group>"; };
+		EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeConfiguration.swift; sourceTree = "<group>"; };
+		EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeValidationResult.swift; sourceTree = "<group>"; };
+		EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolderProtocol.swift; sourceTree = "<group>"; };
+		EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeError.swift; sourceTree = "<group>"; };
+		EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolder.swift; sourceTree = "<group>"; };
+		EF05EDF51EB0D4C300CAE7B6 /* BarButtonLoadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonLoadingService.swift; sourceTree = "<group>"; };
+		EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
+		EF05EDFB1EB0D77400CAE7B6 /* SimpleNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +73,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF05EDDA1EAF9D4A00CAE7B6 /* CommonCrypto.framework in Frameworks */,
 				7A94B4A5956B82BE1CEBA873 /* Pods_LeadKitAdditions.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDCA1EAF9CF100CAE7B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE698E51E968820000394B0 /* LeadKitAdditions */,
+				EF05EDCF1EAF9CF100CAE7B6 /* CommonCrypto */,
 				CAE698E41E968820000394B0 /* Products */,
 				F8A65FEC7C0EB4B93746E50F /* Pods */,
 				A3117951840B8B7D2E7A8A80 /* Frameworks */,
@@ -70,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE698E31E968820000394B0 /* LeadKitAdditions.framework */,
+				EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,12 +119,13 @@
 		CAE698E51E968820000394B0 /* LeadKitAdditions */ = {
 			isa = PBXGroup;
 			children = (
+				EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */,
+				CAE698EE1E968B72000394B0 /* Classes */,
 				CAE699011E9693DE000394B0 /* Enums */,
 				CAE698F81E968F56000394B0 /* Extensions */,
-				CAE698F31E968E28000394B0 /* Services */,
-				CAE698EE1E968B72000394B0 /* Classes */,
-				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
 				CAE698E71E968820000394B0 /* Info.plist */,
+				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
+				CAE698F31E968E28000394B0 /* Services */,
 			);
 			path = LeadKitAdditions;
 			sourceTree = "<group>";
@@ -90,37 +133,108 @@
 		CAE698EE1E968B72000394B0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CAE698EF1E968BA6000394B0 /* BaseDateFormatter.swift */,
-				CAE698FD1E969352000394B0 /* ApiResponse.swift */,
-				CAE699101E969D2B000394B0 /* DefaultNetworkService.swift */,
+				EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */,
+				EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		CAE698F31E968E28000394B0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CAE698F41E968E3D000394B0 /* BaseUserService.swift */,
+				EF05EDF91EB0D75A00CAE7B6 /* Network */,
+				EF05EDF51EB0D4C300CAE7B6 /* BarButtonLoadingService.swift */,
+				EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */,
+				EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */,
+				EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */,
 			);
-			name = Services;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CAE698F81E968F56000394B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CAE698F91E968F78000394B0 /* UserDefaults+UserService.swift */,
-				CAE6990C1E969C66000394B0 /* Observable+Extensions.swift */,
+				EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */,
+				EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */,
+				EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CAE699011E9693DE000394B0 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				CAE699021E9693F4000394B0 /* ConnectionError.swift */,
-				CAE699061E96956D000394B0 /* ApiError.swift */,
+				EF05EDB91EAF705500CAE7B6 /* ApiError.swift */,
+				EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */,
 			);
-			name = Enums;
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		EF05EDCF1EAF9CF100CAE7B6 /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDD01EAF9CF100CAE7B6 /* CommonCrypto.h */,
+				EF05EDD61EAF9D2900CAE7B6 /* CommonCrypto.xcconfig */,
+				EF05EDD11EAF9CF100CAE7B6 /* Info.plist */,
+				EF05EDD71EAF9D2900CAE7B6 /* iphoneos.modulemap */,
+				EF05EDD81EAF9D2900CAE7B6 /* iphonesimulator.modulemap */,
+			);
+			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
+		EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDDC1EAFA72600CAE7B6 /* PassCode */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF05EDDC1EAFA72600CAE7B6 /* PassCode */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDDD1EAFA72600CAE7B6 /* Model */,
+				EF05EDDE1EAFA72600CAE7B6 /* View */,
+				EF05EDDF1EAFA72600CAE7B6 /* ViewModel */,
+			);
+			path = PassCode;
+			sourceTree = "<group>";
+		};
+		EF05EDDD1EAFA72600CAE7B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */,
+				EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */,
+				EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */,
+				EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */,
+				EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF05EDDE1EAFA72600CAE7B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF05EDDF1EAFA72600CAE7B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF05EDF91EB0D75A00CAE7B6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */,
+				EF05EDFB1EB0D77400CAE7B6 /* SimpleNetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		F8A65FEC7C0EB4B93746E50F /* Pods */ = {
@@ -140,6 +254,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDCB1EAF9CF100CAE7B6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF05EDD21EAF9CF100CAE7B6 /* CommonCrypto.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +290,24 @@
 			productReference = CAE698E31E968820000394B0 /* LeadKitAdditions.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EF05EDCD1EAF9CF100CAE7B6 /* CommonCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF05EDD31EAF9CF100CAE7B6 /* Build configuration list for PBXNativeTarget "CommonCrypto" */;
+			buildPhases = (
+				EF05EDC91EAF9CF100CAE7B6 /* Sources */,
+				EF05EDCA1EAF9CF100CAE7B6 /* Frameworks */,
+				EF05EDCB1EAF9CF100CAE7B6 /* Headers */,
+				EF05EDCC1EAF9CF100CAE7B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommonCrypto;
+			productName = CommonCrypto;
+			productReference = EF05EDCE1EAF9CF100CAE7B6 /* CommonCrypto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -180,6 +320,10 @@
 					CAE698E21E968820000394B0 = {
 						CreatedOnToolsVersion = 8.3;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
+					};
+					EF05EDCD1EAF9CF100CAE7B6 = {
+						CreatedOnToolsVersion = 8.3.1;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -197,12 +341,20 @@
 			projectRoot = "";
 			targets = (
 				CAE698E21E968820000394B0 /* LeadKitAdditions */,
+				EF05EDCD1EAF9CF100CAE7B6 /* CommonCrypto */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CAE698E11E968820000394B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDCC1EAF9CF100CAE7B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,7 +419,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -277,14 +429,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE698FB1E968F78000394B0 /* UserDefaults+UserService.swift in Sources */,
-				CAE698FF1E969352000394B0 /* ApiResponse.swift in Sources */,
-				CAE698F11E968BA6000394B0 /* BaseDateFormatter.swift in Sources */,
-				CAE699041E9693F4000394B0 /* ConnectionError.swift in Sources */,
-				CAE6990E1E969C66000394B0 /* Observable+Extensions.swift in Sources */,
-				CAE698F61E968E3D000394B0 /* BaseUserService.swift in Sources */,
-				CAE699121E969D2B000394B0 /* DefaultNetworkService.swift in Sources */,
-				CAE699081E96956D000394B0 /* ApiError.swift in Sources */,
+				EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */,
+				EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */,
+				EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */,
+				EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */,
+				EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */,
+				EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */,
+				EF05EDFD1EB0D77400CAE7B6 /* SimpleNetworkService.swift in Sources */,
+				EF05EDF81EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift in Sources */,
+				EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */,
+				EF05EDF61EB0D4C300CAE7B6 /* BarButtonLoadingService.swift in Sources */,
+				EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */,
+				EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */,
+				EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */,
+				EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */,
+				EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */,
+				EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */,
+				EF05EDFC1EB0D77400CAE7B6 /* DefaultNetworkService.swift in Sources */,
+				EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */,
+				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
+				EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF05EDC91EAF9CF100CAE7B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +612,52 @@
 			};
 			name = Release;
 		};
+		EF05EDD41EAF9CF100CAE7B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphoneos.modulemap;
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphonesimulator.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchin.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EF05EDD51EAF9CF100CAE7B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphoneos.modulemap;
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = /Users/alexeygerasimov/Documents/dev/LeadKitAdditions/LeadKitAdditions/CommonCrypto/iphonesimulator.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.touchin.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,6 +678,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EF05EDD31EAF9CF100CAE7B6 /* Build configuration list for PBXNativeTarget "CommonCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF05EDD41EAF9CF100CAE7B6 /* Debug */,
+				EF05EDD51EAF9CF100CAE7B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
