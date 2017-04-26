@@ -50,7 +50,7 @@ open class BasePassCodeViewController: UIViewController {
     @IBOutlet public weak var errorLabel: UILabel?
     @IBOutlet public weak var dotStackView: UIStackView!
 
-    let disposeBag = DisposeBag()
+    public let disposeBag = DisposeBag()
 
     fileprivate lazy var fakeTextField: UITextField = {
         let fakeTextField = UITextField()
