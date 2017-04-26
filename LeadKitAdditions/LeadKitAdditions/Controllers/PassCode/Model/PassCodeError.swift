@@ -23,5 +23,5 @@
 public enum PassCodeError: Error {
     case codesNotMatch
     case wrongCode
-    case tooMuchAttempts
+    case tooManyAttempts
 }

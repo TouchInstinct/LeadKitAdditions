@@ -139,7 +139,7 @@ extension BasePassCodeViewModel {
     private var shouldUpdateControllerState: Bool {
         return !passCodeHolder.shouldValidate ||
             !(validationResultHolder.value?.isValid ?? true) ||
-            validationResultHolder.value?.error == .tooMuchAttempts
+            validationResultHolder.value?.error == .tooManyAttempts
     }
 
     private func validateIfNeeded() {
@@ -158,7 +158,7 @@ extension BasePassCodeViewModel {
 
             if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsLoginNumber)) ||
                 attemptsNumber > Int(passCodeConfiguration.maxAttemptsLoginNumber) {
-                validationResult = .inValid(.tooMuchAttempts)
+                validationResult = .inValid(.tooManyAttempts)
             }
         }
 

@@ -38,8 +38,7 @@ public struct PassCodeConfiguration {
     }
 
     public static var defaultConfiguration: PassCodeConfiguration {
-        let passCodeConfiguration = PassCodeConfiguration()
-        return passCodeConfiguration
+        return PassCodeConfiguration()
     }
 
 }
