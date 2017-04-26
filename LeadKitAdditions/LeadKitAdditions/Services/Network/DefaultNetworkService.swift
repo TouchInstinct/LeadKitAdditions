@@ -33,11 +33,11 @@ open class DefaultNetworkService: NetworkService {
     static let retryLimit = 3
 
     open class var baseUrl: String {
-        fatalError("You should override this var")
+        fatalError("You should override this var: baseUrl")
     }
 
     open class var defaultTimeoutInterval: TimeInterval {
-        fatalError("You should override this var")
+        fatalError("You should override this var: defaultTimeoutInterval")
     }
 
     public override init(sessionManager: SessionManager) {

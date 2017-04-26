@@ -100,12 +100,12 @@ open class BasePassCodeViewModel: BaseViewModel {
     // MARK: - HAVE TO OVERRIDE
 
     open func isEnteredPassCodeValid(_ passCode: String) -> Bool {
-        assertionFailure("Don't use it directly. Override it!")
+        assertionFailure("You should override this method: isEnteredPassCodeValid(_ passCode: String)")
         return false
     }
 
     open func authSucceed(_ type: PassCodeAuthType) {
-        assertionFailure("Don't use it directly. Override it!")
+        assertionFailure("You should override this method: authSucceed(_ type: PassCodeAuthType)")
     }
 
     // MARK: - Functions that can you can override to use TouchId
@@ -115,7 +115,7 @@ open class BasePassCodeViewModel: BaseViewModel {
     }
 
     open func activateTouchIdForUser() {
-        assertionFailure("Don't use it directly. Override it!")
+        assertionFailure("You should override this method: activateTouchIdForUser()")
     }
 
 }

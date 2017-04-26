@@ -154,25 +154,25 @@ open class BasePassCodeViewController: UIViewController {
     // MARK: - HAVE TO OVERRIDE
 
     open var touchIdHint: String {
-        assertionFailure("You should override this var")
+        assertionFailure("You should override this var: touchIdHint")
         return ""
     }
 
     // override to change Images
     func imageFor(type: PinImageType) -> UIImage {
-        assertionFailure("Don't use it directly. Override it!")
+        assertionFailure("You should override this method: imageFor(type: PinImageType)")
         return UIImage()
     }
 
     // override to change error text
     func errorDescription(for error: PassCodeError) -> String {
-        assertionFailure("Don't use it directly. Override it!")
+        assertionFailure("You should override this method: errorDescription(for error: PassCodeError)")
         return ""
     }
 
     // override to change action title text
     func actionTitle(for passCodeControllerState: PassCodeControllerState) -> String {
-        assertionFailure("Don't use it directly. Override it!")
+        assertionFailure("You should override this method: actionTitle(for passCodeControllerState: PassCodeControllerState)")
         return ""
     }
 
