@@ -22,7 +22,7 @@
 
 import KeychainAccess
 import CocoaLumberjack
-import CommonCrypto
+import IDZSwiftCommonCrypto
 
 open class BasePassCodeService {
 
@@ -98,21 +98,10 @@ extension BasePassCodeService {
 private extension BasePassCodeService {
 
     func sha256(_ str: String) -> String? {
-        guard let data = str.data(using: String.Encoding.utf8), let shaData = sha256(data) else {
+        guard let digests = Digest(algorithm: .sha256).update(string: str)?.final() else {
             return nil
         }
-
-        let rc = shaData.base64EncodedString(options: [])
-        return rc
-    }
-
-    func sha256(_ data: Data) -> Data? {
-        guard let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH)) else {
-            return nil
-        }
-
-        CC_SHA256((data as NSData).bytes, CC_LONG(data.count), res.mutableBytes.assumingMemoryBound(to: UInt8.self))
-        return res as Data
+        return hexString(fromArray: digests)
     }
 
 }
