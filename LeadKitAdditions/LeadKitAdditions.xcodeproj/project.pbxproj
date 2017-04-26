@@ -28,6 +28,7 @@
 		EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */; };
 		EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */; };
 		EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */; };
+		EF05EDF41EB0D05400CAE7B6 /* SimpleNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF31EB0D05400CAE7B6 /* SimpleNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolderProtocol.swift; sourceTree = "<group>"; };
 		EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeError.swift; sourceTree = "<group>"; };
 		EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolder.swift; sourceTree = "<group>"; };
+		EF05EDF31EB0D05400CAE7B6 /* SimpleNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */,
 				EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */,
 				EF05EDBF1EAF706200CAE7B6 /* DefaultNetworkService.swift */,
+				EF05EDF31EB0D05400CAE7B6 /* SimpleNetworkService.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */,
+				EF05EDF41EB0D05400CAE7B6 /* SimpleNetworkService.swift in Sources */,
 				EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */,
 				EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */,
 				EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */,
