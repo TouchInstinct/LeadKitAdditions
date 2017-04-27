@@ -60,7 +60,7 @@ open class ApiNetworkService: DefaultNetworkService {
 
 extension ApiRequestParameters {
 
-    init(url: String, parameters: [String: Any] = [:]) {
+    public init(url: String, parameters: [String: Any] = [:]) {
 
         self.init(url: ApiNetworkService.baseUrl + url,
                   method: .post,
