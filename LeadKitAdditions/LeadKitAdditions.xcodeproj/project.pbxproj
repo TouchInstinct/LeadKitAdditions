@@ -29,6 +29,7 @@
 		EF05EDFC1EB0D77400CAE7B6 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */; };
 		EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
 		EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
+		EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
 		EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiNetworkService.swift; sourceTree = "<group>"; };
 		EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
+		EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				EF05EDB91EAF705500CAE7B6 /* ApiError.swift */,
+				EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */,
 				EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */,
 			);
 			path = Enums;
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */,
 				EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */,
 				EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */,
 				EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */,

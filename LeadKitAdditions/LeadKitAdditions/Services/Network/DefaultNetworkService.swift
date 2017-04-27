@@ -64,21 +64,4 @@ open class DefaultNetworkService: NetworkService {
         return sessionManager
     }
 
-    public static func apiRequestParameters(url: String, parameters: [String: Any] = [:]) -> ApiRequestParameters {
-        return ApiRequestParameters(baseUrl: baseUrl, url: url, parameters: parameters)
-    }
-
-}
-
-private extension ApiRequestParameters {
-
-    init(baseUrl: String, url: String, parameters: [String: Any] = [:]) {
-
-        self.init(url: baseUrl + url,
-                  method: .post,
-                  parameters: parameters,
-                  encoding: JSONEncoding.default,
-                  headers: nil)
-    }
-
 }
