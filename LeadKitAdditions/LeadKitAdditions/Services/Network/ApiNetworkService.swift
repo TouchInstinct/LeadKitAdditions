@@ -57,16 +57,3 @@ open class ApiNetworkService: DefaultNetworkService {
     }
 
 }
-
-extension ApiRequestParameters {
-
-    public init(url: String, parameters: [String: Any] = [:]) {
-
-        self.init(url: ApiNetworkService.baseUrl + url,
-                  method: .post,
-                  parameters: parameters,
-                  encoding: JSONEncoding.default,
-                  headers: nil)
-    }
-
-}
