@@ -66,4 +66,27 @@ public extension Observable {
             }
     }
 
+    public func handleApiError<T: ApiErrorProtocol>(_ apiErrorType: T,
+                                                    handler: @escaping () -> Void) -> Observable<Observable.E>
+        where T.RawValue == Int {
+
+        return observeOn(CurrentThreadScheduler.instance)
+            .do(onError: { error in
+                if error.isApiError(apiErrorType) {
+                    handler()
+                }
+            })
+    }
+
+    public func changeLoadingBehaviour(isLoading: PublishSubject<Bool>) -> Observable<Observable.E> {
+        return observeOn(CurrentThreadScheduler.instance)
+            .do(onNext: { _ in
+                isLoading.onNext(false)
+            }, onError: { _ in
+                isLoading.onNext(false)
+            }, onSubscribe: { _ in
+                isLoading.onNext(true)
+            })
+    }
+
 }

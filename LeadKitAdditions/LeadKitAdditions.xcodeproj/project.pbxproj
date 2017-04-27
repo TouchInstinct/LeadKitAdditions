@@ -25,10 +25,11 @@
 		EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */; };
 		EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */; };
 		EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */; };
-		EF05EDF61EB0D4C300CAE7B6 /* BarButtonLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF51EB0D4C300CAE7B6 /* BarButtonLoadingService.swift */; };
 		EF05EDF81EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */; };
 		EF05EDFC1EB0D77400CAE7B6 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */; };
-		EF05EDFD1EB0D77400CAE7B6 /* SimpleNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* SimpleNetworkService.swift */; };
+		EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
+		EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
+		EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +55,11 @@
 		EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolderProtocol.swift; sourceTree = "<group>"; };
 		EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeError.swift; sourceTree = "<group>"; };
 		EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolder.swift; sourceTree = "<group>"; };
-		EF05EDF51EB0D4C300CAE7B6 /* BarButtonLoadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonLoadingService.swift; sourceTree = "<group>"; };
 		EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
-		EF05EDFB1EB0D77400CAE7B6 /* SimpleNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleNetworkService.swift; sourceTree = "<group>"; };
+		EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiNetworkService.swift; sourceTree = "<group>"; };
+		EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
+		EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */,
 				EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */,
+				EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -125,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				EF05EDF91EB0D75A00CAE7B6 /* Network */,
-				EF05EDF51EB0D4C300CAE7B6 /* BarButtonLoadingService.swift */,
 				EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */,
 				EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */,
 				EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */,
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				EF05EDB91EAF705500CAE7B6 /* ApiError.swift */,
+				EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */,
 				EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */,
 			);
 			path = Enums;
@@ -201,8 +204,8 @@
 		EF05EDF91EB0D75A00CAE7B6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */,
 				EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */,
-				EF05EDFB1EB0D77400CAE7B6 /* SimpleNetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -361,19 +364,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */,
 				EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */,
 				EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */,
 				EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */,
 				EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */,
 				EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */,
 				EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */,
-				EF05EDFD1EB0D77400CAE7B6 /* SimpleNetworkService.swift in Sources */,
+				EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */,
 				EF05EDF81EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift in Sources */,
 				EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */,
-				EF05EDF61EB0D4C300CAE7B6 /* BarButtonLoadingService.swift in Sources */,
 				EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */,
 				EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */,
 				EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */,
+				EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */,
 				EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */,
 				EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */,
 				EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */,
