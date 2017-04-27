@@ -32,7 +32,7 @@ public enum LoadingBarButtonSide {
 public class LoadingBarButton {
 
     fileprivate weak var navigationItem: UINavigationItem?
-    fileprivate var savedBarButton: UIBarButtonItem?
+    fileprivate var initialBarButton: UIBarButtonItem?
     private let side: LoadingBarButtonSide
 
     private var barButtonItem: UIBarButtonItem? {
@@ -57,17 +57,16 @@ public class LoadingBarButton {
     public init(navigationItem: UINavigationItem, side: LoadingBarButtonSide) {
         self.navigationItem = navigationItem
         self.side = side
+        initialBarButton = barButtonItem
     }
 
     fileprivate func setState(waiting: Bool = false) {
         if waiting {
-            savedBarButton = barButtonItem
-
             let activityIndicatorItem =  UIBarButtonItem.activityIndicator
             barButtonItem = activityIndicatorItem.barButton
             activityIndicatorItem.activityIndicator.startAnimating()
         } else {
-            barButtonItem = savedBarButton
+            barButtonItem = initialBarButton
         }
     }
 
