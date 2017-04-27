@@ -24,10 +24,8 @@ import LeadKit
 import Alamofire
 import ObjectMapper
 import RxSwift
-import RxCocoa
-import RxAlamofire
 
-open class SimpleNetworkService: DefaultNetworkService {
+open class ApiNetworkService: DefaultNetworkService {
 
     open func request<T: ImmutableMappable>(with parameters: ApiRequestParameters) -> Observable<T> {
         let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
@@ -56,6 +54,19 @@ open class SimpleNetworkService: DefaultNetworkService {
                     throw ApiError(apiResponse: $0.model)
                 }
             }
+    }
+
+}
+
+extension ApiRequestParameters {
+
+    init(url: String, parameters: [String: Any] = [:]) {
+
+        self.init(url: ApiNetworkService.baseUrl + url,
+                  method: .post,
+                  parameters: parameters,
+                  encoding: JSONEncoding.default,
+                  headers: nil)
     }
 
 }

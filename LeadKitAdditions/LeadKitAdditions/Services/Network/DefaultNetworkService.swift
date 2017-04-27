@@ -20,13 +20,10 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
 import Alamofire
 import LeadKit
 import ObjectMapper
 import RxSwift
-import RxCocoa
-import RxAlamofire
 
 open class DefaultNetworkService: NetworkService {
 
@@ -37,7 +34,7 @@ open class DefaultNetworkService: NetworkService {
     }
 
     open class var defaultTimeoutInterval: TimeInterval {
-        fatalError("You should override this var: defaultTimeoutInterval")
+        return 20.0
     }
 
     public override init(sessionManager: SessionManager) {
@@ -65,23 +62,6 @@ open class DefaultNetworkService: NetworkService {
         let sessionManager = SessionManager(configuration: configuration,
                                             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
         return sessionManager
-    }
-
-    public static func apiRequestParameters(url: String, parameters: [String: Any] = [:]) -> ApiRequestParameters {
-        return ApiRequestParameters(baseUrl: baseUrl, url: url, parameters: parameters)
-    }
-
-}
-
-private extension ApiRequestParameters {
-
-    init(baseUrl: String, url: String, parameters: [String: Any] = [:]) {
-
-        self.init(url: baseUrl + url,
-                  method: .post,
-                  parameters: parameters,
-                  encoding: JSONEncoding.default,
-                  headers: nil)
     }
 
 }

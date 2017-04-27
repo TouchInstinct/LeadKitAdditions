@@ -24,16 +24,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public enum BarButtonLoadingServiceSide {
+public enum LoadingBarButtonSide {
     case left
     case right
 }
 
-public class BarButtonLoadingService {
+public class LoadingBarButton {
 
     fileprivate weak var navigationItem: UINavigationItem?
     fileprivate var savedBarButton: UIBarButtonItem?
-    private let side: BarButtonLoadingServiceSide
+    private let side: LoadingBarButtonSide
 
     private var barButtonItem: UIBarButtonItem? {
         get {
@@ -54,12 +54,12 @@ public class BarButtonLoadingService {
         }
     }
 
-    public init(navigationItem: UINavigationItem, side: BarButtonLoadingServiceSide) {
+    public init(navigationItem: UINavigationItem, side: LoadingBarButtonSide) {
         self.navigationItem = navigationItem
         self.side = side
     }
 
-    fileprivate func setBarButton(waiting: Bool = false) {
+    fileprivate func setState(waiting: Bool = false) {
         if waiting {
             savedBarButton = barButtonItem
 
@@ -75,12 +75,12 @@ public class BarButtonLoadingService {
 
 extension Observable {
 
-    public func changeLoadingUI(using loadingService: BarButtonLoadingService) -> Observable<Observable.E> {
+    public func changeLoadingUI(using barButton: LoadingBarButton) -> Observable<Observable.E> {
         return observeOn(MainScheduler.instance)
             .do(onSubscribe: {
-                loadingService.setBarButton(waiting: true)
+                barButton.setState(waiting: true)
             }, onDispose: {
-                loadingService.setBarButton(waiting: false)
+                barButton.setState(waiting: false)
             })
     }
 
