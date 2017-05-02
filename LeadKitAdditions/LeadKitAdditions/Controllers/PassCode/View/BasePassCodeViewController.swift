@@ -57,6 +57,7 @@ open class BasePassCodeViewController: UIViewController {
         fakeTextField.isSecureTextEntry = true
         fakeTextField.keyboardType = .numberPad
         fakeTextField.isHidden = true
+        fakeTextField.delegate = self
         self.view.addSubview(fakeTextField)
         return fakeTextField
     }()
@@ -236,4 +237,16 @@ extension BasePassCodeViewController: ConfigurableController {
 
     open func localize() {}
 
+}
+
+extension BasePassCodeViewController: UITextFieldDelegate {
+
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+
+        let invalid = CharacterSet(charactersIn: "0123456789").inverted
+        return string.rangeOfCharacter(from: invalid, options: [], range: string.startIndex..<string.endIndex) == nil
+    }
+    
 }
