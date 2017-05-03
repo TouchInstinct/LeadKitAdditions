@@ -33,6 +33,9 @@ extension PassCodeHolderProtocol {
         return self as? PassCodeHolderEnter
     }
 
+    public var passCodeHolderChange: PassCodeHolderChange? {
+        return self as? PassCodeHolderChange
+    }
 }
 
 public class PassCodeHolderCreate: PassCodeHolderProtocol {
@@ -42,11 +45,11 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
     private var firstPassCode: String?
     private var secondPassCode: String?
 
-    public var enterStep: PassCodeEnterStep {
+    public var enterStep: PassCodeControllerState {
         if firstPassCode == nil {
-            return .first
+            return .enter
         } else {
-            return .second
+            return .repeatEnter
         }
     }
 
@@ -64,10 +67,12 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
 
     public func add(passCode: String) {
         switch enterStep {
-        case .first:
+        case .enter:
             firstPassCode = passCode
-        case .second:
+        case .repeatEnter:
             secondPassCode = passCode
+        default:
+            break
         }
     }
 
@@ -89,7 +94,7 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
 public class PassCodeHolderEnter: PassCodeHolderProtocol {
 
     public let type: PassCodeControllerType = .enter
-    public let enterStep: PassCodeEnterStep = .first
+    public let enterStep: PassCodeControllerState = .enter
 
     public var shouldValidate: Bool {
         return passCode != nil
@@ -113,4 +118,74 @@ public class PassCodeHolderEnter: PassCodeHolderProtocol {
         passCode = nil
     }
 
+}
+
+public class PassCodeHolderChange: PassCodeHolderProtocol {
+
+    public let type: PassCodeControllerType = .change
+
+    private var oldPassCode: String?
+    private var newFirstPassCode: String?
+    private var newSecondPassCode: String?
+
+    public var enterStep: PassCodeControllerState {
+        guard oldPassCode != nil else {
+            return .oldEnter
+        }
+
+        if newFirstPassCode == nil {
+            return .newEnter
+        } else {
+            return .repeatEnter
+        }
+    }
+
+    public var shouldValidate: Bool {
+        if enterStep == .newEnter {
+            return oldPassCode != nil
+        } else {
+            return newFirstPassCode != nil && newSecondPassCode != nil
+        }
+    }
+
+    public var passCode: String? {
+        switch (oldPassCode, newFirstPassCode, newSecondPassCode) {
+        case (let oldPassCode?, nil, nil):
+            return oldPassCode
+        case (_, let newFirstPassCode?, nil):
+            return nil
+        case (_, let newFirstPassCode?, let newSecondPassCode?) where newFirstPassCode == newSecondPassCode:
+            return newFirstPassCode
+        default:
+            return nil
+        }
+    }
+
+    public func add(passCode: String) {
+        if oldPassCode == nil {
+            oldPassCode = passCode
+        } else if newFirstPassCode == nil {
+            newFirstPassCode = passCode
+        } else if newSecondPassCode == nil {
+            newSecondPassCode = passCode
+        }
+    }
+
+    public func validate() -> PassCodeValidationResult {
+        if let passCode = passCode {
+            return .valid(passCode)
+        } else {
+            return .inValid(enterStep == .newEnter ? nil : .codesNotMatch)
+        }
+    }
+
+    public func reset() {
+        if enterStep == .newEnter {
+            oldPassCode = nil
+        } else {
+            newFirstPassCode = nil
+            newSecondPassCode = nil
+        }
+    }
+    
 }

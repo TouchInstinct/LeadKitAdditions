@@ -33,11 +33,14 @@ public enum PinImageType {
 public enum PassCodeControllerType {
     case create
     case enter
+    case change
 }
 
 public enum PassCodeControllerState {
     case enter
     case repeatEnter
+    case oldEnter
+    case newEnter
 }
 
 open class BasePassCodeViewController: UIViewController {
@@ -136,7 +139,7 @@ open class BasePassCodeViewController: UIViewController {
     }
 
     fileprivate func showTouchIdIfNeeded(with description: String) {
-        guard viewModel.isTouchIdEnabled else {
+        guard viewModel.isTouchIdEnabled && viewModel.controllerType == .enter else {
             return
         }
 

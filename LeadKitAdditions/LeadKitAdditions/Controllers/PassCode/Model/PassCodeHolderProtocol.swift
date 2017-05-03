@@ -20,15 +20,10 @@
 //  THE SOFTWARE.
 //
 
-public enum PassCodeEnterStep {
-    case first
-    case second
-}
-
 public protocol PassCodeHolderProtocol {
 
     var type: PassCodeControllerType { get }
-    var enterStep: PassCodeEnterStep { get }
+    var enterStep: PassCodeControllerState { get }
 
     func add(passCode: String)
     func reset()
@@ -50,6 +45,8 @@ public class PassCodeHolderBuilder {
             return PassCodeHolderCreate()
         case .enter:
             return PassCodeHolderEnter()
+        case .change:
+            return PassCodeHolderChange()
         }
     }
 
