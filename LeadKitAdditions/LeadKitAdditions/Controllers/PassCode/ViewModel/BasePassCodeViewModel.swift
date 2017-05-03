@@ -80,10 +80,25 @@ open class BasePassCodeViewModel: BaseViewModel {
 
         validationResultHolder.asDriver()
             .drive(onNext: { [weak self] validationResult in
-                if validationResult?.isValid ?? false, let passCode = validationResult?.passCode {
-                    self?.authSucceed(.passCode(passCode))
+                guard let sSelf = self else {
+                    return
+                }
+
+                if sSelf.passCodeHolder.type == .change {
+                    if validationResult?.isValid ?? false,
+                        sSelf.passCodeHolder.enterStep == .repeatEnter,
+                        let passCode = validationResult?.passCode {
+
+                        sSelf.authSucceed(.passCode(passCode))
+                    } else {
+                        sSelf.passCodeControllerStateHolder.value = sSelf.passCodeHolder.enterStep
+                    }
                 } else {
-                    self?.passCodeControllerStateHolder.value = .enter
+                    if validationResult?.isValid ?? false, let passCode = validationResult?.passCode {
+                        sSelf.authSucceed(.passCode(passCode))
+                    } else {
+                        sSelf.passCodeControllerStateHolder.value = sSelf.passCodeHolder.enterStep
+                    }
                 }
             })
             .addDisposableTo(disposeBag)
@@ -127,12 +142,7 @@ extension BasePassCodeViewModel {
         validateIfNeeded()
 
         if shouldUpdateControllerState {
-            switch passCodeHolder.enterStep {
-            case .first:
-                passCodeControllerStateHolder.value = .enter
-            case .second:
-                passCodeControllerStateHolder.value = .repeatEnter
-            }
+            passCodeControllerStateHolder.value = passCodeHolder.enterStep
         }
     }
 
@@ -149,7 +159,7 @@ extension BasePassCodeViewModel {
 
         var validationResult = passCodeHolder.validate()
 
-        if passCodeHolder.type == .enter {
+        if passCodeHolder.type == .enter || (passCodeHolder.type == .change && passCodeHolder.enterStep == .newEnter) {
             attemptsNumber += 1
 
             if let passCode = validationResult.passCode, !isEnteredPassCodeValid(passCode) {
