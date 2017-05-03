@@ -152,7 +152,7 @@ public class PassCodeHolderChange: PassCodeHolderProtocol {
         switch (oldPassCode, newFirstPassCode, newSecondPassCode) {
         case (let oldPassCode?, nil, nil):
             return oldPassCode
-        case (_, let newFirstPassCode?, nil):
+        case (_, _?, nil):
             return nil
         case (_, let newFirstPassCode?, let newSecondPassCode?) where newFirstPassCode == newSecondPassCode:
             return newFirstPassCode
@@ -187,5 +187,5 @@ public class PassCodeHolderChange: PassCodeHolderProtocol {
             newSecondPassCode = nil
         }
     }
-    
+
 }
