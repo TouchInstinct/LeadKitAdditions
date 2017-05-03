@@ -114,5 +114,5 @@ open class BaseDateFormatter {
             }
         })
     }
-    
+
 }
