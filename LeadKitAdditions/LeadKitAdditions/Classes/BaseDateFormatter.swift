@@ -33,35 +33,30 @@ open class BaseDateFormatter {
 
     private static let apiFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = usedLocale
         dateFormatter.dateFormat = apiDateTimeFormat
         return dateFormatter
     }()
 
     private static let apiDateWithoutTimeFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = usedLocale
         dateFormatter.dateFormat = apiDateWithoutTimeFormat
         return dateFormatter
     }()
 
     private static let hourAndMinuteFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
-        dateFormater.locale = usedLocale
         dateFormater.dateFormat = hourAndMinuteDateTimeFormat
         return dateFormater
     }()
 
     private static let dayAndMonthFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
-        dateFormater.locale = usedLocale
         dateFormater.dateFormat = dayAndMonthDateTimeFormat
         return dateFormater
     }()
 
     private static let dayMonthYearFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
-        dateFormater.locale = usedLocale
         dateFormater.dateFormat = dayMonthYearDateTimeFormat
         return dateFormater
     }()
@@ -73,26 +68,32 @@ open class BaseDateFormatter {
     }
 
     public static func backendDate(fromStrDate strDate: String) -> Date? {
+        apiFormatter.locale = usedLocale
         return apiFormatter.date(from: strDate)
     }
 
     public static func backendStrDate(withDate date: Date) -> String {
+        apiFormatter.locale = usedLocale
         return apiFormatter.string(from: date)
     }
 
     public static func backendDateWithoutTime(withDate date: Date) -> String {
+        apiDateWithoutTimeFormatter.locale = usedLocale
         return apiDateWithoutTimeFormatter.string(from: date)
     }
 
     public static func hourAndMinuteStrDate(withDate date: Date) -> String {
+        hourAndMinuteFormatter.locale = usedLocale
         return hourAndMinuteFormatter.string(from: date)
     }
 
     public static func dayAndMonthStrDate(withDate date: Date) -> String {
+        hourAndMinuteFormatter.locale = usedLocale
         return dayAndMonthFormatter.string(from: date)
     }
 
     public static func dayMonthYearStrDate(withDate date: Date) -> String {
+        hourAndMinuteFormatter.locale = usedLocale
         return dayMonthYearFormatter.string(from: date)
     }
 
