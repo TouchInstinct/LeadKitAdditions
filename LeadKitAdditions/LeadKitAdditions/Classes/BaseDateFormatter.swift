@@ -34,35 +34,35 @@ open class BaseDateFormatter {
     private static let apiFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = usedLocale
-        dateFormatter.dateFormat = BaseDateFormatter.apiDateTimeFormat
+        dateFormatter.dateFormat = apiDateTimeFormat
         return dateFormatter
     }()
 
     private static let apiDateWithoutTimeFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = usedLocale
-        dateFormatter.dateFormat = BaseDateFormatter.apiDateWithoutTimeFormat
+        dateFormatter.dateFormat = apiDateWithoutTimeFormat
         return dateFormatter
     }()
 
     private static let hourAndMinuteFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
         dateFormater.locale = usedLocale
-        dateFormater.dateFormat = BaseDateFormatter.hourAndMinuteDateTimeFormat
+        dateFormater.dateFormat = hourAndMinuteDateTimeFormat
         return dateFormater
     }()
 
     private static let dayAndMonthFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
         dateFormater.locale = usedLocale
-        dateFormater.dateFormat = BaseDateFormatter.dayAndMonthDateTimeFormat
+        dateFormater.dateFormat = dayAndMonthDateTimeFormat
         return dateFormater
     }()
 
     private static let dayMonthYearFormatter: DateFormatter = {
         let dateFormater = DateFormatter()
         dateFormater.locale = usedLocale
-        dateFormater.dateFormat = BaseDateFormatter.dayMonthYearDateTimeFormat
+        dateFormater.dateFormat = dayMonthYearDateTimeFormat
         return dateFormater
     }()
 
@@ -73,23 +73,27 @@ open class BaseDateFormatter {
     }
 
     public static func backendDate(fromStrDate strDate: String) -> Date? {
-        return BaseDateFormatter.apiFormatter.date(from: strDate)
+        return apiFormatter.date(from: strDate)
     }
 
     public static func backendStrDate(withDate date: Date) -> String {
-        return BaseDateFormatter.apiFormatter.string(from: date)
+        return apiFormatter.string(from: date)
     }
 
     public static func backendDateWithoutTime(withDate date: Date) -> String {
-        return BaseDateFormatter.apiDateWithoutTimeFormatter.string(from: date)
+        return apiDateWithoutTimeFormatter.string(from: date)
     }
 
     public static func hourAndMinuteStrDate(withDate date: Date) -> String {
-        return BaseDateFormatter.hourAndMinuteFormatter.string(from: date)
+        return hourAndMinuteFormatter.string(from: date)
+    }
+
+    public static func dayAndMonthStrDate(withDate date: Date) -> String {
+        return dayAndMonthFormatter.string(from: date)
     }
 
     public static func dayMonthYearStrDate(withDate date: Date) -> String {
-        return BaseDateFormatter.dayMonthYearFormatter.string(from: date)
+        return dayMonthYearFormatter.string(from: date)
     }
 
     // MARK: - Transformers
@@ -97,13 +101,13 @@ open class BaseDateFormatter {
     public static var transformFromStringToDate: TransformOf<Date, String> {
         return TransformOf<Date, String>(fromJSON: { (stringValue) -> Date? in
             if let stringValue = stringValue {
-                return BaseDateFormatter.backendDate(fromStrDate: stringValue)
+                return backendDate(fromStrDate: stringValue)
             } else {
                 return nil
             }
         }, toJSON: { (dateValue) -> String? in
             if let dateValue = dateValue {
-                return BaseDateFormatter.backendStrDate(withDate: dateValue)
+                return backendStrDate(withDate: dateValue)
             } else {
                 return nil
             }

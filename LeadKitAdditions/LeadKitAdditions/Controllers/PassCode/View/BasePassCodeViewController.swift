@@ -244,12 +244,12 @@ extension BasePassCodeViewController: ConfigurableController {
 
 extension BasePassCodeViewController: UITextFieldDelegate {
 
-    func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField,
+                          shouldChangeCharactersIn range: NSRange,
+                          replacementString string: String) -> Bool {
 
         let invalid = CharacterSet(charactersIn: "0123456789").inverted
         return string.rangeOfCharacter(from: invalid, options: [], range: string.startIndex..<string.endIndex) == nil
     }
-    
+
 }
