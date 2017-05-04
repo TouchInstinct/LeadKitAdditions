@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A94B4A5956B82BE1CEBA873 /* Pods_LeadKitAdditions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7F57C5E5275C4D8DC71992 /* Pods_LeadKitAdditions.framework */; };
+		248389A288C0A6D7914F0546 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
+		B326804BA6CC8B8BB136A46A /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */; };
 		EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */; };
@@ -30,15 +31,42 @@
 		EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
 		EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
 		EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
+		EFBD557A1EBB893F0062AA63 /* Info-iOS-Extensions.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */; };
+		EFBD557B1EBB893F0062AA63 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBD55791EBB893F0062AA63 /* Info-iOS.plist */; };
+		EFBD557C1EBB95680062AA63 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */; };
+		EFBD557D1EBB956A0062AA63 /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */; };
+		EFBD557E1EBB956C0062AA63 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
+		EFBD557F1EBB95730062AA63 /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */; };
+		EFBD55801EBB95730062AA63 /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */; };
+		EFBD55811EBB95730062AA63 /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */; };
+		EFBD55821EBB95730062AA63 /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */; };
+		EFBD55831EBB95730062AA63 /* PassCodeValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */; };
+		EFBD55841EBB95770062AA63 /* BasePassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */; };
+		EFBD55851EBB957A0062AA63 /* BasePassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */; };
+		EFBD55861EBB95810062AA63 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB91EAF705500CAE7B6 /* ApiError.swift */; };
+		EFBD55871EBB95810062AA63 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
+		EFBD55881EBB95810062AA63 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */; };
+		EFBD55891EBB95850062AA63 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */; };
+		EFBD558A1EBB95850062AA63 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */; };
+		EFBD558B1EBB95850062AA63 /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */; };
+		EFBD558C1EBB95890062AA63 /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */; };
+		EFBD558D1EBB95890062AA63 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */; };
+		EFBD558E1EBB95890062AA63 /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */; };
+		EFBD558F1EBB958D0062AA63 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
+		EFBD55901EBB958D0062AA63 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */; };
+		EFBD55921EBB9A980062AA63 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		53E343F9E8F0A27C6114C160 /* Pods-LeadKitAdditions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions/Pods-LeadKitAdditions.debug.xcconfig"; sourceTree = "<group>"; };
+		01605ECA03749D49C27FA3DD /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig"; sourceTree = "<group>"; };
+		0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49738551AC648B0AFA74E57F /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7B7F57C5E5275C4D8DC71992 /* Pods_LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A48492D1BE72C6D161A6E8E /* Pods-LeadKitAdditions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions/Pods-LeadKitAdditions.release.xcconfig"; sourceTree = "<group>"; };
+		9D549FA5A7579702358E07DF /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig"; sourceTree = "<group>"; };
 		CAE698E31E968820000394B0 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE698E61E968820000394B0 /* LeadKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadKitAdditions.h; sourceTree = "<group>"; };
-		CAE698E71E968820000394B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0AB283D10B2175EFDBF7924 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; sourceTree = "<group>"; };
 		EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUserService.swift; sourceTree = "<group>"; };
 		EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserService.swift"; sourceTree = "<group>"; };
@@ -60,6 +88,9 @@
 		EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiNetworkService.swift; sourceTree = "<group>"; };
 		EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
 		EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
+		EFBD55701EBB87100062AA63 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS-Extensions.plist"; sourceTree = "<group>"; };
+		EFBD55791EBB893F0062AA63 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +98,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A94B4A5956B82BE1CEBA873 /* Pods_LeadKitAdditions.framework in Frameworks */,
+				248389A288C0A6D7914F0546 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFBD556C1EBB87100062AA63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B326804BA6CC8B8BB136A46A /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				7B7F57C5E5275C4D8DC71992 /* Pods_LeadKitAdditions.framework */,
+				0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */,
+				CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,7 +126,7 @@
 		CAE698D91E968820000394B0 = {
 			isa = PBXGroup;
 			children = (
-				CAE698E51E968820000394B0 /* LeadKitAdditions */,
+				CAE698E51E968820000394B0 /* Sources */,
 				CAE698E41E968820000394B0 /* Products */,
 				F8A65FEC7C0EB4B93746E50F /* Pods */,
 				A3117951840B8B7D2E7A8A80 /* Frameworks */,
@@ -96,22 +137,24 @@
 			isa = PBXGroup;
 			children = (
 				CAE698E31E968820000394B0 /* LeadKitAdditions.framework */,
+				EFBD55701EBB87100062AA63 /* LeadKitAdditions.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CAE698E51E968820000394B0 /* LeadKitAdditions */ = {
+		CAE698E51E968820000394B0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */,
 				CAE698EE1E968B72000394B0 /* Classes */,
+				EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */,
 				CAE699011E9693DE000394B0 /* Enums */,
 				CAE698F81E968F56000394B0 /* Extensions */,
-				CAE698E71E968820000394B0 /* Info.plist */,
-				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
 				CAE698F31E968E28000394B0 /* Services */,
+				EFBD55791EBB893F0062AA63 /* Info-iOS.plist */,
+				EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */,
+				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
 			);
-			path = LeadKitAdditions;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		CAE698EE1E968B72000394B0 /* Classes */ = {
@@ -213,8 +256,10 @@
 		F8A65FEC7C0EB4B93746E50F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				53E343F9E8F0A27C6114C160 /* Pods-LeadKitAdditions.debug.xcconfig */,
-				8A48492D1BE72C6D161A6E8E /* Pods-LeadKitAdditions.release.xcconfig */,
+				49738551AC648B0AFA74E57F /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */,
+				D0AB283D10B2175EFDBF7924 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */,
+				9D549FA5A7579702358E07DF /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig */,
+				01605ECA03749D49C27FA3DD /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -230,12 +275,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFBD556D1EBB87100062AA63 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFBD55921EBB9A980062AA63 /* LeadKitAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CAE698E21E968820000394B0 /* LeadKitAdditions */ = {
+		CAE698E21E968820000394B0 /* LeadKitAdditions iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CAE698EB1E968820000394B0 /* Build configuration list for PBXNativeTarget "LeadKitAdditions" */;
+			buildConfigurationList = CAE698EB1E968820000394B0 /* Build configuration list for PBXNativeTarget "LeadKitAdditions iOS" */;
 			buildPhases = (
 				E8E82E34792B38EF225575D7 /* [CP] Check Pods Manifest.lock */,
 				CAE698DE1E968820000394B0 /* Sources */,
@@ -250,9 +303,29 @@
 			);
 			dependencies = (
 			);
-			name = LeadKitAdditions;
+			name = "LeadKitAdditions iOS";
 			productName = LeadKitAdditions;
 			productReference = CAE698E31E968820000394B0 /* LeadKitAdditions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EFBD556F1EBB87100062AA63 /* LeadKitAdditions iOS Extensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFBD55751EBB87100062AA63 /* Build configuration list for PBXNativeTarget "LeadKitAdditions iOS Extensions" */;
+			buildPhases = (
+				1C200FD9213D2207669C4304 /* [CP] Check Pods Manifest.lock */,
+				EFBD556B1EBB87100062AA63 /* Sources */,
+				EFBD556C1EBB87100062AA63 /* Frameworks */,
+				EFBD556D1EBB87100062AA63 /* Headers */,
+				EFBD556E1EBB87100062AA63 /* Resources */,
+				808FF5474C0E1574D405EFAF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LeadKitAdditions iOS Extensions";
+			productName = "LeadKitAdditions-iOS-Extensions";
+			productReference = EFBD55701EBB87100062AA63 /* LeadKitAdditions.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -269,6 +342,10 @@
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
+					EFBD556F1EBB87100062AA63 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = CAE698DD1E968820000394B0 /* Build configuration list for PBXProject "LeadKitAdditions" */;
@@ -283,7 +360,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CAE698E21E968820000394B0 /* LeadKitAdditions */,
+				CAE698E21E968820000394B0 /* LeadKitAdditions iOS */,
+				EFBD556F1EBB87100062AA63 /* LeadKitAdditions iOS Extensions */,
 			);
 		};
 /* End PBXProject section */
@@ -293,12 +371,51 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBD557B1EBB893F0062AA63 /* Info-iOS.plist in Resources */,
+				EFBD557A1EBB893F0062AA63 /* Info-iOS-Extensions.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFBD556E1EBB87100062AA63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C200FD9213D2207669C4304 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		808FF5474C0E1574D405EFAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		94F6E1BA5AD68C6E2F10062B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,7 +428,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeadKitAdditions/Pods-LeadKitAdditions-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAE6990A1E969A7A000394B0 /* Swiftlint */ = {
@@ -385,6 +502,34 @@
 				EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */,
 				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
 				EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFBD556B1EBB87100062AA63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFBD55861EBB95810062AA63 /* ApiError.swift in Sources */,
+				EFBD55821EBB95730062AA63 /* PassCodeHolderProtocol.swift in Sources */,
+				EFBD55881EBB95810062AA63 /* ConnectionError.swift in Sources */,
+				EFBD558C1EBB95890062AA63 /* BasePassCodeService.swift in Sources */,
+				EFBD558A1EBB95850062AA63 /* UIBarButtonItem+Extensions.swift in Sources */,
+				EFBD557F1EBB95730062AA63 /* PassCodeConfiguration.swift in Sources */,
+				EFBD558E1EBB95890062AA63 /* TouchIDService.swift in Sources */,
+				EFBD558F1EBB958D0062AA63 /* ApiNetworkService.swift in Sources */,
+				EFBD55891EBB95850062AA63 /* Observable+Extensions.swift in Sources */,
+				EFBD55871EBB95810062AA63 /* ApiErrorProtocol.swift in Sources */,
+				EFBD55841EBB95770062AA63 /* BasePassCodeViewController.swift in Sources */,
+				EFBD55811EBB95730062AA63 /* PassCodeHolder.swift in Sources */,
+				EFBD557C1EBB95680062AA63 /* ApiResponse.swift in Sources */,
+				EFBD557E1EBB956C0062AA63 /* LoadingBarButton.swift in Sources */,
+				EFBD558B1EBB95850062AA63 /* UserDefaults+UserService.swift in Sources */,
+				EFBD55831EBB95730062AA63 /* PassCodeValidationResult.swift in Sources */,
+				EFBD557D1EBB956A0062AA63 /* BaseDateFormatter.swift in Sources */,
+				EFBD55901EBB958D0062AA63 /* DefaultNetworkService.swift in Sources */,
+				EFBD55801EBB95730062AA63 /* PassCodeError.swift in Sources */,
+				EFBD55851EBB957A0062AA63 /* BasePassCodeViewModel.swift in Sources */,
+				EFBD558D1EBB95890062AA63 /* BaseUserService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +639,7 @@
 		};
 		CAE698EC1E968820000394B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53E343F9E8F0A27C6114C160 /* Pods-LeadKitAdditions.debug.xcconfig */;
+			baseConfigurationReference = 49738551AC648B0AFA74E57F /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -504,12 +649,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LeadKitAdditions/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = touchinstinct.LeadKitAdditions;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "touchinstinct.LeadKitAdditions-iOS";
+				PRODUCT_NAME = LeadKitAdditions;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -519,7 +664,7 @@
 		};
 		CAE698ED1E968820000394B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A48492D1BE72C6D161A6E8E /* Pods-LeadKitAdditions.release.xcconfig */;
+			baseConfigurationReference = D0AB283D10B2175EFDBF7924 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -529,14 +674,62 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = LeadKitAdditions/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = touchinstinct.LeadKitAdditions;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "touchinstinct.LeadKitAdditions-iOS";
+				PRODUCT_NAME = LeadKitAdditions;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EFBD55761EBB87100062AA63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D549FA5A7579702358E07DF /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-iOS-Extensions.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "touchinstinct.LeadKitAdditions-iOS-Extensions";
+				PRODUCT_NAME = LeadKitAdditions;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG LEADKIT_EXTENSION_TARGET";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EFBD55771EBB87100062AA63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01605ECA03749D49C27FA3DD /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-iOS-Extensions.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "touchinstinct.LeadKitAdditions-iOS-Extensions";
+				PRODUCT_NAME = LeadKitAdditions;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = LEADKIT_EXTENSION_TARGET;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -553,11 +746,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CAE698EB1E968820000394B0 /* Build configuration list for PBXNativeTarget "LeadKitAdditions" */ = {
+		CAE698EB1E968820000394B0 /* Build configuration list for PBXNativeTarget "LeadKitAdditions iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CAE698EC1E968820000394B0 /* Debug */,
 				CAE698ED1E968820000394B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFBD55751EBB87100062AA63 /* Build configuration list for PBXNativeTarget "LeadKitAdditions iOS Extensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFBD55761EBB87100062AA63 /* Debug */,
+				EFBD55771EBB87100062AA63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
