@@ -40,7 +40,9 @@ open class DefaultNetworkService: NetworkService {
     public override init(sessionManager: SessionManager) {
         super.init(sessionManager: sessionManager)
 
-        bindActivityIndicator()
+        #if os(iOS) && !LEADKIT_EXTENSION_TARGET
+            bindActivityIndicator()
+        #endif
     }
 
     // MARK: - Default Values
