@@ -30,6 +30,11 @@
 		EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
 		EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
 		EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
+		EFBE57C51EBCCE410040E00A /* AlertRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE57C41EBCCE410040E00A /* AlertRepresentable.swift */; };
+		EFBE57C71EBCCF560040E00A /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE57C61EBCCF560040E00A /* UIAlertController+Extensions.swift */; };
+		EFBE57C91EBCD5730040E00A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE57C81EBCD5730040E00A /* UIView+Extensions.swift */; };
+		EFBE57CB1EBCD6480040E00A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE57CA1EBCD6480040E00A /* String+Extensions.swift */; };
+		EFBE57CD1EBCD6C00040E00A /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBE57CC1EBCD6C00040E00A /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +65,11 @@
 		EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiNetworkService.swift; sourceTree = "<group>"; };
 		EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
 		EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
+		EFBE57C41EBCCE410040E00A /* AlertRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRepresentable.swift; sourceTree = "<group>"; };
+		EFBE57C61EBCCF560040E00A /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
+		EFBE57C81EBCD5730040E00A /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EFBE57CA1EBCD6480040E00A /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		EFBE57CC1EBCD6C00040E00A /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +113,13 @@
 		CAE698E51E968820000394B0 /* LeadKitAdditions */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */,
 				CAE698EE1E968B72000394B0 /* Classes */,
+				EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */,
 				CAE699011E9693DE000394B0 /* Enums */,
 				CAE698F81E968F56000394B0 /* Extensions */,
 				CAE698E71E968820000394B0 /* Info.plist */,
 				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
+				EFBE57C31EBCCE270040E00A /* Protocols */,
 				CAE698F31E968E28000394B0 /* Services */,
 			);
 			path = LeadKitAdditions;
@@ -138,8 +149,12 @@
 		CAE698F81E968F56000394B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EFBE57CC1EBCD6C00040E00A /* Array+Extensions.swift */,
 				EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */,
+				EFBE57CA1EBCD6480040E00A /* String+Extensions.swift */,
+				EFBE57C61EBCCF560040E00A /* UIAlertController+Extensions.swift */,
 				EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */,
+				EFBE57C81EBCD5730040E00A /* UIView+Extensions.swift */,
 				EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */,
 			);
 			path = Extensions;
@@ -208,6 +223,14 @@
 				EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		EFBE57C31EBCCE270040E00A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EFBE57C41EBCCE410040E00A /* AlertRepresentable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F8A65FEC7C0EB4B93746E50F /* Pods */ = {
@@ -370,19 +393,24 @@
 				EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */,
 				EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */,
 				EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */,
+				EFBE57C91EBCD5730040E00A /* UIView+Extensions.swift in Sources */,
 				EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */,
 				EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */,
+				EFBE57CD1EBCD6C00040E00A /* Array+Extensions.swift in Sources */,
 				EF05EDF81EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift in Sources */,
 				EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */,
 				EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */,
 				EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */,
 				EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */,
 				EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */,
+				EFBE57CB1EBCD6480040E00A /* String+Extensions.swift in Sources */,
+				EFBE57C71EBCCF560040E00A /* UIAlertController+Extensions.swift in Sources */,
 				EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */,
 				EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */,
 				EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */,
 				EF05EDFC1EB0D77400CAE7B6 /* DefaultNetworkService.swift in Sources */,
 				EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */,
+				EFBE57C51EBCCE410040E00A /* AlertRepresentable.swift in Sources */,
 				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
 				EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */,
 			);
