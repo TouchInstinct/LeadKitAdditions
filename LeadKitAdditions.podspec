@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source          = { :git => "https://github.com/NikAshanin/LeadKitAdditions.git", :tag => s.version }
 
   s.subspec 'Core' do |ss|
+    ss.ios.deployment_target = '9.0'
     ss.source_files = "LeadKitAdditions/Sources/**/*.swift"
 
     ss.dependency "LeadKit", '0.5.1'
@@ -17,6 +18,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Core-iOS-Extension' do |ss|
+    ss.platform = :ios, '9.0'
     ss.source_files = "LeadKitAdditions/Sources/**/*.swift"
 
     ss.dependency "LeadKit/Core-iOS-Extension", '0.5.1'
