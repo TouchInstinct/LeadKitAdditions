@@ -29,6 +29,8 @@ open class DefaultNetworkService: NetworkService {
 
     static let retryLimit = 3
 
+    private let disposeBag = DisposeBag()
+
     open class var baseUrl: String {
         fatalError("You should override this var: baseUrl")
     }
@@ -40,9 +42,7 @@ open class DefaultNetworkService: NetworkService {
     public override init(sessionManager: SessionManager) {
         super.init(sessionManager: sessionManager)
 
-        #if os(iOS) && !LEADKIT_EXTENSION_TARGET
-            bindActivityIndicator()
-        #endif
+        activityIndicatorBinding()?.addDisposableTo(disposeBag)
     }
 
     // MARK: - Default Values

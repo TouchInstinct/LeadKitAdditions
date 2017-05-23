@@ -31,6 +31,8 @@
 		EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
 		EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
 		EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
+		EF2EC13C1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC13B1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift */; };
+		EF2EC13E1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC13D1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift */; };
 		EFBD557A1EBB893F0062AA63 /* Info-iOS-Extensions.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */; };
 		EFBD557B1EBB893F0062AA63 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBD55791EBB893F0062AA63 /* Info-iOS.plist */; };
 		EFBD557C1EBB95680062AA63 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */; };
@@ -88,6 +90,8 @@
 		EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiNetworkService.swift; sourceTree = "<group>"; };
 		EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
 		EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
+		EF2EC13B1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		EF2EC13D1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
 		EFBD55701EBB87100062AA63 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS-Extensions.plist"; sourceTree = "<group>"; };
 		EFBD55791EBB893F0062AA63 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 			children = (
 				EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */,
 				EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */,
+				EF2EC13B1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift */,
+				EF2EC13D1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */,
 				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
 				EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */,
+				EF2EC13C1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +535,7 @@
 				EFBD557D1EBB956A0062AA63 /* BaseDateFormatter.swift in Sources */,
 				EFBD55901EBB958D0062AA63 /* DefaultNetworkService.swift in Sources */,
 				EFBD55801EBB95730062AA63 /* PassCodeError.swift in Sources */,
+				EF2EC13E1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift in Sources */,
 				EFBD55851EBB957A0062AA63 /* BasePassCodeViewModel.swift in Sources */,
 				EFBD558D1EBB95890062AA63 /* BaseUserService.swift in Sources */,
 			);
