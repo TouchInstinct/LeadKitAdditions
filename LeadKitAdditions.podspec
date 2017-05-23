@@ -12,6 +12,10 @@ Pod::Spec.new do |s|
     ss.ios.deployment_target = '9.0'
     ss.source_files = "LeadKitAdditions/Sources/**/*.swift"
 
+    ss.exclude_files = [
+      "LeadKitAdditions/Sources/Services/Network/DefaultNetworkService+ActivityIndicator+Extension.swift",
+    ]
+
     ss.dependency "LeadKit", '0.5.1'
     ss.dependency "KeychainAccess", '3.0.2'
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
@@ -20,6 +24,10 @@ Pod::Spec.new do |s|
   s.subspec 'Core-iOS-Extension' do |ss|
     ss.platform = :ios, '9.0'
     ss.source_files = "LeadKitAdditions/Sources/**/*.swift"
+
+    ss.exclude_files = [
+      "LeadKitAdditions/Sources/Services/Network/DefaultNetworkService+ActivityIndicator.swift",
+    ]
 
     ss.dependency "LeadKit/Core-iOS-Extension", '0.5.1'
     ss.dependency "KeychainAccess", '3.0.2'
