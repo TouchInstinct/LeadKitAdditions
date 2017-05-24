@@ -20,6 +20,7 @@
 //  THE SOFTWARE.
 //
 
+/// Result of pass code validation
 public enum PassCodeValidationResult {
 
     case valid(String)

@@ -24,6 +24,7 @@ import UIKit
 
 extension UIBarButtonItem {
 
+    /// Creates activity indicator view and bar button item (based on activity indicator)
     public static var activityIndicator: (barButton: UIBarButtonItem, activityIndicator: UIActivityIndicatorView) {
         let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
         let indicatorBar = UIBarButtonItem(customView: indicatorView)

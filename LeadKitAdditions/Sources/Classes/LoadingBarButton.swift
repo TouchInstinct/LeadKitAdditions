@@ -24,11 +24,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+/// Side to which ativity indicator applied
 public enum LoadingBarButtonSide {
     case left
     case right
 }
 
+/// Workaround with navigationBarButton, that can change state (UI) into activity indicator
 public class LoadingBarButton {
 
     fileprivate weak var navigationItem: UINavigationItem?
@@ -54,6 +56,13 @@ public class LoadingBarButton {
         }
     }
 
+    /**
+     Create an instance of LoadingBarButton
+     
+     - Parameters:
+       - navigationItem: item to which apply changes
+       - side: side where navigationItem would be placed
+     */
     public init(navigationItem: UINavigationItem, side: LoadingBarButtonSide) {
         self.navigationItem = navigationItem
         self.side = side
@@ -74,6 +83,14 @@ public class LoadingBarButton {
 
 extension Observable {
 
+    /**
+     Reactive extension for LoadingBarButton
+     Apply transformations on subscribe and on dispose events
+     
+     - Parameters:
+       - barButton: LoadingBarButton instance to which transformations would applied
+     - Returns:
+     */
     public func changeLoadingUI(using barButton: LoadingBarButton) -> Observable<Observable.E> {
         return observeOn(MainScheduler.instance)
             .do(onSubscribe: {

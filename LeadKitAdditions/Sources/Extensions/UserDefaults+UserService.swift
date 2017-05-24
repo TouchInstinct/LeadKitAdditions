@@ -22,13 +22,14 @@
 
 import Foundation
 
-fileprivate enum Keys {
+private enum Keys {
     static let sessionId = "sessionId"
     static let userLogin = "userLogin"
 }
 
 public extension UserDefaults {
 
+    /// Default place to store session id
     public var sessionId: String? {
         get {
             return string(forKey: Keys.sessionId)
@@ -38,6 +39,7 @@ public extension UserDefaults {
         }
     }
 
+    /// Default place to store userLogin
     public var userLogin: String? {
         get {
             return string(forKey: Keys.userLogin)

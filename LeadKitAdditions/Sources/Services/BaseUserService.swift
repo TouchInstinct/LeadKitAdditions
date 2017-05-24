@@ -23,12 +23,14 @@
 import RxSwift
 import LeadKit
 
+/// Represents service that store basic user information
 open class BaseUserService {
 
     public init() {
         // Can be overrided
     }
 
+    /// Returns user login
     open var userLogin: String {
         guard let defaultsLogin = UserDefaults.standard.userLogin else {
             assertionFailure("userLogin is nil. Use isLoggedIn before read userLogin")
@@ -38,6 +40,7 @@ open class BaseUserService {
         return defaultsLogin
     }
 
+    /// Returns session id
     open var sessionId: String {
         guard let defaultsSessionId = UserDefaults.standard.sessionId else {
             assertionFailure("sessionId is nil. Use isLoggedIn before read sessionId")
@@ -46,10 +49,12 @@ open class BaseUserService {
         return defaultsSessionId
     }
 
+    /// Indicates if user is logged in
     open var isLoggedIn: Bool {
         return UserDefaults.standard.sessionId != nil
     }
 
+    /// Reset user information
     open class func clearData() {
         UserDefaults.standard.sessionId = nil
         UserDefaults.standard.userLogin = nil

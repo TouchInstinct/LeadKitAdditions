@@ -24,6 +24,7 @@ import LocalAuthentication
 
 public typealias TouchIDServiceAuthHandler = (Bool) -> Void
 
+/// Represents service that provides access to authentication via touch id
 public class TouchIDService {
 
     private lazy var laContext: LAContext = {
@@ -32,10 +33,18 @@ public class TouchIDService {
 
     public init() {}
 
+    /// Indicates is it possible to authenticate on this device via touch id
     public var canAuthenticateByTouchId: Bool {
         return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 
+    /**
+     Initiates system touch id authentication process
+
+      - parameters:
+        - description: prompt on the system alert that describes what for user should attach finger to device
+        - authHandler: callback, with parameter, indicates if user authenticate successfuly
+     */
     public func authenticateByTouchId(description: String, authHandler: @escaping TouchIDServiceAuthHandler) {
         laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
                                  localizedReason: description) { success, _ in

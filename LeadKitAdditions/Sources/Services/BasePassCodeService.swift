@@ -24,8 +24,10 @@ import KeychainAccess
 import CocoaLumberjack
 import IDZSwiftCommonCrypto
 
+/// Represents base pass code service which encapsulates pass code storing
 open class BasePassCodeService {
 
+    /// Override to set specific keychain service name
     open class var keychainService: String {
         return Bundle.main.bundleIdentifier ?? ""
     }
@@ -63,10 +65,12 @@ open class BasePassCodeService {
 
 extension BasePassCodeService {
 
+    /// Indicates is pass code already saved on this device
     public var isPassCodeSaved: Bool {
         return keychain[Keys.passCodeHash] != nil
     }
 
+    /// Indicates is it possible to authenticate on this device via touch id
     public var isTouchIdEnabled: Bool {
         get {
             return keychain[Keys.isTouchIdEnabled] == Values.touchIdEnabled
@@ -76,6 +80,7 @@ extension BasePassCodeService {
         }
     }
 
+    /// Saves new pass code
     public func save(passCode: String?) {
         if let passCode = passCode {
             keychain[Keys.passCodeHash] = sha256(passCode)
@@ -84,10 +89,12 @@ extension BasePassCodeService {
         }
     }
 
+    /// Check if pass code is correct
     public func check(passCode: String) -> Bool {
         return sha256(passCode) == passCodeHash
     }
 
+    /// Reset pass code settings
     public func reset() {
         save(passCode: nil)
         isTouchIdEnabled = false

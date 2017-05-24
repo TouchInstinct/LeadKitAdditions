@@ -20,6 +20,7 @@
 //  THE SOFTWARE.
 //
 
+/// Describes error, which may occures during pass code entering
 public enum PassCodeError: Error {
     case codesNotMatch
     case wrongCode

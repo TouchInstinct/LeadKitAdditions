@@ -23,6 +23,7 @@
 import Foundation
 import ObjectMapper
 
+/// Base date formatter class, contains most frequently used formats, including RFC3339
 open class BaseDateFormatter {
 
     private static let apiDateTimeFormat           = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -61,37 +62,44 @@ open class BaseDateFormatter {
         return dateFormater
     }()
 
-    // MARK: Public interface
+    // MARK: - Public interface
 
+    /// DateFormatter's locale can be overriden
     open class var usedLocale: Locale {
         return .current
     }
 
+    /// Parse date from string with format: yyyy-MM-dd'T'HH:mm:ssZ
     public static func backendDate(fromStrDate strDate: String) -> Date? {
         apiFormatter.locale = usedLocale
         return apiFormatter.date(from: strDate)
     }
 
+    /// Serialize date into string with format: yyyy-MM-dd'T'HH:mm:ssZ
     public static func backendStrDate(withDate date: Date) -> String {
         apiFormatter.locale = usedLocale
         return apiFormatter.string(from: date)
     }
 
+    /// Serialize date into string with format: yyyy-MM-dd'T'Z
     public static func backendDateWithoutTime(withDate date: Date) -> String {
         apiDateWithoutTimeFormatter.locale = usedLocale
         return apiDateWithoutTimeFormatter.string(from: date)
     }
 
+    /// Serialize date into string with format: HH:mm
     public static func hourAndMinuteStrDate(withDate date: Date) -> String {
         hourAndMinuteFormatter.locale = usedLocale
         return hourAndMinuteFormatter.string(from: date)
     }
 
+    /// Serialize date into string with format: dd MMM
     public static func dayAndMonthStrDate(withDate date: Date) -> String {
         hourAndMinuteFormatter.locale = usedLocale
         return dayAndMonthFormatter.string(from: date)
     }
 
+    /// Serialize date into string with format: dd.MM.yyyy
     public static func dayMonthYearStrDate(withDate date: Date) -> String {
         hourAndMinuteFormatter.locale = usedLocale
         return dayMonthYearFormatter.string(from: date)
@@ -99,6 +107,7 @@ open class BaseDateFormatter {
 
     // MARK: - Transformers
 
+    /// Transformer to workaround with dates in Mappable (ObjectMapper) objects
     public static var transformFromStringToDate: TransformOf<Date, String> {
         return TransformOf<Date, String>(fromJSON: { (stringValue) -> Date? in
             if let stringValue = stringValue {

@@ -28,6 +28,7 @@ public typealias VoidBlock = () -> Void
 
 public extension Observable {
 
+    /// Handles connection errors during request
     public func handleConnectionErrors() -> Observable<Observable.E> {
         return observeOn(CurrentThreadScheduler.instance)
 
@@ -52,6 +53,13 @@ public extension Observable {
             })
     }
 
+    /**
+     Allow to configure request to restart if error occured
+     
+      - parameters:
+        - errorTypes: list of error types, which triggers request restart
+        - retryLimit: how many times request can restarts
+     */
     public func retryWithinErrors(_ errorTypes: [Error.Type] = [ConnectionError.self],
                                   retryLimit: Int = DefaultNetworkService.retryLimit)
         -> Observable<Observable.E> {
@@ -66,6 +74,13 @@ public extension Observable {
             }
     }
 
+    /**
+     Add block that executes, when error, described by ApiErrorProtocol, occured during request
+     
+      - parameters:
+        - apiErrorType: type of errors, received frim server
+        - handler: block, that executes, when error occured
+     */
     public func handleApiError<T: ApiErrorProtocol>(_ apiErrorType: T,
                                                     handler: @escaping () -> Void) -> Observable<Observable.E>
         where T.RawValue == Int {
@@ -78,6 +93,11 @@ public extension Observable {
             })
     }
 
+    /**
+     Add ability to monitor request status
+     
+      - parameter isLoading: subject, request state bind to
+     */
     public func changeLoadingBehaviour(isLoading: PublishSubject<Bool>) -> Observable<Observable.E> {
         return observeOn(CurrentThreadScheduler.instance)
             .do(onNext: { _ in

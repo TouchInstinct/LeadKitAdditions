@@ -20,17 +20,26 @@
 //  THE SOFTWARE.
 //
 
+/// Holds information about enter type (create, change, etc), step
+/// Also describes interface to manipulate with entered pass code
 public protocol PassCodeHolderProtocol {
 
+    /// Type of operation with pass code
     var type: PassCodeControllerType { get }
+    /// Operation step
     var enterStep: PassCodeControllerState { get }
 
+    /// Add pass code for current step
     func add(passCode: String)
+    /// Reset all progress
     func reset()
 
+    /// Should been pass code validated
     var shouldValidate: Bool { get }
+    /// Current pass code
     var passCode: String? { get }
 
+    /// Returns passCode or error if pass code is invalid
     func validate() -> PassCodeValidationResult
 
 }
@@ -39,6 +48,12 @@ public class PassCodeHolderBuilder {
 
     private init() {}
 
+    /**
+     Creates holder by type (create, change, etc)
+
+      - parameter type: type of pass code controller
+      - returns: pass code information holder, specific by type
+     */
     public static func build(with type: PassCodeControllerType) -> PassCodeHolderProtocol {
         switch type {
         case .create:

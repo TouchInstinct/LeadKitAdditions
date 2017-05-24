@@ -20,10 +20,12 @@
 //  THE SOFTWARE.
 //
 
+/// Describes error by raw value (more likely - Int code), received from back-end
 public protocol ApiErrorProtocol: RawRepresentable {}
 
 extension Error {
 
+    /// Method indicates that error is back-end error
     public func isApiError<T: ApiErrorProtocol>(_ apiErrorType: T) -> Bool where T.RawValue == Int {
         if let error = self as? ApiError,
             case let .error(code: code, message: _) = error,

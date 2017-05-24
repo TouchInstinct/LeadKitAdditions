@@ -25,16 +25,19 @@ import LeadKit
 import ObjectMapper
 import RxSwift
 
+/// Default implementation of network service, which trust any server and uses default timeout interval
 open class DefaultNetworkService: NetworkService {
 
     static let retryLimit = 3
 
     private let disposeBag = DisposeBag()
 
+    /// Override to set base server url
     open class var baseUrl: String {
         fatalError("You should override this var: baseUrl")
     }
 
+    /// Override to change timeout interval default value
     open class var defaultTimeoutInterval: TimeInterval {
         return 20.0
     }
@@ -47,12 +50,14 @@ open class DefaultNetworkService: NetworkService {
 
     // MARK: - Default Values
 
+    /// Override to change server trust policies
     open class var serverTrustPolicies: [String: ServerTrustPolicy] {
         return [
             baseUrl: .disableEvaluation
         ]
     }
 
+    /// Override to change default urlSession configuration
     open class var configuration: URLSessionConfiguration {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = defaultTimeoutInterval
@@ -60,6 +65,7 @@ open class DefaultNetworkService: NetworkService {
         return configuration
     }
 
+    /// Override to configure alamofire session manager
     open class var sessionManager: SessionManager {
         let sessionManager = SessionManager(configuration: configuration,
                                             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))

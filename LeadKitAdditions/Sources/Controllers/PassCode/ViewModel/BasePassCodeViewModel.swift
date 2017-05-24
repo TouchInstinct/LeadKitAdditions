@@ -24,18 +24,22 @@ import LeadKit
 import RxSwift
 import RxCocoa
 
+/// Describes types of authentication
 public enum PassCodeAuthType {
     case passCode(String)
     case touchId
 }
 
+/// Base view model for passCodeViewController
 open class BasePassCodeViewModel: BaseViewModel {
 
     public let controllerType: PassCodeControllerType
 
     public let disposeBag = DisposeBag()
 
+    /// TouchId service, which can answer if user is authorized by finger
     public let touchIdService: TouchIDService?
+    /// Contains configuration for pass code operations
     public let passCodeConfiguration: PassCodeConfiguration
 
     fileprivate let validationResultHolder = Variable<PassCodeValidationResult?>(nil)
@@ -114,21 +118,25 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     // MARK: - HAVE TO OVERRIDE
 
+    /// Override to check if entered pass code is equal to stored
     open func isEnteredPassCodeValid(_ passCode: String) -> Bool {
         assertionFailure("You should override this method: isEnteredPassCodeValid(_ passCode: String)")
         return false
     }
 
+    /// Handler called after successful authentication
     open func authSucceed(_ type: PassCodeAuthType) {
         assertionFailure("You should override this method: authSucceed(_ type: PassCodeAuthType)")
     }
 
     // MARK: - Functions that can you can override to use TouchId
 
+    /// Override to be able use touchId during authentication
     open var isTouchIdEnabled: Bool {
         return false
     }
 
+    /// You should save user choice about authenticate by touchId
     open func activateTouchIdForUser() {
         assertionFailure("You should override this method: activateTouchIdForUser()")
     }

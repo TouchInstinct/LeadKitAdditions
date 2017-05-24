@@ -22,6 +22,7 @@
 
 import Foundation
 
+/// Describes "no connection to server" error
 public enum ConnectionError: LocalizedError {
 
     case noConnection

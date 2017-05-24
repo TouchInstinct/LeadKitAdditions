@@ -38,6 +38,7 @@ extension PassCodeHolderProtocol {
     }
 }
 
+/// Holds information about pass codes during pass code creation process
 public class PassCodeHolderCreate: PassCodeHolderProtocol {
 
     public let type: PassCodeControllerType = .create
@@ -91,6 +92,7 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
 
 }
 
+/// Holds information about pass code during pass code entering process
 public class PassCodeHolderEnter: PassCodeHolderProtocol {
 
     public let type: PassCodeControllerType = .enter
@@ -120,6 +122,7 @@ public class PassCodeHolderEnter: PassCodeHolderProtocol {
 
 }
 
+/// Holds information about pass codes during pass code changing process
 public class PassCodeHolderChange: PassCodeHolderProtocol {
 
     public let type: PassCodeControllerType = .change

@@ -20,8 +20,7 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
-
+/// Describes possible error, received from back-end
 public enum ApiError: Error {
 
     case error(code: Int, message: String)
@@ -29,6 +28,7 @@ public enum ApiError: Error {
 
 }
 
+// MARK: - LocalizedError
 extension ApiError: LocalizedError {
 
     public init(apiResponse: ApiResponseProtocol) {

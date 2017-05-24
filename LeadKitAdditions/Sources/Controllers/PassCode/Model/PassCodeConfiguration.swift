@@ -20,11 +20,15 @@
 //  THE SOFTWARE.
 //
 
+/// Configuration container for BasePassCodeViewController
 public struct PassCodeConfiguration {
 
+    /// Pass code length
     public var passCodeCharactersNumber: UInt = 4
+    /// Incorrect pass code attempts count
     public var maxAttemptsLoginNumber: UInt = 5
 
+    /// Clear input progress when application goes to background
     public var shouldResetWhenGoBackground: Bool = true
 
     private init() {}
@@ -37,6 +41,7 @@ public struct PassCodeConfiguration {
         self.passCodeCharactersNumber = passCodeCharactersNumber
     }
 
+    /// Returns configuration with default values
     public static var defaultConfiguration: PassCodeConfiguration {
         return PassCodeConfiguration()
     }

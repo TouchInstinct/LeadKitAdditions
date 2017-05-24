@@ -25,17 +25,20 @@ import RxSwift
 import RxCocoa
 import LeadKit
 
+/// Describes pin image
 public enum PinImageType {
     case entered
     case clear
 }
 
+/// Pass code operation type
 public enum PassCodeControllerType {
     case create
     case enter
     case change
 }
 
+/// Pass code operation state
 public enum PassCodeControllerState {
     case enter
     case repeatEnter
@@ -43,6 +46,7 @@ public enum PassCodeControllerState {
     case newEnter
 }
 
+/// Base view controller that operates with pass code
 open class BasePassCodeViewController: UIViewController {
 
     public var viewModel: BasePassCodeViewModel!
@@ -157,41 +161,44 @@ open class BasePassCodeViewController: UIViewController {
 
     // MARK: - HAVE TO OVERRIDE
 
+    /// Returns prompt that appears on touch id system alert
     open var touchIdHint: String {
         assertionFailure("You should override this var: touchIdHint")
         return ""
     }
 
-    // override to change Images
+    /// Override to point certain images
     open func imageFor(type: PinImageType) -> UIImage {
         assertionFailure("You should override this method: imageFor(type: PinImageType)")
         return UIImage()
     }
 
-    // override to change error text
+    /// Override to change error description
     open func errorDescription(for error: PassCodeError) -> String {
         assertionFailure("You should override this method: errorDescription(for error: PassCodeError)")
         return ""
     }
 
-    // override to change action title text
+    /// Override to change action title text
     open func actionTitle(for passCodeControllerState: PassCodeControllerState) -> String {
         assertionFailure("You should override this method: actionTitle(for passCodeControllerState: PassCodeControllerState)")
         return ""
     }
 
-    // MARK: - Functions that can you can override to castomise your controller
+    // MARK: - Functions that you can override to customize your controller
 
+    /// Call to show error
     open func showError(for error: PassCodeError) {
         errorLabel?.text = errorDescription(for: error)
         errorLabel?.isHidden = false
     }
 
+    /// Call to disappear error label
     open func hideError() {
         errorLabel?.isHidden = true
     }
 
-    // override to change UI for state
+    /// Override to change UI for state
     open func configureUI(for passCodeControllerState: PassCodeControllerState) {
         resetDotsUI()
         titleLabel?.text = actionTitle(for: passCodeControllerState)
@@ -199,6 +206,7 @@ open class BasePassCodeViewController: UIViewController {
 
 }
 
+// MARK: - ConfigurableController
 // We need to implement all functions of ConfigurableController protocol to give ability to override them.
 extension BasePassCodeViewController: ConfigurableController {
 
@@ -242,6 +250,7 @@ extension BasePassCodeViewController: ConfigurableController {
 
 }
 
+// MARK: - UITextFieldDelegate
 extension BasePassCodeViewController: UITextFieldDelegate {
 
     public func textField(_ textField: UITextField,

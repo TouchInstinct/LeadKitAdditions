@@ -22,10 +22,14 @@
 
 import ObjectMapper
 
+/// Class describes typical response from server, which designed by TouchInstinct
 public class ApiResponse: ApiResponseProtocol, ImmutableMappable {
 
+    /// nil in case of error, result of request otherwise
     public let result: Any?
+    /// In case of error contains error code, 0 (zero) otherwise
     public let errorCode: Int
+    /// nil in case of success, error description otherwise
     public let errorMessage: String?
 
     public required init(map: Map) throws {
@@ -36,9 +40,12 @@ public class ApiResponse: ApiResponseProtocol, ImmutableMappable {
 
 }
 
+/// Describes error, which received from server designed by TouchInstinct
 public protocol ApiResponseProtocol: ImmutableMappable {
 
+    /// Error code
     var errorCode: Int { get }
+    /// Error description
     var errorMessage: String? { get }
 
 }

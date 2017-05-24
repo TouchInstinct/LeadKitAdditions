@@ -25,8 +25,10 @@ import Alamofire
 import ObjectMapper
 import RxSwift
 
+/// Base network service implementation for back-end designed by TouchInstinct
 open class ApiNetworkService: DefaultNetworkService {
 
+    /// Returns observable for ImmutableMappable response model by parameters
     open func request<T: ImmutableMappable>(with parameters: ApiRequestParameters) -> Observable<T> {
         let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
 
@@ -41,6 +43,7 @@ open class ApiNetworkService: DefaultNetworkService {
             }
     }
 
+    /// Returns observable for boolean response by parameters
     open func requestForResult(with parameters: ApiRequestParameters) -> Observable<Bool> {
         let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
 
