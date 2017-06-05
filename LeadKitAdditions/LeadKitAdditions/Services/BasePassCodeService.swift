@@ -104,5 +104,5 @@ private extension BasePassCodeService {
         }
         return hexString(fromArray: digests)
     }
-    
+
 }
