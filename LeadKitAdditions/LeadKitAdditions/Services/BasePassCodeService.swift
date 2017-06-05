@@ -31,7 +31,7 @@ open class BasePassCodeService {
     }
 
     public init() {
-        let initialLoadValue = UserDefaults.standard.value(forKey: Keys.isInitialLoad) as? String
+        let initialLoadValue = UserDefaults.standard.value(forKey: Keys.isInitialLoad)
         if initialLoadValue == nil {
             UserDefaults.standard.set(Values.initialLoad, forKey: Keys.isInitialLoad)
             reset()
