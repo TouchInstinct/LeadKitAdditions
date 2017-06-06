@@ -1,14 +1,27 @@
 source "https://github.com/CocoaPods/Specs.git"
 source "https://github.com/TouchInstinct/Podspecs.git"
 
-platform :ios, '9.0'
+abstract_target 'LeadKitAdditions' do
+  pod 'KeychainAccess', '3.0.2'
+  pod 'IDZSwiftCommonCrypto', '0.9.1'
 
-target 'LeadKitAdditions' do
-  use_frameworks!
+  inhibit_all_warnings!
 
-  pod 'LeadKit', :git => 'https://github.com/TouchInstinct/LeadKit.git', :branch => 'fix/sharedApplication', :commit => 'fd0eb18b8a6680ff16bbb1668d1ae0d29f29fad7'
-  pod 'KeychainAccess'
-  pod 'IDZSwiftCommonCrypto'
+  target 'LeadKitAdditions iOS' do
+    platform :ios, '9.0'
+
+    use_frameworks!
+
+    pod "LeadKit", '0.5.1'
+  end
+
+  target 'LeadKitAdditions iOS Extensions' do
+    platform :ios, '9.0'
+
+    use_frameworks!
+
+    pod "LeadKit/Core-iOS-Extension", '0.5.1'
+  end
 end
 
 # If you have slow HDD
