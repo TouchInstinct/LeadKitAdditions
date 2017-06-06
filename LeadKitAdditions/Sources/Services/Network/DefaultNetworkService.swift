@@ -25,7 +25,7 @@ import LeadKit
 import ObjectMapper
 import RxSwift
 
-/// Default implementation of network service, which trust any server and uses default timeout interval
+/// Default implementation of network service, which trust any server and use default timeout interval
 open class DefaultNetworkService: NetworkService {
 
     static let retryLimit = 3

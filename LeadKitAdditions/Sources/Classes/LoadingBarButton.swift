@@ -24,7 +24,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-/// Side to which ativity indicator applied
+/// Side to which activity indicator applied
 public enum LoadingBarButtonSide {
     case left
     case right
@@ -90,6 +90,7 @@ extension Observable {
      - Parameters:
        - barButton: LoadingBarButton instance to which transformations would applied
      - Returns:
+       - observable, that handles LoadingBarButton behaviour
      */
     public func changeLoadingUI(using barButton: LoadingBarButton) -> Observable<Observable.E> {
         return observeOn(MainScheduler.instance)
