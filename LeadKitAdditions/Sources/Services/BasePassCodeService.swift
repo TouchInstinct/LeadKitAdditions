@@ -33,9 +33,9 @@ open class BasePassCodeService {
     }
 
     public init() {
-        let isInitialLoad = UserDefaults.standard.bool(forKey: Keys.isInitialLoad)
-        if isInitialLoad {
-            UserDefaults.standard.set(false, forKey: Keys.isInitialLoad)
+        let initialLoadValue = UserDefaults.standard.value(forKey: Keys.isInitialLoad)
+        if initialLoadValue == nil {
+            UserDefaults.standard.set(Values.initialLoad, forKey: Keys.isInitialLoad)
             reset()
         }
     }
@@ -59,6 +59,7 @@ open class BasePassCodeService {
 
     fileprivate enum Values {
         static let touchIdEnabled = "touchIdEnabled"
+        static let initialLoad = "initialLoad"
     }
 
 }
