@@ -58,7 +58,6 @@ open class BaseUserService {
     open class func clearData() {
         UserDefaults.standard.sessionId = nil
         UserDefaults.standard.userLogin = nil
-        UserDefaults.standard.synchronize()
     }
 
 }
