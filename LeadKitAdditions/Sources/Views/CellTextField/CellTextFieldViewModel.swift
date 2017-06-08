@@ -26,5 +26,5 @@ class CellTextFieldViewModel: CellFieldJumpingProtocol {
         self.placeholder = placeholder
         self.textFieldSettingsBlock = textFieldSettingsBlock
     }
-    
+
 }

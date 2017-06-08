@@ -34,5 +34,5 @@ extension CellFieldJumpingProtocol {
             })
             .addDisposableTo(disposeBag)
     }
-    
+
 }

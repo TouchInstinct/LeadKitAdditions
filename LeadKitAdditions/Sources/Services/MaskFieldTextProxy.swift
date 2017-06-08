@@ -11,19 +11,19 @@ class MaskFieldTextProxy: NSObject {
 
     private(set) var field: UITextField?
 
-    private let maskedDelegate: PolyMaskTextFieldDelegate
+    private let maskedProxy: PolyMaskTextFieldDelegate
 
     init(primaryFormat: String, affineFormats: [String] = []) {
-        maskedDelegate = PolyMaskTextFieldDelegate(primaryFormat: primaryFormat, affineFormats: affineFormats)
+        maskedProxy = PolyMaskTextFieldDelegate(primaryFormat: primaryFormat, affineFormats: affineFormats)
 
         super.init()
 
-        maskedDelegate.listener = self
+        maskedProxy.listener = self
     }
 
     func configure(with field: UITextField) {
         self.field = field
-        field.delegate = maskedDelegate
+        field.delegate = maskedProxy
     }
 
     private func bindData() {
@@ -36,7 +36,7 @@ class MaskFieldTextProxy: NSObject {
                     return
                 }
 
-                self?.maskedDelegate.put(text: value, into: textField)
+                self?.maskedProxy.put(text: value, into: textField)
             })
             .addDisposableTo(disposeBag)
     }

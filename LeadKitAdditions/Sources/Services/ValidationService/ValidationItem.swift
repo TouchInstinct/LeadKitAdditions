@@ -70,10 +70,10 @@ class ValidationItem {
 
     @discardableResult
     private func validate(text: String?, isManual: Bool = false) -> Bool {
-        let error = rules.filter{
+        let error = rules.filter {
                 return !$0.validate(text ?? "")
             }
-            .map{ rule -> ValidationError in
+            .map { rule -> ValidationError in
                 return ValidationError(failedRule: rule, errorMessage: rule.errorMessage())
             }
             .first

@@ -10,5 +10,5 @@ extension CellFieldMaskProtocol {
     var haveMask: Bool {
         return maskFieldTextProxy != nil
     }
-    
+
 }

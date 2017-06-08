@@ -78,7 +78,7 @@ class CellFieldsJumpingService {
 
                 field.shouldGoForward.asObservable()
                     .subscribe(onNext: {
-                        if let nextActive = cellFields.nextActive(from: offset)  {
+                        if let nextActive = cellFields.nextActive(from: offset) {
                             nextActive.shouldBecomeFirstResponder.onNext()
                         } else {
                             self.didDone.onNext()
@@ -99,7 +99,7 @@ class CellFieldsJumpingService {
 
         toolBar.shouldGoForward.asObservable()
             .subscribe(onNext: { [weak self] in
-                if let nextActive = self?.cellFields.nextActive(from: index)  {
+                if let nextActive = self?.cellFields.nextActive(from: index) {
                     nextActive.shouldBecomeFirstResponder.onNext()
                 } else {
                     self?.didDone.onNext()
@@ -109,7 +109,7 @@ class CellFieldsJumpingService {
 
         toolBar.shouldGoBackward.asObservable()
             .subscribe(onNext: { [weak self] in
-                if let previousActive = self?.cellFields.previousActive(from: index)  {
+                if let previousActive = self?.cellFields.previousActive(from: index) {
                     previousActive.shouldBecomeFirstResponder.onNext()
                 }
             })
@@ -123,7 +123,7 @@ class CellFieldsJumpingService {
 
         return toolBar
     }
-    
+
 }
 
 extension Array where Element == CellFieldJumpingProtocol {
