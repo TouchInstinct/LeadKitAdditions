@@ -2,7 +2,7 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-typealias UIItemSettingsBlock<UIItem> = (UIItem) -> Void where UIItem: UIView
+typealias ItemSettingsBlock<UIItem> = (UIItem) -> Void where UIItem: UIView
 
 protocol CellFieldJumpingProtocol: FormCellViewModelProtocol {
 

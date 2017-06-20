@@ -35,7 +35,7 @@ class ValidationItem {
 
     private let disposeBag = DisposeBag()
 
-    private let validationStateHolder: Variable<ValidationItemState> = Variable(.initial)
+    private let validationStateHolder = Variable<ValidationItemState>(.initial)
     var validationState: ValidationItemState {
         return validationStateHolder.value
     }
@@ -43,19 +43,17 @@ class ValidationItem {
         return validationStateHolder.asObservable()
     }
 
-    private(set) var rules: [Rule] = []
-    private var text: String?
+    let text = Variable<String?>(nil)
 
-    init(textObservable: Observable<String?>, rules: [Rule]) {
+    private(set) var rules: [Rule] = []
+
+    init(rules: [Rule]) {
         self.rules = rules
-        bindValue(with: textObservable)
+        bindText()
     }
 
-    private func bindValue(with textObservable: Observable<String?>) {
-        textObservable
-            .do(onNext: { [weak self] value in
-                self?.text = value
-            })
+    private func bindText() {
+        text.asObservable()
             .filter { [weak self] _ in !(self?.validationState.isInitial ?? true)}
             .subscribe(onNext: { [weak self] value in
                 self?.validate(text: value)
@@ -65,7 +63,7 @@ class ValidationItem {
 
     @discardableResult
     func manualValidate() -> Bool {
-        return validate(text: text, isManual: true)
+        return validate(text: text.value, isManual: true)
     }
 
     @discardableResult

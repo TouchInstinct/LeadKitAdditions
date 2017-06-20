@@ -1,21 +1,11 @@
 import RxSwift
 import UIKit
 
-enum CellFieldsToolBarType {
-    case none
-    case `default`
-}
-
 struct CellFieldsJumpingServiceConfig {
 
-    var toolBarType: CellFieldsToolBarType = .default
     var toolBarNeedArrows = true
 
     init() {}
-
-    init(toolBarType: CellFieldsToolBarType) {
-        self.toolBarType = toolBarType
-    }
 
     static var `default`: CellFieldsJumpingServiceConfig {
         return CellFieldsJumpingServiceConfig()
@@ -77,12 +67,8 @@ class CellFieldsJumpingService {
                 field.returnButtonType = .next
 
                 field.shouldGoForward.asObservable()
-                    .subscribe(onNext: {
-                        if let nextActive = cellFields.nextActive(from: offset) {
-                            nextActive.shouldBecomeFirstResponder.onNext()
-                        } else {
-                            self.didDone.onNext()
-                        }
+                    .subscribe(onNext: { [weak self] in
+                        self?.shouldGoForwardAction(from: offset)
                     })
                     .addDisposableTo(disposeBag)
             }
@@ -99,11 +85,7 @@ class CellFieldsJumpingService {
 
         toolBar.shouldGoForward.asObservable()
             .subscribe(onNext: { [weak self] in
-                if let nextActive = self?.cellFields.nextActive(from: index) {
-                    nextActive.shouldBecomeFirstResponder.onNext()
-                } else {
-                    self?.didDone.onNext()
-                }
+                self?.shouldGoForwardAction(from: index)
             })
             .addDisposableTo(disposeBag)
 
@@ -124,6 +106,14 @@ class CellFieldsJumpingService {
         return toolBar
     }
 
+    private func shouldGoForwardAction(from index: Int) {
+        if let nextActive = cellFields.nextActive(from: index) {
+            nextActive.shouldBecomeFirstResponder.onNext()
+        } else {
+            didDone.onNext()
+        }
+    }
+
 }
 
 extension Array where Element == CellFieldJumpingProtocol {
@@ -137,18 +127,12 @@ extension Array where Element == CellFieldJumpingProtocol {
     }
 
     func nextActive(from index: Int) -> CellFieldJumpingProtocol? {
-        for (currentIndex, item) in enumerated() where currentIndex > index && item.isActive {
-            return item
-        }
-        return nil
+        return enumerated().first { $0 > index && $1.isActive }?.element
     }
 
     func previousActive(from index: Int) -> CellFieldJumpingProtocol? {
         let reversedIndex = count - index - 1
-        for (currentIndex, item) in reversed().enumerated() where currentIndex > reversedIndex && item.isActive {
-            return item
-        }
-        return nil
+        return reversed().enumerated().first { $0 > reversedIndex && $1.isActive }?.element
     }
 
 }

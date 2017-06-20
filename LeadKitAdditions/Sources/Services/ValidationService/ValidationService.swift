@@ -28,7 +28,7 @@ class ValidationService {
 
     private(set) var validationItems: [ValidationItem] = []
 
-    private let stateHolder: Variable<ValidationServiceState> = Variable(.initial)
+    private let stateHolder = Variable<ValidationServiceState>(.initial)
     var state: ValidationServiceState {
         return stateHolder.value
     }
@@ -69,7 +69,7 @@ class ValidationService {
     @discardableResult
     func validate() -> Bool {
         validationStateReactType = .all
-        let isValid = validationItems.map { $0.manualValidate()}.reduce(true) { $0 && $1 }
+        let isValid = validationItems.map { $0.manualValidate() }.reduce(true) { $0 && $1 }
         validationStateReactType = .each
 
         return isValid

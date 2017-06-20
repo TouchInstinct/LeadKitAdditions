@@ -7,7 +7,13 @@ class MaskFieldTextProxy: NSObject {
     private var disposeBag = DisposeBag()
 
     let text = Variable("")
-    let isComplete = Variable(false)
+    fileprivate let isCompleteHolder = Variable(false)
+    var isComplete: Bool {
+        return isCompleteHolder.value
+    }
+    var isCompleteObservable: Observable<Bool> {
+        return isCompleteHolder.asObservable()
+    }
 
     private(set) var field: UITextField?
 
@@ -36,7 +42,7 @@ class MaskFieldTextProxy: NSObject {
                     return
                 }
 
-                self?.maskedProxy.put(text: value, into: textField)
+                self?.maskedDelegate.put(text: value, into: textField)
             })
             .addDisposableTo(disposeBag)
     }
@@ -47,7 +53,7 @@ extension MaskFieldTextProxy: MaskedTextFieldDelegateListener {
 
     func textField(_ textField: UITextField, didFillMandatoryCharacters complete: Bool, didExtractValue value: String) {
         text.value = value
-        isComplete.value = complete
+        isCompleteHolder.value = complete
     }
 
 }
