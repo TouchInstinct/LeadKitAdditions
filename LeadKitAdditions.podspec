@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
       "LeadKitAdditions/Sources/Services/Network/DefaultNetworkService+ActivityIndicator+Extension.swift",
     ]
 
-    ss.dependency "LeadKit", '0.5.1'
+    ss.dependency "LeadKit", '0.4.6'
     ss.dependency "KeychainAccess", '3.0.2'
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
   end
