@@ -107,7 +107,7 @@ open class BasePassCodeViewModel: BaseViewModel {
     public func reset() {
         passCodeText.value = nil
         validationResultHolder.value = nil
-        passCodeControllerStateHolder.value = .enter
+        passCodeControllerStateHolder.value = controllerType == .change ? .oldEnter : .enter
         attemptsNumber = 0
         passCodeHolder.reset()
     }
