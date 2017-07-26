@@ -42,7 +42,7 @@ class MaskFieldTextProxy: NSObject {
                     return
                 }
 
-                self?.maskedDelegate.put(text: value, into: textField)
+                self?.maskedProxy.put(text: value, into: textField)
             })
             .addDisposableTo(disposeBag)
     }

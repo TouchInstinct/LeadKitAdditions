@@ -4,6 +4,8 @@ source "https://github.com/TouchInstinct/Podspecs.git"
 abstract_target 'LeadKitAdditions' do
   pod 'KeychainAccess', '3.0.2'
   pod 'IDZSwiftCommonCrypto', '0.9.1'
+  pod 'SwiftValidator', '4.0.0'
+  pod 'InputMask', '2.2.5'
 
   inhibit_all_warnings!
 
