@@ -77,33 +77,36 @@ class CellFieldsJumpingService {
     }
 
     private func toolBar(for field: CellFieldJumpingProtocol, with index: Int) -> UIToolbar {
-        let toolBar = CellTextFieldToolBar()
-        toolBar.canGoForward = cellFields.nextActive(from: index) != nil
-        toolBar.canGoBackward = cellFields.previousActive(from: index) != nil
-
-        toolBar.needArrows = config.toolBarNeedArrows
-
-        toolBar.shouldGoForward.asObservable()
-            .subscribe(onNext: { [weak self] in
-                self?.shouldGoForwardAction(from: index)
-            })
-            .addDisposableTo(disposeBag)
-
-        toolBar.shouldGoBackward.asObservable()
-            .subscribe(onNext: { [weak self] in
-                if let previousActive = self?.cellFields.previousActive(from: index) {
-                    previousActive.shouldBecomeFirstResponder.onNext()
-                }
-            })
-            .addDisposableTo(disposeBag)
-
-        toolBar.shouldEndEditing.asObservable()
-            .subscribe(onNext: {
-                field.shouldResignFirstResponder.onNext()
-            })
-            .addDisposableTo(disposeBag)
-
-        return toolBar
+        // hotfix for project builing
+        // todo: @GrigoryUlanov
+        return UIToolbar()
+//        let toolBar = CellTextFieldToolBar()
+//        toolBar.canGoForward = cellFields.nextActive(from: index) != nil
+//        toolBar.canGoBackward = cellFields.previousActive(from: index) != nil
+//
+//        toolBar.needArrows = config.toolBarNeedArrows
+//
+//        toolBar.shouldGoForward.asObservable()
+//            .subscribe(onNext: { [weak self] in
+//                self?.shouldGoForwardAction(from: index)
+//            })
+//            .addDisposableTo(disposeBag)
+//
+//        toolBar.shouldGoBackward.asObservable()
+//            .subscribe(onNext: { [weak self] in
+//                if let previousActive = self?.cellFields.previousActive(from: index) {
+//                    previousActive.shouldBecomeFirstResponder.onNext()
+//                }
+//            })
+//            .addDisposableTo(disposeBag)
+//
+//        toolBar.shouldEndEditing.asObservable()
+//            .subscribe(onNext: {
+//                field.shouldResignFirstResponder.onNext()
+//            })
+//            .addDisposableTo(disposeBag)
+//
+//        return toolBar
     }
 
     private func shouldGoForwardAction(from index: Int) {

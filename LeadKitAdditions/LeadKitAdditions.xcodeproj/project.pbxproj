@@ -10,52 +10,74 @@
 		248389A288C0A6D7914F0546 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
 		B326804BA6CC8B8BB136A46A /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */; };
-		EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */; };
-		EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */; };
-		EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB91EAF705500CAE7B6 /* ApiError.swift */; };
-		EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */; };
-		EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */; };
-		EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */; };
-		EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */; };
-		EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */; };
-		EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */; };
-		EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */; };
-		EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */; };
-		EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */; };
-		EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */; };
-		EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */; };
-		EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */; };
-		EF05EDF81EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */; };
-		EF05EDFC1EB0D77400CAE7B6 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */; };
-		EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
-		EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
-		EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
-		EF2EC13C1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC13B1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift */; };
-		EF2EC13E1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2EC13D1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift */; };
-		EFBD557A1EBB893F0062AA63 /* Info-iOS-Extensions.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */; };
-		EFBD557B1EBB893F0062AA63 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBD55791EBB893F0062AA63 /* Info-iOS.plist */; };
-		EFBD557C1EBB95680062AA63 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */; };
-		EFBD557D1EBB956A0062AA63 /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */; };
-		EFBD557E1EBB956C0062AA63 /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */; };
-		EFBD557F1EBB95730062AA63 /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */; };
-		EFBD55801EBB95730062AA63 /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */; };
-		EFBD55811EBB95730062AA63 /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */; };
-		EFBD55821EBB95730062AA63 /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */; };
-		EFBD55831EBB95730062AA63 /* PassCodeValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */; };
-		EFBD55841EBB95770062AA63 /* BasePassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */; };
-		EFBD55851EBB957A0062AA63 /* BasePassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */; };
-		EFBD55861EBB95810062AA63 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB91EAF705500CAE7B6 /* ApiError.swift */; };
-		EFBD55871EBB95810062AA63 /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */; };
-		EFBD55881EBB95810062AA63 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */; };
-		EFBD55891EBB95850062AA63 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */; };
-		EFBD558A1EBB95850062AA63 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */; };
-		EFBD558B1EBB95850062AA63 /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */; };
-		EFBD558C1EBB95890062AA63 /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */; };
-		EFBD558D1EBB95890062AA63 /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */; };
-		EFBD558E1EBB95890062AA63 /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */; };
-		EFBD558F1EBB958D0062AA63 /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */; };
-		EFBD55901EBB958D0062AA63 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */; };
+		ED0C34031F2906EC00FAE9FD /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D31F2906EC00FAE9FD /* ApiResponse.swift */; };
+		ED0C34041F2906EC00FAE9FD /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D31F2906EC00FAE9FD /* ApiResponse.swift */; };
+		ED0C34051F2906EC00FAE9FD /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D41F2906EC00FAE9FD /* BaseDateFormatter.swift */; };
+		ED0C34061F2906EC00FAE9FD /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D41F2906EC00FAE9FD /* BaseDateFormatter.swift */; };
+		ED0C34071F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */; };
+		ED0C34081F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */; };
+		ED0C34091F2906EC00FAE9FD /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D91F2906EC00FAE9FD /* PassCodeConfiguration.swift */; };
+		ED0C340A1F2906EC00FAE9FD /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D91F2906EC00FAE9FD /* PassCodeConfiguration.swift */; };
+		ED0C340B1F2906EC00FAE9FD /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DA1F2906EC00FAE9FD /* PassCodeError.swift */; };
+		ED0C340C1F2906EC00FAE9FD /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DA1F2906EC00FAE9FD /* PassCodeError.swift */; };
+		ED0C340D1F2906EC00FAE9FD /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DB1F2906EC00FAE9FD /* PassCodeHolder.swift */; };
+		ED0C340E1F2906EC00FAE9FD /* PassCodeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DB1F2906EC00FAE9FD /* PassCodeHolder.swift */; };
+		ED0C340F1F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DC1F2906EC00FAE9FD /* PassCodeHolderProtocol.swift */; };
+		ED0C34101F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DC1F2906EC00FAE9FD /* PassCodeHolderProtocol.swift */; };
+		ED0C34111F2906EC00FAE9FD /* PassCodeValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DD1F2906EC00FAE9FD /* PassCodeValidationResult.swift */; };
+		ED0C34121F2906EC00FAE9FD /* PassCodeValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DD1F2906EC00FAE9FD /* PassCodeValidationResult.swift */; };
+		ED0C34131F2906EC00FAE9FD /* BasePassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DF1F2906EC00FAE9FD /* BasePassCodeViewController.swift */; };
+		ED0C34141F2906EC00FAE9FD /* BasePassCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DF1F2906EC00FAE9FD /* BasePassCodeViewController.swift */; };
+		ED0C34151F2906EC00FAE9FD /* BasePassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E11F2906EC00FAE9FD /* BasePassCodeViewModel.swift */; };
+		ED0C34161F2906EC00FAE9FD /* BasePassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E11F2906EC00FAE9FD /* BasePassCodeViewModel.swift */; };
+		ED0C34171F2906EC00FAE9FD /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E31F2906EC00FAE9FD /* ApiError.swift */; };
+		ED0C34181F2906EC00FAE9FD /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E31F2906EC00FAE9FD /* ApiError.swift */; };
+		ED0C34191F2906EC00FAE9FD /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */; };
+		ED0C341A1F2906EC00FAE9FD /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */; };
+		ED0C341B1F2906EC00FAE9FD /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */; };
+		ED0C341C1F2906EC00FAE9FD /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */; };
+		ED0C341D1F2906EC00FAE9FD /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E71F2906EC00FAE9FD /* Observable+Extensions.swift */; };
+		ED0C341E1F2906EC00FAE9FD /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E71F2906EC00FAE9FD /* Observable+Extensions.swift */; };
+		ED0C341F1F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E81F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift */; };
+		ED0C34201F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E81F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift */; };
+		ED0C34211F2906EC00FAE9FD /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E91F2906EC00FAE9FD /* UserDefaults+UserService.swift */; };
+		ED0C34221F2906EC00FAE9FD /* UserDefaults+UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E91F2906EC00FAE9FD /* UserDefaults+UserService.swift */; };
+		ED0C34231F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EB1F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift */; };
+		ED0C34241F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EB1F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift */; };
+		ED0C34251F2906EC00FAE9FD /* CellFieldMaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EC1F2906EC00FAE9FD /* CellFieldMaskProtocol.swift */; };
+		ED0C34261F2906EC00FAE9FD /* CellFieldMaskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EC1F2906EC00FAE9FD /* CellFieldMaskProtocol.swift */; };
+		ED0C34271F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33ED1F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift */; };
+		ED0C34281F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33ED1F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift */; };
+		ED0C34291F2906EC00FAE9FD /* CellFieldValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EE1F2906EC00FAE9FD /* CellFieldValidationProtocol.swift */; };
+		ED0C342A1F2906EC00FAE9FD /* CellFieldValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EE1F2906EC00FAE9FD /* CellFieldValidationProtocol.swift */; };
+		ED0C342B1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EF1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift */; };
+		ED0C342C1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33EF1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift */; };
+		ED0C342D1F2906EC00FAE9FD /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F11F2906EC00FAE9FD /* BasePassCodeService.swift */; };
+		ED0C342E1F2906EC00FAE9FD /* BasePassCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F11F2906EC00FAE9FD /* BasePassCodeService.swift */; };
+		ED0C342F1F2906EC00FAE9FD /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F21F2906EC00FAE9FD /* BaseUserService.swift */; };
+		ED0C34301F2906EC00FAE9FD /* BaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F21F2906EC00FAE9FD /* BaseUserService.swift */; };
+		ED0C34311F2906EC00FAE9FD /* CellFieldsJumpingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F31F2906EC00FAE9FD /* CellFieldsJumpingService.swift */; };
+		ED0C34321F2906EC00FAE9FD /* CellFieldsJumpingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F31F2906EC00FAE9FD /* CellFieldsJumpingService.swift */; };
+		ED0C34331F2906EC00FAE9FD /* MaskFieldTextProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F41F2906EC00FAE9FD /* MaskFieldTextProxy.swift */; };
+		ED0C34341F2906EC00FAE9FD /* MaskFieldTextProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F41F2906EC00FAE9FD /* MaskFieldTextProxy.swift */; };
+		ED0C34351F2906EC00FAE9FD /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F61F2906EC00FAE9FD /* ApiNetworkService.swift */; };
+		ED0C34361F2906EC00FAE9FD /* ApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F61F2906EC00FAE9FD /* ApiNetworkService.swift */; };
+		ED0C34381F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F71F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator+Extension.swift */; };
+		ED0C34391F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F81F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift */; };
+		ED0C343B1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F91F2906EC00FAE9FD /* DefaultNetworkService.swift */; };
+		ED0C343C1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F91F2906EC00FAE9FD /* DefaultNetworkService.swift */; };
+		ED0C343D1F2906EC00FAE9FD /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */; };
+		ED0C343E1F2906EC00FAE9FD /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */; };
+		ED0C343F1F2906EC00FAE9FD /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FC1F2906EC00FAE9FD /* ValidationError.swift */; };
+		ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FC1F2906EC00FAE9FD /* ValidationError.swift */; };
+		ED0C34411F2906EC00FAE9FD /* ValidationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FD1F2906EC00FAE9FD /* ValidationItem.swift */; };
+		ED0C34421F2906EC00FAE9FD /* ValidationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FD1F2906EC00FAE9FD /* ValidationItem.swift */; };
+		ED0C34431F2906EC00FAE9FD /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FE1F2906EC00FAE9FD /* ValidationService.swift */; };
+		ED0C34441F2906EC00FAE9FD /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FE1F2906EC00FAE9FD /* ValidationService.swift */; };
+		ED0C34451F2906EC00FAE9FD /* CellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C34011F2906EC00FAE9FD /* CellTextField.swift */; };
+		ED0C34461F2906EC00FAE9FD /* CellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C34011F2906EC00FAE9FD /* CellTextField.swift */; };
+		ED0C34471F2906EC00FAE9FD /* CellTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C34021F2906EC00FAE9FD /* CellTextFieldViewModel.swift */; };
+		ED0C34481F2906EC00FAE9FD /* CellTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C34021F2906EC00FAE9FD /* CellTextFieldViewModel.swift */; };
 		EFBD55921EBB9A980062AA63 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -69,29 +91,41 @@
 		CAE698E61E968820000394B0 /* LeadKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadKitAdditions.h; sourceTree = "<group>"; };
 		CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AB283D10B2175EFDBF7924 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; sourceTree = "<group>"; };
-		EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUserService.swift; sourceTree = "<group>"; };
-		EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
-		EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserService.swift"; sourceTree = "<group>"; };
-		EF05EDB91EAF705500CAE7B6 /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
-		EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
-		EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDateFormatter.swift; sourceTree = "<group>"; };
-		EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDService.swift; sourceTree = "<group>"; };
-		EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeService.swift; sourceTree = "<group>"; };
-		EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewController.swift; sourceTree = "<group>"; };
-		EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewModel.swift; sourceTree = "<group>"; };
-		EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeConfiguration.swift; sourceTree = "<group>"; };
-		EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeValidationResult.swift; sourceTree = "<group>"; };
-		EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolderProtocol.swift; sourceTree = "<group>"; };
-		EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeError.swift; sourceTree = "<group>"; };
-		EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolder.swift; sourceTree = "<group>"; };
-		EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
-		EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
-		EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiNetworkService.swift; sourceTree = "<group>"; };
-		EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
-		EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
-		EF2EC13B1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator.swift"; sourceTree = "<group>"; };
-		EF2EC13D1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
+		ED0C33D31F2906EC00FAE9FD /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		ED0C33D41F2906EC00FAE9FD /* BaseDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDateFormatter.swift; sourceTree = "<group>"; };
+		ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
+		ED0C33D91F2906EC00FAE9FD /* PassCodeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeConfiguration.swift; sourceTree = "<group>"; };
+		ED0C33DA1F2906EC00FAE9FD /* PassCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeError.swift; sourceTree = "<group>"; };
+		ED0C33DB1F2906EC00FAE9FD /* PassCodeHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolder.swift; sourceTree = "<group>"; };
+		ED0C33DC1F2906EC00FAE9FD /* PassCodeHolderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeHolderProtocol.swift; sourceTree = "<group>"; };
+		ED0C33DD1F2906EC00FAE9FD /* PassCodeValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeValidationResult.swift; sourceTree = "<group>"; };
+		ED0C33DF1F2906EC00FAE9FD /* BasePassCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewController.swift; sourceTree = "<group>"; };
+		ED0C33E11F2906EC00FAE9FD /* BasePassCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewModel.swift; sourceTree = "<group>"; };
+		ED0C33E31F2906EC00FAE9FD /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
+		ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		ED0C33E71F2906EC00FAE9FD /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		ED0C33E81F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		ED0C33E91F2906EC00FAE9FD /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserService.swift"; sourceTree = "<group>"; };
+		ED0C33EB1F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFieldJumpingProtocol.swift; sourceTree = "<group>"; };
+		ED0C33EC1F2906EC00FAE9FD /* CellFieldMaskProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFieldMaskProtocol.swift; sourceTree = "<group>"; };
+		ED0C33ED1F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFieldsToolBarProtocol.swift; sourceTree = "<group>"; };
+		ED0C33EE1F2906EC00FAE9FD /* CellFieldValidationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFieldValidationProtocol.swift; sourceTree = "<group>"; };
+		ED0C33EF1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		ED0C33F11F2906EC00FAE9FD /* BasePassCodeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeService.swift; sourceTree = "<group>"; };
+		ED0C33F21F2906EC00FAE9FD /* BaseUserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUserService.swift; sourceTree = "<group>"; };
+		ED0C33F31F2906EC00FAE9FD /* CellFieldsJumpingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFieldsJumpingService.swift; sourceTree = "<group>"; };
+		ED0C33F41F2906EC00FAE9FD /* MaskFieldTextProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskFieldTextProxy.swift; sourceTree = "<group>"; };
+		ED0C33F61F2906EC00FAE9FD /* ApiNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiNetworkService.swift; sourceTree = "<group>"; };
+		ED0C33F71F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
+		ED0C33F81F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator.swift"; sourceTree = "<group>"; };
+		ED0C33F91F2906EC00FAE9FD /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
+		ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDService.swift; sourceTree = "<group>"; };
+		ED0C33FC1F2906EC00FAE9FD /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		ED0C33FD1F2906EC00FAE9FD /* ValidationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationItem.swift; sourceTree = "<group>"; };
+		ED0C33FE1F2906EC00FAE9FD /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		ED0C34011F2906EC00FAE9FD /* CellTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTextField.swift; sourceTree = "<group>"; };
+		ED0C34021F2906EC00FAE9FD /* CellTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTextFieldViewModel.swift; sourceTree = "<group>"; };
 		EFBD55701EBB87100062AA63 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS-Extensions.plist"; sourceTree = "<group>"; };
 		EFBD55791EBB893F0062AA63 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
@@ -130,10 +164,10 @@
 		CAE698D91E968820000394B0 = {
 			isa = PBXGroup;
 			children = (
-				CAE698E51E968820000394B0 /* Sources */,
-				CAE698E41E968820000394B0 /* Products */,
-				F8A65FEC7C0EB4B93746E50F /* Pods */,
 				A3117951840B8B7D2E7A8A80 /* Frameworks */,
+				F8A65FEC7C0EB4B93746E50F /* Pods */,
+				CAE698E41E968820000394B0 /* Products */,
+				CAE698E51E968820000394B0 /* Sources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,114 +183,158 @@
 		CAE698E51E968820000394B0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CAE698EE1E968B72000394B0 /* Classes */,
-				EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */,
-				CAE699011E9693DE000394B0 /* Enums */,
-				CAE698F81E968F56000394B0 /* Extensions */,
-				CAE698F31E968E28000394B0 /* Services */,
-				EFBD55791EBB893F0062AA63 /* Info-iOS.plist */,
+				ED0C33D21F2906EC00FAE9FD /* Classes */,
+				ED0C33D61F2906EC00FAE9FD /* Controllers */,
+				ED0C33E21F2906EC00FAE9FD /* Enums */,
+				ED0C33E61F2906EC00FAE9FD /* Extensions */,
+				ED0C33EA1F2906EC00FAE9FD /* Protocols */,
+				ED0C33F01F2906EC00FAE9FD /* Services */,
+				ED0C33FF1F2906EC00FAE9FD /* Views */,
 				EFBD55781EBB893F0062AA63 /* Info-iOS-Extensions.plist */,
+				EFBD55791EBB893F0062AA63 /* Info-iOS.plist */,
 				CAE698E61E968820000394B0 /* LeadKitAdditions.h */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		CAE698EE1E968B72000394B0 /* Classes */ = {
+		ED0C33D21F2906EC00FAE9FD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDBD1EAF706200CAE7B6 /* ApiResponse.swift */,
-				EF05EDBE1EAF706200CAE7B6 /* BaseDateFormatter.swift */,
-				EF05EE011EB206C000CAE7B6 /* LoadingBarButton.swift */,
+				ED0C33D31F2906EC00FAE9FD /* ApiResponse.swift */,
+				ED0C33D41F2906EC00FAE9FD /* BaseDateFormatter.swift */,
+				ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		CAE698F31E968E28000394B0 /* Services */ = {
+		ED0C33D61F2906EC00FAE9FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDF91EB0D75A00CAE7B6 /* Network */,
-				EF05EDC71EAF91D500CAE7B6 /* BasePassCodeService.swift */,
-				EF05EDB31EAF703A00CAE7B6 /* BaseUserService.swift */,
-				EF05EDC51EAF70EB00CAE7B6 /* TouchIDService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		CAE698F81E968F56000394B0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				EF05EDB51EAF704800CAE7B6 /* Observable+Extensions.swift */,
-				EF05EDF71EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift */,
-				EF05EDB61EAF704800CAE7B6 /* UserDefaults+UserService.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		CAE699011E9693DE000394B0 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				EF05EDB91EAF705500CAE7B6 /* ApiError.swift */,
-				EF05EE031EB21A2D00CAE7B6 /* ApiErrorProtocol.swift */,
-				EF05EDBA1EAF705500CAE7B6 /* ConnectionError.swift */,
-			);
-			path = Enums;
-			sourceTree = "<group>";
-		};
-		EF05EDDB1EAFA6FA00CAE7B6 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				EF05EDDC1EAFA72600CAE7B6 /* PassCode */,
+				ED0C33D71F2906EC00FAE9FD /* PassCode */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		EF05EDDC1EAFA72600CAE7B6 /* PassCode */ = {
+		ED0C33D71F2906EC00FAE9FD /* PassCode */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDDD1EAFA72600CAE7B6 /* Model */,
-				EF05EDDE1EAFA72600CAE7B6 /* View */,
-				EF05EDDF1EAFA72600CAE7B6 /* ViewModel */,
+				ED0C33D81F2906EC00FAE9FD /* Model */,
+				ED0C33DE1F2906EC00FAE9FD /* View */,
+				ED0C33E01F2906EC00FAE9FD /* ViewModel */,
 			);
 			path = PassCode;
 			sourceTree = "<group>";
 		};
-		EF05EDDD1EAFA72600CAE7B6 /* Model */ = {
+		ED0C33D81F2906EC00FAE9FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDE41EAFA80D00CAE7B6 /* PassCodeConfiguration.swift */,
-				EF05EDEA1EAFA8E600CAE7B6 /* PassCodeError.swift */,
-				EF05EDEC1EAFA96D00CAE7B6 /* PassCodeHolder.swift */,
-				EF05EDE81EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift */,
-				EF05EDE61EAFA87300CAE7B6 /* PassCodeValidationResult.swift */,
+				ED0C33D91F2906EC00FAE9FD /* PassCodeConfiguration.swift */,
+				ED0C33DA1F2906EC00FAE9FD /* PassCodeError.swift */,
+				ED0C33DB1F2906EC00FAE9FD /* PassCodeHolder.swift */,
+				ED0C33DC1F2906EC00FAE9FD /* PassCodeHolderProtocol.swift */,
+				ED0C33DD1F2906EC00FAE9FD /* PassCodeValidationResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		EF05EDDE1EAFA72600CAE7B6 /* View */ = {
+		ED0C33DE1F2906EC00FAE9FD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDE01EAFA74200CAE7B6 /* BasePassCodeViewController.swift */,
+				ED0C33DF1F2906EC00FAE9FD /* BasePassCodeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		EF05EDDF1EAFA72600CAE7B6 /* ViewModel */ = {
+		ED0C33E01F2906EC00FAE9FD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDE21EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift */,
+				ED0C33E11F2906EC00FAE9FD /* BasePassCodeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		EF05EDF91EB0D75A00CAE7B6 /* Network */ = {
+		ED0C33E21F2906EC00FAE9FD /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				EF05EDFB1EB0D77400CAE7B6 /* ApiNetworkService.swift */,
-				EF05EDFA1EB0D77400CAE7B6 /* DefaultNetworkService.swift */,
-				EF2EC13B1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift */,
-				EF2EC13D1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift */,
+				ED0C33E31F2906EC00FAE9FD /* ApiError.swift */,
+				ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */,
+				ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		ED0C33E61F2906EC00FAE9FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C33E71F2906EC00FAE9FD /* Observable+Extensions.swift */,
+				ED0C33E81F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift */,
+				ED0C33E91F2906EC00FAE9FD /* UserDefaults+UserService.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED0C33EA1F2906EC00FAE9FD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C33EB1F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift */,
+				ED0C33EC1F2906EC00FAE9FD /* CellFieldMaskProtocol.swift */,
+				ED0C33EE1F2906EC00FAE9FD /* CellFieldValidationProtocol.swift */,
+				ED0C33ED1F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift */,
+				ED0C33EF1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		ED0C33F01F2906EC00FAE9FD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C33F51F2906EC00FAE9FD /* Network */,
+				ED0C33FB1F2906EC00FAE9FD /* ValidationService */,
+				ED0C33F11F2906EC00FAE9FD /* BasePassCodeService.swift */,
+				ED0C33F21F2906EC00FAE9FD /* BaseUserService.swift */,
+				ED0C33F31F2906EC00FAE9FD /* CellFieldsJumpingService.swift */,
+				ED0C33F41F2906EC00FAE9FD /* MaskFieldTextProxy.swift */,
+				ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED0C33F51F2906EC00FAE9FD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C33F61F2906EC00FAE9FD /* ApiNetworkService.swift */,
+				ED0C33F71F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator+Extension.swift */,
+				ED0C33F81F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift */,
+				ED0C33F91F2906EC00FAE9FD /* DefaultNetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		ED0C33FB1F2906EC00FAE9FD /* ValidationService */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C33FC1F2906EC00FAE9FD /* ValidationError.swift */,
+				ED0C33FD1F2906EC00FAE9FD /* ValidationItem.swift */,
+				ED0C33FE1F2906EC00FAE9FD /* ValidationService.swift */,
+			);
+			path = ValidationService;
+			sourceTree = "<group>";
+		};
+		ED0C33FF1F2906EC00FAE9FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C34001F2906EC00FAE9FD /* CellTextField */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED0C34001F2906EC00FAE9FD /* CellTextField */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C34011F2906EC00FAE9FD /* CellTextField.swift */,
+				ED0C34021F2906EC00FAE9FD /* CellTextFieldViewModel.swift */,
+			);
+			path = CellTextField;
 			sourceTree = "<group>";
 		};
 		F8A65FEC7C0EB4B93746E50F /* Pods */ = {
@@ -377,8 +455,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBD557B1EBB893F0062AA63 /* Info-iOS.plist in Resources */,
-				EFBD557A1EBB893F0062AA63 /* Info-iOS-Extensions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,28 +563,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF05EE041EB21A2D00CAE7B6 /* ApiErrorProtocol.swift in Sources */,
-				EF05EDB81EAF704800CAE7B6 /* UserDefaults+UserService.swift in Sources */,
-				EF05EDE11EAFA74200CAE7B6 /* BasePassCodeViewController.swift in Sources */,
-				EF05EDC61EAF70EB00CAE7B6 /* TouchIDService.swift in Sources */,
-				EF05EDE31EAFA7A600CAE7B6 /* BasePassCodeViewModel.swift in Sources */,
-				EF05EDBB1EAF705500CAE7B6 /* ApiError.swift in Sources */,
-				EF05EDE91EAFA8A000CAE7B6 /* PassCodeHolderProtocol.swift in Sources */,
-				EF05EDFD1EB0D77400CAE7B6 /* ApiNetworkService.swift in Sources */,
-				EF05EDF81EB0D5A600CAE7B6 /* UIBarButtonItem+Extensions.swift in Sources */,
-				EF05EDED1EAFA96D00CAE7B6 /* PassCodeHolder.swift in Sources */,
-				EF05EDB71EAF704800CAE7B6 /* Observable+Extensions.swift in Sources */,
-				EF05EDC01EAF706200CAE7B6 /* ApiResponse.swift in Sources */,
-				EF05EDBC1EAF705500CAE7B6 /* ConnectionError.swift in Sources */,
-				EF05EE021EB206C000CAE7B6 /* LoadingBarButton.swift in Sources */,
-				EF05EDEB1EAFA8E600CAE7B6 /* PassCodeError.swift in Sources */,
-				EF05EDB41EAF703A00CAE7B6 /* BaseUserService.swift in Sources */,
-				EF05EDE51EAFA80D00CAE7B6 /* PassCodeConfiguration.swift in Sources */,
-				EF05EDFC1EB0D77400CAE7B6 /* DefaultNetworkService.swift in Sources */,
-				EF05EDC81EAF91D500CAE7B6 /* BasePassCodeService.swift in Sources */,
-				EF05EDC11EAF706200CAE7B6 /* BaseDateFormatter.swift in Sources */,
-				EF05EDE71EAFA87300CAE7B6 /* PassCodeValidationResult.swift in Sources */,
-				EF2EC13C1ED4A0F100AA67A7 /* DefaultNetworkService+ActivityIndicator.swift in Sources */,
+				ED0C34171F2906EC00FAE9FD /* ApiError.swift in Sources */,
+				ED0C343B1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */,
+				ED0C34351F2906EC00FAE9FD /* ApiNetworkService.swift in Sources */,
+				ED0C340F1F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */,
+				ED0C343D1F2906EC00FAE9FD /* TouchIDService.swift in Sources */,
+				ED0C343F1F2906EC00FAE9FD /* ValidationError.swift in Sources */,
+				ED0C342F1F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
+				ED0C341B1F2906EC00FAE9FD /* ConnectionError.swift in Sources */,
+				ED0C34231F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */,
+				ED0C34411F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
+				ED0C341F1F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,
+				ED0C34091F2906EC00FAE9FD /* PassCodeConfiguration.swift in Sources */,
+				ED0C342B1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift in Sources */,
+				ED0C341D1F2906EC00FAE9FD /* Observable+Extensions.swift in Sources */,
+				ED0C34471F2906EC00FAE9FD /* CellTextFieldViewModel.swift in Sources */,
+				ED0C34191F2906EC00FAE9FD /* ApiErrorProtocol.swift in Sources */,
+				ED0C34131F2906EC00FAE9FD /* BasePassCodeViewController.swift in Sources */,
+				ED0C342D1F2906EC00FAE9FD /* BasePassCodeService.swift in Sources */,
+				ED0C340D1F2906EC00FAE9FD /* PassCodeHolder.swift in Sources */,
+				ED0C34451F2906EC00FAE9FD /* CellTextField.swift in Sources */,
+				ED0C34271F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift in Sources */,
+				ED0C34291F2906EC00FAE9FD /* CellFieldValidationProtocol.swift in Sources */,
+				ED0C34031F2906EC00FAE9FD /* ApiResponse.swift in Sources */,
+				ED0C34071F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */,
+				ED0C34251F2906EC00FAE9FD /* CellFieldMaskProtocol.swift in Sources */,
+				ED0C34211F2906EC00FAE9FD /* UserDefaults+UserService.swift in Sources */,
+				ED0C34391F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift in Sources */,
+				ED0C34311F2906EC00FAE9FD /* CellFieldsJumpingService.swift in Sources */,
+				ED0C34111F2906EC00FAE9FD /* PassCodeValidationResult.swift in Sources */,
+				ED0C34051F2906EC00FAE9FD /* BaseDateFormatter.swift in Sources */,
+				ED0C34431F2906EC00FAE9FD /* ValidationService.swift in Sources */,
+				ED0C34331F2906EC00FAE9FD /* MaskFieldTextProxy.swift in Sources */,
+				ED0C340B1F2906EC00FAE9FD /* PassCodeError.swift in Sources */,
+				ED0C34151F2906EC00FAE9FD /* BasePassCodeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,28 +604,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBD55861EBB95810062AA63 /* ApiError.swift in Sources */,
-				EFBD55821EBB95730062AA63 /* PassCodeHolderProtocol.swift in Sources */,
-				EFBD55881EBB95810062AA63 /* ConnectionError.swift in Sources */,
-				EFBD558C1EBB95890062AA63 /* BasePassCodeService.swift in Sources */,
-				EFBD558A1EBB95850062AA63 /* UIBarButtonItem+Extensions.swift in Sources */,
-				EFBD557F1EBB95730062AA63 /* PassCodeConfiguration.swift in Sources */,
-				EFBD558E1EBB95890062AA63 /* TouchIDService.swift in Sources */,
-				EFBD558F1EBB958D0062AA63 /* ApiNetworkService.swift in Sources */,
-				EFBD55891EBB95850062AA63 /* Observable+Extensions.swift in Sources */,
-				EFBD55871EBB95810062AA63 /* ApiErrorProtocol.swift in Sources */,
-				EFBD55841EBB95770062AA63 /* BasePassCodeViewController.swift in Sources */,
-				EFBD55811EBB95730062AA63 /* PassCodeHolder.swift in Sources */,
-				EFBD557C1EBB95680062AA63 /* ApiResponse.swift in Sources */,
-				EFBD557E1EBB956C0062AA63 /* LoadingBarButton.swift in Sources */,
-				EFBD558B1EBB95850062AA63 /* UserDefaults+UserService.swift in Sources */,
-				EFBD55831EBB95730062AA63 /* PassCodeValidationResult.swift in Sources */,
-				EFBD557D1EBB956A0062AA63 /* BaseDateFormatter.swift in Sources */,
-				EFBD55901EBB958D0062AA63 /* DefaultNetworkService.swift in Sources */,
-				EFBD55801EBB95730062AA63 /* PassCodeError.swift in Sources */,
-				EF2EC13E1ED4A21100AA67A7 /* DefaultNetworkService+ActivityIndicator+Extension.swift in Sources */,
-				EFBD55851EBB957A0062AA63 /* BasePassCodeViewModel.swift in Sources */,
-				EFBD558D1EBB95890062AA63 /* BaseUserService.swift in Sources */,
+				ED0C34181F2906EC00FAE9FD /* ApiError.swift in Sources */,
+				ED0C343C1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */,
+				ED0C34361F2906EC00FAE9FD /* ApiNetworkService.swift in Sources */,
+				ED0C34101F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */,
+				ED0C343E1F2906EC00FAE9FD /* TouchIDService.swift in Sources */,
+				ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */,
+				ED0C34301F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
+				ED0C341C1F2906EC00FAE9FD /* ConnectionError.swift in Sources */,
+				ED0C34241F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */,
+				ED0C34421F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
+				ED0C34201F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,
+				ED0C340A1F2906EC00FAE9FD /* PassCodeConfiguration.swift in Sources */,
+				ED0C342C1F2906EC00FAE9FD /* FormCellViewModelProtocol.swift in Sources */,
+				ED0C34381F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator+Extension.swift in Sources */,
+				ED0C341E1F2906EC00FAE9FD /* Observable+Extensions.swift in Sources */,
+				ED0C34481F2906EC00FAE9FD /* CellTextFieldViewModel.swift in Sources */,
+				ED0C341A1F2906EC00FAE9FD /* ApiErrorProtocol.swift in Sources */,
+				ED0C34141F2906EC00FAE9FD /* BasePassCodeViewController.swift in Sources */,
+				ED0C342E1F2906EC00FAE9FD /* BasePassCodeService.swift in Sources */,
+				ED0C340E1F2906EC00FAE9FD /* PassCodeHolder.swift in Sources */,
+				ED0C34461F2906EC00FAE9FD /* CellTextField.swift in Sources */,
+				ED0C34281F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift in Sources */,
+				ED0C342A1F2906EC00FAE9FD /* CellFieldValidationProtocol.swift in Sources */,
+				ED0C34041F2906EC00FAE9FD /* ApiResponse.swift in Sources */,
+				ED0C34081F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */,
+				ED0C34261F2906EC00FAE9FD /* CellFieldMaskProtocol.swift in Sources */,
+				ED0C34221F2906EC00FAE9FD /* UserDefaults+UserService.swift in Sources */,
+				ED0C34321F2906EC00FAE9FD /* CellFieldsJumpingService.swift in Sources */,
+				ED0C34121F2906EC00FAE9FD /* PassCodeValidationResult.swift in Sources */,
+				ED0C34061F2906EC00FAE9FD /* BaseDateFormatter.swift in Sources */,
+				ED0C34441F2906EC00FAE9FD /* ValidationService.swift in Sources */,
+				ED0C34341F2906EC00FAE9FD /* MaskFieldTextProxy.swift in Sources */,
+				ED0C340C1F2906EC00FAE9FD /* PassCodeError.swift in Sources */,
+				ED0C34161F2906EC00FAE9FD /* BasePassCodeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
