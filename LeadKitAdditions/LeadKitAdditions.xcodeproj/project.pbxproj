@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A08E37F1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08E37E1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift */; };
 		248389A288C0A6D7914F0546 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
 		B326804BA6CC8B8BB136A46A /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		01605ECA03749D49C27FA3DD /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.release.xcconfig"; sourceTree = "<group>"; };
+		0A08E37E1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTextFieldToolBar.swift; sourceTree = "<group>"; };
 		0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49738551AC648B0AFA74E57F /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		7B7F57C5E5275C4D8DC71992 /* Pods_LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -323,6 +325,7 @@
 		ED0C33FF1F2906EC00FAE9FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A08E37E1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift */,
 				ED0C34001F2906EC00FAE9FD /* CellTextField */,
 			);
 			path = Views;
@@ -585,6 +588,7 @@
 				ED0C34451F2906EC00FAE9FD /* CellTextField.swift in Sources */,
 				ED0C34271F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift in Sources */,
 				ED0C34291F2906EC00FAE9FD /* CellFieldValidationProtocol.swift in Sources */,
+				0A08E37F1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift in Sources */,
 				ED0C34031F2906EC00FAE9FD /* ApiResponse.swift in Sources */,
 				ED0C34071F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */,
 				ED0C34251F2906EC00FAE9FD /* CellFieldMaskProtocol.swift in Sources */,
