@@ -28,12 +28,12 @@ class CellTextFieldToolBar: UIToolbar, CellFieldsToolBarProtocol {
 
     // MARK: - UIBarButtonItems
 
-    var backButtonImage: UIImage = #imageLiteral(resourceName: "keyboard_back") {
+    var backButtonImage: UIImage? {
         didSet {
             backButton.image = backButtonImage
         }
     }
-    var forwardButtonImage: UIImage = #imageLiteral(resourceName: "keyboard_forward") {
+    var forwardButtonImage: UIImage? {
         didSet {
             backButton.image = backButtonImage
         }
