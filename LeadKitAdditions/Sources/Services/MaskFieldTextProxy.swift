@@ -6,7 +6,8 @@ class MaskFieldTextProxy: NSObject {
 
     private var disposeBag = DisposeBag()
 
-    let text = Variable("")
+    fileprivate let text = Variable("")
+
     fileprivate let isCompleteHolder = Variable(false)
     var isComplete: Bool {
         return isCompleteHolder.value

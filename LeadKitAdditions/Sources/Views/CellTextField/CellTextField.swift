@@ -24,14 +24,16 @@ class CellTextField: UITextField {
         inputAccessoryView = viewModel.toolBar
         returnKeyType = viewModel.returnButtonType
 
-        text = viewModel.text.value
+        text = viewModel.textValue
         placeholder = viewModel.placeholder
         viewModel.textFieldSettingsBlock?(self)
 
         viewModel.bind(for: self, to: disposeBag)
 
         rx.text.asDriver()
-            .drive(viewModel.text)
+            .drive(onNext: {
+                viewModel.setTextValue($0)
+            })
             .addDisposableTo(disposeBag)
 
         rx.controlEvent(.editingDidEndOnExit).asObservable()

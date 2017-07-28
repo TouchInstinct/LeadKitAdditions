@@ -43,7 +43,7 @@ class ValidationItem {
         return validationStateHolder.asObservable()
     }
 
-    let text = Variable<String?>(nil)
+    private let text = Variable<String?>(nil)
 
     private(set) var rules: [Rule] = []
 
