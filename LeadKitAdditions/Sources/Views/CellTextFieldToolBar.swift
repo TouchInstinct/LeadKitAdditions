@@ -6,7 +6,6 @@ import LeadKit
 class CellTextFieldToolBar: UIToolbar, CellFieldsToolBarProtocol {
 
     private let buttonSpace: CGFloat = 20
-    private let customSkyColor = UIColor(hex6: 0x0A84DF)
 
     // MARK: - CellFieldsToolBarProtocol
 
@@ -29,8 +28,19 @@ class CellTextFieldToolBar: UIToolbar, CellFieldsToolBarProtocol {
 
     // MARK: - UIBarButtonItems
 
+    var backButtonImage: UIImage = #imageLiteral(resourceName: "keyboard_back") {
+        didSet {
+            backButton.image = backButtonImage
+        }
+    }
+    var forwardButtonImage: UIImage = #imageLiteral(resourceName: "keyboard_forward") {
+        didSet {
+            backButton.image = backButtonImage
+        }
+    }
+
     private(set) lazy var backButton: UIBarButtonItem = {
-        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "keyboard_back"),
+        let backButton = UIBarButtonItem(image: self.backButtonImage,
                                          style: .plain,
                                          target: self,
                                          action: #selector(backAction))
@@ -38,7 +48,7 @@ class CellTextFieldToolBar: UIToolbar, CellFieldsToolBarProtocol {
     }()
 
     private(set) lazy var forwardButton: UIBarButtonItem = {
-        let forwardButton = UIBarButtonItem(image: #imageLiteral(resourceName: "keyboard_forward"),
+        let forwardButton = UIBarButtonItem(image: self.forwardButtonImage,
                                             style: .plain,
                                             target: self,
                                             action: #selector(forwardAction))
@@ -67,16 +77,17 @@ class CellTextFieldToolBar: UIToolbar, CellFieldsToolBarProtocol {
     private func initialization() {
         barStyle = .default
         isTranslucent = true
+        tintColor = UIColor(hex6: 0x0A84DF)
         sizeToFit()
 
         let leftSpacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let buttonsSpacer1 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        buttonsSpacer1.width = buttonSpace
-        let buttonsSpacer2 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-        buttonsSpacer2.width = buttonSpace
+        let firstButtonsSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        firstButtonsSpacer.width = buttonSpace
+        let secondButtonsSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        secondButtonsSpacer.width = buttonSpace
 
-        setItems([leftSpacer, backButton, buttonsSpacer1, forwardButton, buttonsSpacer2, closeButton], animated: true)
-        items?.forEach { $0.tintColor = customSkyColor }
+        setItems([leftSpacer, backButton, firstButtonsSpacer, forwardButton, secondButtonsSpacer, closeButton], animated: true)
+        items?.forEach { $0.tintColor = tintColor }
     }
 
     // MARK: - Actions
