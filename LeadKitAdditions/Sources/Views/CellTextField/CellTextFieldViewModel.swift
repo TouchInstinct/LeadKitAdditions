@@ -3,7 +3,10 @@ import RxSwift
 
 class CellTextFieldViewModel: CellFieldJumpingProtocol {
 
+    // swiftlint:disable private_variable
     let text: Variable<String?>
+    // swiftlint:enable private_variable
+
     let placeholder: String
 
     let textFieldSettingsBlock: ItemSettingsBlock<UITextField>?

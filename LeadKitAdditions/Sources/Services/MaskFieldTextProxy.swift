@@ -6,7 +6,10 @@ class MaskFieldTextProxy: NSObject {
 
     private var disposeBag = DisposeBag()
 
+    // swiftlint:disable private_variable
     let text = Variable("")
+    // swiftlint:enable private_variable
+
     fileprivate let isCompleteHolder = Variable(false)
     var isComplete: Bool {
         return isCompleteHolder.value

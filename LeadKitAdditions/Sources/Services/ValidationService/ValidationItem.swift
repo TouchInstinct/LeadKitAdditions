@@ -43,7 +43,9 @@ class ValidationItem {
         return validationStateHolder.asObservable()
     }
 
+    // swiftlint:disable private_variable
     let text = Variable<String?>(nil)
+    // swiftlint:enable private_variable
 
     private(set) var rules: [Rule] = []
 

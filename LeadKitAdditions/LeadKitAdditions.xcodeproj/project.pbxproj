@@ -79,6 +79,7 @@
 		ED0C34461F2906EC00FAE9FD /* CellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C34011F2906EC00FAE9FD /* CellTextField.swift */; };
 		ED0C34471F2906EC00FAE9FD /* CellTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C34021F2906EC00FAE9FD /* CellTextFieldViewModel.swift */; };
 		ED0C34481F2906EC00FAE9FD /* CellTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C34021F2906EC00FAE9FD /* CellTextFieldViewModel.swift */; };
+		ED69E7E81F2AC7CC00C74895 /* CellTextFieldToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08E37E1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift */; };
 		EFBD55921EBB9A980062AA63 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -384,7 +385,6 @@
 				CAE698E11E968820000394B0 /* Resources */,
 				94F6E1BA5AD68C6E2F10062B /* [CP] Copy Pods Resources */,
 				CAE6990A1E969A7A000394B0 /* Swiftlint */,
-				CAE6990B1E969A8D000394B0 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -405,6 +405,7 @@
 				EFBD556D1EBB87100062AA63 /* Headers */,
 				EFBD556E1EBB87100062AA63 /* Resources */,
 				808FF5474C0E1574D405EFAF /* [CP] Copy Pods Resources */,
+				ED69E7E91F2AD0E000C74895 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -530,20 +531,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		CAE6990B1E969A8D000394B0 /* Tailor */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Tailor;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if hash tailor 2>/dev/null; then\n    tailor\nelse\n    echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
-		};
 		E8E82E34792B38EF225575D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,6 +545,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		ED69E7E91F2AD0E000C74895 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -630,6 +631,7 @@
 				ED0C340E1F2906EC00FAE9FD /* PassCodeHolder.swift in Sources */,
 				ED0C34461F2906EC00FAE9FD /* CellTextField.swift in Sources */,
 				ED0C34281F2906EC00FAE9FD /* CellFieldsToolBarProtocol.swift in Sources */,
+				ED69E7E81F2AC7CC00C74895 /* CellTextFieldToolBar.swift in Sources */,
 				ED0C342A1F2906EC00FAE9FD /* CellFieldValidationProtocol.swift in Sources */,
 				ED0C34041F2906EC00FAE9FD /* ApiResponse.swift in Sources */,
 				ED0C34081F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */,
