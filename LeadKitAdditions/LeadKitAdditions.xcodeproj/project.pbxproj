@@ -385,7 +385,6 @@
 				CAE698E11E968820000394B0 /* Resources */,
 				94F6E1BA5AD68C6E2F10062B /* [CP] Copy Pods Resources */,
 				CAE6990A1E969A7A000394B0 /* Swiftlint */,
-				CAE6990B1E969A8D000394B0 /* Tailor */,
 			);
 			buildRules = (
 			);
@@ -406,6 +405,7 @@
 				EFBD556D1EBB87100062AA63 /* Headers */,
 				EFBD556E1EBB87100062AA63 /* Resources */,
 				808FF5474C0E1574D405EFAF /* [CP] Copy Pods Resources */,
+				ED69E7E91F2AD0E000C74895 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -531,20 +531,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		CAE6990B1E969A8D000394B0 /* Tailor */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Tailor;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if hash tailor 2>/dev/null; then\n    tailor\nelse\n    echo \"warning: Please install Tailor from https://tailor.sh\"\nfi";
-		};
 		E8E82E34792B38EF225575D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,6 +545,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		ED69E7E91F2AD0E000C74895 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
