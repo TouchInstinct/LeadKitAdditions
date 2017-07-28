@@ -52,9 +52,7 @@ open class BasePassCodeViewModel: BaseViewModel {
         return passCodeControllerStateHolder.asDriver()
     }
 
-    // swiftlint:disable private_variable
-    public let passCodeText = Variable<String?>(nil)
-    // swiftlint:enable private_variable
+    private let passCodeText = Variable<String?>(nil)
 
     fileprivate var attemptsNumber = 0
 
@@ -108,6 +106,16 @@ open class BasePassCodeViewModel: BaseViewModel {
                 }
             })
             .addDisposableTo(disposeBag)
+    }
+
+    // MARK: - Public
+
+    public var passCodeTextValue: String? {
+        return passCodeText.value
+    }
+
+    public func setPassCodeText(_ value: String?) {
+        passCodeText.value = value
     }
 
     public func reset() {

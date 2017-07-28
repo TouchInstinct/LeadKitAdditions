@@ -212,11 +212,11 @@ extension BasePassCodeViewController: ConfigurableController {
 
     open func bindViews() {
         fakeTextField.rx.text.asDriver()
-            .do(onNext: { [weak self] text in
+            .drive(onNext: { [weak self] text in
                 self?.setStates(for: text ?? "")
                 self?.hideError()
+                self?.viewModel.setPassCodeText(text)
             })
-            .drive(viewModel.passCodeText)
             .addDisposableTo(disposeBag)
 
         viewModel.validationResult

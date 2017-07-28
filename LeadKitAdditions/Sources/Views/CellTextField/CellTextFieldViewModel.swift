@@ -3,9 +3,7 @@ import RxSwift
 
 class CellTextFieldViewModel: CellFieldJumpingProtocol {
 
-    // swiftlint:disable private_variable
-    let text: Variable<String?>
-    // swiftlint:enable private_variable
+    private let text: Variable<String?>
 
     let placeholder: String
 
@@ -28,6 +26,16 @@ class CellTextFieldViewModel: CellFieldJumpingProtocol {
         text = Variable(initialText)
         self.placeholder = placeholder
         self.textFieldSettingsBlock = textFieldSettingsBlock
+    }
+
+    // MARK: - Internal
+
+    var textValue: String? {
+        return text.value
+    }
+
+    func setTextValue(_ value: String?) {
+        text.value = value
     }
 
 }
