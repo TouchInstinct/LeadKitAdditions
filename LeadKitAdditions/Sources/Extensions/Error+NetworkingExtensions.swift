@@ -1,4 +1,5 @@
 import Foundation
+import Alamofire
 
 /// Extension for network Error classification
 public extension Error {
@@ -16,5 +17,5 @@ public extension Error {
     var isResponseSerializationError: Bool {
         return (self as? AFError)?.isResponseSerializationError ?? false
     }
-    
+
 }
