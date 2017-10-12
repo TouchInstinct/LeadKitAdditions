@@ -29,7 +29,7 @@ public typealias VoidBlock = () -> Void
 public extension Observable {
 
     /// Handles connection errors during request
-    public func handleConnectionErrors() -> Observable<Observable.E> {
+    func handleConnectionErrors() -> Observable<Observable.E> {
         return observeOn(CurrentThreadScheduler.instance)
 
             // handle no internet connection
@@ -60,7 +60,7 @@ public extension Observable {
         - errorTypes: list of error types, which triggers request restart
         - retryLimit: how many times request can restarts
      */
-    public func retryWithinErrors(_ errorTypes: [Error.Type] = [ConnectionError.self],
+    func retryWithinErrors(_ errorTypes: [Error.Type] = [ConnectionError.self],
                                   retryLimit: Int = DefaultNetworkService.retryLimit)
         -> Observable<Observable.E> {
 
@@ -81,7 +81,7 @@ public extension Observable {
         - apiErrorType: type of errors, received frim server
         - handler: block, that executes, when error occured
      */
-    public func handleApiError<T: ApiErrorProtocol>(_ apiErrorType: T,
+    func handleApiError<T: ApiErrorProtocol>(_ apiErrorType: T,
                                                     handler: @escaping () -> Void) -> Observable<Observable.E>
         where T.RawValue == Int {
 
@@ -98,7 +98,7 @@ public extension Observable {
      
       - parameter isLoading: subject, request state bind to
      */
-    public func changeLoadingBehaviour(isLoading: PublishSubject<Bool>) -> Observable<Observable.E> {
+    func changeLoadingBehaviour(isLoading: PublishSubject<Bool>) -> Observable<Observable.E> {
         return observeOn(CurrentThreadScheduler.instance)
             .do(onNext: { _ in
                 isLoading.onNext(false)
