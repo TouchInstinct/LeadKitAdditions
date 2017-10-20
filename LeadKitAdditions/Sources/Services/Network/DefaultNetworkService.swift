@@ -22,7 +22,6 @@
 
 import Alamofire
 import LeadKit
-import ObjectMapper
 import RxSwift
 
 /// Default implementation of network service, which trust any server and use default timeout interval
