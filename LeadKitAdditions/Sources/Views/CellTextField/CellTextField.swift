@@ -34,13 +34,13 @@ class CellTextField: UITextField {
             .drive(onNext: {
                 viewModel.setTextValue($0)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
-        rx.controlEvent(.editingDidEndOnExit).asObservable()
-            .subscribe(onNext: {
-                viewModel.shouldGoForward.onNext()
+        rx.controlEvent(.editingDidEndOnExit)
+            .subscribe(onNext: { [viewModel] in
+                viewModel.shouldGoForward.onNext(Void())
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
 }

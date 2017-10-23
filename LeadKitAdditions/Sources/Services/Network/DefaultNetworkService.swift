@@ -27,7 +27,9 @@ import RxSwift
 /// Default implementation of network service, which trust any server and use default timeout interval
 open class DefaultNetworkService: NetworkService {
 
-    static let retryLimit = 3
+    open class var retryLimit: UInt {
+        return 3
+    }
 
     private let disposeBag = DisposeBag()
 
@@ -44,7 +46,7 @@ open class DefaultNetworkService: NetworkService {
     public override init(sessionManager: SessionManager) {
         super.init(sessionManager: sessionManager)
 
-        activityIndicatorBinding()?.addDisposableTo(disposeBag)
+        activityIndicatorBinding()?.disposed(by: disposeBag)
     }
 
     // MARK: - Default Values

@@ -93,15 +93,15 @@ class CellTextFieldToolBar: UIToolbar, CellFieldsToolBarProtocol {
     // MARK: - Actions
 
     @objc private func backAction() {
-        shouldGoBackward.onNext()
+        shouldGoBackward.onNext(Void())
     }
 
     @objc private func forwardAction() {
-        shouldGoForward.onNext()
+        shouldGoForward.onNext(Void())
     }
 
     @objc private func doneAction() {
-        shouldEndEditing.onNext()
+        shouldEndEditing.onNext(Void())
     }
 
 }

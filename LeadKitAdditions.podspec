@@ -17,10 +17,10 @@ Pod::Spec.new do |s|
     ]
 
     ss.dependency "LeadKit", '0.6.0'
-    ss.dependency "KeychainAccess", '3.0.2'
+    ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
-    ss.dependency "InputMask", '2.2.5'
-    ss.dependency "SwiftValidator", '4.0.0'
+    ss.dependency "InputMask", '3.0.0'
+    ss.dependency "SwiftValidator", '5.0.0'
   end
 
   s.subspec 'Core-iOS-Extension' do |ss|
@@ -32,10 +32,10 @@ Pod::Spec.new do |s|
     ]
 
     ss.dependency "LeadKit/Core-iOS-Extension", '0.6.0'
-    ss.dependency "KeychainAccess", '3.0.2'
+    ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
-    ss.dependency "InputMask", '2.2.5'
-    ss.dependency "SwiftValidator", '4.0.0'
+    ss.dependency "InputMask", '3.0.0'
+    ss.dependency "SwiftValidator", '5.0.0'
   end
 
   s.default_subspec = 'Core'
