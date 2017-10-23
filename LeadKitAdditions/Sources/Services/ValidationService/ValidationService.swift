@@ -97,7 +97,7 @@ class ValidationService {
                 }
                 .map { $0 ? ValidationServiceState.valid : .invalid }
                 .bind(to: stateHolder)
-                .addDisposableTo(disposeBag)
+                .disposed(by: disposeBag)
         }
     }
 

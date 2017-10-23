@@ -61,15 +61,15 @@ public extension Observable {
         - retryLimit: how many times request can restarts
      */
     func retryWithinErrors(_ errorTypes: [Error.Type] = [ConnectionError.self],
-                                  retryLimit: Int = DefaultNetworkService.retryLimit)
+                           retryLimit: UInt = DefaultNetworkService.retryLimit)
         -> Observable<Observable.E> {
 
             return observeOn(CurrentThreadScheduler.instance)
                 .retryWhen { errors -> Observable<Observable.E> in
-                    return errors.flatMapWithIndex { e, a -> Observable<Observable.E> in
-                        let canRetry = errorTypes.contains { type(of: e) == $0 }
+                    return errors.enumerated().flatMap { attempt, error -> Observable<Observable.E> in
+                        let canRetry = errorTypes.contains { type(of: error) == $0 }
 
-                        return (canRetry && a < retryLimit - 1) ? self : .error(e)
+                        return (canRetry && attempt < retryLimit - 1) ? self : .error(error)
                     }
             }
     }
@@ -82,7 +82,7 @@ public extension Observable {
         - handler: block, that executes, when error occured
      */
     func handleApiError<T: ApiErrorProtocol>(_ apiErrorType: T,
-                                                    handler: @escaping () -> Void) -> Observable<Observable.E>
+                                             handler: @escaping () -> Void) -> Observable<Observable.E>
         where T.RawValue == Int {
 
         return observeOn(CurrentThreadScheduler.instance)
@@ -104,7 +104,7 @@ public extension Observable {
                 isLoading.onNext(false)
             }, onError: { _ in
                 isLoading.onNext(false)
-            }, onSubscribe: { _ in
+            }, onSubscribe: {
                 isLoading.onNext(true)
             })
     }

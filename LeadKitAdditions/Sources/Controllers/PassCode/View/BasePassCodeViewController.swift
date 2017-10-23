@@ -92,7 +92,7 @@ open class BasePassCodeViewController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.resetUI()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
     private func enebleKeyboard() {
@@ -217,7 +217,7 @@ extension BasePassCodeViewController: ConfigurableController {
                 self?.hideError()
                 self?.viewModel.setPassCodeText(text)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         viewModel.validationResult
             .drive(onNext: { [weak self] validationResult in
@@ -231,13 +231,13 @@ extension BasePassCodeViewController: ConfigurableController {
                     self?.showError(for: pasCodeError)
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         viewModel.passCodeControllerState
             .drive(onNext: { [weak self] controllerState in
                 self?.configureUI(for: controllerState)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
     open func addViews() {}

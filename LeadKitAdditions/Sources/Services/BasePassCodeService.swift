@@ -43,7 +43,7 @@ open class BasePassCodeService {
     // MARK: - Private stuff
 
     fileprivate lazy var keychain: Keychain = {
-        return Keychain(service: keychainService)
+        return Keychain(service: BasePassCodeService.keychainService)
             .synchronizable(false)
     }()
 

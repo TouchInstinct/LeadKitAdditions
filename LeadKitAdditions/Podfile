@@ -2,10 +2,10 @@ source "https://github.com/CocoaPods/Specs.git"
 source "https://github.com/TouchInstinct/Podspecs.git"
 
 abstract_target 'LeadKitAdditions' do
-  pod 'KeychainAccess', '3.0.2'
-  pod 'IDZSwiftCommonCrypto', '0.9.1'
-  pod 'SwiftValidator', '4.0.0'
-  pod 'InputMask', '2.2.5'
+  pod 'KeychainAccess', '3.1.0'
+  pod 'IDZSwiftCommonCrypto'
+  pod "InputMask", '3.0.0'
+  pod "SwiftValidator", '5.0.0'
 
   inhibit_all_warnings!
 
@@ -14,7 +14,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod "LeadKit", '0.5.1'
+    pod "LeadKit", '0.6.0'
   end
 
   target 'LeadKitAdditions iOS Extensions' do
@@ -22,7 +22,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod "LeadKit/Core-iOS-Extension", '0.5.1'
+    pod "LeadKit/Core-iOS-Extension", '0.6.0'
   end
 end
 

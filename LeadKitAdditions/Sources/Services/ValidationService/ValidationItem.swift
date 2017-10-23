@@ -58,7 +58,7 @@ class ValidationItem {
             .subscribe(onNext: { [weak self] value in
                 self?.validate(text: value)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
     @discardableResult

@@ -25,14 +25,14 @@ extension CellFieldJumpingProtocol {
             .subscribe(onNext: { [weak textField] _ in
                 textField?.resignFirstResponder()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         shouldBecomeFirstResponder.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak textField] _ in
                 textField?.becomeFirstResponder()
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
 }

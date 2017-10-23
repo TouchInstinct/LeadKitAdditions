@@ -80,7 +80,7 @@ open class BasePassCodeViewModel: BaseViewModel {
                     self?.set(passCode: passCode)
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         validationResultHolder.asDriver()
             .drive(onNext: { [weak self] validationResult in
@@ -105,7 +105,7 @@ open class BasePassCodeViewModel: BaseViewModel {
                     }
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
     }
 
     // MARK: - Public

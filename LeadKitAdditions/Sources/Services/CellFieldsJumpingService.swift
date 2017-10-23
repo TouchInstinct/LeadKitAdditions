@@ -70,7 +70,7 @@ class CellFieldsJumpingService {
                     .subscribe(onNext: { [weak self] in
                         self?.shouldGoForwardAction(from: offset)
                     })
-                    .addDisposableTo(disposeBag)
+                    .disposed(by: disposeBag)
             }
 
         cellFields.lastActive?.returnButtonType = .done
@@ -87,30 +87,30 @@ class CellFieldsJumpingService {
             .subscribe(onNext: { [weak self] in
                 self?.shouldGoForwardAction(from: index)
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
-        toolBar.shouldGoBackward.asObservable()
+        toolBar.shouldGoBackward
             .subscribe(onNext: { [weak self] in
                 if let previousActive = self?.cellFields.previousActive(from: index) {
-                    previousActive.shouldBecomeFirstResponder.onNext()
+                    previousActive.shouldBecomeFirstResponder.onNext(Void())
                 }
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
-        toolBar.shouldEndEditing.asObservable()
-            .subscribe(onNext: {
-                field.shouldResignFirstResponder.onNext()
+        toolBar.shouldEndEditing
+            .subscribe(onNext: { [field] in
+                field.shouldResignFirstResponder.onNext(Void())
             })
-            .addDisposableTo(disposeBag)
+            .disposed(by: disposeBag)
 
         return toolBar
     }
 
     private func shouldGoForwardAction(from index: Int) {
         if let nextActive = cellFields.nextActive(from: index) {
-            nextActive.shouldBecomeFirstResponder.onNext()
+            nextActive.shouldBecomeFirstResponder.onNext(Void())
         } else {
-            didDone.onNext()
+            didDone.onNext(Void())
         }
     }
 
