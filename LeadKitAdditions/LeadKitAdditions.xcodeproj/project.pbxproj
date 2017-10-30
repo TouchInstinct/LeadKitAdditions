@@ -36,8 +36,6 @@
 		ED0C34181F2906EC00FAE9FD /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E31F2906EC00FAE9FD /* ApiError.swift */; };
 		ED0C34191F2906EC00FAE9FD /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */; };
 		ED0C341A1F2906EC00FAE9FD /* ApiErrorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */; };
-		ED0C341B1F2906EC00FAE9FD /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */; };
-		ED0C341C1F2906EC00FAE9FD /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */; };
 		ED0C341D1F2906EC00FAE9FD /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E71F2906EC00FAE9FD /* Observable+Extensions.swift */; };
 		ED0C341E1F2906EC00FAE9FD /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E71F2906EC00FAE9FD /* Observable+Extensions.swift */; };
 		ED0C341F1F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33E81F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift */; };
@@ -108,7 +106,6 @@
 		ED0C33E11F2906EC00FAE9FD /* BasePassCodeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePassCodeViewModel.swift; sourceTree = "<group>"; };
 		ED0C33E31F2906EC00FAE9FD /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorProtocol.swift; sourceTree = "<group>"; };
-		ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		ED0C33E71F2906EC00FAE9FD /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		ED0C33E81F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		ED0C33E91F2906EC00FAE9FD /* UserDefaults+UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserService.swift"; sourceTree = "<group>"; };
@@ -263,7 +260,6 @@
 			children = (
 				ED0C33E31F2906EC00FAE9FD /* ApiError.swift */,
 				ED0C33E41F2906EC00FAE9FD /* ApiErrorProtocol.swift */,
-				ED0C33E51F2906EC00FAE9FD /* ConnectionError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -583,7 +579,6 @@
 				ED0C343D1F2906EC00FAE9FD /* TouchIDService.swift in Sources */,
 				ED0C343F1F2906EC00FAE9FD /* ValidationError.swift in Sources */,
 				ED0C342F1F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
-				ED0C341B1F2906EC00FAE9FD /* ConnectionError.swift in Sources */,
 				ED0C34231F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */,
 				ED0C34411F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
 				ED0C341F1F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,
@@ -626,7 +621,6 @@
 				ED0C343E1F2906EC00FAE9FD /* TouchIDService.swift in Sources */,
 				ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */,
 				ED0C34301F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
-				ED0C341C1F2906EC00FAE9FD /* ConnectionError.swift in Sources */,
 				ED0C34241F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */,
 				ED0C34421F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
 				ED0C34201F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,

@@ -23,35 +23,11 @@
 import RxSwift
 import Alamofire
 import CocoaLumberjack
+import LeadKit
 
 public typealias VoidBlock = () -> Void
 
 public extension Observable {
-
-    /// Handles connection errors during request
-    func handleConnectionErrors() -> Observable<Observable.E> {
-        return observeOn(CurrentThreadScheduler.instance)
-
-            // handle no internet connection
-            .do(onError: { error in
-                if let urlError = error as? URLError,
-                    urlError.code == .notConnectedToInternet ||
-                        urlError.code == .timedOut {
-                    DDLogError("Error: No Connection")
-                    throw ConnectionError.noConnection
-                }
-            })
-
-            // handle unacceptable http status code like "500 Internal Server Error" and others
-            .do(onError: { error in
-                if let afError = error as? AFError,
-                    case let .responseValidationFailed(reason: reason) = afError,
-                    case let .unacceptableStatusCode(code: statusCode) = reason {
-                    DDLogError("Error: Unacceptable HTTP Status Code - \(statusCode)")
-                    throw ConnectionError.noConnection
-                }
-            })
-    }
 
     /**
      Allow to configure request to restart if error occured
@@ -60,7 +36,7 @@ public extension Observable {
         - errorTypes: list of error types, which triggers request restart
         - retryLimit: how many times request can restarts
      */
-    func retryWithinErrors(_ errorTypes: [Error.Type] = [ConnectionError.self],
+    func retryWithinErrors(_ errorTypes: [Error.Type] = [RequestError.self],
                            retryLimit: UInt = DefaultNetworkService.retryLimit)
         -> Observable<Observable.E> {
 

@@ -33,7 +33,6 @@ open class ApiNetworkService: DefaultNetworkService {
         let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
 
         return apiResponseRequest
-            .handleConnectionErrors()
             .map {
                 if $0.model.errorCode == 0 {
                     return try T(JSON: try cast($0.model.result) as [String: Any])
@@ -48,7 +47,6 @@ open class ApiNetworkService: DefaultNetworkService {
         let apiResponseRequest = rxRequest(with: parameters) as Observable<(response: HTTPURLResponse, model: ApiResponse)>
 
         return apiResponseRequest
-            .handleConnectionErrors()
             .map {
                 if $0.model.errorCode == 0,
                     let result = $0.model.result as? Bool {
