@@ -46,7 +46,10 @@ open class DefaultNetworkService: NetworkService {
     public override init(sessionManager: SessionManager) {
         super.init(sessionManager: sessionManager)
 
-        activityIndicatorBinding()?.disposed(by: disposeBag)
+        // Fatal error: `drive*` family of methods can be only called from `MainThread`
+        DispatchQueue.main.async {
+            self.activityIndicatorBinding()?.disposed(by: self.disposeBag)
+        }
     }
 
     // MARK: - Default Values
