@@ -29,23 +29,23 @@ public typealias VoidBlock = () -> Void
 
 public extension Observable {
 
-    /**
-     Allow to configure request to restart if error occured
-     
-      - parameters:
-        - errorTypes: list of error types, which triggers request restart
-        - retryLimit: how many times request can restarts
-     */
-    func retryWithinErrors(_ errorTypes: [Error.Type] = [RequestError.self],
-                           retryLimit: UInt = DefaultNetworkService.retryLimit)
-        -> Observable<Observable.E> {
+    /// A closure that checks for "retryable" error
+    typealias CanRetryClosure = (Error) -> Bool
+
+    /// Allow to configure request to restart if error occured
+    ///
+    /// - Parameters:
+    ///   - retryLimit: how many times request can restarts
+    ///   - canRetryClosure: a closure that checks for "retryable" error
+    /// - Returns: An observable sequence producing the elements of the given sequence repeatedly
+    /// until it terminates successfully or is notified to error or complete.
+    func retry(retryLimit: UInt = DefaultNetworkService.retryLimit,
+               canRetryClosure: @escaping CanRetryClosure) -> Observable<Observable.E> {
 
             return observeOn(CurrentThreadScheduler.instance)
-                .retryWhen { errors -> Observable<Observable.E> in
-                    return errors.enumerated().flatMap { attempt, error -> Observable<Observable.E> in
-                        let canRetry = errorTypes.contains { type(of: error) == $0 }
-
-                        return (canRetry && attempt < retryLimit - 1) ? self : .error(error)
+                .retryWhen { errorsObservable -> Observable<Observable.E> in
+                    return errorsObservable.enumerated().flatMap {
+                        (canRetryClosure($1) && $0 < retryLimit - 1) ? self : .error($1)
                     }
             }
     }
