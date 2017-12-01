@@ -23,53 +23,29 @@
 import RxSwift
 import Alamofire
 import CocoaLumberjack
+import LeadKit
 
 public typealias VoidBlock = () -> Void
 
 public extension Observable {
 
-    /// Handles connection errors during request
-    func handleConnectionErrors() -> Observable<Observable.E> {
-        return observeOn(CurrentThreadScheduler.instance)
+    /// A closure that checks for "retryable" error
+    typealias CanRetryClosure = (Error) -> Bool
 
-            // handle no internet connection
-            .do(onError: { error in
-                if let urlError = error as? URLError,
-                    urlError.code == .notConnectedToInternet ||
-                        urlError.code == .timedOut {
-                    DDLogError("Error: No Connection")
-                    throw ConnectionError.noConnection
-                }
-            })
-
-            // handle unacceptable http status code like "500 Internal Server Error" and others
-            .do(onError: { error in
-                if let afError = error as? AFError,
-                    case let .responseValidationFailed(reason: reason) = afError,
-                    case let .unacceptableStatusCode(code: statusCode) = reason {
-                    DDLogError("Error: Unacceptable HTTP Status Code - \(statusCode)")
-                    throw ConnectionError.noConnection
-                }
-            })
-    }
-
-    /**
-     Allow to configure request to restart if error occured
-     
-      - parameters:
-        - errorTypes: list of error types, which triggers request restart
-        - retryLimit: how many times request can restarts
-     */
-    func retryWithinErrors(_ errorTypes: [Error.Type] = [ConnectionError.self],
-                           retryLimit: UInt = DefaultNetworkService.retryLimit)
-        -> Observable<Observable.E> {
+    /// Allow to configure request to restart if error occured
+    ///
+    /// - Parameters:
+    ///   - retryLimit: how many times request can restarts
+    ///   - canRetryClosure: a closure that checks for "retryable" error
+    /// - Returns: An observable sequence producing the elements of the given sequence repeatedly
+    /// until it terminates successfully or is notified to error or complete.
+    func retry(retryLimit: UInt = DefaultNetworkService.retryLimit,
+               canRetryClosure: @escaping CanRetryClosure) -> Observable<Observable.E> {
 
             return observeOn(CurrentThreadScheduler.instance)
-                .retryWhen { errors -> Observable<Observable.E> in
-                    return errors.enumerated().flatMap { attempt, error -> Observable<Observable.E> in
-                        let canRetry = errorTypes.contains { type(of: error) == $0 }
-
-                        return (canRetry && attempt < retryLimit - 1) ? self : .error(error)
+                .retryWhen { errorsObservable -> Observable<Observable.E> in
+                    return errorsObservable.enumerated().flatMap {
+                        (canRetryClosure($1) && $0 < retryLimit - 1) ? self : .error($1)
                     }
             }
     }
