@@ -2,14 +2,14 @@ import SwiftValidator
 import RxSwift
 import RxCocoa
 
-enum ValidationItemState {
+public enum ValidationItemState {
     case initial
     case correction(ValidationError)
     case error(ValidationError)
     case valid
 }
 
-extension ValidationItemState {
+public extension ValidationItemState {
 
     var isInitial: Bool {
         switch self {
@@ -31,15 +31,15 @@ extension ValidationItemState {
 
 }
 
-class ValidationItem {
+public final class ValidationItem {
 
     private let disposeBag = DisposeBag()
 
     private let validationStateHolder = Variable<ValidationItemState>(.initial)
-    var validationState: ValidationItemState {
+    public var validationState: ValidationItemState {
         return validationStateHolder.value
     }
-    var validationStateObservable: Observable<ValidationItemState> {
+    public var validationStateObservable: Observable<ValidationItemState> {
         return validationStateHolder.asObservable()
     }
 
@@ -47,27 +47,33 @@ class ValidationItem {
 
     private(set) var rules: [Rule] = []
 
-    init(rules: [Rule]) {
+    public init(rules: [Rule], textDriver: Driver<String?>) {
         self.rules = rules
-        bindText()
+
+        bindText(textDriver: textDriver)
     }
 
-    private func bindText() {
-        text.asObservable()
-            .filter { [weak self] _ in !(self?.validationState.isInitial ?? true)}
-            .subscribe(onNext: { [weak self] value in
-                self?.validate(text: value)
+    private func bindText(textDriver: Driver<String?>) {
+        textDriver
+            .drive(text)
+            .disposed(by: disposeBag)
+
+        textDriver.asObservable().withLatestFrom(validationStateHolder.asObservable()) { (text: $0, validationState: $1) }
+            .filter { !$0.validationState.isInitial }
+            .map { $0.text }
+            .subscribe(onNext: { [weak self] text in
+                self?.validate(text: text)
             })
             .disposed(by: disposeBag)
     }
 
-    @discardableResult
-    func manualValidate() -> Bool {
-        return validate(text: text.value, isManual: true)
+    public func manualValidate() -> Bool {
+        validate(text: text.value, isManual: true)
+
+        return validationStateHolder.value.isValid
     }
 
-    @discardableResult
-    private func validate(text: String?, isManual: Bool = false) -> Bool {
+    private func validate(text: String?, isManual: Bool = false) {
         let error = rules.filter {
                 return !$0.validate(text ?? "")
             }
@@ -89,8 +95,6 @@ class ValidationItem {
         } else {
             validationStateHolder.value = .valid
         }
-
-        return validationStateHolder.value.isValid
     }
 
 }

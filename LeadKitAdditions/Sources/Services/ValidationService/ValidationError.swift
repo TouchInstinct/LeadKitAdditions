@@ -1,12 +1,12 @@
 import SwiftValidator
 
-struct ValidationError: Error {
+public struct ValidationError: Error {
 
-    let failedRule: Rule
-    let errorMessage: String?
-    let errorHint: String?
+    public let failedRule: Rule
+    public let errorMessage: String?
+    public let errorHint: String?
 
-    init(failedRule: Rule, errorMessage: String?, errorHint: String? = nil) {
+    public init(failedRule: Rule, errorMessage: String?, errorHint: String? = nil) {
         self.failedRule = failedRule
         self.errorMessage = errorMessage
         self.errorHint = errorHint

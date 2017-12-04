@@ -8,13 +8,13 @@ private enum ValidationServiceStateReactType {
     case each
 }
 
-enum ValidationServiceState {
+public enum ValidationServiceState {
     case initial
     case valid
     case invalid
 }
 
-extension ValidationServiceState {
+public extension ValidationServiceState {
 
     var isValid: Bool {
         return self == .valid
@@ -22,41 +22,45 @@ extension ValidationServiceState {
 
 }
 
-class ValidationService {
+public final class ValidationService {
 
     private var disposeBag = DisposeBag()
 
     private(set) var validationItems: [ValidationItem] = []
 
     private let stateHolder = Variable<ValidationServiceState>(.initial)
-    var state: ValidationServiceState {
+    public var state: ValidationServiceState {
         return stateHolder.value
     }
-    var stateObservable: Observable<ValidationServiceState> {
+    public var stateObservable: Observable<ValidationServiceState> {
         return stateHolder.asObservable()
     }
 
     private var validationStateReactType: ValidationServiceStateReactType = .none
 
-    func register(item: ValidationItem) {
+    public init() {
+        // just to be accessible
+    }
+
+    public func register(item: ValidationItem) {
         register(items: [item])
     }
 
-    func register(items: [ValidationItem]) {
+    public func register(items: [ValidationItem]) {
         validationItems += items
         bindItems()
     }
 
-    func unregisterAll() {
+    public func unregisterAll() {
         validationItems.removeAll()
         bindItems()
     }
 
-    func unregister(item: ValidationItem) {
+    public func unregister(item: ValidationItem) {
         unregister(items: [item])
     }
 
-    func unregister(items: [ValidationItem]) {
+    public func unregister(items: [ValidationItem]) {
         items.forEach { item in
             if let removeIndex = validationItems.index(where: { $0 === item }) {
                 validationItems.remove(at: removeIndex)
@@ -66,8 +70,7 @@ class ValidationService {
         bindItems()
     }
 
-    @discardableResult
-    func validate() -> Bool {
+    public func validate() -> Bool {
         validationStateReactType = .all
         let isValid = validationItems.map { $0.manualValidate() }.reduce(true) { $0 && $1 }
         validationStateReactType = .each

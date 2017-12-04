@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+- **Update**: Access modifiers of `ValidationService`
+
 ## 0.1.1
 
 - **Add**: `acceptableStatusCodes` property in `DefaultNetworkService`.
