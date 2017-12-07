@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.3
+- **Update**: Typical api response keys naming
+
 ## 0.1.2
 - **Update**: Access modifiers of `ValidationService`
 

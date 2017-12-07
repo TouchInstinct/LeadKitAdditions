@@ -34,8 +34,8 @@ public class ApiResponse: ApiResponseProtocol, ImmutableMappable {
 
     public required init(map: Map) throws {
         result = try? map.value("result")
-        errorCode = try map.value("error_code")
-        errorMessage = try? map.value("error_message")
+        errorCode = try map.value("errorCode")
+        errorMessage = try? map.value("errorMessage")
     }
 
 }
