@@ -102,7 +102,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     private func initialDotNumberConfiguration() {
         dotStackView.arrangedSubviews.forEach { dotStackView.removeArrangedSubview($0) }
 
-        for _ in 0..<viewModel.passCodeConfiguration.passCodeCharactersNumber {
+        for _ in 0 ..< viewModel.passCodeConfiguration.passCodeLength {
             let dotImageView = UIImageView()
             dotImageView.translatesAutoresizingMaskIntoConstraints = false
             dotImageView.widthAnchor.constraint(equalTo: dotImageView.heightAnchor, multiplier: 1)
@@ -132,7 +132,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     private func setStates(for passCodeText: String) {
         var statesArray: [PinImageType] = []
 
-        for characterIndex in 0..<viewModel.passCodeConfiguration.passCodeCharactersNumber {
+        for characterIndex in 0..<viewModel.passCodeConfiguration.passCodeLength {
             let state: PinImageType = Int(characterIndex) <= passCodeText.characters.count - 1 ? .entered : .clear
             statesArray.append(state)
         }

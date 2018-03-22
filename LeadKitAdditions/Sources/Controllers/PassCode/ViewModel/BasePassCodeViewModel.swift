@@ -39,26 +39,25 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     /// TouchId service, which can answer if user is authorized by finger
     public let touchIdService: TouchIDService?
+
     /// Contains configuration for pass code operations
     public let passCodeConfiguration: PassCodeConfiguration
 
-    fileprivate let validationResultHolder = Variable<PassCodeValidationResult?>(nil)
+    private let validationResultHolder = Variable<PassCodeValidationResult?>(nil)
     var validationResult: Driver<PassCodeValidationResult?> {
         return validationResultHolder.asDriver()
     }
 
-    fileprivate let passCodeControllerStateHolder = Variable<PassCodeControllerState>(.enter)
+    private let passCodeControllerStateHolder = Variable<PassCodeControllerState>(.enter)
     public var passCodeControllerState: Driver<PassCodeControllerState> {
         return passCodeControllerStateHolder.asDriver()
     }
 
     private let passCodeText = Variable<String?>(nil)
 
-    fileprivate var attemptsNumber = 0
+    private var attemptsNumber = 0
 
-    fileprivate lazy var passCodeHolder: PassCodeHolderProtocol = {
-        return PassCodeHolderBuilder.build(with: self.controllerType)
-    }()
+    private lazy var passCodeHolder: PassCodeHolderProtocol = PassCodeHolderBuilder.build(with: self.controllerType)
 
     public init(controllerType: PassCodeControllerType,
                 passCodeConfiguration: PassCodeConfiguration,
@@ -76,7 +75,7 @@ open class BasePassCodeViewModel: BaseViewModel {
             .distinctUntilChanged { $0 == $1 }
             .drive(onNext: { [weak self] passCode in
                 if let passCode = passCode,
-                    passCode.characters.count == Int(self?.passCodeConfiguration.passCodeCharactersNumber ?? 0) {
+                    passCode.characters.count == Int(self?.passCodeConfiguration.passCodeLength ?? 0) {
                     self?.set(passCode: passCode)
                 }
             })
@@ -184,8 +183,8 @@ extension BasePassCodeViewModel {
                 validationResult = .inValid(.wrongCode)
             }
 
-            if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsLoginNumber)) ||
-                attemptsNumber > Int(passCodeConfiguration.maxAttemptsLoginNumber) {
+            if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsNumber)) ||
+                attemptsNumber > Int(passCodeConfiguration.maxAttemptsNumber) {
                 validationResult = .inValid(.tooManyAttempts)
             }
         }

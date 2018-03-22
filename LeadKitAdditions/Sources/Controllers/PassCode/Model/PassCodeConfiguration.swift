@@ -24,26 +24,22 @@
 public struct PassCodeConfiguration {
 
     /// Pass code length
-    public var passCodeCharactersNumber: UInt = 4
+    public let passCodeLength: Int
+
     /// Incorrect pass code attempts count
-    public var maxAttemptsLoginNumber: UInt = 5
+    public let maxAttemptsNumber: Int
 
     /// Clear input progress when application goes to background
-    public var shouldResetWhenGoBackground: Bool = true
+    public let shouldResetWhenGoBackground: Bool
 
-    private init() {}
-
-    init?(passCodeCharactersNumber: UInt) {
-        guard passCodeCharactersNumber > 0 else {
-            assertionFailure("passCodeCharactersNumber must be greater then 0")
-            return nil
-        }
-        self.passCodeCharactersNumber = passCodeCharactersNumber
+    public init(passCodeLength: Int = 4, maxAttemptsNumber: Int = 5, shouldResetWhenGoBackground: Bool = true) {
+        self.passCodeLength = passCodeLength
+        self.maxAttemptsNumber = maxAttemptsNumber
+        self.shouldResetWhenGoBackground = shouldResetWhenGoBackground
     }
 
     /// Returns configuration with default values
     public static var defaultConfiguration: PassCodeConfiguration {
         return PassCodeConfiguration()
     }
-
 }
