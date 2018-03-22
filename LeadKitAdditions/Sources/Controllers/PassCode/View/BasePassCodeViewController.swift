@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -47,7 +47,7 @@ public enum PassCodeControllerState {
 }
 
 /// Base view controller that operates with pass code
-open class BasePassCodeViewController: UIViewController {
+open class BasePassCodeViewController: UIViewController, ConfigurableController {
 
     public var viewModel: BasePassCodeViewModel!
 
@@ -59,7 +59,7 @@ open class BasePassCodeViewController: UIViewController {
 
     public let disposeBag = DisposeBag()
 
-    fileprivate lazy var fakeTextField: UITextField = {
+    private lazy var fakeTextField: UITextField = {
         let fakeTextField = UITextField()
         fakeTextField.isSecureTextEntry = true
         fakeTextField.keyboardType = .numberPad
@@ -113,7 +113,7 @@ open class BasePassCodeViewController: UIViewController {
         resetDotsUI()
     }
 
-    fileprivate func resetDotsUI() {
+    private func resetDotsUI() {
         fakeTextField.text = nil
         dotStackView.arrangedSubviews
             .flatMap { $0 as? UIImageView }
@@ -129,7 +129,7 @@ open class BasePassCodeViewController: UIViewController {
         imageView.image = imageFor(type: state)
     }
 
-    fileprivate func setStates(for passCodeText: String) {
+    private func setStates(for passCodeText: String) {
         var statesArray: [PinImageType] = []
 
         for characterIndex in 0..<viewModel.passCodeConfiguration.passCodeCharactersNumber {
@@ -142,7 +142,7 @@ open class BasePassCodeViewController: UIViewController {
         }
     }
 
-    fileprivate func showTouchIdIfNeeded(with description: String) {
+    private func showTouchIdIfNeeded(with description: String) {
         guard viewModel.isTouchIdEnabled && viewModel.controllerType == .enter else {
             return
         }
@@ -154,7 +154,7 @@ open class BasePassCodeViewController: UIViewController {
         }
     }
 
-    fileprivate func resetUI() {
+    private func resetUI() {
         resetDotsUI()
         viewModel.reset()
     }
@@ -204,11 +204,7 @@ open class BasePassCodeViewController: UIViewController {
         titleLabel?.text = actionTitle(for: passCodeControllerState)
     }
 
-}
-
-// MARK: - ConfigurableController
-// We need to implement all functions of ConfigurableController protocol to give ability to override them.
-extension BasePassCodeViewController: ConfigurableController {
+    // MARK: - ConfigurableController
 
     open func bindViews() {
         fakeTextField.rx.text.asDriver()
@@ -251,6 +247,7 @@ extension BasePassCodeViewController: ConfigurableController {
 }
 
 // MARK: - UITextFieldDelegate
+
 extension BasePassCodeViewController: UITextFieldDelegate {
 
     public func textField(_ textField: UITextField,
@@ -262,3 +259,4 @@ extension BasePassCodeViewController: UITextFieldDelegate {
     }
 
 }
+
