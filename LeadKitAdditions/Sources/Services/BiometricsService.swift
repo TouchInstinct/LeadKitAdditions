@@ -24,12 +24,12 @@ import LocalAuthentication
 
 public typealias BiometricsAuthHandler = (Bool, Error?) -> Void
 
+
+
 /// Service that provide access to authentication via biometric
 public final class BiometricsService {
 
     private lazy var laContext = LAContext()
-
-    public init() {}
 
     /// Indicates is it possible to authenticate on this device via touch id
     public var canAuthenticateWithBiometrics: Bool {
@@ -43,7 +43,17 @@ public final class BiometricsService {
         - description: prompt on the system alert that describes what for user should attach finger to device
         - authHandler: callback, with parameter, indicates if user authenticate successfuly
      */
-    public func authenticateWithBiometrics(with description: String, authHandler: @escaping BiometricsAuthHandler) {
+    public func authenticateWithBiometrics(with description: String,
+                                           fallback fallbackTitle: String? = nil,
+                                           cancel cancelTitle: String? = nil,
+                                           authHandler: @escaping BiometricsAuthHandler) {
+        if #available(iOS 10.0, *), let cancel = cancelTitle {
+            laContext.localizedCancelTitle = cancelTitle
+        }
+        if let fallback = fallbackTitle {
+            laContext.localizedFallbackTitle = fallbackTitle
+        }
+
         laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { success, error in
             authHandler(success, error)
         }

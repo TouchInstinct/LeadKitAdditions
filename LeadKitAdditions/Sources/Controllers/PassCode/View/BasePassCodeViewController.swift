@@ -77,7 +77,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         initialLoadView()
         initialDotNumberConfiguration()
         configureBackgroundNotifications()
-        showBiometricsRequestIfNeeded(with: touchIdHint)
+        showBiometricsRequestIfNeeded(with: biometricsAuthorizationHint)
     }
 
     override open func viewWillAppear(_ animated: Bool) {
@@ -165,7 +165,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     // MARK: - HAVE TO OVERRIDE
 
     /// Returns prompt that appears on touch id system alert
-    open var touchIdHint: String {
+    open var biometricsAuthorizationHint: String {
         assertionFailure("You should override this var: touchIdHint")
         return ""
     }
