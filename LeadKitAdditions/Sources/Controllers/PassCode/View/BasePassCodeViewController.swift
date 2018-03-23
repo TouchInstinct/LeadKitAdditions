@@ -154,11 +154,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
             return
         }
 
-        viewModel.touchIdService?.authenticateByTouchId(description: description) { [weak self] isSuccess in
-            if isSuccess {
-                self?.viewModel.authSucceed(.touchId)
-            }
-        }
+        viewModel.authenticateUsingBiometrics(with: description)
     }
 
     private func resetUI() {

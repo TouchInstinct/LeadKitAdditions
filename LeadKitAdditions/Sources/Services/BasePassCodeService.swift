@@ -59,8 +59,6 @@ open class BasePassCodeService {
         return keychain[Keys.passCodeHash]
     }
 
-
-
 }
 
 public extension BasePassCodeService {

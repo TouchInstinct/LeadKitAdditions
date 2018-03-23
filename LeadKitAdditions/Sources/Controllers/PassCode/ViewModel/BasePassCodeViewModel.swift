@@ -37,8 +37,8 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     public let disposeBag = DisposeBag()
 
-    /// TouchId service, which can answer if user is authorized by finger
-    public let touchIdService: TouchIDService?
+    /// Service that can answer if user is authorized by biometrics
+    public let biometricsService = BiometricsService()
 
     /// Contains configuration for pass code operations
     public let passCodeConfiguration: PassCodeConfiguration
@@ -59,13 +59,9 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     private lazy var passCodeHolder: PassCodeHolderProtocol = PassCodeHolderBuilder.build(with: self.controllerType)
 
-    public init(controllerType: PassCodeControllerType,
-                passCodeConfiguration: PassCodeConfiguration,
-                touchIdService: TouchIDService? = nil) {
-
+    public init(controllerType: PassCodeControllerType, passCodeConfiguration: PassCodeConfiguration) {
         self.controllerType = controllerType
         self.passCodeConfiguration = passCodeConfiguration
-        self.touchIdService = touchIdService
 
         bindViewModel()
     }
@@ -125,6 +121,16 @@ open class BasePassCodeViewModel: BaseViewModel {
         passCodeHolder.reset()
     }
 
+    public func authenticateUsingBiometrics(with description: String) {
+        biometricsService.authenticateWithBiometrics(with: description) { [weak self] success, error in
+            if success {
+                self?.authSucceed(.touchId)
+            } else {
+                self?.authFailed(with: error)
+            }
+        }
+    }
+
     // MARK: - HAVE TO OVERRIDE
 
     /// Override to check if entered pass code is equal to stored
@@ -133,9 +139,14 @@ open class BasePassCodeViewModel: BaseViewModel {
         return false
     }
 
-    /// Handler called after successful authentication
+    /// Method is called after successful authentication
     open func authSucceed(_ type: PassCodeAuthType) {
         assertionFailure("You should override this method: authSucceed(_ type: PassCodeAuthType)")
+    }
+
+    /// Called when authentication failed
+    open func authFailed(with: Error?) {
+        assertionFailure("You should override this method: authFailed(with: Error)")
     }
 
     // MARK: - Biometrics
