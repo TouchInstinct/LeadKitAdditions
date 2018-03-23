@@ -76,9 +76,20 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
         initialLoadView()
         initialDotNumberConfiguration()
-        enebleKeyboard()
         configureBackgroundNotifications()
         showTouchIdIfNeeded(with: touchIdHint)
+    }
+
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        fakeTextField.becomeFirstResponder()
+    }
+
+    override open func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        fakeTextField.resignFirstResponder()
     }
 
     // MARK: - Private functions
@@ -93,10 +104,6 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
                 self?.resetUI()
             })
             .disposed(by: disposeBag)
-    }
-
-    private func enebleKeyboard() {
-        fakeTextField.becomeFirstResponder()
     }
 
     private func initialDotNumberConfiguration() {
