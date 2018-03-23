@@ -24,6 +24,17 @@ import KeychainAccess
 import CocoaLumberjack
 import IDZSwiftCommonCrypto
 
+private enum Keys {
+    static let passCodeHash        = "passCodeHashKey"
+    static let isBiometricsEnabled = "isBiometricsEnabledKey"
+    static let isInitialLoad       = "isInitialLoadKey"
+}
+
+private enum Values {
+    static let biometricsEnabled = "biometricsEnabled"
+    static let initialLoad       = "initialLoad"
+}
+
 /// Represents base pass code service which encapsulates pass code storing
 open class BasePassCodeService {
 
@@ -48,16 +59,7 @@ open class BasePassCodeService {
         return keychain[Keys.passCodeHash]
     }
 
-    private enum Keys {
-        static let passCodeHash     = "passCodeHash"
-        static let isTouchIdEnabled = "isTouchIdEnabled"
-        static let isInitialLoad    = "isInitialLoad"
-    }
 
-    private enum Values {
-        static let touchIdEnabled = "touchIdEnabled"
-        static let initialLoad = "initialLoad"
-    }
 
 }
 
@@ -68,13 +70,13 @@ public extension BasePassCodeService {
         return keychain[Keys.passCodeHash] != nil
     }
 
-    /// Indicates is it possible to authenticate on this device via touch id
-    var isTouchIdEnabled: Bool {
+    /// Possibility to authenticate via biometrics. TouchID or FaceID
+    var isBiometricsAuthorizationEnabled: Bool {
         get {
-            return keychain[Keys.isTouchIdEnabled] == Values.touchIdEnabled
+            return keychain[Keys.isBiometricsEnabled] == Values.biometricsEnabled
         }
         set {
-            keychain[Keys.isTouchIdEnabled] = newValue ? Values.touchIdEnabled : nil
+            keychain[Keys.isBiometricsEnabled] = newValue ? Values.biometricsEnabled : nil
         }
     }
 
@@ -95,7 +97,7 @@ public extension BasePassCodeService {
     /// Reset pass code settings
     func reset() {
         save(passCode: nil)
-        isTouchIdEnabled = false
+        isBiometricsAuthorizationEnabled = false
     }
 
 }

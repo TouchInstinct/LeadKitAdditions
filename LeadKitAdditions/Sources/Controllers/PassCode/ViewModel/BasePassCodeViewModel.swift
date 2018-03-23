@@ -138,23 +138,23 @@ open class BasePassCodeViewModel: BaseViewModel {
         assertionFailure("You should override this method: authSucceed(_ type: PassCodeAuthType)")
     }
 
-    // MARK: - Functions that can you can override to use TouchId
+    // MARK: - Biometrics
 
-    /// Override to be able use touchId during authentication
-    open var isTouchIdEnabled: Bool {
+    /// Posibility to use biometrics for authentication
+    open var isBiometricsEnabled: Bool {
         return false
     }
 
-    /// You should save user choice about authenticate by touchId
-    open func activateTouchIdForUser() {
-        assertionFailure("You should override this method: activateTouchIdForUser()")
+    /// Notify about activation for biometrics. Remember to save user choice
+    open func activateBiometricsForUser() {
+        assertionFailure("You should override this method: activateBiometricsForUser()")
     }
 
 }
 
 extension BasePassCodeViewModel {
 
-    fileprivate func set(passCode: String) {
+    private func set(passCode: String) {
         passCodeHolder.add(passCode: passCode)
         validateIfNeeded()
 

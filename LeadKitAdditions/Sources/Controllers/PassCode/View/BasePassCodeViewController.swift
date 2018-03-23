@@ -77,7 +77,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         initialLoadView()
         initialDotNumberConfiguration()
         configureBackgroundNotifications()
-        showTouchIdIfNeeded(with: touchIdHint)
+        showBiometricsRequestIfNeeded(with: touchIdHint)
     }
 
     override open func viewWillAppear(_ animated: Bool) {
@@ -149,8 +149,8 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         }
     }
 
-    private func showTouchIdIfNeeded(with description: String) {
-        guard viewModel.isTouchIdEnabled && viewModel.controllerType == .enter else {
+    private func showBiometricsRequestIfNeeded(with description: String) {
+        guard viewModel.isBiometricsEnabled && viewModel.controllerType == .enter else {
             return
         }
 
