@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -180,12 +180,12 @@ extension BasePassCodeViewModel {
             attemptsNumber += 1
 
             if let passCode = validationResult.passCode, !isEnteredPassCodeValid(passCode) {
-                validationResult = .inValid(.wrongCode)
+                validationResult = .invalid(.wrongCode)
             }
 
             if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsNumber)) ||
                 attemptsNumber > Int(passCodeConfiguration.maxAttemptsNumber) {
-                validationResult = .inValid(.tooManyAttempts)
+                validationResult = .invalid(.tooManyAttempts)
             }
         }
 

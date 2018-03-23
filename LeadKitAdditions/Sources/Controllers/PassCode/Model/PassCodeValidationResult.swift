@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -24,33 +24,35 @@
 public enum PassCodeValidationResult {
 
     case valid(String)
-    case inValid(PassCodeError?)
+    case invalid(PassCodeError?)
 
-    public var isValid: Bool {
+}
+
+public extension PassCodeValidationResult {
+    var isValid: Bool {
         switch self {
         case .valid:
             return true
-        default:
+        case .invalid(_):
             return false
         }
     }
 
-    public var passCode: String? {
+    var passCode: String? {
         switch self {
         case let .valid(passCode):
             return passCode
-        default:
+        case .invalid(_):
             return nil
         }
     }
 
-    public var error: PassCodeError? {
+    var error: PassCodeError? {
         switch self {
-        case let .inValid(error):
+        case let .invalid(error):
             return error
-        default:
+        case .valid(_):
             return nil
         }
     }
-
 }
