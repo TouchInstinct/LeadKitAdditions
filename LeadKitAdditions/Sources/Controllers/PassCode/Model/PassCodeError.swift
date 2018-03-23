@@ -21,8 +21,22 @@
 //
 
 /// Describes error, which may occur during pass code entering
+/// - codesNotMatch: Different codes
+/// - wrongCode: Value is remaining attemps
+/// - tooManyAttempts: Attempts limit reached
 public enum PassCodeError: Error {
     case codesNotMatch
-    case wrongCode
+    case wrongCode(Int)
     case tooManyAttempts
+}
+
+public extension PassCodeError {
+    var isTooManyAttempts: Bool {
+        switch self {
+        case .tooManyAttempts:
+            return true
+        default:
+            return false
+        }
+    }
 }

@@ -77,29 +77,8 @@ open class BasePassCodeViewModel: BaseViewModel {
             })
             .disposed(by: disposeBag)
 
-        validationResultHolder.asDriver()
-            .drive(onNext: { [weak self] validationResult in
-                guard let sSelf = self else {
-                    return
-                }
-
-                if sSelf.passCodeHolder.type == .change {
-                    if validationResult?.isValid ?? false,
-                        sSelf.passCodeHolder.enterStep == .repeatEnter,
-                        let passCode = validationResult?.passCode {
-
-                        sSelf.authSucceed(.passCode(passCode))
-                    } else {
-                        sSelf.passCodeControllerStateHolder.value = sSelf.passCodeHolder.enterStep
-                    }
-                } else {
-                    if validationResult?.isValid ?? false, let passCode = validationResult?.passCode {
-                        sSelf.authSucceed(.passCode(passCode))
-                    } else {
-                        sSelf.passCodeControllerStateHolder.value = sSelf.passCodeHolder.enterStep
-                    }
-                }
-            })
+        validationResultHolder.asObservable()
+            .bind(to: validationResultBinder)
             .disposed(by: disposeBag)
     }
 
@@ -163,6 +142,29 @@ open class BasePassCodeViewModel: BaseViewModel {
 
 }
 
+private extension BasePassCodeViewModel {
+    var validationResultBinder: Binder<PassCodeValidationResult?> {
+        return Binder(self) { model, validationResult in
+            let isValid = validationResult?.isValid ?? false
+            let passCode = validationResult?.passCode
+
+            if model.passCodeHolder.type == .change {
+                if isValid, model.passCodeHolder.enterStep == .repeatEnter, let passCode = passCode {
+                    model.authSucceed(.passCode(passCode))
+                } else {
+                    model.passCodeControllerStateHolder.value = model.passCodeHolder.enterStep
+                }
+            } else {
+                if isValid, let passCode = passCode {
+                    model.authSucceed(.passCode(passCode))
+                } else {
+                    model.passCodeControllerStateHolder.value = model.passCodeHolder.enterStep
+                }
+            }
+        }
+    }
+}
+
 extension BasePassCodeViewModel {
 
     private func set(passCode: String) {
@@ -177,7 +179,7 @@ extension BasePassCodeViewModel {
     private var shouldUpdateControllerState: Bool {
         return !passCodeHolder.shouldValidate ||
             !(validationResultHolder.value?.isValid ?? true) ||
-            validationResultHolder.value?.error == .tooManyAttempts
+            validationResultHolder.value?.error?.isTooManyAttempts ?? false
     }
 
     private func validateIfNeeded() {
@@ -191,7 +193,8 @@ extension BasePassCodeViewModel {
             attemptsNumber += 1
 
             if let passCode = validationResult.passCode, !isEnteredPassCodeValid(passCode) {
-                validationResult = .invalid(.wrongCode)
+                assert(passCodeConfiguration.maxAttemptsNumber > attemptsNumber)
+                validationResult = .invalid(.wrongCode(passCodeConfiguration.maxAttemptsNumber - attemptsNumber))
             }
 
             if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsNumber)) ||

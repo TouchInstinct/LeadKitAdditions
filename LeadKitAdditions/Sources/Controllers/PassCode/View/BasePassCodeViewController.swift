@@ -226,8 +226,8 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
                 if validationResult.isValid {
                     self?.hideError()
-                } else if let pasCodeError = validationResult.error {
-                    self?.showError(for: pasCodeError)
+                } else if let passCodeError = validationResult.error {
+                    self?.showError(for: passCodeError)
                 }
             })
             .disposed(by: disposeBag)
