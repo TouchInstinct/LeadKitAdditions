@@ -140,7 +140,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         var statesArray: [PinImageType] = []
 
         for characterIndex in 0..<viewModel.passCodeConfiguration.passCodeLength {
-            let state: PinImageType = Int(characterIndex) <= passCodeText.characters.count - 1 ? .entered : .clear
+            let state: PinImageType = Int(characterIndex) <= passCodeText.count - 1 ? .entered : .clear
             statesArray.append(state)
         }
 

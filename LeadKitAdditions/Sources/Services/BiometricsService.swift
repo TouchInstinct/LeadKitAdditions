@@ -45,12 +45,10 @@ public final class BiometricsService {
                                            fallback fallbackTitle: String? = nil,
                                            cancel cancelTitle: String? = nil,
                                            authHandler: @escaping BiometricsAuthHandler) {
-        if #available(iOS 10.0, *), let cancel = cancelTitle {
+        if #available(iOS 10.0, *) {
             laContext.localizedCancelTitle = cancelTitle
         }
-        if let fallback = fallbackTitle {
-            laContext.localizedFallbackTitle = fallbackTitle
-        }
+        laContext.localizedFallbackTitle = fallbackTitle
 
         laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { success, error in
             authHandler(success, error)

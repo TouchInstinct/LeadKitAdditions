@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A08E37F1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08E37E1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift */; };
 		248389A288C0A6D7914F0546 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
+		678D26AA206935B900B05B93 /* BiometricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D26A9206935B900B05B93 /* BiometricsService.swift */; };
 		A6CFB8D91F5024A500A42CC2 /* Error+NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */; };
 		B326804BA6CC8B8BB136A46A /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,8 +67,6 @@
 		ED0C34391F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F81F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift */; };
 		ED0C343B1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F91F2906EC00FAE9FD /* DefaultNetworkService.swift */; };
 		ED0C343C1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33F91F2906EC00FAE9FD /* DefaultNetworkService.swift */; };
-		ED0C343D1F2906EC00FAE9FD /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */; };
-		ED0C343E1F2906EC00FAE9FD /* TouchIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */; };
 		ED0C343F1F2906EC00FAE9FD /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FC1F2906EC00FAE9FD /* ValidationError.swift */; };
 		ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FC1F2906EC00FAE9FD /* ValidationError.swift */; };
 		ED0C34411F2906EC00FAE9FD /* ValidationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33FD1F2906EC00FAE9FD /* ValidationItem.swift */; };
@@ -87,6 +86,7 @@
 		0A08E37E1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTextFieldToolBar.swift; sourceTree = "<group>"; };
 		0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49738551AC648B0AFA74E57F /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		678D26A9206935B900B05B93 /* BiometricsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricsService.swift; sourceTree = "<group>"; };
 		7B7F57C5E5275C4D8DC71992 /* Pods_LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D549FA5A7579702358E07DF /* Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions.debug.xcconfig"; sourceTree = "<group>"; };
 		A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+NetworkingExtensions.swift"; sourceTree = "<group>"; };
@@ -122,7 +122,6 @@
 		ED0C33F71F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
 		ED0C33F81F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultNetworkService+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		ED0C33F91F2906EC00FAE9FD /* DefaultNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
-		ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDService.swift; sourceTree = "<group>"; };
 		ED0C33FC1F2906EC00FAE9FD /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		ED0C33FD1F2906EC00FAE9FD /* ValidationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationItem.swift; sourceTree = "<group>"; };
 		ED0C33FE1F2906EC00FAE9FD /* ValidationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
@@ -296,7 +295,7 @@
 				ED0C33F21F2906EC00FAE9FD /* BaseUserService.swift */,
 				ED0C33F31F2906EC00FAE9FD /* CellFieldsJumpingService.swift */,
 				ED0C33F41F2906EC00FAE9FD /* MaskFieldTextProxy.swift */,
-				ED0C33FA1F2906EC00FAE9FD /* TouchIDService.swift */,
+				678D26A9206935B900B05B93 /* BiometricsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -531,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = ". build-scripts/xcode/build_phases/swiftlint.sh Sources";
 		};
 		E8E82E34792B38EF225575D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -563,7 +562,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = ". build-scripts/xcode/build_phases/swiftlint.sh Sources";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -576,10 +575,10 @@
 				ED0C343B1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */,
 				ED0C34351F2906EC00FAE9FD /* ApiNetworkService.swift in Sources */,
 				ED0C340F1F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */,
-				ED0C343D1F2906EC00FAE9FD /* TouchIDService.swift in Sources */,
 				ED0C343F1F2906EC00FAE9FD /* ValidationError.swift in Sources */,
 				ED0C342F1F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
 				ED0C34231F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */,
+				678D26AA206935B900B05B93 /* BiometricsService.swift in Sources */,
 				ED0C34411F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
 				ED0C341F1F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,
 				ED0C34091F2906EC00FAE9FD /* PassCodeConfiguration.swift in Sources */,
@@ -618,9 +617,9 @@
 				ED0C343C1F2906EC00FAE9FD /* DefaultNetworkService.swift in Sources */,
 				ED0C34361F2906EC00FAE9FD /* ApiNetworkService.swift in Sources */,
 				ED0C34101F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */,
-				ED0C343E1F2906EC00FAE9FD /* TouchIDService.swift in Sources */,
 				ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */,
 				ED0C34301F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
+				678D267F2069237800B05B93 /* OnlineValidationState.swift in Sources */,
 				ED0C34241F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */,
 				ED0C34421F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
 				ED0C34201F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,

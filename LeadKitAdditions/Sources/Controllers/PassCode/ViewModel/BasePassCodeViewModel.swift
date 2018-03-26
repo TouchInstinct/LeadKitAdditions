@@ -71,7 +71,7 @@ open class BasePassCodeViewModel: BaseViewModel {
             .distinctUntilChanged { $0 == $1 }
             .drive(onNext: { [weak self] passCode in
                 if let passCode = passCode,
-                    passCode.characters.count == Int(self?.passCodeConfiguration.passCodeLength ?? 0) {
+                    passCode.count == Int(self?.passCodeConfiguration.passCodeLength ?? 0) {
                     self?.set(passCode: passCode)
                 }
             })
