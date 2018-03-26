@@ -24,8 +24,6 @@ import LocalAuthentication
 
 public typealias BiometricsAuthHandler = (Bool, Error?) -> Void
 
-
-
 /// Service that provide access to authentication via biometric
 public final class BiometricsService {
 
