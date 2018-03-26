@@ -40,12 +40,12 @@ public final class BiometricsService {
       - parameters:
         - description: prompt on the system alert
         - fallback: alternative action button title on system alert
-        - cancel: cancel Button title on the system alert
+        - cancel: cancel button title on the system alert
         - authHandler: callback, with parameter, indicates if user authenticate successfuly
      */
     public func authenticateWithBiometrics(with description: String,
-                                           fallback fallbackTitle: String? = nil,
-                                           cancel cancelTitle: String? = nil,
+                                           fallback fallbackTitle: String?,
+                                           cancel cancelTitle: String?,
                                            authHandler: @escaping BiometricsAuthHandler) {
         if #available(iOS 10.0, *) {
             laContext.localizedCancelTitle = cancelTitle
