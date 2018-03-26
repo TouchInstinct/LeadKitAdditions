@@ -57,8 +57,8 @@ class CellTextFieldToolBar: UIToolbar, CellFieldsToolBarProtocol {
 
     private(set) lazy var closeButton: UIBarButtonItem = {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
-                                          target: self,
-                                          action: #selector(doneAction))
+                                         target: self,
+                                         action: #selector(doneAction))
         return doneButton
     }()
 

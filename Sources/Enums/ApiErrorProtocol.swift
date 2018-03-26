@@ -20,15 +20,20 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+/// Describes error by raw value (more likely - Int code), received from back-end
+public protocol ApiErrorProtocol: RawRepresentable {}
 
-extension UIBarButtonItem {
+public extension Error {
 
-    /// Creates activity indicator view and bar button item (based on activity indicator)
-    public static var activityIndicator: (barButton: UIBarButtonItem, activityIndicator: UIActivityIndicatorView) {
-        let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .white)
-        let indicatorBar = UIBarButtonItem(customView: indicatorView)
-        return (indicatorBar, indicatorView)
+    /// Method indicates that error is back-end error
+    func isApiError<T: ApiErrorProtocol>(_ apiErrorType: T) -> Bool where T.RawValue == Int {
+        if let error = self as? ApiError,
+            case let .error(code: code, message: _) = error,
+            code == apiErrorType.rawValue {
+            return true
+        } else {
+            return false
+        }
     }
 
 }

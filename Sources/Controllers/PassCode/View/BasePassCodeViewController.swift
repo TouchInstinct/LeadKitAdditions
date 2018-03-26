@@ -53,9 +53,9 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
     // MARK: - IBOutlets
 
-    @IBOutlet public weak var titleLabel: UILabel?
-    @IBOutlet public weak var errorLabel: UILabel?
-    @IBOutlet public weak var dotStackView: UIStackView!
+    @IBOutlet private weak var titleLabel: UILabel?
+    @IBOutlet private weak var errorLabel: UILabel?
+    @IBOutlet private weak var dotStackView: UIStackView!
 
     public let disposeBag = DisposeBag()
 
@@ -140,7 +140,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         var statesArray: [PinImageType] = []
 
         for characterIndex in 0..<viewModel.passCodeConfiguration.passCodeLength {
-            let state: PinImageType = Int(characterIndex) <= passCodeText.characters.count - 1 ? .entered : .clear
+            let state: PinImageType = Int(characterIndex) <= passCodeText.count - 1 ? .entered : .clear
             statesArray.append(state)
         }
 
@@ -262,4 +262,3 @@ extension BasePassCodeViewController: UITextFieldDelegate {
     }
 
 }
-

@@ -96,7 +96,7 @@ public final class ValidationService {
         stateObservables.forEach { observable in
             observable
                 .map { states -> Bool in
-                    return states.map { $0.isValid }.reduce(true) { $0 && $1 }
+                    states.map { $0.isValid }.reduce(true) { $0 && $1 }
                 }
                 .map { $0 ? ValidationServiceState.valid : .invalid }
                 .bind(to: stateHolder)
