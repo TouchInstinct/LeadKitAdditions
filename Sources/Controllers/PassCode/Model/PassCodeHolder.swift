@@ -23,17 +23,17 @@
 import RxSwift
 import RxCocoa
 
-extension PassCodeHolderProtocol {
+public extension PassCodeHolderProtocol {
 
-    public var passCodeHolderCreate: PassCodeHolderCreate? {
+    var passCodeHolderCreate: PassCodeHolderCreate? {
         return self as? PassCodeHolderCreate
     }
 
-    public var passCodeHolderEnter: PassCodeHolderEnter? {
+    var passCodeHolderEnter: PassCodeHolderEnter? {
         return self as? PassCodeHolderEnter
     }
 
-    public var passCodeHolderChange: PassCodeHolderChange? {
+    var passCodeHolderChange: PassCodeHolderChange? {
         return self as? PassCodeHolderChange
     }
 }

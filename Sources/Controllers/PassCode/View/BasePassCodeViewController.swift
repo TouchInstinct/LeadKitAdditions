@@ -53,9 +53,9 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
     // MARK: - IBOutlets
 
-    @IBOutlet public weak var titleLabel: UILabel?
-    @IBOutlet public weak var errorLabel: UILabel?
-    @IBOutlet public weak var dotStackView: UIStackView!
+    @IBOutlet private weak var titleLabel: UILabel?
+    @IBOutlet private weak var errorLabel: UILabel?
+    @IBOutlet private weak var dotStackView: UIStackView!
 
     public let disposeBag = DisposeBag()
 
@@ -262,4 +262,3 @@ extension BasePassCodeViewController: UITextFieldDelegate {
     }
 
 }
-

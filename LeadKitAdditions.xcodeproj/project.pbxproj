@@ -10,6 +10,7 @@
 		0A08E37F1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08E37E1F2A13BF00F9AB62 /* CellTextFieldToolBar.swift */; };
 		248389A288C0A6D7914F0546 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
 		678D26AA206935B900B05B93 /* BiometricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D26A9206935B900B05B93 /* BiometricsService.swift */; };
+		67B4E6EB206941CE00E233EA /* BiometricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D26A9206935B900B05B93 /* BiometricsService.swift */; };
 		A6CFB8D91F5024A500A42CC2 /* Error+NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */; };
 		B326804BA6CC8B8BB136A46A /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD5627139CAB27705F75C07 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -619,7 +620,6 @@
 				ED0C34101F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */,
 				ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */,
 				ED0C34301F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
-				678D267F2069237800B05B93 /* OnlineValidationState.swift in Sources */,
 				ED0C34241F2906EC00FAE9FD /* CellFieldJumpingProtocol.swift in Sources */,
 				ED0C34421F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
 				ED0C34201F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,
@@ -628,6 +628,7 @@
 				ED0C34381F2906EC00FAE9FD /* DefaultNetworkService+ActivityIndicator+Extension.swift in Sources */,
 				ED0C341E1F2906EC00FAE9FD /* Observable+Extensions.swift in Sources */,
 				ED0C34481F2906EC00FAE9FD /* CellTextFieldViewModel.swift in Sources */,
+				67B4E6EB206941CE00E233EA /* BiometricsService.swift in Sources */,
 				ED0C341A1F2906EC00FAE9FD /* ApiErrorProtocol.swift in Sources */,
 				ED0C34141F2906EC00FAE9FD /* BasePassCodeViewController.swift in Sources */,
 				ED0C342E1F2906EC00FAE9FD /* BasePassCodeService.swift in Sources */,

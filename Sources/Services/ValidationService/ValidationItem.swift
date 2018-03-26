@@ -75,12 +75,12 @@ public final class ValidationItem {
 
     private func validate(text: String?, isManual: Bool = false) {
         let error = rules.filter {
-                return !$0.validate(text ?? "")
-            }
-            .map { rule -> ValidationError in
-                return ValidationError(failedRule: rule, errorMessage: rule.errorMessage())
-            }
-            .first
+            !$0.validate(text ?? "")
+        }
+        .map { rule -> ValidationError in
+            ValidationError(failedRule: rule, errorMessage: rule.errorMessage())
+        }
+        .first
 
         if let validationError = error {
             switch validationStateHolder.value {
