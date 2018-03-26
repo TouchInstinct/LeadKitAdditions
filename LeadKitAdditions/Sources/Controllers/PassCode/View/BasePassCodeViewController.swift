@@ -177,9 +177,9 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     }
 
     /// Override to change error description
-    open func errorDescription(for error: PassCodeError) -> String {
+    open func errorDescription(for error: PassCodeError) -> NSAttributedString? {
         assertionFailure("You should override this method: errorDescription(for error: PassCodeError)")
-        return ""
+        return nil
     }
 
     /// Override to change action title text
@@ -192,7 +192,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
     /// Call to show error
     open func showError(for error: PassCodeError) {
-        errorLabel?.text = errorDescription(for: error)
+        errorLabel?.attributedText = errorDescription(for: error)
         errorLabel?.isHidden = false
     }
 
@@ -232,7 +232,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
             })
             .disposed(by: disposeBag)
 
-        viewModel.passCodeControllerState
+        viewModel.passCodeControllerStateDriver
             .drive(onNext: { [weak self] controllerState in
                 self?.configureUI(for: controllerState)
             })

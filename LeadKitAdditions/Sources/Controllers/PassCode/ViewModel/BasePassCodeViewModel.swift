@@ -48,9 +48,9 @@ open class BasePassCodeViewModel: BaseViewModel {
         return validationResultHolder.asDriver()
     }
 
-    private let passCodeControllerStateHolder = Variable<PassCodeControllerState>(.enter)
-    public var passCodeControllerState: Driver<PassCodeControllerState> {
-        return passCodeControllerStateHolder.asDriver()
+    private let passCodeControllerStateVariable = Variable<PassCodeControllerState>(.enter)
+    public var passCodeControllerStateDriver: Driver<PassCodeControllerState> {
+        return passCodeControllerStateVariable.asDriver()
     }
 
     private let passCodeText = Variable<String?>(nil)
@@ -95,7 +95,7 @@ open class BasePassCodeViewModel: BaseViewModel {
     public func reset() {
         passCodeText.value = nil
         validationResultHolder.value = nil
-        passCodeControllerStateHolder.value = controllerType == .change ? .oldEnter : .enter
+        passCodeControllerStateVariable.value = controllerType == .change ? .oldEnter : .enter
         attemptsNumber = 0
         passCodeHolder.reset()
     }
@@ -152,13 +152,13 @@ private extension BasePassCodeViewModel {
                 if isValid, model.passCodeHolder.enterStep == .repeatEnter, let passCode = passCode {
                     model.authSucceed(.passCode(passCode))
                 } else {
-                    model.passCodeControllerStateHolder.value = model.passCodeHolder.enterStep
+                    model.passCodeControllerStateVariable.value = model.passCodeHolder.enterStep
                 }
             } else {
                 if isValid, let passCode = passCode {
                     model.authSucceed(.passCode(passCode))
                 } else {
-                    model.passCodeControllerStateHolder.value = model.passCodeHolder.enterStep
+                    model.passCodeControllerStateVariable.value = model.passCodeHolder.enterStep
                 }
             }
         }
@@ -172,7 +172,7 @@ extension BasePassCodeViewModel {
         validateIfNeeded()
 
         if shouldUpdateControllerState {
-            passCodeControllerStateHolder.value = passCodeHolder.enterStep
+            passCodeControllerStateVariable.value = passCodeHolder.enterStep
         }
     }
 
@@ -189,11 +189,12 @@ extension BasePassCodeViewModel {
 
         var validationResult = passCodeHolder.validate()
 
-        if passCodeHolder.type == .enter || (passCodeHolder.type == .change && passCodeHolder.enterStep == .newEnter) {
+        let passCodeValidationForPassCodeChange = passCodeHolder.type == .change && passCodeHolder.enterStep == .newEnter
+
+        if passCodeHolder.type == .enter || passCodeValidationForPassCodeChange {
             attemptsNumber += 1
 
             if let passCode = validationResult.passCode, !isEnteredPassCodeValid(passCode) {
-                assert(passCodeConfiguration.maxAttemptsNumber > attemptsNumber)
                 validationResult = .invalid(.wrongCode(passCodeConfiguration.maxAttemptsNumber - attemptsNumber))
             }
 
