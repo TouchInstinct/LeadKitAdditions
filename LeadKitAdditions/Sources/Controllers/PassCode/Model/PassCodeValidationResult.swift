@@ -33,7 +33,7 @@ public extension PassCodeValidationResult {
         switch self {
         case .valid:
             return true
-        case .invalid(_):
+        case .invalid:
             return false
         }
     }
@@ -42,7 +42,7 @@ public extension PassCodeValidationResult {
         switch self {
         case let .valid(passCode):
             return passCode
-        case .invalid(_):
+        case .invalid:
             return nil
         }
     }
@@ -51,7 +51,7 @@ public extension PassCodeValidationResult {
         switch self {
         case let .invalid(error):
             return error
-        case .valid(_):
+        case .valid:
             return nil
         }
     }
