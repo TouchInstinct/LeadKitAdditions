@@ -109,13 +109,13 @@ open class BaseDateFormatter {
 
     /// Transformer to workaround with dates in Mappable (ObjectMapper) objects
     public static var transformFromStringToDate: TransformOf<Date, String> {
-        return TransformOf<Date, String>(fromJSON: { (stringValue) -> Date? in
+        return TransformOf<Date, String>(fromJSON: { stringValue -> Date? in
             if let stringValue = stringValue {
                 return backendDate(fromStrDate: stringValue)
             } else {
                 return nil
             }
-        }, toJSON: { (dateValue) -> String? in
+        }, toJSON: { dateValue -> String? in
             if let dateValue = dateValue {
                 return backendStrDate(withDate: dateValue)
             } else {

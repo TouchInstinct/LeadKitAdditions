@@ -44,10 +44,10 @@ public extension Observable {
 
             return observeOn(CurrentThreadScheduler.instance)
                 .retryWhen { errorsObservable -> Observable<Observable.E> in
-                    return errorsObservable.enumerated().flatMap {
+                    errorsObservable.enumerated().flatMap {
                         (canRetryClosure($1) && $0 < retryLimit - 1) ? self : .error($1)
                     }
-            }
+                }
     }
 
     /**
