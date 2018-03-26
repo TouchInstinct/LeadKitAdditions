@@ -77,7 +77,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         initialLoadView()
         initialDotNumberConfiguration()
         configureBackgroundNotifications()
-        showBiometricsRequestIfNeeded(with: biometricsAuthorizationHint)
+        showBiometricsRequestIfNeeded()
     }
 
     override open func viewWillAppear(_ animated: Bool) {
@@ -149,12 +149,14 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         }
     }
 
-    private func showBiometricsRequestIfNeeded(with description: String) {
+    private func showBiometricsRequestIfNeeded() {
         guard viewModel.isBiometricsEnabled && viewModel.controllerType == .enter else {
             return
         }
 
-        viewModel.authenticateUsingBiometrics(with: description)
+        viewModel.authenticateUsingBiometrics(with: biometricsAuthorizationHint,
+                                              fallback: biometricsFallbackButtonTitle,
+                                              cancel: biometricsCancelButtonTitle)
     }
 
     private func resetUI() {
@@ -166,8 +168,20 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
     /// Returns prompt that appears on touch id system alert
     open var biometricsAuthorizationHint: String {
-        assertionFailure("You should override this var: touchIdHint")
+        assertionFailure("You should override this \(#function)")
         return ""
+    }
+
+    /// Returns prompt that appears on touch id system alert
+    open var biometricsFallbackButtonTitle: String? {
+        assertionFailure("You should override this \(#function)")
+        return nil
+    }
+
+    /// Returns prompt that appears on touch id system alert
+    open var biometricsCancelButtonTitle: String? {
+        assertionFailure("You should override this \(#function)")
+        return nil
     }
 
     /// Override to point certain images

@@ -38,7 +38,9 @@ public final class BiometricsService {
      Initiates system biometrics authentication process
 
       - parameters:
-        - description: prompt on the system alert that describes what for user should attach finger to device
+        - description: prompt on the system alert
+        - fallback: alternative action button title on system alert
+        - cancel: cancel Button title on the system alert
         - authHandler: callback, with parameter, indicates if user authenticate successfuly
      */
     public func authenticateWithBiometrics(with description: String,
