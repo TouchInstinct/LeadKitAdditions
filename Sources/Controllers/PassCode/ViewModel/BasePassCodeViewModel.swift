@@ -100,8 +100,8 @@ open class BasePassCodeViewModel: BaseViewModel {
         passCodeHolder.reset()
     }
 
-    public func authenticateUsingBiometrics(with description: String) {
-        biometricsService.authenticateWithBiometrics(with: description) { [weak self] success, error in
+    public func authenticateUsingBiometrics(with description: String, fallback: String?, cancel: String?) {
+        biometricsService.authenticateWithBiometrics(with: description, fallback: fallback, cancel: cancel) { [weak self] success, error in
             if success {
                 self?.authSucceed(.touchId)
             } else {

@@ -38,12 +38,14 @@ public final class BiometricsService {
      Initiates system biometrics authentication process
 
       - parameters:
-        - description: prompt on the system alert that describes what for user should attach finger to device
+        - description: prompt on the system alert
+        - fallback: alternative action button title on system alert
+        - cancel: cancel button title on the system alert
         - authHandler: callback, with parameter, indicates if user authenticate successfuly
      */
     public func authenticateWithBiometrics(with description: String,
-                                           fallback fallbackTitle: String? = nil,
-                                           cancel cancelTitle: String? = nil,
+                                           fallback fallbackTitle: String?,
+                                           cancel cancelTitle: String?,
                                            authHandler: @escaping BiometricsAuthHandler) {
         if #available(iOS 10.0, *) {
             laContext.localizedCancelTitle = cancelTitle

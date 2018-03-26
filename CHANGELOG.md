@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.5
+- **Update**: Passcode private configuration
+
 ## 0.1.4
 - **Update**: Refactor PassCode
 
