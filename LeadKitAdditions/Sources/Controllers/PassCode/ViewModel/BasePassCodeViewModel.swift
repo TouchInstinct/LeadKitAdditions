@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -37,36 +37,31 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     public let disposeBag = DisposeBag()
 
-    /// TouchId service, which can answer if user is authorized by finger
-    public let touchIdService: TouchIDService?
+    /// Service that can answer if user is authorized by biometrics
+    public let biometricsService = BiometricsService()
+
     /// Contains configuration for pass code operations
     public let passCodeConfiguration: PassCodeConfiguration
 
-    fileprivate let validationResultHolder = Variable<PassCodeValidationResult?>(nil)
+    private let validationResultHolder = Variable<PassCodeValidationResult?>(nil)
     var validationResult: Driver<PassCodeValidationResult?> {
         return validationResultHolder.asDriver()
     }
 
-    fileprivate let passCodeControllerStateHolder = Variable<PassCodeControllerState>(.enter)
-    public var passCodeControllerState: Driver<PassCodeControllerState> {
-        return passCodeControllerStateHolder.asDriver()
+    private let passCodeControllerStateVariable = Variable<PassCodeControllerState>(.enter)
+    public var passCodeControllerStateDriver: Driver<PassCodeControllerState> {
+        return passCodeControllerStateVariable.asDriver()
     }
 
     private let passCodeText = Variable<String?>(nil)
 
-    fileprivate var attemptsNumber = 0
+    private var attemptsNumber = 0
 
-    fileprivate lazy var passCodeHolder: PassCodeHolderProtocol = {
-        return PassCodeHolderBuilder.build(with: self.controllerType)
-    }()
+    private lazy var passCodeHolder: PassCodeHolderProtocol = PassCodeHolderBuilder.build(with: self.controllerType)
 
-    public init(controllerType: PassCodeControllerType,
-                passCodeConfiguration: PassCodeConfiguration,
-                touchIdService: TouchIDService? = nil) {
-
+    public init(controllerType: PassCodeControllerType, passCodeConfiguration: PassCodeConfiguration) {
         self.controllerType = controllerType
         self.passCodeConfiguration = passCodeConfiguration
-        self.touchIdService = touchIdService
 
         bindViewModel()
     }
@@ -76,35 +71,14 @@ open class BasePassCodeViewModel: BaseViewModel {
             .distinctUntilChanged { $0 == $1 }
             .drive(onNext: { [weak self] passCode in
                 if let passCode = passCode,
-                    passCode.characters.count == Int(self?.passCodeConfiguration.passCodeCharactersNumber ?? 0) {
+                    passCode.characters.count == Int(self?.passCodeConfiguration.passCodeLength ?? 0) {
                     self?.set(passCode: passCode)
                 }
             })
             .disposed(by: disposeBag)
 
-        validationResultHolder.asDriver()
-            .drive(onNext: { [weak self] validationResult in
-                guard let sSelf = self else {
-                    return
-                }
-
-                if sSelf.passCodeHolder.type == .change {
-                    if validationResult?.isValid ?? false,
-                        sSelf.passCodeHolder.enterStep == .repeatEnter,
-                        let passCode = validationResult?.passCode {
-
-                        sSelf.authSucceed(.passCode(passCode))
-                    } else {
-                        sSelf.passCodeControllerStateHolder.value = sSelf.passCodeHolder.enterStep
-                    }
-                } else {
-                    if validationResult?.isValid ?? false, let passCode = validationResult?.passCode {
-                        sSelf.authSucceed(.passCode(passCode))
-                    } else {
-                        sSelf.passCodeControllerStateHolder.value = sSelf.passCodeHolder.enterStep
-                    }
-                }
-            })
+        validationResultHolder.asObservable()
+            .bind(to: validationResultBinder)
             .disposed(by: disposeBag)
     }
 
@@ -121,9 +95,19 @@ open class BasePassCodeViewModel: BaseViewModel {
     public func reset() {
         passCodeText.value = nil
         validationResultHolder.value = nil
-        passCodeControllerStateHolder.value = controllerType == .change ? .oldEnter : .enter
+        passCodeControllerStateVariable.value = controllerType == .change ? .oldEnter : .enter
         attemptsNumber = 0
         passCodeHolder.reset()
+    }
+
+    public func authenticateUsingBiometrics(with description: String) {
+        biometricsService.authenticateWithBiometrics(with: description) { [weak self] success, error in
+            if success {
+                self?.authSucceed(.touchId)
+            } else {
+                self?.authFailed(with: error)
+            }
+        }
     }
 
     // MARK: - HAVE TO OVERRIDE
@@ -134,40 +118,68 @@ open class BasePassCodeViewModel: BaseViewModel {
         return false
     }
 
-    /// Handler called after successful authentication
+    /// Method is called after successful authentication
     open func authSucceed(_ type: PassCodeAuthType) {
         assertionFailure("You should override this method: authSucceed(_ type: PassCodeAuthType)")
     }
 
-    // MARK: - Functions that can you can override to use TouchId
+    /// Called when authentication failed
+    open func authFailed(with: Error?) {
+        assertionFailure("You should override this method: authFailed(with: Error)")
+    }
 
-    /// Override to be able use touchId during authentication
-    open var isTouchIdEnabled: Bool {
+    // MARK: - Biometrics
+
+    /// Posibility to use biometrics for authentication
+    open var isBiometricsEnabled: Bool {
         return false
     }
 
-    /// You should save user choice about authenticate by touchId
-    open func activateTouchIdForUser() {
-        assertionFailure("You should override this method: activateTouchIdForUser()")
+    /// Notify about activation for biometrics. Remember to save user choice
+    open func activateBiometricsForUser() {
+        assertionFailure("You should override this method: activateBiometricsForUser()")
     }
 
 }
 
+private extension BasePassCodeViewModel {
+    var validationResultBinder: Binder<PassCodeValidationResult?> {
+        return Binder(self) { model, validationResult in
+            let isValid = validationResult?.isValid ?? false
+            let passCode = validationResult?.passCode
+
+            if model.passCodeHolder.type == .change {
+                if isValid, model.passCodeHolder.enterStep == .repeatEnter, let passCode = passCode {
+                    model.authSucceed(.passCode(passCode))
+                } else {
+                    model.passCodeControllerStateVariable.value = model.passCodeHolder.enterStep
+                }
+            } else {
+                if isValid, let passCode = passCode {
+                    model.authSucceed(.passCode(passCode))
+                } else {
+                    model.passCodeControllerStateVariable.value = model.passCodeHolder.enterStep
+                }
+            }
+        }
+    }
+}
+
 extension BasePassCodeViewModel {
 
-    fileprivate func set(passCode: String) {
+    private func set(passCode: String) {
         passCodeHolder.add(passCode: passCode)
         validateIfNeeded()
 
         if shouldUpdateControllerState {
-            passCodeControllerStateHolder.value = passCodeHolder.enterStep
+            passCodeControllerStateVariable.value = passCodeHolder.enterStep
         }
     }
 
     private var shouldUpdateControllerState: Bool {
         return !passCodeHolder.shouldValidate ||
             !(validationResultHolder.value?.isValid ?? true) ||
-            validationResultHolder.value?.error == .tooManyAttempts
+            validationResultHolder.value?.error?.isTooManyAttempts ?? false
     }
 
     private func validateIfNeeded() {
@@ -177,16 +189,18 @@ extension BasePassCodeViewModel {
 
         var validationResult = passCodeHolder.validate()
 
-        if passCodeHolder.type == .enter || (passCodeHolder.type == .change && passCodeHolder.enterStep == .newEnter) {
+        let passCodeValidationForPassCodeChange = passCodeHolder.type == .change && passCodeHolder.enterStep == .newEnter
+
+        if passCodeHolder.type == .enter || passCodeValidationForPassCodeChange {
             attemptsNumber += 1
 
             if let passCode = validationResult.passCode, !isEnteredPassCodeValid(passCode) {
-                validationResult = .inValid(.wrongCode)
+                validationResult = .invalid(.wrongCode(passCodeConfiguration.maxAttemptsNumber - attemptsNumber))
             }
 
-            if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsLoginNumber)) ||
-                attemptsNumber > Int(passCodeConfiguration.maxAttemptsLoginNumber) {
-                validationResult = .inValid(.tooManyAttempts)
+            if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsNumber)) ||
+                attemptsNumber > Int(passCodeConfiguration.maxAttemptsNumber) {
+                validationResult = .invalid(.tooManyAttempts)
             }
         }
 

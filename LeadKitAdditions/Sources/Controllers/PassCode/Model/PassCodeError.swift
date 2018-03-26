@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -21,8 +21,22 @@
 //
 
 /// Describes error, which may occur during pass code entering
+/// - codesNotMatch: Different codes
+/// - wrongCode: Value is remaining attemps
+/// - tooManyAttempts: Attempts limit reached
 public enum PassCodeError: Error {
     case codesNotMatch
-    case wrongCode
+    case wrongCode(Int)
     case tooManyAttempts
+}
+
+public extension PassCodeError {
+    var isTooManyAttempts: Bool {
+        switch self {
+        case .tooManyAttempts:
+            return true
+        default:
+            return false
+        }
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -47,7 +47,7 @@ public enum PassCodeControllerState {
 }
 
 /// Base view controller that operates with pass code
-open class BasePassCodeViewController: UIViewController {
+open class BasePassCodeViewController: UIViewController, ConfigurableController {
 
     public var viewModel: BasePassCodeViewModel!
 
@@ -59,7 +59,7 @@ open class BasePassCodeViewController: UIViewController {
 
     public let disposeBag = DisposeBag()
 
-    fileprivate lazy var fakeTextField: UITextField = {
+    private lazy var fakeTextField: UITextField = {
         let fakeTextField = UITextField()
         fakeTextField.isSecureTextEntry = true
         fakeTextField.keyboardType = .numberPad
@@ -76,9 +76,20 @@ open class BasePassCodeViewController: UIViewController {
 
         initialLoadView()
         initialDotNumberConfiguration()
-        enebleKeyboard()
         configureBackgroundNotifications()
-        showTouchIdIfNeeded(with: touchIdHint)
+        showBiometricsRequestIfNeeded(with: biometricsAuthorizationHint)
+    }
+
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        fakeTextField.becomeFirstResponder()
+    }
+
+    override open func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        fakeTextField.resignFirstResponder()
     }
 
     // MARK: - Private functions
@@ -95,14 +106,10 @@ open class BasePassCodeViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    private func enebleKeyboard() {
-        fakeTextField.becomeFirstResponder()
-    }
-
     private func initialDotNumberConfiguration() {
         dotStackView.arrangedSubviews.forEach { dotStackView.removeArrangedSubview($0) }
 
-        for _ in 0..<viewModel.passCodeConfiguration.passCodeCharactersNumber {
+        for _ in 0 ..< viewModel.passCodeConfiguration.passCodeLength {
             let dotImageView = UIImageView()
             dotImageView.translatesAutoresizingMaskIntoConstraints = false
             dotImageView.widthAnchor.constraint(equalTo: dotImageView.heightAnchor, multiplier: 1)
@@ -113,7 +120,7 @@ open class BasePassCodeViewController: UIViewController {
         resetDotsUI()
     }
 
-    fileprivate func resetDotsUI() {
+    private func resetDotsUI() {
         fakeTextField.text = nil
         dotStackView.arrangedSubviews
             .flatMap { $0 as? UIImageView }
@@ -129,10 +136,10 @@ open class BasePassCodeViewController: UIViewController {
         imageView.image = imageFor(type: state)
     }
 
-    fileprivate func setStates(for passCodeText: String) {
+    private func setStates(for passCodeText: String) {
         var statesArray: [PinImageType] = []
 
-        for characterIndex in 0..<viewModel.passCodeConfiguration.passCodeCharactersNumber {
+        for characterIndex in 0..<viewModel.passCodeConfiguration.passCodeLength {
             let state: PinImageType = Int(characterIndex) <= passCodeText.characters.count - 1 ? .entered : .clear
             statesArray.append(state)
         }
@@ -142,19 +149,15 @@ open class BasePassCodeViewController: UIViewController {
         }
     }
 
-    fileprivate func showTouchIdIfNeeded(with description: String) {
-        guard viewModel.isTouchIdEnabled && viewModel.controllerType == .enter else {
+    private func showBiometricsRequestIfNeeded(with description: String) {
+        guard viewModel.isBiometricsEnabled && viewModel.controllerType == .enter else {
             return
         }
 
-        viewModel.touchIdService?.authenticateByTouchId(description: description) { [weak self] isSuccess in
-            if isSuccess {
-                self?.viewModel.authSucceed(.touchId)
-            }
-        }
+        viewModel.authenticateUsingBiometrics(with: description)
     }
 
-    fileprivate func resetUI() {
+    private func resetUI() {
         resetDotsUI()
         viewModel.reset()
     }
@@ -162,7 +165,7 @@ open class BasePassCodeViewController: UIViewController {
     // MARK: - HAVE TO OVERRIDE
 
     /// Returns prompt that appears on touch id system alert
-    open var touchIdHint: String {
+    open var biometricsAuthorizationHint: String {
         assertionFailure("You should override this var: touchIdHint")
         return ""
     }
@@ -174,9 +177,9 @@ open class BasePassCodeViewController: UIViewController {
     }
 
     /// Override to change error description
-    open func errorDescription(for error: PassCodeError) -> String {
+    open func errorDescription(for error: PassCodeError) -> NSAttributedString? {
         assertionFailure("You should override this method: errorDescription(for error: PassCodeError)")
-        return ""
+        return nil
     }
 
     /// Override to change action title text
@@ -189,7 +192,7 @@ open class BasePassCodeViewController: UIViewController {
 
     /// Call to show error
     open func showError(for error: PassCodeError) {
-        errorLabel?.text = errorDescription(for: error)
+        errorLabel?.attributedText = errorDescription(for: error)
         errorLabel?.isHidden = false
     }
 
@@ -204,11 +207,7 @@ open class BasePassCodeViewController: UIViewController {
         titleLabel?.text = actionTitle(for: passCodeControllerState)
     }
 
-}
-
-// MARK: - ConfigurableController
-// We need to implement all functions of ConfigurableController protocol to give ability to override them.
-extension BasePassCodeViewController: ConfigurableController {
+    // MARK: - ConfigurableController
 
     open func bindViews() {
         fakeTextField.rx.text.asDriver()
@@ -227,13 +226,13 @@ extension BasePassCodeViewController: ConfigurableController {
 
                 if validationResult.isValid {
                     self?.hideError()
-                } else if let pasCodeError = validationResult.error {
-                    self?.showError(for: pasCodeError)
+                } else if let passCodeError = validationResult.error {
+                    self?.showError(for: passCodeError)
                 }
             })
             .disposed(by: disposeBag)
 
-        viewModel.passCodeControllerState
+        viewModel.passCodeControllerStateDriver
             .drive(onNext: { [weak self] controllerState in
                 self?.configureUI(for: controllerState)
             })
@@ -251,6 +250,7 @@ extension BasePassCodeViewController: ConfigurableController {
 }
 
 // MARK: - UITextFieldDelegate
+
 extension BasePassCodeViewController: UITextFieldDelegate {
 
     public func textField(_ textField: UITextField,
@@ -262,3 +262,4 @@ extension BasePassCodeViewController: UITextFieldDelegate {
     }
 
 }
+

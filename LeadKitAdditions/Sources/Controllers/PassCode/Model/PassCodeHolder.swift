@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -81,7 +81,7 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
         if let passCode = passCode {
             return .valid(passCode)
         } else {
-            return .inValid(.codesNotMatch)
+            return .invalid(.codesNotMatch)
         }
     }
 
@@ -112,7 +112,7 @@ public class PassCodeHolderEnter: PassCodeHolderProtocol {
         if let passCode = passCode {
             return .valid(passCode)
         } else {
-            return .inValid(nil)
+            return .invalid(nil)
         }
     }
 
@@ -178,7 +178,7 @@ public class PassCodeHolderChange: PassCodeHolderProtocol {
         if let passCode = passCode {
             return .valid(passCode)
         } else {
-            return .inValid(enterStep == .newEnter ? nil : .codesNotMatch)
+            return .invalid(enterStep == .newEnter ? nil : .codesNotMatch)
         }
     }
 

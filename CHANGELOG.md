@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.4
+- **Update**: Refactor PassCode
+
 ## 0.1.3
 - **Update**: Typical api response keys naming
 

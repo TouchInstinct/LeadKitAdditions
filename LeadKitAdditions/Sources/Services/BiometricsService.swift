@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -22,34 +22,38 @@
 
 import LocalAuthentication
 
-public typealias TouchIDServiceAuthHandler = (Bool) -> Void
+public typealias BiometricsAuthHandler = (Bool, Error?) -> Void
 
-/// Represents service that provides access to authentication via touch id
-public class TouchIDService {
+/// Service that provide access to authentication via biometric
+public final class BiometricsService {
 
-    private lazy var laContext: LAContext = {
-        return LAContext()
-    }()
-
-    public init() {}
+    private lazy var laContext = LAContext()
 
     /// Indicates is it possible to authenticate on this device via touch id
-    public var canAuthenticateByTouchId: Bool {
+    public var canAuthenticateWithBiometrics: Bool {
         return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 
     /**
-     Initiates system touch id authentication process
+     Initiates system biometrics authentication process
 
       - parameters:
         - description: prompt on the system alert that describes what for user should attach finger to device
         - authHandler: callback, with parameter, indicates if user authenticate successfuly
      */
-    public func authenticateByTouchId(description: String, authHandler: @escaping TouchIDServiceAuthHandler) {
-        laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics,
-                                 localizedReason: description) { success, _ in
+    public func authenticateWithBiometrics(with description: String,
+                                           fallback fallbackTitle: String? = nil,
+                                           cancel cancelTitle: String? = nil,
+                                           authHandler: @escaping BiometricsAuthHandler) {
+        if #available(iOS 10.0, *), let cancel = cancelTitle {
+            laContext.localizedCancelTitle = cancelTitle
+        }
+        if let fallback = fallbackTitle {
+            laContext.localizedFallbackTitle = fallbackTitle
+        }
 
-            authHandler(success)
+        laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: description) { success, error in
+            authHandler(success, error)
         }
     }
 

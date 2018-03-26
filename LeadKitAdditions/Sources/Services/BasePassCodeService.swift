@@ -1,5 +1,5 @@
 //
-//  Copyright (c) 2017 Touch Instinct
+//  Copyright (c) 2018 Touch Instinct
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the Software), to deal
@@ -24,11 +24,22 @@ import KeychainAccess
 import CocoaLumberjack
 import IDZSwiftCommonCrypto
 
+private enum Keys {
+    static let passCodeHash        = "passCodeHashKey"
+    static let isBiometricsEnabled = "isBiometricsEnabledKey"
+    static let isInitialLoad       = "isInitialLoadKey"
+}
+
+private enum Values {
+    static let biometricsEnabled = "biometricsEnabled"
+    static let initialLoad       = "initialLoad"
+}
+
 /// Represents base pass code service which encapsulates pass code storing
 open class BasePassCodeService {
 
     /// Override to set specific keychain service name
-    open class var keychainService: String {
+    open class var keychainServiceString: String {
         return Bundle.main.bundleIdentifier ?? ""
     }
 
@@ -42,47 +53,33 @@ open class BasePassCodeService {
 
     // MARK: - Private stuff
 
-    fileprivate lazy var keychain: Keychain = {
-        return Keychain(service: BasePassCodeService.keychainService)
-            .synchronizable(false)
-    }()
+    private lazy var keychain = Keychain(service: BasePassCodeService.keychainServiceString).synchronizable(false)
 
-    fileprivate var passCodeHash: String? {
+    private var passCodeHash: String? {
         return keychain[Keys.passCodeHash]
-    }
-
-    fileprivate enum Keys {
-        static let passCodeHash     = "passCodeHash"
-        static let isTouchIdEnabled = "isTouchIdEnabled"
-        static let isInitialLoad    = "isInitialLoad"
-    }
-
-    fileprivate enum Values {
-        static let touchIdEnabled = "touchIdEnabled"
-        static let initialLoad = "initialLoad"
     }
 
 }
 
-extension BasePassCodeService {
+public extension BasePassCodeService {
 
     /// Indicates is pass code already saved on this device
-    public var isPassCodeSaved: Bool {
+    var isPassCodeSaved: Bool {
         return keychain[Keys.passCodeHash] != nil
     }
 
-    /// Indicates is it possible to authenticate on this device via touch id
-    public var isTouchIdEnabled: Bool {
+    /// Possibility to authenticate via biometrics. TouchID or FaceID
+    var isBiometricsAuthorizationEnabled: Bool {
         get {
-            return keychain[Keys.isTouchIdEnabled] == Values.touchIdEnabled
+            return keychain[Keys.isBiometricsEnabled] == Values.biometricsEnabled
         }
         set {
-            keychain[Keys.isTouchIdEnabled] = newValue ? Values.touchIdEnabled : nil
+            keychain[Keys.isBiometricsEnabled] = newValue ? Values.biometricsEnabled : nil
         }
     }
 
     /// Saves new pass code
-    public func save(passCode: String?) {
+    func save(passCode: String?) {
         if let passCode = passCode {
             keychain[Keys.passCodeHash] = sha256(passCode)
         } else {
@@ -91,14 +88,14 @@ extension BasePassCodeService {
     }
 
     /// Check if pass code is correct
-    public func check(passCode: String) -> Bool {
+    func check(passCode: String) -> Bool {
         return sha256(passCode) == passCodeHash
     }
 
     /// Reset pass code settings
-    public func reset() {
+    func reset() {
         save(passCode: nil)
-        isTouchIdEnabled = false
+        isBiometricsAuthorizationEnabled = false
     }
 
 }
