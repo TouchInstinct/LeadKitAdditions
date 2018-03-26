@@ -183,9 +183,9 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     }
 
     /// Override to change action title text
-    open func actionTitle(for passCodeControllerState: PassCodeControllerState) -> String {
+    open func actionTitle(for passCodeControllerState: PassCodeControllerState) -> NSAttributedString {
         assertionFailure("You should override this method: actionTitle(for passCodeControllerState: PassCodeControllerState)")
-        return ""
+        return NSAttributedString(string: "")
     }
 
     // MARK: - Functions that you can override to customize your controller
@@ -204,7 +204,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     /// Override to change UI for state
     open func configureUI(for passCodeControllerState: PassCodeControllerState) {
         resetDotsUI()
-        titleLabel?.text = actionTitle(for: passCodeControllerState)
+        titleLabel?.attributedText = actionTitle(for: passCodeControllerState)
     }
 
     // MARK: - ConfigurableController
