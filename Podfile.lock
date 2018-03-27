@@ -6,9 +6,9 @@ PODS:
   - IDZSwiftCommonCrypto (0.10.0)
   - InputMask (3.0.0)
   - KeychainAccess (3.1.0)
-  - LeadKit (0.6.7):
-    - LeadKit/Core (= 0.6.7)
-  - LeadKit/Core (0.6.7):
+  - LeadKit (0.7.0):
+    - LeadKit/Core (= 0.7.0)
+  - LeadKit/Core (0.7.0):
     - CocoaLumberjack/Swift (~> 3.4)
     - ObjectMapper (~> 3.0)
     - RxAlamofire (~> 4.1)
@@ -16,7 +16,7 @@ PODS:
     - RxSwift (~> 4.1)
     - TableKit (~> 2.6)
     - UIScrollView-InfiniteScroll (~> 1.0.0)
-  - LeadKit/Core-iOS-Extension (0.6.7):
+  - LeadKit/Core-iOS-Extension (0.7.0):
     - CocoaLumberjack/Swift (~> 3.4)
     - ObjectMapper (~> 3.0)
     - RxAlamofire (~> 4.1)
@@ -40,20 +40,10 @@ DEPENDENCIES:
   - IDZSwiftCommonCrypto
   - InputMask (= 3.0.0)
   - KeychainAccess (= 3.1.0)
-  - LeadKit (from `https://github.com/TouchInstinct/LeadKit`, branch `feature/text_field_view_model`)
-  - LeadKit/Core-iOS-Extension (from `https://github.com/TouchInstinct/LeadKit`, branch `feature/text_field_view_model`)
+  - LeadKit (~> 0.7.0)
+  - LeadKit/Core-iOS-Extension (~> 0.7.0)
   - SwiftLint (~> 0.25)
   - SwiftValidator (= 5.0.0)
-
-EXTERNAL SOURCES:
-  LeadKit:
-    :branch: feature/text_field_view_model
-    :git: https://github.com/TouchInstinct/LeadKit
-
-CHECKOUT OPTIONS:
-  LeadKit:
-    :commit: 463279d2865b2e77bd727e18d7bc9793c9539160
-    :git: https://github.com/TouchInstinct/LeadKit
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -61,7 +51,7 @@ SPEC CHECKSUMS:
   IDZSwiftCommonCrypto: 4eef2c46e262dfbcbc1fd76365e066336680ad7d
   InputMask: 37c273bde6705187d80cf0b4240cb42ea92096c3
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  LeadKit: d6dd4ec58e535c3a76cbc78b53d283278f61cbfa
+  LeadKit: 86250de67f264b5a9bdfd5ddb04a8f8d084acaf3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
@@ -71,6 +61,6 @@ SPEC CHECKSUMS:
   TableKit: 61880e4c13ac0ba396a308fcb1ae48f6dec8b458
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: d35945b0ded474b18dc52df4f9b12cb7fdf59377
+PODFILE CHECKSUM: b9c752a6fd2bd5c6ecdab991fac4af266941ddf1
 
 COCOAPODS: 1.4.0

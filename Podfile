@@ -15,7 +15,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod 'LeadKit', :git => 'https://github.com/TouchInstinct/LeadKit', :branch => 'feature/text_field_view_model'
+    pod 'LeadKit', '~> 0.7.0'
   end
 
   target 'LeadKitAdditions iOS Extensions' do
@@ -23,7 +23,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod "LeadKit/Core-iOS-Extension", :git => 'https://github.com/TouchInstinct/LeadKit', :branch => 'feature/text_field_view_model'
+    pod "LeadKit/Core-iOS-Extension", '~> 0.7.0'
   end
 end
 
