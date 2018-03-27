@@ -87,7 +87,7 @@ public extension BaseTextFieldViewModelEvents {
         return validationStateDriver
     }
 
-    typealias OnlineValidationClosure = (String) -> Single<OnlineValidationResult>
+    typealias OnlineValidationClosure = (String) -> Single<OnlineValidateable>
 
     /// Method that binds text driver to validation chain (offline validation -> online validation)
     /// and returns online validation state driver.

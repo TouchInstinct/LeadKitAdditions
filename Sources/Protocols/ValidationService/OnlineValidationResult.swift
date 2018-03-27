@@ -23,7 +23,7 @@
 import Foundation
 
 /// Prototol with two fields that describes result of online validation.
-public protocol OnlineValidationResult {
+public protocol OnlineValidateable {
 
     /// Contains true if online validation did passed.
     var isValid: Bool { get }
