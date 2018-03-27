@@ -23,6 +23,7 @@
 import LeadKit
 import RxSwift
 import RxCocoa
+import SwiftValidator
 
 /// Base implementation of TextFieldViewEvents.
 open class BaseTextFieldViewEvents: TextFieldViewEvents {
@@ -61,8 +62,6 @@ open class BaseTextFieldViewModelEvents: TextFieldViewModelEvents {
     }
 
 }
-
-import SwiftValidator
 
 public extension BaseTextFieldViewModelEvents {
 
