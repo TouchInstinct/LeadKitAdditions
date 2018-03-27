@@ -25,6 +25,7 @@ import LeadKit
 import RxSwift
 
 /// Default implementation of network service, which trust any server and use default timeout interval
+@available(*, deprecated, message: "Use ConfigurableNetworkService protocol from LeadKit.")
 open class DefaultNetworkService: NetworkService {
 
     open class var retryLimit: UInt {
