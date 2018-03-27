@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = "LeadKitAdditions"
-  s.version         = "0.1.5"
+  s.version         = "0.2.0"
   s.summary         = "iOS framework with a bunch of tools for rapid development"
   s.homepage        = "https://github.com/TouchInstinct/LeadKitAdditions"
   s.license         = "Apache License, Version 2.0"
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
       "Sources/Services/Network/DefaultNetworkService+ActivityIndicator+Extension.swift",
     ]
 
-    ss.dependency "LeadKit", '~> 0.6.0'
+    ss.dependency "LeadKit", '~> 0.7.0'
     ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
     ss.dependency "InputMask", '3.0.0'
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
       "Sources/Services/Network/DefaultNetworkService+ActivityIndicator.swift",
     ]
 
-    ss.dependency "LeadKit/Core-iOS-Extension", '~> 0.6.0'
+    ss.dependency "LeadKit/Core-iOS-Extension", '~> 0.7.0'
     ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
     ss.dependency "InputMask", '3.0.0'

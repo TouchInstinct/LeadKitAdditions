@@ -15,7 +15,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod "LeadKit", '~> 0.6.0'
+    pod 'LeadKit', '~> 0.7.0'
   end
 
   target 'LeadKitAdditions iOS Extensions' do
@@ -23,7 +23,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod "LeadKit/Core-iOS-Extension", '~> 0.6.0'
+    pod "LeadKit/Core-iOS-Extension", '~> 0.7.0'
   end
 end
 
