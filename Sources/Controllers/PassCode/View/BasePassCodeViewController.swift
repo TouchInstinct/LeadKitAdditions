@@ -225,9 +225,12 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
     open func bindViews() {
         fakeTextField.rx.text.asDriver()
-            .drive(onNext: { [weak self] text in
+            .do(onNext: { [weak self] text in
                 self?.setStates(for: text ?? "")
                 self?.hideError()
+            })
+            .delay(0.1)     // time to draw dots
+            .drive(onNext: { [weak self] text in
                 self?.viewModel.setPassCodeText(text)
             })
             .disposed(by: disposeBag)
