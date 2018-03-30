@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+
+- **Add**: `PassCodeDelayedDescription` to schedule error messages
+
 ## 0.2.1
 
 - **Fixed**: BasePassCodeViewController doesn't draw last dot filled

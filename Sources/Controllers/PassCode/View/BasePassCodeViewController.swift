@@ -58,6 +58,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     @IBOutlet private weak var dotStackView: UIStackView!
 
     public let disposeBag = DisposeBag()
+    private var delayedErrorDescriptions: Disposable?
 
     private lazy var fakeTextField: UITextField = {
         let fakeTextField = UITextField()
@@ -191,9 +192,9 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     }
 
     /// Override to change error description
-    open func errorDescription(for error: PassCodeError) -> NSAttributedString? {
+    open func errorDescription(for error: PassCodeError) -> [PassCodeDelayedDescription] {
         assertionFailure("You should override this method: errorDescription(for error: PassCodeError)")
-        return nil
+        return []
     }
 
     /// Override to change action title text
@@ -206,8 +207,25 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
     /// Call to show error
     open func showError(for error: PassCodeError) {
-        errorLabel?.attributedText = errorDescription(for: error)
+        let descriptionsObservables = errorDescription(for: error)
+            .sorted { $0.delay < $1.delay }
+            .map { [weak self] delayedDescription in
+                Observable<Int>
+                    .interval(delayedDescription.delay, scheduler: MainScheduler.instance)
+                    .take(1)
+                    .do(onNext: { _ in
+                        self?.errorLabel?.attributedText = delayedDescription.description
+                    })
+            }
+
+        delayedErrorDescriptions?.dispose()
+
+        errorLabel?.attributedText = nil
         errorLabel?.isHidden = false
+
+        delayedErrorDescriptions = Observable
+            .merge(descriptionsObservables)
+            .subscribe()
     }
 
     /// Call to disappear error label
