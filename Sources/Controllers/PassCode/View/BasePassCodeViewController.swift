@@ -229,7 +229,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
                 self?.setStates(for: text ?? "")
                 self?.hideError()
             })
-            .throttle(0.1)
+            .delay(0.1)
             .drive(onNext: { [weak self] text in
                 self?.viewModel.setPassCodeText(text)
             })
