@@ -1,11 +1,12 @@
 # Changelog
 
-## 0.2.2
+### 0.2.3
+- **Update**: Xcode 9.3 migration.
 
+### 0.2.2
 - **Add**: `PassCodeDelayedDescription` to schedule error messages
 
-## 0.2.1
-
+### 0.2.1
 - **Fixed**: BasePassCodeViewController doesn't draw last dot filled
 
 ## 0.2.0
