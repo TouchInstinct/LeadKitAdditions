@@ -229,7 +229,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
                 self?.setStates(for: text ?? "")
                 self?.hideError()
             })
-            .delay(0.1)
+            .delay(0.1)     // time to draw dots
             .drive(onNext: { [weak self] text in
                 self?.viewModel.setPassCodeText(text)
             })

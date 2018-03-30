@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- **Fixed**: BasePassCodeViewController doesn't draw last dot filled
+
 ## 0.2.0
 - **Updated**: LeadKit to `0.7.x` version
 - **Removed**: `CellField*` and `FormField*` protocols and classes.
