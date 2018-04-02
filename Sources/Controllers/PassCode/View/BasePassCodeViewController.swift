@@ -124,7 +124,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
     private func resetDotsUI() {
         fakeTextField.text = nil
         dotStackView.arrangedSubviews
-            .flatMap { $0 as? UIImageView }
+            .compactMap { $0 as? UIImageView }
             .forEach { $0.image = self.imageFor(type: .clear) }
     }
 

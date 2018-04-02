@@ -45,12 +45,12 @@ open class DefaultNetworkService: NetworkService {
     }
 
     /// The default acceptable range 200…299
-    open var acceptableStatusCodes: [Int] {
+    open class var acceptableStatusCodes: [Int] {
         return Alamofire.SessionManager.defaultAcceptableStatusCodes
     }
 
     public init(sessionManager: SessionManager) {
-        super.init(sessionManager: sessionManager, acceptableStatusCodes: acceptableStatusCodes)
+        super.init(sessionManager: sessionManager, acceptableStatusCodes: DefaultNetworkService.acceptableStatusCodes)
 
         // Fatal error: `drive*` family of methods can be only called from `MainThread`
         DispatchQueue.main.async {
