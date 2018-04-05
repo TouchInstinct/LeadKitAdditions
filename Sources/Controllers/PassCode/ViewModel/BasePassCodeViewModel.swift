@@ -101,9 +101,11 @@ open class BasePassCodeViewModel: BaseViewModel {
     }
 
     public func authenticateUsingBiometrics(with description: String, fallback: String?, cancel: String?) {
+        biometricsAuthBegins()
         biometricsService.authenticateWithBiometrics(with: description,
                                                      fallback: fallback,
                                                      cancel: cancel) { [weak self] success, error in
+            self?.biometricsAuthEnds()
             if success {
                 self?.authSucceed(.touchId)
             } else {
@@ -141,6 +143,12 @@ open class BasePassCodeViewModel: BaseViewModel {
     open func activateBiometricsForUser() {
         assertionFailure("You should override this method: activateBiometricsForUser()")
     }
+
+    /// Notify before system alert with biometrics
+    open func biometricsAuthBegins() {}
+
+    /// Notify after system alert with biometrics
+    open func biometricsAuthEnds() {}
 
 }
 
