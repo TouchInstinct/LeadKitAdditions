@@ -7,6 +7,7 @@ abstract_target 'LeadKitAdditions' do
   pod "InputMask", '3.0.0'
   pod "SwiftValidator", '5.0.0'
   pod "SwiftLint", '~> 0.25'
+  pod "PinLayout", '~> 1.6'
 
   inhibit_all_warnings!
 

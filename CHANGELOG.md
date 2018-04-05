@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.2.4
+- **Add**: `PinLayout` dependency.
+- **Add**: `PinLayoutTableViewCell`, `SeparatorTableViewCell` and `LabelTableViewCell` powered by PinLayout.
+- **Add**: `LabelCellViewModel` default view model for label cell.
+- **Add**: Playground to project.
+
 ### 0.2.3
 - **Update**: Xcode 9.3 migration.
 
