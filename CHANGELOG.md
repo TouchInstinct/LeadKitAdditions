@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.2.5
+
+- **Add**: Methods to notify when biometrics auth begins and ends.
+
 ### 0.2.4
 - **Add**: `PinLayout` dependency.
 - **Add**: `PinLayoutTableViewCell`, `SeparatorTableViewCell` and `LabelTableViewCell` powered by PinLayout.
