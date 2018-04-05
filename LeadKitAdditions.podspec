@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
     ss.dependency "InputMask", '3.0.0'
     ss.dependency "SwiftValidator", '5.0.0'
+    ss.dependency "PinLayout", '~> 1.6'
   end
 
   s.subspec 'Core-iOS-Extension' do |ss|
@@ -28,7 +29,9 @@ Pod::Spec.new do |s|
     ss.source_files = "Sources/**/*.swift"
 
     ss.exclude_files = [
+      "Sources/Classes/Cells/**/*.swift",
       "Sources/Services/Network/DefaultNetworkService+ActivityIndicator.swift",
+      "Sources/Extensions/Cells/**/*.swift"
     ]
 
     ss.dependency "LeadKit/Core-iOS-Extension", '~> 0.7.0'
@@ -36,6 +39,7 @@ Pod::Spec.new do |s|
     ss.dependency "IDZSwiftCommonCrypto", '0.9.1'
     ss.dependency "InputMask", '3.0.0'
     ss.dependency "SwiftValidator", '5.0.0'
+    ss.dependency "PinLayout", '~> 1.6'
   end
 
   s.default_subspec = 'Core'
