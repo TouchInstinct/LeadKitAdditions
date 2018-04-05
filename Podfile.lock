@@ -6,9 +6,9 @@ PODS:
   - IDZSwiftCommonCrypto (0.10.0)
   - InputMask (3.0.0)
   - KeychainAccess (3.1.0)
-  - LeadKit (0.7.4):
-    - LeadKit/Core (= 0.7.4)
-  - LeadKit/Core (0.7.4):
+  - LeadKit (0.7.5):
+    - LeadKit/Core (= 0.7.5)
+  - LeadKit/Core (0.7.5):
     - CocoaLumberjack/Swift (~> 3.4)
     - ObjectMapper (~> 3.0)
     - RxAlamofire (~> 4.1)
@@ -17,7 +17,7 @@ PODS:
     - SwiftDate (~> 4.5)
     - TableKit (~> 2.6)
     - UIScrollView-InfiniteScroll (~> 1.0.0)
-  - LeadKit/Core-iOS-Extension (0.7.4):
+  - LeadKit/Core-iOS-Extension (0.7.5):
     - CocoaLumberjack/Swift (~> 3.4)
     - ObjectMapper (~> 3.0)
     - RxAlamofire (~> 4.1)
@@ -26,11 +26,11 @@ PODS:
     - SwiftDate (~> 4.5)
   - ObjectMapper (3.1.0)
   - PinLayout (1.6.0)
-  - RxAlamofire (4.1.0):
-    - RxAlamofire/Core (= 4.1.0)
-  - RxAlamofire/Core (4.1.0):
+  - RxAlamofire (4.2.0):
+    - RxAlamofire/Core (= 4.2.0)
+  - RxAlamofire/Core (4.2.0):
     - Alamofire (~> 4.5)
-    - RxSwift (~> 4.0)
+    - RxSwift (~> 4)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
@@ -44,26 +44,22 @@ DEPENDENCIES:
   - IDZSwiftCommonCrypto
   - InputMask (= 3.0.0)
   - KeychainAccess (= 3.1.0)
-  - LeadKit (from `/Users/ivansmolin/Projects/tmp/LeadKit`)
-  - LeadKit/Core-iOS-Extension (from `/Users/ivansmolin/Projects/tmp/LeadKit`)
+  - LeadKit (~> 0.7.0)
+  - LeadKit/Core-iOS-Extension (~> 0.7.0)
   - PinLayout (~> 1.6)
   - SwiftLint (~> 0.25)
   - SwiftValidator (= 5.0.0)
-
-EXTERNAL SOURCES:
-  LeadKit:
-    :path: /Users/ivansmolin/Projects/tmp/LeadKit
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   CocoaLumberjack: 2e258a064cacc8eb9a2aca318e24d02a0a7fd56d
   IDZSwiftCommonCrypto: 4eef2c46e262dfbcbc1fd76365e066336680ad7d
-  InputMask: 37c273bde6705187d80cf0b4240cb42ea92096c3
+  InputMask: 8b5c42acac19cd48fe664b739f30995103b75e75
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  LeadKit: 65b21acf728e87d15e497bd92eae37f22c8c95e5
+  LeadKit: 1295888d8ef6c9f58cbdb5cd7ba316362b111e19
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PinLayout: a2bbe9057d49a1e326b13dc4fe8c14751f8c8844
-  RxAlamofire: 96a2bff4694a1609bb59c57b53d99ea7a0ddc64a
+  RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
@@ -72,6 +68,6 @@ SPEC CHECKSUMS:
   TableKit: 61880e4c13ac0ba396a308fcb1ae48f6dec8b458
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: 1cf6417e00d3d5db4e108436ce72412ad60d78cf
+PODFILE CHECKSUM: 73e5e2c6d2eafde7ff0ee904b88ce1a1ff2669b2
 
 COCOAPODS: 1.4.0
