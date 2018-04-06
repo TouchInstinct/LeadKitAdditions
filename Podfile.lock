@@ -6,9 +6,9 @@ PODS:
   - IDZSwiftCommonCrypto (0.10.0)
   - InputMask (3.0.0)
   - KeychainAccess (3.1.0)
-  - LeadKit (0.7.5):
-    - LeadKit/Core (= 0.7.5)
-  - LeadKit/Core (0.7.5):
+  - LeadKit (0.7.6):
+    - LeadKit/Core (= 0.7.6)
+  - LeadKit/Core (0.7.6):
     - CocoaLumberjack/Swift (~> 3.4)
     - ObjectMapper (~> 3.0)
     - RxAlamofire (~> 4.1)
@@ -17,7 +17,7 @@ PODS:
     - SwiftDate (~> 4.5)
     - TableKit (~> 2.6)
     - UIScrollView-InfiniteScroll (~> 1.0.0)
-  - LeadKit/Core-iOS-Extension (0.7.5):
+  - LeadKit/Core-iOS-Extension (0.7.6):
     - CocoaLumberjack/Swift (~> 3.4)
     - ObjectMapper (~> 3.0)
     - RxAlamofire (~> 4.1)
@@ -56,7 +56,7 @@ SPEC CHECKSUMS:
   IDZSwiftCommonCrypto: 4eef2c46e262dfbcbc1fd76365e066336680ad7d
   InputMask: 8b5c42acac19cd48fe664b739f30995103b75e75
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  LeadKit: 1295888d8ef6c9f58cbdb5cd7ba316362b111e19
+  LeadKit: 9e0a27cea8171a38b72bef7605ade92cd8a48217
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PinLayout: a2bbe9057d49a1e326b13dc4fe8c14751f8c8844
   RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
