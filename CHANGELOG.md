@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.2.6
+
+- **Update**: `DefaultNetworkService` supported `NetworkServiceConfiguration`
+
 ### 0.2.5
 
 - **Add**: Methods to notify when biometrics auth begins and ends.
