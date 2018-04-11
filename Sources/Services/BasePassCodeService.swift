@@ -21,7 +21,6 @@
 //
 
 import KeychainAccess
-import CocoaLumberjack
 import IDZSwiftCommonCrypto
 
 private enum Keys {
