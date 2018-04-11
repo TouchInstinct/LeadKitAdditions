@@ -22,7 +22,6 @@
 
 import RxSwift
 import Alamofire
-import CocoaLumberjack
 import LeadKit
 
 public typealias VoidBlock = () -> Void

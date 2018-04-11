@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.2.7
+
+- **Fix**: Build with new LeadKit 0.7.9
+
 ### 0.2.6
 
 - **Update**: `DefaultNetworkService` supported `NetworkServiceConfiguration`
