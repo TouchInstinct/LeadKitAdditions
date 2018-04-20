@@ -253,7 +253,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
             })
             .disposed(by: disposeBag)
 
-        viewModel.validationResult
+        viewModel.validationResultDriver
             .drive(onNext: { [weak self] validationResult in
                 guard let validationResult = validationResult else {
                     return

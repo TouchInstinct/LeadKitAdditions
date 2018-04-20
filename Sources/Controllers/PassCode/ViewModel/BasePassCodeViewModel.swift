@@ -44,7 +44,7 @@ open class BasePassCodeViewModel: BaseViewModel {
     public let passCodeConfiguration: PassCodeConfiguration
 
     private let validationResultHolder = Variable<PassCodeValidationResult?>(nil)
-    var validationResult: Driver<PassCodeValidationResult?> {
+    public var validationResultDriver: Driver<PassCodeValidationResult?> {
         return validationResultHolder.asDriver()
     }
 

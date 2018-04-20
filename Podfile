@@ -3,8 +3,7 @@ source "https://github.com/TouchInstinct/Podspecs.git"
 
 abstract_target 'LeadKitAdditions' do
   pod "KeychainAccess", '3.1.0'
-  pod "IDZSwiftCommonCrypto"
-  pod "InputMask", '3.0.0'
+  pod "CryptoSwift", "~> 0.9.0"
   pod "SwiftValidator", '5.0.0'
   pod "SwiftLint", '~> 0.25'
   pod "PinLayout", '~> 1.6'
