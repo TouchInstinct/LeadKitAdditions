@@ -21,7 +21,7 @@
 //
 
 import KeychainAccess
-import IDZSwiftCommonCrypto
+import CryptoSwift
 
 private enum Keys {
     static let passCodeHash        = "passCodeHashKey"
@@ -80,7 +80,7 @@ public extension BasePassCodeService {
     /// Saves new pass code
     func save(passCode: String?) {
         if let passCode = passCode {
-            keychain[Keys.passCodeHash] = sha256(passCode)
+            keychain[Keys.passCodeHash] = passCode.sha256()
         } else {
             keychain[Keys.passCodeHash] = nil
         }
@@ -88,24 +88,13 @@ public extension BasePassCodeService {
 
     /// Check if pass code is correct
     func check(passCode: String) -> Bool {
-        return sha256(passCode) == passCodeHash
+        return passCode.sha256() == passCodeHash
     }
 
     /// Reset pass code settings
     func reset() {
         save(passCode: nil)
         isBiometricsAuthorizationEnabled = false
-    }
-
-}
-
-private extension BasePassCodeService {
-
-    func sha256(_ str: String) -> String? {
-        guard let digests = Digest(algorithm: .sha256).update(string: str)?.final() else {
-            return nil
-        }
-        return hexString(fromArray: digests)
     }
 
 }

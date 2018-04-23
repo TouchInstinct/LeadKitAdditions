@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.2.8
+- **Update**: `validationResult` of `BasePassCodeViewModel` renamed to `validationResultDriver` and becomes public.
+- **Remove**: `MaskFieldTextProxy`.
+- **Remove**: `InputMask` dependency
+- **Replace**: `IDZSwiftCommonCrypto` with `CryptoSwift`
+
 ### 0.2.7
 
 - **Fix**: Build with new LeadKit 0.7.9
