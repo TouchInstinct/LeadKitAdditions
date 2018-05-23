@@ -29,6 +29,11 @@ public final class BiometricsService {
 
     private lazy var laContext = LAContext()
 
+    public var domianState: Data? {
+        _ = canAuthenticateWithBiometrics
+        return laContext.evaluatedPolicyDomainState
+    }
+
     /// Indicates is it possible to authenticate on this device via touch id
     public var canAuthenticateWithBiometrics: Bool {
         return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
