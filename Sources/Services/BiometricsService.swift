@@ -29,7 +29,8 @@ public final class BiometricsService {
 
     private lazy var laContext = LAContext()
 
-    public var domianState: Data? {
+    /// Returns current domain state
+    public var evaluatedPolicyDomainState: Data? {
         _ = canAuthenticateWithBiometrics
         return laContext.evaluatedPolicyDomainState
     }
@@ -38,6 +39,9 @@ public final class BiometricsService {
     public var canAuthenticateWithBiometrics: Bool {
         return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
+
+    /// Public initialization
+    public init() { }
 
     /**
      Initiates system biometrics authentication process
