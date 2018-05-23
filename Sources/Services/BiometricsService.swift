@@ -31,6 +31,7 @@ public final class BiometricsService {
 
     /// Returns current domain state
     public var evaluatedPolicyDomainState: Data? {
+        // We need to call canEvaluatePolicy function for evaluatedPolicyDomainState to be updated
         _ = canAuthenticateWithBiometrics
         return laContext.evaluatedPolicyDomainState
     }
