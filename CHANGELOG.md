@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.2.9
+- **Add**: `evaluatedPolicyDomainState` to `BiometricsService`.
+
 ### 0.2.8
 - **Update**: `validationResult` of `BasePassCodeViewModel` renamed to `validationResultDriver` and becomes public.
 - **Remove**: `MaskFieldTextProxy`.
