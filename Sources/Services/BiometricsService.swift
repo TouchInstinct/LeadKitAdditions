@@ -40,9 +40,6 @@ public final class BiometricsService {
         return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 
-    /// Public initialization
-    public init() { }
-
     /**
      Initiates system biometrics authentication process
 
