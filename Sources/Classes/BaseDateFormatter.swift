@@ -21,7 +21,6 @@
 //
 
 import Foundation
-import ObjectMapper
 
 /// Base date formatter class, contains most frequently used formats, including RFC3339
 open class BaseDateFormatter {
@@ -103,25 +102,6 @@ open class BaseDateFormatter {
     public static func dayMonthYearStrDate(withDate date: Date) -> String {
         hourAndMinuteFormatter.locale = usedLocale
         return dayMonthYearFormatter.string(from: date)
-    }
-
-    // MARK: - Transformers
-
-    /// Transformer to workaround with dates in Mappable (ObjectMapper) objects
-    public static var transformFromStringToDate: TransformOf<Date, String> {
-        return TransformOf<Date, String>(fromJSON: { stringValue -> Date? in
-            if let stringValue = stringValue {
-                return backendDate(fromStrDate: stringValue)
-            } else {
-                return nil
-            }
-        }, toJSON: { dateValue -> String? in
-            if let dateValue = dateValue {
-                return backendStrDate(withDate: dateValue)
-            } else {
-                return nil
-            }
-        })
     }
 
 }

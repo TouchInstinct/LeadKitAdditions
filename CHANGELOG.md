@@ -1,5 +1,13 @@
 # Changelog
 
+### 0.3.0
+- **Remove**: `ApiResponse` class
+- **Remove**: Occurrences of `ObjectMapper` in `BaseDateFormatter`
+- **Remove**: `ApiError` enum and `ApiErrorProtocol`
+- **Remove**: `Observable` extension related to error handling
+- **Remove**: `ApiNetworkService`
+- **Remove**: `DefaultNetworkService` and its extensions
+
 ### 0.2.9
 - **Add**: `evaluatedPolicyDomainState` to `BiometricsService`.
 
