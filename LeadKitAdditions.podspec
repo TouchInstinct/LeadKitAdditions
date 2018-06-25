@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
       "Sources/Extensions/Cells/**/*.swift"
     ]
 
-    ss.dependency "LeadKit/Core-iOS-Extension" #, '~> 0.8.0'
+    ss.dependency "LeadKit/Core-iOS-Extension"
     ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "CryptoSwift", '~> 0.9.0'
     ss.dependency "SwiftValidator", '5.0.0'
