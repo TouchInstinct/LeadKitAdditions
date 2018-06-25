@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
       "Sources/Services/Network/DefaultNetworkService+ActivityIndicator+Extension.swift",
     ]
 
-    ss.dependency "LeadKit"
+    ss.dependency "LeadKit", '~> 0.8.0'
     ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "CryptoSwift", '~> 0.9.0'
     ss.dependency "SwiftValidator", '5.0.0'
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
       "Sources/Extensions/Cells/**/*.swift"
     ]
 
-    ss.dependency "LeadKit/Core-iOS-Extension"
+    ss.dependency "LeadKit/Core-iOS-Extension", '~> 0.8.0'
     ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "CryptoSwift", '~> 0.9.0'
     ss.dependency "SwiftValidator", '5.0.0'
