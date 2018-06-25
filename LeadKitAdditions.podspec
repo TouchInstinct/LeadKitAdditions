@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     ss.source_files = "Sources/**/*.swift"
 
     ss.exclude_files = [
-      "Sources/Classes/Cells/**/*.swift",
+      "Sources/Classes/Cells/LabelTableViewCell/*.swift",
       "Sources/Services/Network/DefaultNetworkService+ActivityIndicator.swift",
       "Sources/Extensions/UIKit/UIApplication/UIApplication+OpenUrlSupport",
       "Sources/Extensions/Cells/**/*.swift"
