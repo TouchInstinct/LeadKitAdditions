@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.1
+- **Add**: `PinLayoutTableViewCell` and `SeparatorTableViewCell` to `Core-iOS-Extension`.
+
 ### 0.3.0
 - **Remove**: `ApiResponse` class
 - **Remove**: Occurrences of `ObjectMapper` in `BaseDateFormatter`
