@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		248389A288C0A6D7914F0546 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED4A1B793EAA73C9E95969F /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
+		3622F5D620E15DD1009DED94 /* PinLayoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF05AF206E99DF009A2AB9 /* PinLayoutTableViewCell.swift */; };
+		3622F5D720E15DD5009DED94 /* SeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2A41520724BBA000A5682 /* SeparatorTableViewCell.swift */; };
 		6760AF1A207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF19207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift */; };
 		67779CBC206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */; };
 		67779CBD206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */; };
@@ -601,6 +603,7 @@
 				67779CBD206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */,
 				ED0C34101F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */,
 				ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */,
+				3622F5D720E15DD5009DED94 /* SeparatorTableViewCell.swift in Sources */,
 				ED0C34301F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
 				ED0C34421F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
 				ED0C34201F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,
@@ -616,6 +619,7 @@
 				ED0C34221F2906EC00FAE9FD /* UserDefaults+UserService.swift in Sources */,
 				ED0C34121F2906EC00FAE9FD /* PassCodeValidationResult.swift in Sources */,
 				ED0C34061F2906EC00FAE9FD /* BaseDateFormatter.swift in Sources */,
+				3622F5D620E15DD1009DED94 /* PinLayoutTableViewCell.swift in Sources */,
 				ED0C34441F2906EC00FAE9FD /* ValidationService.swift in Sources */,
 				EF5A43B2206E7A67003CED07 /* PassCodeDelayedDescription.swift in Sources */,
 				ED0C340C1F2906EC00FAE9FD /* PassCodeError.swift in Sources */,

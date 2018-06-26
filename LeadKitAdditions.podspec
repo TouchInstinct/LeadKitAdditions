@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = "LeadKitAdditions"
-  s.version         = "0.3.0"
+  s.version         = "0.3.1"
   s.summary         = "iOS framework with a bunch of tools for rapid development"
   s.homepage        = "https://github.com/TouchInstinct/LeadKitAdditions"
   s.license         = "Apache License, Version 2.0"
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     ss.source_files = "Sources/**/*.swift"
 
     ss.exclude_files = [
-      "Sources/Classes/Cells/**/*.swift",
+      "Sources/Classes/Cells/LabelTableViewCell/*.swift",
       "Sources/Services/Network/DefaultNetworkService+ActivityIndicator.swift",
       "Sources/Extensions/Cells/**/*.swift"
     ]
