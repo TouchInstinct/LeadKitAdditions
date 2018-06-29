@@ -109,7 +109,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
             return
         }
 
-        NotificationCenter.default.rx.notification(.UIApplicationWillResignActive)
+        NotificationCenter.default.rx.notification(UIApplication.willResignActiveNotification)
             .subscribe(onNext: { [weak self] _ in
                 self?.resetUI()
             })
