@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.source          = { :git => "https://github.com/TouchInstinct/LeadKitAdditions.git", :tag => s.version }
 
   s.subspec 'Core' do |ss|
+
     ss.ios.deployment_target = '9.0'
     ss.source_files = "Sources/**/*.swift"
 
@@ -21,11 +22,13 @@ Pod::Spec.new do |s|
     ss.dependency "CryptoSwift", '~> 0.9.0'
     ss.dependency "SwiftValidator", '5.0.0'
     ss.dependency "PinLayout", '~> 1.6'
+
   end
 
   s.subspec 'Core-iOS-Extension' do |ss|
     ss.platform = :ios, '9.0'
-    ss.source_files = "Sources/**/*.swift"
+
+	ss.source_files = "Sources/**/*.swift"
 
     ss.exclude_files = [
       "Sources/Classes/Cells/LabelTableViewCell/*.swift",

@@ -2,16 +2,16 @@ PODS:
   - Alamofire (4.7.2)
   - CryptoSwift (0.9.0)
   - KeychainAccess (3.1.0)
-  - LeadKit (0.8.4):
-    - LeadKit/Core (= 0.8.4)
-  - LeadKit/Core (0.8.4):
+  - LeadKit (0.9.0):
+    - LeadKit/Core (= 0.9.0)
+  - LeadKit/Core (0.9.0):
     - RxAlamofire (~> 4.1)
     - RxCocoa (~> 4.1)
     - RxSwift (~> 4.1)
     - SwiftDate (~> 4.5)
     - TableKit (~> 2.6)
     - UIScrollView-InfiniteScroll (~> 1.0.0)
-  - LeadKit/Core-iOS-Extension (0.8.4):
+  - LeadKit/Core-iOS-Extension (0.9.0):
     - RxAlamofire (~> 4.1)
     - RxCocoa (~> 4.1)
     - RxSwift (~> 4.1)
@@ -29,7 +29,7 @@ PODS:
   - SwiftDate (4.5.1)
   - SwiftLint (0.25.1)
   - SwiftValidator (5.0.0)
-  - TableKit (2.6.0)
+  - TableKit (2.7.0)
   - UIScrollView-InfiniteScroll (1.0.2)
 
 DEPENDENCIES:
@@ -64,14 +64,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LeadKit:
-    :commit: af60c61909146fa17d4482454a82eaecbcf65141
+    :commit: c5749729985605561771e56248421ad4e978f77d
     :git: https://github.com/TouchInstinct/LeadKit.git
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  LeadKit: cec9148463b89da075371cc90cf5c80261d33771
+  LeadKit: 0d947ddf5d384ce15c63df0f35babd6ded7e3414
   PinLayout: 359b7ce1714450139463595ef0a9b0046be215c0
   RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
@@ -79,9 +79,9 @@ SPEC CHECKSUMS:
   SwiftDate: 7b56d42a221f582047287deb256b23fc5ed49a60
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
   SwiftValidator: 46cdd2061962df3ee8bab3c536dea9b34191d459
-  TableKit: 61880e4c13ac0ba396a308fcb1ae48f6dec8b458
+  TableKit: 506650573ed96ec007649b655559ecd43f9fd505
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: 48432343afe293f66e1143ec9cc431ae0e5b16e3
+PODFILE CHECKSUM: 4f259356633cbfbc1db682925938092da1503f99
 
 COCOAPODS: 1.5.3
