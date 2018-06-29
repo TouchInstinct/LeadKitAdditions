@@ -6,7 +6,7 @@ abstract_target 'LeadKitAdditions' do
   pod "CryptoSwift", "~> 0.9.0"
   pod "SwiftValidator", '5.0.0'
   pod "SwiftLint", '~> 0.25'
-  pod "PinLayout", '~> 1.6'
+  pod "PinLayout" # :git => 'https://github.com/igorkislyuk/PinLayout.git', :branch => 'feature/swift4.2'
 
   inhibit_all_warnings!
 
@@ -15,7 +15,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod 'LeadKit', '~> 0.7.0'
+    pod 'LeadKit', :git => 'https://github.com/TouchInstinct/LeadKit.git', :branch => 'feature/swift4.2'
   end
 
   target 'LeadKitAdditions iOS Extensions' do
@@ -23,7 +23,7 @@ abstract_target 'LeadKitAdditions' do
 
     use_frameworks!
 
-    pod "LeadKit/Core-iOS-Extension", '~> 0.7.0'
+    pod "LeadKit/Core-iOS-Extension", :git => 'https://github.com/TouchInstinct/LeadKit.git', :branch => 'feature/swift4.2'
   end
 end
 

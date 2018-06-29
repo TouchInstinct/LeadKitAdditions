@@ -42,8 +42,8 @@ open class LabelCellViewModel {
     ///   - separatorType: Separator type to use for separators.
     public init(viewText: ViewText,
                 contentBackground: ViewBackground = .color(.clear),
-                contentInsets: UIEdgeInsets = .zero,
-                labelInsets: UIEdgeInsets = .zero,
+                contentInsets: UIEdgeInsets = .nonCrashZero,
+                labelInsets: UIEdgeInsets = .nonCrashZero,
                 separatorType: CellSeparatorType = .none) {
 
         self.viewText = viewText

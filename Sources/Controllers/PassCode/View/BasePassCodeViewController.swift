@@ -49,7 +49,16 @@ public enum PassCodeControllerState {
 /// Base view controller that operates with pass code
 open class BasePassCodeViewController: UIViewController, ConfigurableController {
 
-    public var viewModel: BasePassCodeViewModel!
+    public let viewModel: BasePassCodeViewModel
+
+    public init(viewModel: BasePassCodeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - IBOutlets
 
@@ -276,12 +285,11 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
 
     open func addViews() {}
 
-    open func setAppearance() {}
+    open func configureAppearance() {}
 
     open func configureBarButtons() {}
 
     open func localize() {}
-
 }
 
 // MARK: - UITextFieldDelegate

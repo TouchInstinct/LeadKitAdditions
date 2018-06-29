@@ -373,7 +373,6 @@
 				CAE698DF1E968820000394B0 /* Frameworks */,
 				CAE698E01E968820000394B0 /* Headers */,
 				CAE698E11E968820000394B0 /* Resources */,
-				94F6E1BA5AD68C6E2F10062B /* [CP] Copy Pods Resources */,
 				CAE6990A1E969A7A000394B0 /* Swiftlint */,
 			);
 			buildRules = (
@@ -394,7 +393,6 @@
 				EFBD556C1EBB87100062AA63 /* Frameworks */,
 				EFBD556D1EBB87100062AA63 /* Headers */,
 				EFBD556E1EBB87100062AA63 /* Resources */,
-				808FF5474C0E1574D405EFAF /* [CP] Copy Pods Resources */,
 				ED69E7E91F2AD0E000C74895 /* Swiftlint */,
 			);
 			buildRules = (
@@ -478,36 +476,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		808FF5474C0E1574D405EFAF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions/Pods-LeadKitAdditions-LeadKitAdditions iOS Extensions-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94F6E1BA5AD68C6E2F10062B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CAE6990A1E969A7A000394B0 /* Swiftlint */ = {
