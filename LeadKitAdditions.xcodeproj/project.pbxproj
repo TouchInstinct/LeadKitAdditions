@@ -27,6 +27,7 @@
 		67CF05AA206E9880009A2AB9 /* PinLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF05A9206E9880009A2AB9 /* PinLayoutCell.swift */; };
 		67CF05B0206E99DF009A2AB9 /* PinLayoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF05AF206E99DF009A2AB9 /* PinLayoutTableViewCell.swift */; };
 		8A400E8D824CFC3796C7F360 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7695273F6876B988333B78C5 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
+		A6054E6D20E5CA3000750633 /* PinLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF05A9206E9880009A2AB9 /* PinLayoutCell.swift */; };
 		A6CFB8D91F5024A500A42CC2 /* Error+NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */; };
 		C96D09613C44B7DA0ABD415E /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA4F6E269CA4D976E41B759 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS_Extensions.framework */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -566,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6054E6D20E5CA3000750633 /* PinLayoutCell.swift in Sources */,
 				67779CBD206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */,
 				ED0C34101F2906EC00FAE9FD /* PassCodeHolderProtocol.swift in Sources */,
 				ED0C34401F2906EC00FAE9FD /* ValidationError.swift in Sources */,

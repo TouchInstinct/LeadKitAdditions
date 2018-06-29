@@ -64,14 +64,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   LeadKit:
-    :commit: c5749729985605561771e56248421ad4e978f77d
+    :commit: e92cdf4be67f738b20d4eedd83947926d762b79e
     :git: https://github.com/TouchInstinct/LeadKit.git
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  LeadKit: 0d947ddf5d384ce15c63df0f35babd6ded7e3414
+  LeadKit: 6d8cecd303279bde3888ea77aa3c6536972e8b80
   PinLayout: 359b7ce1714450139463595ef0a9b0046be215c0
   RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
@@ -82,6 +82,6 @@ SPEC CHECKSUMS:
   TableKit: 506650573ed96ec007649b655559ecd43f9fd505
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
 
-PODFILE CHECKSUM: 4f259356633cbfbc1db682925938092da1503f99
+PODFILE CHECKSUM: a37834b511410712f0ba7b2b28ca9e68f17f06a1
 
 COCOAPODS: 1.5.3

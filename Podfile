@@ -32,8 +32,8 @@ ENV['COCOAPODS_DISABLE_STATS'] = "true"
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
-        if target.name == 'LeadKit' or target.name == 'LeadKit-Core-iOS-Extensions'
-            target.build_configurations.each do |config|
+        if target.name.include? 'LeadKit'
+		    target.build_configurations.each do |config|
                 config.build_settings['SWIFT_VERSION'] = '4.2'
             end
         else
