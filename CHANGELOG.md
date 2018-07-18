@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.3.2
+
+- **Add**: functions to `BasePassCodeViewController` to make `fakeTextField` become and resign first responder
+
 ### 0.3.1
 - **Add**: `PinLayoutTableViewCell` and `SeparatorTableViewCell` to `Core-iOS-Extension`.
 
