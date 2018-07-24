@@ -64,4 +64,6 @@ public final class BiometricsService {
         }
     }
 
+    public init() {}
+
 }
