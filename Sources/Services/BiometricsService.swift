@@ -29,6 +29,15 @@ public final class BiometricsService {
 
     private lazy var laContext = LAContext()
 
+    /// Returns true if user can authenticate via faceID
+    public var isFaceIdSupported: Bool {
+        if #available(iOS 11.0, *) {
+            return canAuthenticateWithBiometrics && laContext.biometryType == .faceID
+        } else {
+            return false
+        }
+    }
+
     /// Returns current domain state
     public var evaluatedPolicyDomainState: Data? {
         // We need to call canEvaluatePolicy function for evaluatedPolicyDomainState to be updated
