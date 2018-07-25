@@ -1,6 +1,10 @@
 # Changelog
 
 
+### 0.3.4
+
+- **Add**: `isFaceIdSupported` variable to `BiometricsService` to distinguish FaceID from TouchID.
+
 ### 0.3.3
 
 - **Add**: Public `init` to `BiometricsService`
