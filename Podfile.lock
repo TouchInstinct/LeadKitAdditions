@@ -35,8 +35,8 @@ PODS:
 DEPENDENCIES:
   - CryptoSwift (~> 0.9.0)
   - KeychainAccess (= 3.1.0)
-  - "LeadKit (from `git@github.com:TouchInstinct/LeadKit.git`, branch `feature/general_data_loading_swift4.2`)"
-  - "LeadKit/Core-iOS-Extension (from `git@github.com:TouchInstinct/LeadKit.git`, branch `feature/general_data_loading_swift4.2`)"
+  - LeadKit (~> 0.8.13)
+  - LeadKit/Core-iOS-Extension (~> 0.8.13)
   - PinLayout (~> 1.6)
   - SwiftLint (~> 0.25)
   - SwiftValidator (= 5.0.0)
@@ -55,23 +55,14 @@ SPEC REPOS:
     - TableKit
     - UIScrollView-InfiniteScroll
   https://github.com/TouchInstinct/Podspecs.git:
+    - LeadKit
     - SwiftValidator
-
-EXTERNAL SOURCES:
-  LeadKit:
-    :branch: feature/general_data_loading_swift4.2
-    :git: "git@github.com:TouchInstinct/LeadKit.git"
-
-CHECKOUT OPTIONS:
-  LeadKit:
-    :commit: e7eb1bd51fb50cf44107da5500573acfa15f8944
-    :git: "git@github.com:TouchInstinct/LeadKit.git"
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  LeadKit: f213e6993e855394d9a0db35f36d63d53e4864c2
+  LeadKit: 524c6c2776588534b4fa1d31150c4faf1e997ece
   PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
   RxAlamofire: 09624d0f2d48ed8b686e4eb4cf68e28cbd2df556
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
@@ -82,6 +73,6 @@ SPEC CHECKSUMS:
   TableKit: d635663343d00e209f258e35d4ee0072ad1beb1a
   UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: e8fc3483d2ab98c8ccfaf8a856b77cd740ce9c3c
+PODFILE CHECKSUM: b45697ebd4a2c5c52a63a09cf76dfe091fbfe44f
 
 COCOAPODS: 1.5.3
