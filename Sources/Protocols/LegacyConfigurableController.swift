@@ -20,15 +20,34 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+import LeadKit
 
-public extension UIBarButtonItem {
+public protocol LegacyConfigurableController: InitializableView {
 
-    /// Creates activity indicator view and bar button item (based on activity indicator)
-    static var activityIndicator: (barButton: UIBarButtonItem, activityIndicator: UIActivityIndicatorView) {
-        let indicatorView = UIActivityIndicatorView(style: .white)
-        let indicatorBar = UIBarButtonItem(customView: indicatorView)
-        return (indicatorBar, indicatorView)
+    associatedtype ViewModelT
+
+    var viewModel: ViewModelT! { get }
+
+    func configureBarButtons()
+
+    func initialLoadView()
+
+}
+
+public extension LegacyConfigurableController where Self: UIViewController {
+
+    func initializeView() {
+        assertionFailure("Use \(initialLoadView) for UIViewController instead!")
+    }
+
+    /// Method that should be called in viewDidLoad method of UIViewController.
+    func initialLoadView() {
+        addViews()
+        configureLayout()
+        configureAppearance()
+        configureBarButtons()
+        localize()
+        bindViews()
     }
 
 }

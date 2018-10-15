@@ -9,21 +9,20 @@ abstract_target 'LeadKitAdditions' do
   pod "PinLayout", '~> 1.6'
 
   inhibit_all_warnings!
+  use_frameworks!
 
   target 'LeadKitAdditions iOS' do
     platform :ios, '9.0'
 
-    use_frameworks!
-
-    pod 'LeadKit', '~> 0.7.0'
+    pod 'LeadKit', :path => '~/Projects/LeadKit/'
+    # pod 'LeadKit', '~> 0.8.0'
   end
 
   target 'LeadKitAdditions iOS Extensions' do
     platform :ios, '9.0'
 
-    use_frameworks!
-
-    pod "LeadKit/Core-iOS-Extension", '~> 0.7.0'
+    pod 'LeadKit/Core-iOS-Extension', :path => '~/Projects/LeadKit/'
+    # pod "LeadKit/Core-iOS-Extension", '~> 0.8.0'
   end
 end
 
