@@ -14,13 +14,13 @@ abstract_target 'LeadKitAdditions' do
   target 'LeadKitAdditions iOS' do
     platform :ios, '9.0'
 
-    pod 'LeadKit', '~> 0.8.13'
+    pod 'LeadKit', '~> 0.9.0'
   end
 
   target 'LeadKitAdditions iOS Extensions' do
     platform :ios, '9.0'
 
-    pod "LeadKit/Core-iOS-Extension", '~> 0.8.13'
+    pod "LeadKit/Core-iOS-Extension", '~> 0.9.0'
   end
 end
 

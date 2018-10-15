@@ -2,16 +2,16 @@ PODS:
   - Alamofire (4.7.3)
   - CryptoSwift (0.9.0)
   - KeychainAccess (3.1.0)
-  - LeadKit (0.8.13):
-    - LeadKit/Core (= 0.8.13)
-  - LeadKit/Core (0.8.13):
+  - LeadKit (0.9.0):
+    - LeadKit/Core (= 0.9.0)
+  - LeadKit/Core (0.9.0):
     - RxAlamofire (~> 4.3)
     - RxCocoa (~> 4.3)
     - RxSwift (~> 4.3)
     - SwiftDate (~> 5.0)
     - TableKit (~> 2.8)
     - UIScrollView-InfiniteScroll (~> 1.1.0)
-  - LeadKit/Core-iOS-Extension (0.8.13):
+  - LeadKit/Core-iOS-Extension (0.9.0):
     - RxAlamofire (~> 4.3)
     - RxCocoa (~> 4.3)
     - RxSwift (~> 4.3)
@@ -35,8 +35,8 @@ PODS:
 DEPENDENCIES:
   - CryptoSwift (~> 0.9.0)
   - KeychainAccess (= 3.1.0)
-  - LeadKit (~> 0.8.13)
-  - LeadKit/Core-iOS-Extension (~> 0.8.13)
+  - LeadKit (~> 0.9.0)
+  - LeadKit/Core-iOS-Extension (~> 0.9.0)
   - PinLayout (~> 1.6)
   - SwiftLint (~> 0.25)
   - SwiftValidator (= 5.0.0)
@@ -62,7 +62,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  LeadKit: 524c6c2776588534b4fa1d31150c4faf1e997ece
+  LeadKit: 80787b6215648cf9bfedf2c591fbe924ba4940a1
   PinLayout: fe2a2432d6982588e208572005c941aeeae417ab
   RxAlamofire: 09624d0f2d48ed8b686e4eb4cf68e28cbd2df556
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
@@ -73,6 +73,6 @@ SPEC CHECKSUMS:
   TableKit: d635663343d00e209f258e35d4ee0072ad1beb1a
   UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: b45697ebd4a2c5c52a63a09cf76dfe091fbfe44f
+PODFILE CHECKSUM: 3a69f15c8923b9a8b4798d4e8e1caf8dc6293c6d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1
