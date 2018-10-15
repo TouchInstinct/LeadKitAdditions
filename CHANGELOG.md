@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.5
+
+- **Update**: Migrate to Swift 4.2 & Xcode 10. Update dependencies.
 
 ### 0.3.4
 
