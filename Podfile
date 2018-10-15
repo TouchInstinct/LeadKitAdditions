@@ -14,14 +14,14 @@ abstract_target 'LeadKitAdditions' do
   target 'LeadKitAdditions iOS' do
     platform :ios, '9.0'
 
-    pod 'LeadKit', :path => '~/Projects/LeadKit/'
+    pod 'LeadKit', :git => 'git@github.com:TouchInstinct/LeadKit.git', :branch => 'feature/general_data_loading_swift4.2'
     # pod 'LeadKit', '~> 0.8.0'
   end
 
   target 'LeadKitAdditions iOS Extensions' do
     platform :ios, '9.0'
 
-    pod 'LeadKit/Core-iOS-Extension', :path => '~/Projects/LeadKit/'
+    pod 'LeadKit/Core-iOS-Extension', :git => 'git@github.com:TouchInstinct/LeadKit.git', :branch => 'feature/general_data_loading_swift4.2'
     # pod "LeadKit/Core-iOS-Extension", '~> 0.8.0'
   end
 end
