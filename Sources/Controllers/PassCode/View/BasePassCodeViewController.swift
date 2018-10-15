@@ -47,7 +47,7 @@ public enum PassCodeControllerState {
 }
 
 /// Base view controller that operates with pass code
-open class BasePassCodeViewController: UIViewController, ConfigurableController {
+open class BasePassCodeViewController: UIViewController, LegacyConfigurableController {
 
     public var viewModel: BasePassCodeViewModel!
 
@@ -100,7 +100,7 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
             return
         }
 
-        NotificationCenter.default.rx.notification(.UIApplicationWillResignActive)
+        NotificationCenter.default.rx.notification(UIApplication.willResignActiveNotification)
             .subscribe(onNext: { [weak self] _ in
                 self?.resetUI()
             })

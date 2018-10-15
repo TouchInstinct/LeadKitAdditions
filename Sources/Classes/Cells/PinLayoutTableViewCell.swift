@@ -26,7 +26,7 @@ import PinLayout
 /// Cell that uses PinLayout. Contains methods that should be overriden in subclasses.
 open class PinLayoutTableViewCell: UITableViewCell, PinLayoutCell {
 
-    public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         initializeCell()
