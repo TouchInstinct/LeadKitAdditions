@@ -45,14 +45,14 @@ open class SeparatorTableViewCell: PinLayoutTableViewCell {
 
     /// Move separator upward in hierarchy
     public func bringSeparatorsToFront() {
-        contentView.bringSubview(toFront: topSeparator)
-        contentView.bringSubview(toFront: bottomSeparator)
+        contentView.bringSubviewToFront(topSeparator)
+        contentView.bringSubviewToFront(bottomSeparator)
     }
 
     /// Move separator backward in hierarchy
     public func sendSeparatorsToBack() {
-        contentView.sendSubview(toBack: topSeparator)
-        contentView.sendSubview(toBack: bottomSeparator)
+        contentView.sendSubviewToBack(topSeparator)
+        contentView.sendSubviewToBack(bottomSeparator)
     }
 
     // MARK: - PinLayoutTableViewCell
