@@ -248,6 +248,18 @@ open class BasePassCodeViewController: UIViewController, ConfigurableController 
         titleLabel?.attributedText = actionTitle(for: passCodeControllerState)
     }
 
+    // MARK: - Public functions
+
+    /// Make fakeTextField become first responder
+    public func enableInput() {
+        fakeTextField.becomeFirstResponder()
+    }
+
+    /// Make fakeTextField resign first responder
+    public func disableInput() {
+        fakeTextField.resignFirstResponder()
+    }
+
     // MARK: - ConfigurableController
 
     open func bindViews() {
