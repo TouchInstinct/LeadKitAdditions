@@ -288,7 +288,7 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
 
     open func addViews() {}
 
-    open func setAppearance() {}
+    open func configureAppearance() {}
 
     open func configureBarButtons() {}
 
