@@ -32,7 +32,7 @@ public enum PinImageType {
 }
 
 /// Pass code operation type
-public enum PassCodeControllerType {
+public enum PassCodeOperationType {
     case create
     case enter
     case change
@@ -150,16 +150,6 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
         }
     }
 
-    private func showBiometricsRequestIfNeeded() {
-        guard viewModel.isBiometricsEnabled && viewModel.controllerType == .enter else {
-            return
-        }
-
-        viewModel.authenticateUsingBiometrics(with: biometricsAuthorizationHint,
-                                              fallback: biometricsFallbackButtonTitle,
-                                              cancel: biometricsCancelButtonTitle)
-    }
-
     private func resetUI() {
         resetDotsUI()
         viewModel.reset()
@@ -251,6 +241,17 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
         fakeTextField.resignFirstResponder()
     }
 
+    /// Show biometrics system UI if applicable
+    public func showBiometricsRequestIfNeeded() {
+        guard viewModel.isBiometricsEnabled && viewModel.operationType == .enter else {
+            return
+        }
+
+        viewModel.authenticateUsingBiometrics(with: biometricsAuthorizationHint,
+                                              fallback: biometricsFallbackButtonTitle,
+                                              cancel: biometricsCancelButtonTitle)
+    }
+
     // MARK: - ConfigurableController
 
     open func bindViews() {
@@ -288,7 +289,7 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
 
     open func addViews() {}
 
-    open func setAppearance() {}
+    open func configureAppearance() {}
 
     open func configureBarButtons() {}
 

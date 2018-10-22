@@ -33,7 +33,7 @@ public enum PassCodeAuthType {
 /// Base view model for passCodeViewController
 open class BasePassCodeViewModel: BaseViewModel {
 
-    public let controllerType: PassCodeControllerType
+    public let operationType: PassCodeOperationType
 
     public let disposeBag = DisposeBag()
 
@@ -57,10 +57,10 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     private var attemptsNumber = 0
 
-    private lazy var passCodeHolder: PassCodeHolderProtocol = PassCodeHolderBuilder.build(with: self.controllerType)
+    private lazy var passCodeHolder: PassCodeHolderProtocol = PassCodeHolderBuilder.build(with: self.operationType)
 
-    public init(controllerType: PassCodeControllerType, passCodeConfiguration: PassCodeConfiguration) {
-        self.controllerType = controllerType
+    public init(operationType: PassCodeOperationType, passCodeConfiguration: PassCodeConfiguration) {
+        self.operationType = operationType
         self.passCodeConfiguration = passCodeConfiguration
 
         bindViewModel()
@@ -95,7 +95,7 @@ open class BasePassCodeViewModel: BaseViewModel {
     public func reset() {
         passCodeText.value = nil
         validationResultHolder.value = nil
-        passCodeControllerStateVariable.value = controllerType == .change ? .oldEnter : .enter
+        passCodeControllerStateVariable.value = operationType == .change ? .oldEnter : .enter
         attemptsNumber = 0
         passCodeHolder.reset()
     }
@@ -197,21 +197,32 @@ extension BasePassCodeViewModel {
             return
         }
 
+        switch passCodeHolder.type {
+        case .create where passCodeHolder.enterStep == .enter:
+            attemptsNumber += 1
+        case .change where passCodeHolder.enterStep == .enter:
+            attemptsNumber += 1
+        case .enter:
+            attemptsNumber += 1
+        default:
+            break
+        }
+
         var validationResult = passCodeHolder.validate()
 
-        let passCodeValidationForPassCodeChange = passCodeHolder.type == .change && passCodeHolder.enterStep == .newEnter
+        // if entered (in .enter mode) code is invalid -> .wrongCode
+        if passCodeHolder.type == .enter,
+            let passCode = validationResult.passCode,
+            !isEnteredPassCodeValid(passCode) {
 
-        if passCodeHolder.type == .enter || passCodeValidationForPassCodeChange {
-            attemptsNumber += 1
+            let remainingAttemptsCount = passCodeConfiguration.maxAttemptsNumber - attemptsNumber
+            validationResult = .invalid(.wrongCode(attemptsRemaining: remainingAttemptsCount))
+        }
 
-            if let passCode = validationResult.passCode, !isEnteredPassCodeValid(passCode) {
-                validationResult = .invalid(.wrongCode(passCodeConfiguration.maxAttemptsNumber - attemptsNumber))
-            }
-
-            if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsNumber)) ||
-                attemptsNumber > Int(passCodeConfiguration.maxAttemptsNumber) {
-                validationResult = .invalid(.tooManyAttempts)
-            }
+        // if entered code (in any mode) is mismatched too many times -> .tooManyAttempts
+        if (!validationResult.isValid && attemptsNumber == passCodeConfiguration.maxAttemptsNumber) ||
+            attemptsNumber > passCodeConfiguration.maxAttemptsNumber {
+            validationResult = .invalid(.tooManyAttempts(type: operationType))
         }
 
         if !validationResult.isValid {

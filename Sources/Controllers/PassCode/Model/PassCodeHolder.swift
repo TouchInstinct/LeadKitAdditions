@@ -41,7 +41,7 @@ public extension PassCodeHolderProtocol {
 /// Holds information about pass codes during pass code creation process
 public class PassCodeHolderCreate: PassCodeHolderProtocol {
 
-    public let type: PassCodeControllerType = .create
+    public let type: PassCodeOperationType = .create
 
     private var firstPassCode: String?
     private var secondPassCode: String?
@@ -95,7 +95,7 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
 /// Holds information about pass code during pass code entering process
 public class PassCodeHolderEnter: PassCodeHolderProtocol {
 
-    public let type: PassCodeControllerType = .enter
+    public let type: PassCodeOperationType = .enter
     public let enterStep: PassCodeControllerState = .enter
 
     public var shouldValidate: Bool {
@@ -125,7 +125,7 @@ public class PassCodeHolderEnter: PassCodeHolderProtocol {
 /// Holds information about pass codes during pass code changing process
 public class PassCodeHolderChange: PassCodeHolderProtocol {
 
-    public let type: PassCodeControllerType = .change
+    public let type: PassCodeOperationType = .change
 
     private var oldPassCode: String?
     private var newFirstPassCode: String?

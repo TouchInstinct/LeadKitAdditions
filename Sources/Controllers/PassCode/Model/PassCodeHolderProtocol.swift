@@ -25,7 +25,7 @@
 public protocol PassCodeHolderProtocol {
 
     /// Type of operation with pass code
-    var type: PassCodeControllerType { get }
+    var type: PassCodeOperationType { get }
     /// Operation step
     var enterStep: PassCodeControllerState { get }
 
@@ -54,7 +54,7 @@ public class PassCodeHolderBuilder {
       - parameter type: type of pass code controller
       - returns: pass code information holder, specific by type
      */
-    public static func build(with type: PassCodeControllerType) -> PassCodeHolderProtocol {
+    public static func build(with type: PassCodeOperationType) -> PassCodeHolderProtocol {
         switch type {
         case .create:
             return PassCodeHolderCreate()

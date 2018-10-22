@@ -21,13 +21,15 @@
 //
 
 /// Describes error, which may occur during pass code entering
-/// - codesNotMatch: Different codes
-/// - wrongCode: Value is remaining attemps
-/// - tooManyAttempts: Attempts limit reached
 public enum PassCodeError: Error {
+    /// Different codes
     case codesNotMatch
-    case wrongCode(Int)
-    case tooManyAttempts
+
+    /// Value is remaining attemps
+    case wrongCode(attemptsRemaining: Int)
+
+    /// Attempts limit reached (for create, change or enter)
+    case tooManyAttempts(type: PassCodeOperationType)
 }
 
 public extension PassCodeError {
