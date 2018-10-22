@@ -242,7 +242,7 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
     }
 
     /// Show biometrics system UI if applicable
-    func showBiometricsRequestIfNeeded() {
+    public func showBiometricsRequestIfNeeded() {
         guard viewModel.isBiometricsEnabled && viewModel.operationType == .enter else {
             return
         }
