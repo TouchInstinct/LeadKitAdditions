@@ -32,7 +32,7 @@ public enum PinImageType {
 }
 
 /// Pass code operation type
-public enum PassCodeControllerType {
+public enum PassCodeOperationType {
     case create
     case enter
     case change

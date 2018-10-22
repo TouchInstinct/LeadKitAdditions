@@ -33,7 +33,7 @@ public enum PassCodeAuthType {
 /// Base view model for passCodeViewController
 open class BasePassCodeViewModel: BaseViewModel {
 
-    public let controllerType: PassCodeControllerType
+    public let operationType: PassCodeOperationType
 
     public let disposeBag = DisposeBag()
 
@@ -57,10 +57,10 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     private var attemptsNumber = 0
 
-    private lazy var passCodeHolder: PassCodeHolderProtocol = PassCodeHolderBuilder.build(with: self.controllerType)
+    private lazy var passCodeHolder: PassCodeHolderProtocol = PassCodeHolderBuilder.build(with: self.operationType)
 
-    public init(controllerType: PassCodeControllerType, passCodeConfiguration: PassCodeConfiguration) {
-        self.controllerType = controllerType
+    public init(operationType: PassCodeOperationType, passCodeConfiguration: PassCodeConfiguration) {
+        self.operationType = operationType
         self.passCodeConfiguration = passCodeConfiguration
 
         bindViewModel()
@@ -95,7 +95,7 @@ open class BasePassCodeViewModel: BaseViewModel {
     public func reset() {
         passCodeText.value = nil
         validationResultHolder.value = nil
-        passCodeControllerStateVariable.value = controllerType == .change ? .oldEnter : .enter
+        passCodeControllerStateVariable.value = operationType == .change ? .oldEnter : .enter
         attemptsNumber = 0
         passCodeHolder.reset()
     }
