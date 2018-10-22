@@ -150,16 +150,6 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
         }
     }
 
-    private func showBiometricsRequestIfNeeded() {
-        guard viewModel.isBiometricsEnabled && viewModel.controllerType == .enter else {
-            return
-        }
-
-        viewModel.authenticateUsingBiometrics(with: biometricsAuthorizationHint,
-                                              fallback: biometricsFallbackButtonTitle,
-                                              cancel: biometricsCancelButtonTitle)
-    }
-
     private func resetUI() {
         resetDotsUI()
         viewModel.reset()
@@ -249,6 +239,17 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
     /// Make fakeTextField resign first responder
     public func disableInput() {
         fakeTextField.resignFirstResponder()
+    }
+
+    /// Show biometrics system UI if applicable
+    func showBiometricsRequestIfNeeded() {
+        guard viewModel.isBiometricsEnabled && viewModel.operationType == .enter else {
+            return
+        }
+
+        viewModel.authenticateUsingBiometrics(with: biometricsAuthorizationHint,
+                                              fallback: biometricsFallbackButtonTitle,
+                                              cancel: biometricsCancelButtonTitle)
     }
 
     // MARK: - ConfigurableController
