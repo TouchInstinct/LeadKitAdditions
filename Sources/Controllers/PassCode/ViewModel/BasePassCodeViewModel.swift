@@ -197,21 +197,32 @@ extension BasePassCodeViewModel {
             return
         }
 
+        switch passCodeHolder.type {
+        case .create where passCodeHolder.enterStep == .enter:
+            attemptsNumber += 1
+        case .change where passCodeHolder.enterStep == .enter:
+            attemptsNumber += 1
+        case .enter:
+            attemptsNumber += 1
+        default:
+            break
+        }
+
         var validationResult = passCodeHolder.validate()
 
-        let passCodeValidationForPassCodeChange = passCodeHolder.type == .change && passCodeHolder.enterStep == .newEnter
+        // if entered (in .enter mode) code is invalid -> .wrongCode
+        if passCodeHolder.type == .enter,
+            let passCode = validationResult.passCode,
+            !isEnteredPassCodeValid(passCode) {
 
-        if passCodeHolder.type == .enter || passCodeValidationForPassCodeChange {
-            attemptsNumber += 1
+            let remainingAttemptsCount = passCodeConfiguration.maxAttemptsNumber - attemptsNumber
+            validationResult = .invalid(.wrongCode(attemptsRemaining: remainingAttemptsCount))
+        }
 
-            if let passCode = validationResult.passCode, !isEnteredPassCodeValid(passCode) {
-                validationResult = .invalid(.wrongCode(passCodeConfiguration.maxAttemptsNumber - attemptsNumber))
-            }
-
-            if (!validationResult.isValid && attemptsNumber == Int(passCodeConfiguration.maxAttemptsNumber)) ||
-                attemptsNumber > Int(passCodeConfiguration.maxAttemptsNumber) {
-                validationResult = .invalid(.tooManyAttempts)
-            }
+        // if entered code (in any mode) is mismatched too many times -> .tooManyAttempts
+        if (!validationResult.isValid && attemptsNumber == passCodeConfiguration.maxAttemptsNumber) ||
+            attemptsNumber > passCodeConfiguration.maxAttemptsNumber {
+            validationResult = .invalid(.tooManyAttempts(type: operationType))
         }
 
         if !validationResult.isValid {
