@@ -1,5 +1,11 @@
 # Changelog
 
+### 0.3.6
+
+- **Update**: PassCodeError, now emmit `tooManyAttempts` in any operation (*create* / *change* / *enter*) type.
+- **Update**: Rename `PassCodeControllerType` to `PassCodeOperationType`.
+- **Update**: `showBiometricsRequestIfNeeded` method become public.
+
 ### 0.3.5
 
 - **Update**: Migrate to Swift 4.2 & Xcode 10. Update dependencies.
