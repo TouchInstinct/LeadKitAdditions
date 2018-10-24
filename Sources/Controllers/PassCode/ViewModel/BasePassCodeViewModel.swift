@@ -198,9 +198,9 @@ extension BasePassCodeViewModel {
         }
 
         switch passCodeHolder.type {
-        case .create where passCodeHolder.enterStep == .enter:
+        case .create where passCodeHolder.enterStep == .repeatEnter:
             attemptsNumber += 1
-        case .change where passCodeHolder.enterStep == .enter:
+        case .change where passCodeHolder.enterStep == .repeatEnter:
             attemptsNumber += 1
         case .enter:
             attemptsNumber += 1

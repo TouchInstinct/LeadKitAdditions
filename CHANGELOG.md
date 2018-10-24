@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.3.7
+
+- **Fixed**: `PassCodeError.tooManyAttempts` logic in `.create` and `.change` `PassCodeOperationType`
+
 ### 0.3.6
 
 - **Update**: PassCodeError, now emmit `tooManyAttempts` in any operation (*create* / *change* / *enter*) type.
