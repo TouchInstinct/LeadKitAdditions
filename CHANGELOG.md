@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.3.8
+
+- **Fixed**: `SwiftValidator` fork moved to TouchInstinct repo, the used one is removed. Version number is downgraded to `4.0.2` to avoid collision when the original pod will update.
+
 ### 0.3.7
 
 - **Fixed**: `PassCodeError.tooManyAttempts` logic in `.create` and `.change` `PassCodeOperationType`

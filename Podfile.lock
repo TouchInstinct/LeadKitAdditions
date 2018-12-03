@@ -28,7 +28,7 @@ PODS:
   - RxSwift (4.3.1)
   - SwiftDate (5.0.10)
   - SwiftLint (0.27.0)
-  - SwiftValidator (5.0.0)
+  - SwiftValidator (4.0.2)
   - TableKit (2.8.0)
   - UIScrollView-InfiniteScroll (1.1.0)
 
@@ -39,7 +39,7 @@ DEPENDENCIES:
   - LeadKit/Core-iOS-Extension (~> 0.9.0)
   - PinLayout (~> 1.6)
   - SwiftLint (~> 0.25)
-  - SwiftValidator (= 5.0.0)
+  - SwiftValidator (= 4.0.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -69,10 +69,10 @@ SPEC CHECKSUMS:
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
   SwiftDate: fcdaa7ca22a903faf6d7ed231239a88d174dcae3
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
-  SwiftValidator: 46cdd2061962df3ee8bab3c536dea9b34191d459
+  SwiftValidator: 8517a67bceebd7286cb487da259db7dd44c5fc74
   TableKit: d635663343d00e209f258e35d4ee0072ad1beb1a
   UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: 3a69f15c8923b9a8b4798d4e8e1caf8dc6293c6d
+PODFILE CHECKSUM: 447350715f27bad97492296a2ed066c844cfaf5a
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2
