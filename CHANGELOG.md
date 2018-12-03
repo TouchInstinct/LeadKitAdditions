@@ -3,6 +3,7 @@
 ### 0.3.8
 
 - **Fixed**: `SwiftValidator` fork moved to TouchInstinct repo, the used one is removed. Version number is downgraded to `4.0.2` to avoid collision when the original pod will update.
+- **Fixed**: Extensions target building. Removed all PassCode logic, SeparatorTableViewCell and PinLayoutTableViewCell from extensions target.
 
 ### 0.3.7
 

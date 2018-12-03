@@ -30,7 +30,8 @@ Pod::Spec.new do |s|
     ss.exclude_files = [
       "Sources/Classes/Cells/LabelTableViewCell/*.swift",
       "Sources/Services/Network/DefaultNetworkService+ActivityIndicator.swift",
-      "Sources/Extensions/Cells/**/*.swift"
+      "Sources/Extensions/Cells/**/*.swift",
+      "Sources/Controllers/Passcode/**/*.swift"
     ]
 
     ss.dependency "LeadKit/Core-iOS-Extension", '~> 0.9.0'
