@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.3.9
+
+- **Add**: `allowableReuseDuration` variable to `BiometricsService` which is a wrapper for touchIDAuthenticationAllowableReuseDuration.
+- **Add**: individual `isTouchIdSupported` variable to `BiometricsService` to indicate if TouchId can be used.
+- **Add**: `clear` function to `BiometricsService` so the context can be refreshed.
+- **Update**: Documentations.
+
 ### 0.3.8
 
 - **Fixed**: `SwiftValidator` fork moved to TouchInstinct repo, the used one is removed. Version number is downgraded to `4.0.2` to avoid collision when the original pod will update.
