@@ -29,13 +29,35 @@ public final class BiometricsService {
 
     private lazy var laContext = LAContext()
 
-    /// Returns true if user can authenticate via faceID
+    /// If the user unlocks the device using biometrics within the specified time interval,
+    /// then authentication for the receiver succeeds automatically, without prompting the user for biometrics.
+    /// Works only after device unlock event, no other apps authentications counts.
+    public var allowableReuseDuration: TimeInterval? = nil {
+        didSet {
+            guard let duration = allowableReuseDuration else {
+                return
+            }
+            if #available(iOS 9.0, *) {
+                laContext.touchIDAuthenticationAllowableReuseDuration = duration
+            }
+        }
+    }
+
+    /// Returns true if user can authenticate via Face ID
     public var isFaceIdSupported: Bool {
         if #available(iOS 11.0, *) {
             return canAuthenticateWithBiometrics && laContext.biometryType == .faceID
-        } else {
-            return false
         }
+        return false
+    }
+
+    /// Returns true if user can authenticate via Touch ID
+    public var isTouchIdSupported: Bool {
+        let canEvaluate = canAuthenticateWithBiometrics
+        if #available(iOS 11.0, *) {
+            return canEvaluate && laContext.biometryType == .touchID
+        }
+        return canEvaluate
     }
 
     /// Returns current domain state
@@ -45,19 +67,22 @@ public final class BiometricsService {
         return laContext.evaluatedPolicyDomainState
     }
 
-    /// Indicates is it possible to authenticate on this device via touch id
+    /// Indicates is it possible to authenticate on this device via any biometric.
+    /// Returns false if not enrolled or lockedout.
     public var canAuthenticateWithBiometrics: Bool {
         return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 
     /**
-     Initiates system biometrics authentication process
+     Initiates system biometrics authentication process.
+     Once evaluated, will return success until the context is deallocated.
+     Call "clear" to use a new context instance.
 
-      - parameters:
-        - description: prompt on the system alert
-        - fallback: alternative action button title on system alert
-        - cancel: cancel button title on the system alert
-        - authHandler: callback, with parameter, indicates if user authenticate successfuly
+     - parameters:
+     - description: prompt on the system alert
+     - fallback: alternative action button title on system alert
+     - cancel: cancel button title on the system alert
+     - authHandler: callback, with parameter, indicates if user authenticate successfuly
      */
     public func authenticateWithBiometrics(with description: String,
                                            fallback fallbackTitle: String?,
@@ -73,6 +98,10 @@ public final class BiometricsService {
         }
     }
 
-    public init() {}
+    /// Replace old instance of the context with the new one
+    public func clear() {
+        laContext = LAContext()
+    }
 
+    public init() {}
 }
