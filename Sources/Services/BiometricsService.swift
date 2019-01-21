@@ -75,7 +75,8 @@ public final class BiometricsService {
 
     /**
      Initiates system biometrics authentication process.
-     Once evaluated, will return success until the context is deallocated or invalidated.
+     Once evaluated, will return success until the context is deallocated.
+     Call "clear" to use a new context instance.
 
      - parameters:
      - description: prompt on the system alert
@@ -97,10 +98,8 @@ public final class BiometricsService {
         }
     }
 
-    /// This method allows invalidating the context manually while it is in scope.
-    /// Invalidation terminates any existing policy evaluation and the respective call will
-    /// fail with LAErrorAppCancel.
-    public func invalidate() {
+    /// Replace old instance of the context with the new one
+    public func clear() {
         laContext = LAContext()
     }
 
