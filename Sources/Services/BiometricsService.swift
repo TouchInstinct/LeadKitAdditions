@@ -29,6 +29,9 @@ public final class BiometricsService {
 
     private lazy var laContext = LAContext()
 
+    /// If the user unlocks the device using biometrics within the specified time interval,
+    /// then authentication for the receiver succeeds automatically, without prompting the user for biometrics.
+    /// Works only after device unlock event, no other apps authentications counts.
     public var allowableReuseDuration: TimeInterval? = nil {
         didSet {
             guard let duration = allowableReuseDuration else {
