@@ -2,7 +2,7 @@
 
 ### 0.3.10
 
-- **Remove**: `isTouchIdSupported` and `isFaceIdSupported`.
+- **[Breaking change]**: Remove `isTouchIdSupported` and `isFaceIdSupported`.
 - **Add** BiometryType for BiometricsService: `touchID`, `faceID`, `none`.
 
 ### 0.3.9
