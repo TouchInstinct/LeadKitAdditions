@@ -1,5 +1,10 @@
 # Changelog
 
+### 0.3.10
+
+- **Remove**: `isTouchIdSupported` and `isFaceIdSupported`.
+- **Add** BiometryType for BiometricsService: `touchID`, `faceID`, `none`.
+
 ### 0.3.9
 
 - **Add**: `allowableReuseDuration` variable to `BiometricsService` which is a wrapper for touchIDAuthenticationAllowableReuseDuration.
