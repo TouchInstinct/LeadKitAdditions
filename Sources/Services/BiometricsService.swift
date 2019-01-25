@@ -26,6 +26,15 @@ public typealias BiometricsAuthHandler = (Bool, Error?) -> Void
 
 /// Service that provide access to authentication via biometric
 public final class BiometricsService {
+    
+    public enum BiometryType {
+        
+        case faceID
+        
+        case touchID
+        
+        case none
+    }
 
     private lazy var laContext = LAContext()
 
@@ -43,21 +52,22 @@ public final class BiometricsService {
         }
     }
 
-    /// Returns true if user can authenticate via Face ID
-    public var isFaceIdSupported: Bool {
-        if #available(iOS 11.0, *) {
-            return canAuthenticateWithBiometrics && laContext.biometryType == .faceID
-        }
-        return false
-    }
-
-    /// Returns true if user can authenticate via Touch ID
-    public var isTouchIdSupported: Bool {
+    /// Returns BiometryType supporting by device: TouchID, FaceID or none
+    public var biometryType: BiometryType {
         let canEvaluate = canAuthenticateWithBiometrics
+        
         if #available(iOS 11.0, *) {
-            return canEvaluate && laContext.biometryType == .touchID
+            switch laContext.biometryType {
+            case .touchID:
+                return .touchID
+            case .faceID:
+                return .faceID
+            case .none:
+                return .none
+            }
         }
-        return canEvaluate
+        
+        return canEvaluate ? .touchID : .none
     }
 
     /// Returns current domain state
