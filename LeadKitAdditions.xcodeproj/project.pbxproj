@@ -426,7 +426,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = ". build-scripts/xcode/build_phases/swiftlint.sh Sources";
+			shellScript = "swiftlint autocorrect --path Sources --config ${PROJECT_DIR}/build-scripts/xcode/.swiftlint.yml && swiftlint --path Sources --config ${PROJECT_DIR}/build-scripts/xcode/.swiftlint.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
