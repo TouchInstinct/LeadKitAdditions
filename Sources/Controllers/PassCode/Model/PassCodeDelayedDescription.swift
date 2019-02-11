@@ -32,5 +32,4 @@ public struct PassCodeDelayedDescription {
         self.description = description
         self.delay = delay
     }
-
 }

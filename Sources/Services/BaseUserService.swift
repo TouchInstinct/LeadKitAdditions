@@ -59,5 +59,4 @@ open class BaseUserService {
         UserDefaults.standard.sessionId = nil
         UserDefaults.standard.userLogin = nil
     }
-
 }

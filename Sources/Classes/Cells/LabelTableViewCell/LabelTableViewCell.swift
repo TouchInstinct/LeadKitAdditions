@@ -38,8 +38,7 @@ open class LabelTableViewCell: SeparatorTableViewCell {
     override open func addViews() {
         super.addViews()
 
-        contentContainerView.addSubview(backgroundImageView)
-        contentContainerView.addSubview(label)
+        contentContainerView.addSubviews(backgroundImageView, label)
 
         contentView.addSubview(contentContainerView)
     }
@@ -137,5 +136,4 @@ open class LabelTableViewCell: SeparatorTableViewCell {
     public func configureLabelText(with viewText: ViewText) {
         label.configure(with: viewText)
     }
-
 }

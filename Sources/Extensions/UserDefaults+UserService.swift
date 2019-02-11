@@ -48,5 +48,4 @@ public extension UserDefaults {
             set(newValue, forKey: Keys.userLogin)
         }
     }
-
 }

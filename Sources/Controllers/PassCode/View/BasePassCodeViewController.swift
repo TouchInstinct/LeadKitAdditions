@@ -49,7 +49,7 @@ public enum PassCodeControllerState {
 /// Base view controller that operates with pass code
 open class BasePassCodeViewController: UIViewController, LegacyConfigurableController {
 
-    public var viewModel: BasePassCodeViewModel!
+    public var viewModel: BasePassCodeViewModel! // swiftlint:disable:this implicitly_unwrapped_optional
 
     // MARK: - IBOutlets
 
@@ -294,7 +294,6 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
     open func configureBarButtons() {}
 
     open func localize() {}
-
 }
 
 // MARK: - UITextFieldDelegate
@@ -308,5 +307,4 @@ extension BasePassCodeViewController: UITextFieldDelegate {
         let invalid = CharacterSet(charactersIn: "0123456789").inverted
         return string.rangeOfCharacter(from: invalid, options: [], range: string.startIndex..<string.endIndex) == nil
     }
-
 }

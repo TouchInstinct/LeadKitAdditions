@@ -29,5 +29,4 @@ public extension PinLayoutCell {
         configureAppearance()
         configureLayout()
     }
-
 }

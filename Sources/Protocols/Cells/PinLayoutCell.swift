@@ -56,5 +56,4 @@ public protocol PinLayoutCell {
 
     /// Current content height.
     var contentHeight: CGFloat { get }
-
 }

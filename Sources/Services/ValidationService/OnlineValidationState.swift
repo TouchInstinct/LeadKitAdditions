@@ -32,5 +32,4 @@ public enum OnlineValidationState {
     case processing
     case valid
     case invalid(error: Error?)
-
 }

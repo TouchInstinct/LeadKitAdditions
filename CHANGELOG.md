@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.3.11
+- **Add**: Carthage support.
+- **[Breaking change]**: Remove `BaseDateFormatter`. Use `NumberFormattingService` from LeadKit instead.
+
 ### 0.3.10
 
 - **[Breaking change]**: Remove `isTouchIdSupported` and `isFaceIdSupported`.

@@ -19,7 +19,6 @@ public extension ValidationServiceState {
     var isValid: Bool {
         return self == .valid
     }
-
 }
 
 public final class ValidationService {
@@ -103,5 +102,4 @@ public final class ValidationService {
                 .disposed(by: disposeBag)
         }
     }
-
 }

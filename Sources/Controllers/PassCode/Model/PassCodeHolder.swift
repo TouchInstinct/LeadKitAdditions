@@ -70,8 +70,10 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
         switch enterStep {
         case .enter:
             firstPassCode = passCode
+
         case .repeatEnter:
             secondPassCode = passCode
+
         default:
             break
         }
@@ -86,10 +88,9 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
     }
 
     public func reset() {
-        firstPassCode  = nil
+        firstPassCode = nil
         secondPassCode = nil
     }
-
 }
 
 /// Holds information about pass code during pass code entering process
@@ -119,7 +120,6 @@ public class PassCodeHolderEnter: PassCodeHolderProtocol {
     public func reset() {
         passCode = nil
     }
-
 }
 
 /// Holds information about pass codes during pass code changing process
@@ -155,10 +155,13 @@ public class PassCodeHolderChange: PassCodeHolderProtocol {
         switch (oldPassCode, newFirstPassCode, newSecondPassCode) {
         case (let oldPassCode?, nil, nil):
             return oldPassCode
+
         case (_, _?, nil):
             return nil
-        case (_, let newFirstPassCode?, let newSecondPassCode?) where newFirstPassCode == newSecondPassCode:
+
+        case let (_, newFirstPassCode?, newSecondPassCode?) where newFirstPassCode == newSecondPassCode:
             return newFirstPassCode
+
         default:
             return nil
         }
@@ -190,5 +193,4 @@ public class PassCodeHolderChange: PassCodeHolderProtocol {
             newSecondPassCode = nil
         }
     }
-
 }

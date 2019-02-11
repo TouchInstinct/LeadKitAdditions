@@ -90,7 +90,6 @@ open class PinLayoutTableViewCell: UITableViewCell, PinLayoutCell {
     open var contentHeight: CGFloat {
         return contentView.subviewsMaxY
     }
-
 }
 
 private extension UIView {
@@ -100,5 +99,4 @@ private extension UIView {
             .map { $0.frame.maxY }
             .max() ?? frame.maxY
     }
-
 }
