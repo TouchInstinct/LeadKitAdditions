@@ -36,7 +36,6 @@ open class BaseTextFieldViewEvents: TextFieldViewEvents {
     public init(textChangedDriver: Driver<String?>) {
         self.textChangedDriver = textChangedDriver
     }
-
 }
 
 /// Base implementation of text field view model events.
@@ -60,7 +59,6 @@ open class BaseTextFieldViewModelEvents: TextFieldViewModelEvents {
         self.changeValidationStateDriver = changeValidationStateDriver
         self.changeOnlineValidationStateDriver = changeOnlineValidationStateDriver
     }
-
 }
 
 public extension BaseTextFieldViewModelEvents {
@@ -164,5 +162,4 @@ public extension BaseTextFieldViewModelEvents {
                   changeValidationStateDriver: offlineValidationDriver,
                   changeOnlineValidationStateDriver: onlineValidationDriver)
     }
-
 }

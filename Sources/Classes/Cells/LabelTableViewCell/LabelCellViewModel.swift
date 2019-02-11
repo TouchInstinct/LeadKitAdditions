@@ -52,5 +52,4 @@ open class LabelCellViewModel {
         self.labelInsets = labelInsets
         self.separatorType = separatorType
     }
-
 }

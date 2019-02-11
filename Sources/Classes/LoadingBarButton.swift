@@ -42,6 +42,7 @@ public class LoadingBarButton {
             switch side {
             case .left:
                 return navigationItem?.leftBarButtonItem
+
             case .right:
                 return navigationItem?.rightBarButtonItem
             }
@@ -50,6 +51,7 @@ public class LoadingBarButton {
             switch side {
             case .left:
                 navigationItem?.leftBarButtonItem = newValue
+
             case .right:
                 navigationItem?.rightBarButtonItem = newValue
             }
@@ -71,14 +73,13 @@ public class LoadingBarButton {
 
     fileprivate func setState(waiting: Bool = false) {
         if waiting {
-            let activityIndicatorItem =  UIBarButtonItem.activityIndicator
+            let activityIndicatorItem = UIBarButtonItem.activityIndicator
             barButtonItem = activityIndicatorItem.barButton
             activityIndicatorItem.activityIndicator.startAnimating()
         } else {
             barButtonItem = initialBarButton
         }
     }
-
 }
 
 public extension Observable {
@@ -100,5 +101,4 @@ public extension Observable {
                 barButton.setState(waiting: false)
             })
     }
-
 }

@@ -27,5 +27,4 @@ extension LabelTableViewCell: ConfigurableCell {
     public func configure(with viewModel: LabelCellViewModel) {
         configureLabelCell(with: viewModel)
     }
-
 }

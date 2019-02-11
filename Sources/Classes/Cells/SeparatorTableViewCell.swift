@@ -60,8 +60,7 @@ open class SeparatorTableViewCell: PinLayoutTableViewCell {
     override open func addViews() {
         super.addViews()
 
-        contentView.addSubview(topSeparator)
-        contentView.addSubview(bottomSeparator)
+        contentView.addSubviews(topSeparator, bottomSeparator)
     }
 
     override open func layout() {
@@ -100,5 +99,4 @@ open class SeparatorTableViewCell: PinLayoutTableViewCell {
 
         configureSeparator(with: .none)
     }
-
 }

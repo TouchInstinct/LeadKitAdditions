@@ -35,5 +35,4 @@ public extension BaseTextFieldViewEvents {
 
         self.init(textChangedDriver: textChangedDriver)
     }
-
 }

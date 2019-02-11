@@ -26,12 +26,11 @@ public protocol LegacyConfigurableController: InitializableView {
 
     associatedtype ViewModelT
 
-    var viewModel: ViewModelT! { get }
+    var viewModel: ViewModelT! { get } // swiftlint:disable:this implicitly_unwrapped_optional
 
     func configureBarButtons()
 
     func initialLoadView()
-
 }
 
 public extension LegacyConfigurableController where Self: UIViewController {
@@ -49,5 +48,4 @@ public extension LegacyConfigurableController where Self: UIViewController {
         localize()
         bindViews()
     }
-
 }

@@ -57,7 +57,6 @@ open class BasePassCodeService {
     private var passCodeHash: String? {
         return keychain[Keys.passCodeHash]
     }
-
 }
 
 public extension BasePassCodeService {
@@ -96,5 +95,4 @@ public extension BasePassCodeService {
         save(passCode: nil)
         isBiometricsAuthorizationEnabled = false
     }
-
 }

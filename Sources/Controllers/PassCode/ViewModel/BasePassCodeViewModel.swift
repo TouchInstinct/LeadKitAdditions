@@ -149,7 +149,6 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     /// Notify after system alert with biometrics
     open func biometricsAuthEnds() {}
-
 }
 
 private extension BasePassCodeViewModel {
@@ -200,10 +199,13 @@ extension BasePassCodeViewModel {
         switch passCodeHolder.type {
         case .create where passCodeHolder.enterStep == .repeatEnter:
             attemptsNumber += 1
+
         case .change where passCodeHolder.enterStep == .repeatEnter:
             attemptsNumber += 1
+
         case .enter:
             attemptsNumber += 1
+
         default:
             break
         }
@@ -231,5 +233,4 @@ extension BasePassCodeViewModel {
 
         validationResultHolder.value = validationResult
     }
-
 }

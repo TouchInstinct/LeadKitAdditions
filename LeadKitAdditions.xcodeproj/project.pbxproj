@@ -35,7 +35,6 @@
 		786CBB3B220DD7A70017587F /* PinLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB2E220DD7A70017587F /* PinLayout.framework */; };
 		A6CFB8D91F5024A500A42CC2 /* Error+NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED0C34051F2906EC00FAE9FD /* BaseDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D41F2906EC00FAE9FD /* BaseDateFormatter.swift */; };
 		ED0C34071F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */; };
 		ED0C34091F2906EC00FAE9FD /* PassCodeConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D91F2906EC00FAE9FD /* PassCodeConfiguration.swift */; };
 		ED0C340B1F2906EC00FAE9FD /* PassCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33DA1F2906EC00FAE9FD /* PassCodeError.swift */; };
@@ -85,7 +84,6 @@
 		A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+NetworkingExtensions.swift"; sourceTree = "<group>"; };
 		CAE698E31E968820000394B0 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE698E61E968820000394B0 /* LeadKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadKitAdditions.h; sourceTree = "<group>"; };
-		ED0C33D41F2906EC00FAE9FD /* BaseDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDateFormatter.swift; sourceTree = "<group>"; };
 		ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
 		ED0C33D91F2906EC00FAE9FD /* PassCodeConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeConfiguration.swift; sourceTree = "<group>"; };
 		ED0C33DA1F2906EC00FAE9FD /* PassCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassCodeError.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 			children = (
 				67528BCB206E3C12009F2525 /* Cells */,
 				67B4E6F0206945D200E233EA /* BaseTextFieldViewModel */,
-				ED0C33D41F2906EC00FAE9FD /* BaseDateFormatter.swift */,
 				ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */,
 			);
 			path = Classes;
@@ -426,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftlint autocorrect --path Sources --config ${PROJECT_DIR}/build-scripts/xcode/.swiftlint.yml && swiftlint --path Sources --config ${PROJECT_DIR}/build-scripts/xcode/.swiftlint.yml\n";
+			shellScript = "CONFIG_PATH=${PROJECT_DIR}/build-scripts/xcode/.swiftlint.yml\n\nif which swiftlint >/dev/null; then\nswiftlint autocorrect --path Sources --config ${CONFIG_PATH} && swiftlint --path Sources --config ${CONFIG_PATH}\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -460,7 +457,6 @@
 				6760AF1A207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift in Sources */,
 				ED0C34211F2906EC00FAE9FD /* UserDefaults+UserService.swift in Sources */,
 				ED0C34111F2906EC00FAE9FD /* PassCodeValidationResult.swift in Sources */,
-				ED0C34051F2906EC00FAE9FD /* BaseDateFormatter.swift in Sources */,
 				ED0C34431F2906EC00FAE9FD /* ValidationService.swift in Sources */,
 				ED0C340B1F2906EC00FAE9FD /* PassCodeError.swift in Sources */,
 				67B4E6F6206945DD00E233EA /* OnlineValidationResult.swift in Sources */,

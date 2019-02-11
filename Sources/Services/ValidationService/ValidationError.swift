@@ -11,5 +11,4 @@ public struct ValidationError: Error {
         self.errorMessage = errorMessage
         self.errorHint = errorHint
     }
-
 }

@@ -37,6 +37,7 @@ public extension PassCodeError {
         switch self {
         case .tooManyAttempts:
             return true
+
         default:
             return false
         }

@@ -17,5 +17,4 @@ public extension Error {
     var isResponseSerializationError: Bool {
         return (self as? AFError)?.isResponseSerializationError ?? false
     }
-
 }

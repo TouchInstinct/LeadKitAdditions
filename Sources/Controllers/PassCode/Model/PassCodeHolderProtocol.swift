@@ -41,7 +41,6 @@ public protocol PassCodeHolderProtocol {
 
     /// Returns passCode or error if pass code is invalid
     func validate() -> PassCodeValidationResult
-
 }
 
 public class PassCodeHolderBuilder {
@@ -58,11 +57,12 @@ public class PassCodeHolderBuilder {
         switch type {
         case .create:
             return PassCodeHolderCreate()
+
         case .enter:
             return PassCodeHolderEnter()
+
         case .change:
             return PassCodeHolderChange()
         }
     }
-
 }

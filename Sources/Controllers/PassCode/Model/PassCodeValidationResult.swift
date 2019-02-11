@@ -25,7 +25,6 @@ public enum PassCodeValidationResult {
 
     case valid(String)
     case invalid(PassCodeError?)
-
 }
 
 public extension PassCodeValidationResult {
@@ -33,6 +32,7 @@ public extension PassCodeValidationResult {
         switch self {
         case .valid:
             return true
+
         case .invalid:
             return false
         }
@@ -42,6 +42,7 @@ public extension PassCodeValidationResult {
         switch self {
         case let .valid(passCode):
             return passCode
+
         case .invalid:
             return nil
         }
@@ -51,6 +52,7 @@ public extension PassCodeValidationResult {
         switch self {
         case let .invalid(error):
             return error
+
         case .valid:
             return nil
         }

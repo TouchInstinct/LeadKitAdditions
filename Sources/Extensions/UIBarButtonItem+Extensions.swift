@@ -30,5 +30,4 @@ public extension UIBarButtonItem {
         let indicatorBar = UIBarButtonItem(customView: indicatorView)
         return (indicatorBar, indicatorView)
     }
-
 }

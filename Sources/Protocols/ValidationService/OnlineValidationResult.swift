@@ -30,5 +30,4 @@ public protocol OnlineValidateable {
 
     /// May contain an error if validation did failed.
     var error: Error? { get }
-
 }

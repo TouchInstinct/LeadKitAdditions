@@ -15,6 +15,7 @@ public extension ValidationItemState {
         switch self {
         case .initial:
             return true
+
         default:
             return false
         }
@@ -24,11 +25,11 @@ public extension ValidationItemState {
         switch self {
         case .valid:
             return true
+
         default:
             return false
         }
     }
-
 }
 
 public final class ValidationItem {
@@ -58,7 +59,8 @@ public final class ValidationItem {
             .drive(text)
             .disposed(by: disposeBag)
 
-        textDriver.asObservable().withLatestFrom(validationStateHolder.asObservable()) { (text: $0, validationState: $1) }
+        textDriver.asObservable()
+            .withLatestFrom(validationStateHolder.asObservable()) { (text: $0, validationState: $1) }
             .filter { !$0.validationState.isInitial }
             .map { $0.text }
             .subscribe(onNext: { [weak self] text in
@@ -89,6 +91,7 @@ public final class ValidationItem {
                  .valid where !isManual:
 
                 validationStateHolder.value = .correction(validationError)
+
             default:
                 validationStateHolder.value = .error(validationError)
             }
@@ -96,5 +99,4 @@ public final class ValidationItem {
             validationStateHolder.value = .valid
         }
     }
-
 }
