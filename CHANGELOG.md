@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.12
+- **Update**: Swift 5 support
+
 ### 0.3.11
 - **Add**: Carthage support.
 - **[Breaking change]**: Remove `BaseDateFormatter`. Use `NumberFormattingService` from LeadKit instead.
