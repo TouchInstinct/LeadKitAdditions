@@ -61,7 +61,7 @@ public final class ValidationService {
 
     public func unregister(items: [ValidationItem]) {
         items.forEach { item in
-            if let removeIndex = validationItems.index(where: { $0 === item }) {
+            if let removeIndex = validationItems.firstIndex(where: { $0 === item }) {
                 validationItems.remove(at: removeIndex)
             }
         }
