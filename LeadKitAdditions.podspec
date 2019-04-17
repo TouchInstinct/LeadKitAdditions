@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
     ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "CryptoSwift", '~> 0.9.0'
     ss.dependency "SwiftValidator", '4.0.2'
-    ss.dependency "PinLayout", '~> 1.6'
   end
 
   s.default_subspec = 'Core'
