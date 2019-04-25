@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.3.13
+- **[Breaking change]**: `LabelTableViewCell` moved to `LeadKit`.
+- **[Breaking change]**: Removed `PinLayout` dependency.
+
 ### 0.3.12
 - **Update**: Swift 5 support
 
@@ -128,4 +132,3 @@
 ## 0.1.0
 
 - **Add**: support for Swift 3.2 / 4
-

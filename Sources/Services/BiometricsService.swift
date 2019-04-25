@@ -66,6 +66,9 @@ public final class BiometricsService {
 
             case .none:
                 return .none
+
+            @unknown default:
+                return .none
             }
         }
 

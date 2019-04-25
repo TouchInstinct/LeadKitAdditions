@@ -7,18 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6760AF1A207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF19207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift */; };
 		67779CBC206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */; };
 		678D26AA206935B900B05B93 /* BiometricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D26A9206935B900B05B93 /* BiometricsService.swift */; };
 		67B4E6F6206945DD00E233EA /* OnlineValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4E6F5206945DC00E233EA /* OnlineValidationResult.swift */; };
 		67B4E6F9206945F900E233EA /* OnlineValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4E6F8206945F900E233EA /* OnlineValidationState.swift */; };
 		67B4E6FB20694A4200E233EA /* BaseTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4E6F1206945D200E233EA /* BaseTextFieldViewModel.swift */; };
-		67C2A41620724BBA000A5682 /* SeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2A41520724BBA000A5682 /* SeparatorTableViewCell.swift */; };
-		67C2A41820724EA0000A5682 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2A41720724EA0000A5682 /* LabelTableViewCell.swift */; };
-		67C2A41B20724F40000A5682 /* LabelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2A41A20724F40000A5682 /* LabelCellViewModel.swift */; };
-		67C2A41D20725359000A5682 /* LabelTableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2A41C20725359000A5682 /* LabelTableViewCell+Extensions.swift */; };
-		67CF05AA206E9880009A2AB9 /* PinLayoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF05A9206E9880009A2AB9 /* PinLayoutCell.swift */; };
-		67CF05B0206E99DF009A2AB9 /* PinLayoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CF05AF206E99DF009A2AB9 /* PinLayoutTableViewCell.swift */; };
 		67D6041821627600002DAF5B /* LegacyConfigurableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D6041721627600002DAF5B /* LegacyConfigurableController.swift */; };
 		786CBB2F220DD7A70017587F /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB22220DD7A70017587F /* RxSwift.framework */; };
 		786CBB30220DD7A70017587F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB23220DD7A70017587F /* Alamofire.framework */; };
@@ -32,7 +25,6 @@
 		786CBB38220DD7A70017587F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB2B220DD7A70017587F /* RxCocoa.framework */; };
 		786CBB39220DD7A70017587F /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB2C220DD7A70017587F /* CryptoSwift.framework */; };
 		786CBB3A220DD7A70017587F /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB2D220DD7A70017587F /* KeychainAccess.framework */; };
-		786CBB3B220DD7A70017587F /* PinLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB2E220DD7A70017587F /* PinLayout.framework */; };
 		A6CFB8D91F5024A500A42CC2 /* Error+NetworkingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */; };
 		CAE698E81E968820000394B0 /* LeadKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAE698E61E968820000394B0 /* LeadKitAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED0C34071F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */; };
@@ -55,18 +47,11 @@
 
 /* Begin PBXFileReference section */
 		67528BCE206E3CC6009F2525 /* iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = iOS.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6760AF19207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinLayoutCell+DefaultImplementation.swift"; sourceTree = "<group>"; };
 		67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextFieldViewEvents+Extensions.swift"; sourceTree = "<group>"; };
 		678D26A9206935B900B05B93 /* BiometricsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricsService.swift; sourceTree = "<group>"; };
 		67B4E6F1206945D200E233EA /* BaseTextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextFieldViewModel.swift; sourceTree = "<group>"; };
 		67B4E6F5206945DC00E233EA /* OnlineValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineValidationResult.swift; sourceTree = "<group>"; };
 		67B4E6F8206945F900E233EA /* OnlineValidationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineValidationState.swift; sourceTree = "<group>"; };
-		67C2A41520724BBA000A5682 /* SeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorTableViewCell.swift; sourceTree = "<group>"; };
-		67C2A41720724EA0000A5682 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
-		67C2A41A20724F40000A5682 /* LabelCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCellViewModel.swift; sourceTree = "<group>"; };
-		67C2A41C20725359000A5682 /* LabelTableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LabelTableViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		67CF05A9206E9880009A2AB9 /* PinLayoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLayoutCell.swift; sourceTree = "<group>"; };
-		67CF05AF206E99DF009A2AB9 /* PinLayoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLayoutTableViewCell.swift; sourceTree = "<group>"; };
 		67D6041721627600002DAF5B /* LegacyConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyConfigurableController.swift; sourceTree = "<group>"; };
 		786CBB22220DD7A70017587F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		786CBB23220DD7A70017587F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -121,23 +106,12 @@
 				786CBB38220DD7A70017587F /* RxCocoa.framework in Frameworks */,
 				786CBB39220DD7A70017587F /* CryptoSwift.framework in Frameworks */,
 				786CBB3A220DD7A70017587F /* KeychainAccess.framework in Frameworks */,
-				786CBB3B220DD7A70017587F /* PinLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67528BCB206E3C12009F2525 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				67C2A41920724F32000A5682 /* LabelTableViewCell */,
-				67CF05AF206E99DF009A2AB9 /* PinLayoutTableViewCell.swift */,
-				67C2A41520724BBA000A5682 /* SeparatorTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		67B4E6F0206945D200E233EA /* BaseTextFieldViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,32 +126,6 @@
 				67B4E6F5206945DC00E233EA /* OnlineValidationResult.swift */,
 			);
 			path = ValidationService;
-			sourceTree = "<group>";
-		};
-		67C2A41920724F32000A5682 /* LabelTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				67C2A41720724EA0000A5682 /* LabelTableViewCell.swift */,
-				67C2A41A20724F40000A5682 /* LabelCellViewModel.swift */,
-			);
-			path = LabelTableViewCell;
-			sourceTree = "<group>";
-		};
-		67CF05A8206E986A009A2AB9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				67CF05A9206E9880009A2AB9 /* PinLayoutCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		67CF05AC206E9931009A2AB9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				67C2A41C20725359000A5682 /* LabelTableViewCell+Extensions.swift */,
-				6760AF19207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		A3117951840B8B7D2E7A8A80 /* Frameworks */ = {
@@ -236,7 +184,6 @@
 		ED0C33D21F2906EC00FAE9FD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				67528BCB206E3C12009F2525 /* Cells */,
 				67B4E6F0206945D200E233EA /* BaseTextFieldViewModel */,
 				ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */,
 			);
@@ -293,7 +240,6 @@
 		ED0C33E61F2906EC00FAE9FD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				67CF05AC206E9931009A2AB9 /* Cells */,
 				ED0C33E81F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift */,
 				ED0C33E91F2906EC00FAE9FD /* UserDefaults+UserService.swift */,
 				A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */,
@@ -305,7 +251,6 @@
 		ED0C33EA1F2906EC00FAE9FD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				67CF05A8206E986A009A2AB9 /* Cells */,
 				67B4E6F4206945DC00E233EA /* ValidationService */,
 				67D6041721627600002DAF5B /* LegacyConfigurableController.swift */,
 			);
@@ -439,29 +384,22 @@
 				ED0C343F1F2906EC00FAE9FD /* ValidationError.swift in Sources */,
 				ED0C342F1F2906EC00FAE9FD /* BaseUserService.swift in Sources */,
 				678D26AA206935B900B05B93 /* BiometricsService.swift in Sources */,
-				67C2A41D20725359000A5682 /* LabelTableViewCell+Extensions.swift in Sources */,
 				ED0C34411F2906EC00FAE9FD /* ValidationItem.swift in Sources */,
 				ED0C341F1F2906EC00FAE9FD /* UIBarButtonItem+Extensions.swift in Sources */,
-				67C2A41820724EA0000A5682 /* LabelTableViewCell.swift in Sources */,
 				ED0C34091F2906EC00FAE9FD /* PassCodeConfiguration.swift in Sources */,
 				EF5A43B1206E7A67003CED07 /* PassCodeDelayedDescription.swift in Sources */,
-				67CF05B0206E99DF009A2AB9 /* PinLayoutTableViewCell.swift in Sources */,
 				ED0C34131F2906EC00FAE9FD /* BasePassCodeViewController.swift in Sources */,
-				67C2A41620724BBA000A5682 /* SeparatorTableViewCell.swift in Sources */,
 				ED0C342D1F2906EC00FAE9FD /* BasePassCodeService.swift in Sources */,
 				67B4E6F9206945F900E233EA /* OnlineValidationState.swift in Sources */,
 				67779CBC206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */,
 				ED0C340D1F2906EC00FAE9FD /* PassCodeHolder.swift in Sources */,
-				67CF05AA206E9880009A2AB9 /* PinLayoutCell.swift in Sources */,
 				A6CFB8D91F5024A500A42CC2 /* Error+NetworkingExtensions.swift in Sources */,
 				ED0C34071F2906EC00FAE9FD /* LoadingBarButton.swift in Sources */,
-				6760AF1A207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift in Sources */,
 				ED0C34211F2906EC00FAE9FD /* UserDefaults+UserService.swift in Sources */,
 				ED0C34111F2906EC00FAE9FD /* PassCodeValidationResult.swift in Sources */,
 				ED0C34431F2906EC00FAE9FD /* ValidationService.swift in Sources */,
 				ED0C340B1F2906EC00FAE9FD /* PassCodeError.swift in Sources */,
 				67B4E6F6206945DD00E233EA /* OnlineValidationResult.swift in Sources */,
-				67C2A41B20724F40000A5682 /* LabelCellViewModel.swift in Sources */,
 				ED0C34151F2906EC00FAE9FD /* BasePassCodeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

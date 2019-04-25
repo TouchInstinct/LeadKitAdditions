@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = "LeadKitAdditions"
-  s.version         = "0.3.12"
+  s.version         = "0.3.13"
   s.summary         = "iOS framework with a bunch of tools for rapid development"
   s.homepage        = "https://github.com/TouchInstinct/LeadKitAdditions"
   s.license         = "Apache License, Version 2.0"
@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
     ss.dependency "KeychainAccess", '3.1.0'
     ss.dependency "CryptoSwift", '~> 0.9.0'
     ss.dependency "SwiftValidator", '4.0.2'
-    ss.dependency "PinLayout", '~> 1.6'
   end
 
   s.default_subspec = 'Core'
