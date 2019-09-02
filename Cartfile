@@ -9,3 +9,4 @@ binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1/TableKit/TableKit.json"
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1/RxSwift/RxSwift.json"
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1/UIScrollView_InfiniteScroll/UIScrollView_InfiniteScroll.json"
+binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1/SnapKit/SnapKit.json"
