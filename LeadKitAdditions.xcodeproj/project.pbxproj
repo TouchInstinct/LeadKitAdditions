@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41F97F9CCC33BDC869B3E55C /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77CC9D309EFCAC63A58D072 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
 		6760AF1A207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6760AF19207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift */; };
 		67779CBC206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */; };
 		678D26AA206935B900B05B93 /* BiometricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D26A9206935B900B05B93 /* BiometricsService.swift */; };
@@ -55,7 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		66C6C15BA189F817462035EF /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; path = "Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		67528BCE206E3CC6009F2525 /* iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = iOS.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6760AF19207268EC00C2BB7E /* PinLayoutCell+DefaultImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinLayoutCell+DefaultImplementation.swift"; sourceTree = "<group>"; };
 		67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextFieldViewEvents+Extensions.swift"; sourceTree = "<group>"; };
@@ -84,8 +82,6 @@
 		786CBB2D220DD7A70017587F /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
 		786CBB2E220DD7A70017587F /* PinLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PinLayout.framework; path = Carthage/Build/iOS/PinLayout.framework; sourceTree = "<group>"; };
 		A6CFB8D81F5024A500A42CC2 /* Error+NetworkingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+NetworkingExtensions.swift"; sourceTree = "<group>"; };
-		B77CC9D309EFCAC63A58D072 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC23CB0D748C20B1C1C425D1 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; path = "Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; sourceTree = "<group>"; };
 		CAE698E31E968820000394B0 /* LeadKitAdditions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LeadKitAdditions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAE698E61E968820000394B0 /* LeadKitAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadKitAdditions.h; sourceTree = "<group>"; };
 		ED0C33D51F2906EC00FAE9FD /* LoadingBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingBarButton.swift; sourceTree = "<group>"; };
@@ -126,7 +122,6 @@
 				786CBB39220DD7A70017587F /* CryptoSwift.framework in Frameworks */,
 				786CBB3A220DD7A70017587F /* KeychainAccess.framework in Frameworks */,
 				786CBB3B220DD7A70017587F /* PinLayout.framework in Frameworks */,
-				41F97F9CCC33BDC869B3E55C /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,19 +196,8 @@
 				786CBB26220DD7A70017587F /* SwiftValidator.framework */,
 				786CBB24220DD7A70017587F /* TableKit.framework */,
 				786CBB27220DD7A70017587F /* UIScrollView_InfiniteScroll.framework */,
-				B77CC9D309EFCAC63A58D072 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AA67E11C4BA2859582092B6E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				66C6C15BA189F817462035EF /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */,
-				BC23CB0D748C20B1C1C425D1 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		CAE698D91E968820000394B0 = {
@@ -223,7 +207,6 @@
 				CAE698E41E968820000394B0 /* Products */,
 				CAE698E51E968820000394B0 /* Sources */,
 				67528BCE206E3CC6009F2525 /* iOS.playground */,
-				AA67E11C4BA2859582092B6E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -369,7 +352,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAE698EB1E968820000394B0 /* Build configuration list for PBXNativeTarget "LeadKitAdditions iOS" */;
 			buildPhases = (
-				838CB0F038CB36B815DFF548 /* [CP] Check Pods Manifest.lock */,
 				CAE698DE1E968820000394B0 /* Sources */,
 				CAE698DF1E968820000394B0 /* Frameworks */,
 				CAE698E01E968820000394B0 /* Headers */,
@@ -430,28 +412,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		838CB0F038CB36B815DFF548 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LeadKitAdditions-LeadKitAdditions iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		CAE6990A1E969A7A000394B0 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -630,7 +590,6 @@
 		};
 		CAE698EC1E968820000394B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66C6C15BA189F817462035EF /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -659,7 +618,6 @@
 		};
 		CAE698ED1E968820000394B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC23CB0D748C20B1C1C425D1 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
