@@ -4,6 +4,7 @@ binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1_v2/LeadKit/LeadKit.json" "0.9.27"
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1_v2/RxAlamofire/RxAlamofire.json" "4.3.0"
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1_v2/RxSwift/RxSwift.json" "4.5.0"
+binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1_v2/SnapKit/SnapKit.json" "4.2.0"
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1_v2/SwiftDate/SwiftDate.json" "6.0.3"
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1_v2/SwiftValidator/SwiftValidator.json" "5.0.0"
 binary "https://raw.github.com/TouchInstinct/CarthageBinaries/rebuild_with_swift_5_1_v2/TableKit/TableKit.json" "2.10008.1"
