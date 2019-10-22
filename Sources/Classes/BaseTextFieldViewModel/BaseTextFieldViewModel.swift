@@ -106,7 +106,7 @@ public extension BaseTextFieldViewModelEvents {
 
             let passedRules = offlineRules
                 .map { $0.validate(nonEmptyString) }
-                .reduce(true) { $0 && $1 }
+                .allSatisfy { $0 }
 
             guard passedRules else {
                 return .just(.initial)
