@@ -71,7 +71,7 @@ public final class ValidationService {
 
     public func validate() -> Bool {
         validationStateReactType = .all
-        let isValid = validationItems.map { $0.manualValidate() }.reduce(true) { $0 && $1 }
+        let isValid = validationItems.allSatisfy { $0.manualValidate() }
         validationStateReactType = .each
 
         return isValid
@@ -95,7 +95,7 @@ public final class ValidationService {
         stateObservables.forEach { observable in
             observable
                 .map { states -> Bool in
-                    states.map { $0.isValid }.reduce(true) { $0 && $1 }
+                    states.allSatisfy { $0.isValid }
                 }
                 .map { $0 ? ValidationServiceState.valid : .invalid }
                 .bind(to: stateHolder)
