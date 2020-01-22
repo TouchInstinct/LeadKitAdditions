@@ -1,5 +1,5 @@
 github "krzyzanowskim/CryptoSwift"
-github "TouchInstinct/LeadKit" "carthage_without_binary"
+github "TouchInstinct/LeadKit"
 github "petropavel13/SwiftValidator"
 github "kishikawakatsumi/KeychainAccess"
 github "layoutBox/PinLayout"
