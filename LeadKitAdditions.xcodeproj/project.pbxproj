@@ -369,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "CONFIG_PATH=${PROJECT_DIR}/build-scripts/xcode/.swiftlint.yml\n\nif which swiftlint >/dev/null; then\nswiftlint autocorrect --path Sources --config ${CONFIG_PATH} && swiftlint --path Sources --config ${CONFIG_PATH}\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = ". run_swiftlint.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

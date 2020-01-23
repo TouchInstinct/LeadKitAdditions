@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.14
+- **Update**: remove Carthage binary dependencies, update build scripts.
+
 ### 0.3.13
 - **[Breaking change]**: `LabelTableViewCell` moved to `LeadKit`.
 - **[Breaking change]**: Removed `PinLayout` dependency.
