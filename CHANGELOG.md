@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.3.15
+-**Update**: update LeadKit dependency
+
 ### 0.3.14
 - **Update**: remove Carthage binary dependencies, update build scripts.
 
