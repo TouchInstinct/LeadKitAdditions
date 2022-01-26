@@ -201,7 +201,8 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
             .sorted { $0.delay < $1.delay }
             .map { [weak self] delayedDescription in
                 Observable<Int>
-                    .interval(delayedDescription.delay, scheduler: MainScheduler.instance)
+                    .interval(.seconds(Int(delayedDescription.delay)),
+                              scheduler: MainScheduler.instance)
                     .take(1)
                     .do(onNext: { _ in
                         self?.errorLabel?.attributedText = delayedDescription.description
@@ -260,7 +261,7 @@ open class BasePassCodeViewController: UIViewController, LegacyConfigurableContr
                 self?.setStates(for: text ?? "")
                 self?.hideError()
             })
-            .delay(0.1)     // time to draw dots
+            .delay(.milliseconds(100))     // time to draw dots
             .drive(onNext: { [weak self] text in
                 self?.viewModel.setPassCodeText(text)
             })

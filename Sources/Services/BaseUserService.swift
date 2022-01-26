@@ -21,7 +21,6 @@
 //
 
 import RxSwift
-import LeadKit
 
 /// Represents service that store basic user information
 open class BaseUserService {
@@ -51,7 +50,7 @@ open class BaseUserService {
 
     /// Indicates if user is logged in
     open var isLoggedIn: Bool {
-        return UserDefaults.standard.sessionId != nil
+        UserDefaults.standard.sessionId != nil
     }
 
     /// Reset user information

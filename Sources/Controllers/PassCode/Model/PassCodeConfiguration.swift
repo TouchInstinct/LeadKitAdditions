@@ -40,6 +40,6 @@ public struct PassCodeConfiguration {
 
     /// Returns configuration with default values
     public static var defaultConfiguration: PassCodeConfiguration {
-        return PassCodeConfiguration()
+        PassCodeConfiguration()
     }
 }

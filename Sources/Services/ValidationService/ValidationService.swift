@@ -17,7 +17,7 @@ public enum ValidationServiceState {
 public extension ValidationServiceState {
 
     var isValid: Bool {
-        return self == .valid
+        self == .valid
     }
 }
 
@@ -27,12 +27,12 @@ public final class ValidationService {
 
     private(set) var validationItems: [ValidationItem] = []
 
-    private let stateHolder = Variable<ValidationServiceState>(.initial)
+    private let stateHolder = BehaviorRelay<ValidationServiceState>(value: .initial)
     public var state: ValidationServiceState {
-        return stateHolder.value
+        stateHolder.value
     }
     public var stateObservable: Observable<ValidationServiceState> {
-        return stateHolder.asObservable()
+        stateHolder.asObservable()
     }
 
     private var validationStateReactType: ValidationServiceStateReactType = .none
@@ -84,11 +84,15 @@ public final class ValidationService {
 
         let zipStates = Observable
             .zip(allValidationStateObservables) { $0 }
-            .filter { [weak self] _ in self?.validationStateReactType == .all }
+            .filter { [weak self] _ in
+                self?.validationStateReactType == .all
+            }
 
         let combineLatestStates = Observable
             .combineLatest(allValidationStateObservables) { $0 }
-            .filter { [weak self] _ in self?.validationStateReactType == .each }
+            .filter { [weak self] _ in
+                self?.validationStateReactType == .each
+            }
 
         let stateObservables = [zipStates, combineLatestStates]
 

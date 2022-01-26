@@ -15,6 +15,6 @@ public extension Error {
 
     /// Returns: true if server json response is not valid
     var isResponseSerializationError: Bool {
-        return (self as? AFError)?.isResponseSerializationError ?? false
+        (self as? AFError)?.isResponseSerializationError ?? false
     }
 }
