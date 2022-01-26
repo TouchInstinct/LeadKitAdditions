@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14E3AD49502B3D81264560DB /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDEF7F6C22BB04CBB754C14 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */; };
 		67779CBC206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */; };
 		678D26AA206935B900B05B93 /* BiometricsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D26A9206935B900B05B93 /* BiometricsService.swift */; };
 		67B4E6F6206945DD00E233EA /* OnlineValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B4E6F5206945DC00E233EA /* OnlineValidationResult.swift */; };
@@ -19,7 +20,6 @@
 		786CBB32220DD7A70017587F /* LeadKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB25220DD7A70017587F /* LeadKit.framework */; };
 		786CBB33220DD7A70017587F /* SwiftValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB26220DD7A70017587F /* SwiftValidator.framework */; };
 		786CBB34220DD7A70017587F /* UIScrollView_InfiniteScroll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB27220DD7A70017587F /* UIScrollView_InfiniteScroll.framework */; };
-		786CBB35220DD7A70017587F /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB28220DD7A70017587F /* RxAtomic.framework */; };
 		786CBB36220DD7A70017587F /* RxAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB29220DD7A70017587F /* RxAlamofire.framework */; };
 		786CBB37220DD7A70017587F /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB2A220DD7A70017587F /* SwiftDate.framework */; };
 		786CBB38220DD7A70017587F /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786CBB2B220DD7A70017587F /* RxCocoa.framework */; };
@@ -46,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AC235099AA10D83D608A253 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; path = "Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig"; sourceTree = "<group>"; };
+		3EDEF7F6C22BB04CBB754C14 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67528BCE206E3CC6009F2525 /* iOS.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = iOS.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		67779CBB206986390098F024 /* BaseTextFieldViewEvents+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseTextFieldViewEvents+Extensions.swift"; sourceTree = "<group>"; };
 		678D26A9206935B900B05B93 /* BiometricsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricsService.swift; sourceTree = "<group>"; };
@@ -53,13 +55,13 @@
 		67B4E6F5206945DC00E233EA /* OnlineValidationResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineValidationResult.swift; sourceTree = "<group>"; };
 		67B4E6F8206945F900E233EA /* OnlineValidationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineValidationState.swift; sourceTree = "<group>"; };
 		67D6041721627600002DAF5B /* LegacyConfigurableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyConfigurableController.swift; sourceTree = "<group>"; };
+		6FEE03727D0B955F00DE8429 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; path = "Target Support Files/Pods-LeadKitAdditions-LeadKitAdditions iOS/Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		786CBB22220DD7A70017587F /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		786CBB23220DD7A70017587F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		786CBB24220DD7A70017587F /* TableKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TableKit.framework; path = Carthage/Build/iOS/TableKit.framework; sourceTree = "<group>"; };
 		786CBB25220DD7A70017587F /* LeadKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LeadKit.framework; path = Carthage/Build/iOS/LeadKit.framework; sourceTree = "<group>"; };
 		786CBB26220DD7A70017587F /* SwiftValidator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftValidator.framework; path = Carthage/Build/iOS/SwiftValidator.framework; sourceTree = "<group>"; };
 		786CBB27220DD7A70017587F /* UIScrollView_InfiniteScroll.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIScrollView_InfiniteScroll.framework; path = Carthage/Build/iOS/UIScrollView_InfiniteScroll.framework; sourceTree = "<group>"; };
-		786CBB28220DD7A70017587F /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		786CBB29220DD7A70017587F /* RxAlamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAlamofire.framework; path = Carthage/Build/iOS/RxAlamofire.framework; sourceTree = "<group>"; };
 		786CBB2A220DD7A70017587F /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		786CBB2B220DD7A70017587F /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -100,12 +102,12 @@
 				786CBB32220DD7A70017587F /* LeadKit.framework in Frameworks */,
 				786CBB33220DD7A70017587F /* SwiftValidator.framework in Frameworks */,
 				786CBB34220DD7A70017587F /* UIScrollView_InfiniteScroll.framework in Frameworks */,
-				786CBB35220DD7A70017587F /* RxAtomic.framework in Frameworks */,
 				786CBB36220DD7A70017587F /* RxAlamofire.framework in Frameworks */,
 				786CBB37220DD7A70017587F /* SwiftDate.framework in Frameworks */,
 				786CBB38220DD7A70017587F /* RxCocoa.framework in Frameworks */,
 				786CBB39220DD7A70017587F /* CryptoSwift.framework in Frameworks */,
 				786CBB3A220DD7A70017587F /* KeychainAccess.framework in Frameworks */,
+				14E3AD49502B3D81264560DB /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,13 +139,13 @@
 				786CBB25220DD7A70017587F /* LeadKit.framework */,
 				786CBB2E220DD7A70017587F /* PinLayout.framework */,
 				786CBB29220DD7A70017587F /* RxAlamofire.framework */,
-				786CBB28220DD7A70017587F /* RxAtomic.framework */,
 				786CBB2B220DD7A70017587F /* RxCocoa.framework */,
 				786CBB22220DD7A70017587F /* RxSwift.framework */,
 				786CBB2A220DD7A70017587F /* SwiftDate.framework */,
 				786CBB26220DD7A70017587F /* SwiftValidator.framework */,
 				786CBB24220DD7A70017587F /* TableKit.framework */,
 				786CBB27220DD7A70017587F /* UIScrollView_InfiniteScroll.framework */,
+				3EDEF7F6C22BB04CBB754C14 /* Pods_LeadKitAdditions_LeadKitAdditions_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,6 +157,7 @@
 				CAE698E41E968820000394B0 /* Products */,
 				CAE698E51E968820000394B0 /* Sources */,
 				67528BCE206E3CC6009F2525 /* iOS.playground */,
+				FBC34E01DAB566B85ED77BAD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,6 +282,15 @@
 			path = ValidationService;
 			sourceTree = "<group>";
 		};
+		FBC34E01DAB566B85ED77BAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FEE03727D0B955F00DE8429 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */,
+				1AC235099AA10D83D608A253 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -297,6 +309,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAE698EB1E968820000394B0 /* Build configuration list for PBXNativeTarget "LeadKitAdditions iOS" */;
 			buildPhases = (
+				DA96E76177E2633117FCBE55 /* [CP] Check Pods Manifest.lock */,
 				CAE698DE1E968820000394B0 /* Sources */,
 				CAE698DF1E968820000394B0 /* Frameworks */,
 				CAE698E01E968820000394B0 /* Headers */,
@@ -370,6 +383,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = ". run_swiftlint.sh\n";
+		};
+		DA96E76177E2633117FCBE55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LeadKitAdditions-LeadKitAdditions iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -528,6 +563,7 @@
 		};
 		CAE698EC1E968820000394B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FEE03727D0B955F00DE8429 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -537,13 +573,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "touchinstinct.LeadKitAdditions-iOS";
 				PRODUCT_NAME = LeadKitAdditions;
@@ -556,6 +588,7 @@
 		};
 		CAE698ED1E968820000394B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC235099AA10D83D608A253 /* Pods-LeadKitAdditions-LeadKitAdditions iOS.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -565,13 +598,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "touchinstinct.LeadKitAdditions-iOS";
 				PRODUCT_NAME = LeadKitAdditions;

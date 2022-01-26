@@ -39,7 +39,7 @@ open class BasePassCodeService {
 
     /// Override to set specific keychain service name
     open class var keychainServiceString: String {
-        return Bundle.main.bundleIdentifier ?? ""
+        Bundle.main.bundleIdentifier ?? ""
     }
 
     public init() {
@@ -55,7 +55,7 @@ open class BasePassCodeService {
     private lazy var keychain = Keychain(service: BasePassCodeService.keychainServiceString).synchronizable(false)
 
     private var passCodeHash: String? {
-        return keychain[Keys.passCodeHash]
+        keychain[Keys.passCodeHash]
     }
 }
 
@@ -63,13 +63,13 @@ public extension BasePassCodeService {
 
     /// Indicates is pass code already saved on this device
     var isPassCodeSaved: Bool {
-        return keychain[Keys.passCodeHash] != nil
+        keychain[Keys.passCodeHash] != nil
     }
 
     /// Possibility to authenticate via biometrics. TouchID or FaceID
     var isBiometricsAuthorizationEnabled: Bool {
         get {
-            return keychain[Keys.isBiometricsEnabled] == Values.biometricsEnabled
+            keychain[Keys.isBiometricsEnabled] == Values.biometricsEnabled
         }
         set {
             keychain[Keys.isBiometricsEnabled] = newValue ? Values.biometricsEnabled : nil
@@ -87,7 +87,7 @@ public extension BasePassCodeService {
 
     /// Check if pass code is correct
     func check(passCode: String) -> Bool {
-        return passCode.sha256() == passCodeHash
+        passCode.sha256() == passCodeHash
     }
 
     /// Reset pass code settings

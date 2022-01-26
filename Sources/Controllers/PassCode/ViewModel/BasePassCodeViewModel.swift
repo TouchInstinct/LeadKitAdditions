@@ -20,7 +20,6 @@
 //  THE SOFTWARE.
 //
 
-import LeadKit
 import RxSwift
 import RxCocoa
 
@@ -31,7 +30,7 @@ public enum PassCodeAuthType {
 }
 
 /// Base view model for passCodeViewController
-open class BasePassCodeViewModel: BaseViewModel {
+open class BasePassCodeViewModel {
 
     public let operationType: PassCodeOperationType
 
@@ -43,17 +42,17 @@ open class BasePassCodeViewModel: BaseViewModel {
     /// Contains configuration for pass code operations
     public let passCodeConfiguration: PassCodeConfiguration
 
-    private let validationResultHolder = Variable<PassCodeValidationResult?>(nil)
+    private let validationResultHolder = BehaviorRelay<PassCodeValidationResult?>(value: nil)
     public var validationResultDriver: Driver<PassCodeValidationResult?> {
-        return validationResultHolder.asDriver()
+        validationResultHolder.asDriver()
     }
 
-    private let passCodeControllerStateVariable = Variable<PassCodeControllerState>(.enter)
+    private let passCodeControllerStateVariable = BehaviorRelay<PassCodeControllerState>(value: .enter)
     public var passCodeControllerStateDriver: Driver<PassCodeControllerState> {
-        return passCodeControllerStateVariable.asDriver()
+        passCodeControllerStateVariable.asDriver()
     }
 
-    private let passCodeText = Variable<String?>(nil)
+    private let passCodeText = BehaviorRelay<String?>(value: nil)
 
     private var attemptsNumber = 0
 
@@ -85,17 +84,17 @@ open class BasePassCodeViewModel: BaseViewModel {
     // MARK: - Public
 
     public var passCodeTextValue: String? {
-        return passCodeText.value
+        passCodeText.value
     }
 
     public func setPassCodeText(_ value: String?) {
-        passCodeText.value = value
+        passCodeText.accept(value)
     }
 
     public func reset() {
-        passCodeText.value = nil
-        validationResultHolder.value = nil
-        passCodeControllerStateVariable.value = operationType == .change ? .oldEnter : .enter
+        passCodeText.accept(nil)
+        validationResultHolder.accept(nil)
+        passCodeControllerStateVariable.accept(operationType == .change ? .oldEnter : .enter)
         attemptsNumber = 0
         passCodeHolder.reset()
     }
@@ -136,7 +135,7 @@ open class BasePassCodeViewModel: BaseViewModel {
 
     /// Posibility to use biometrics for authentication
     open var isBiometricsEnabled: Bool {
-        return false
+        false
     }
 
     /// Notify about activation for biometrics. Remember to save user choice
@@ -153,7 +152,7 @@ open class BasePassCodeViewModel: BaseViewModel {
 
 private extension BasePassCodeViewModel {
     var validationResultBinder: Binder<PassCodeValidationResult?> {
-        return Binder(self) { model, validationResult in
+        Binder(self) { model, validationResult in
             let isValid = validationResult?.isValid ?? false
             let passCode = validationResult?.passCode
 
@@ -161,13 +160,13 @@ private extension BasePassCodeViewModel {
                 if isValid, model.passCodeHolder.enterStep == .repeatEnter, let passCode = passCode {
                     model.authSucceed(.passCode(passCode))
                 } else {
-                    model.passCodeControllerStateVariable.value = model.passCodeHolder.enterStep
+                    model.passCodeControllerStateVariable.accept(model.passCodeHolder.enterStep)
                 }
             } else {
                 if isValid, let passCode = passCode {
                     model.authSucceed(.passCode(passCode))
                 } else {
-                    model.passCodeControllerStateVariable.value = model.passCodeHolder.enterStep
+                    model.passCodeControllerStateVariable.accept(model.passCodeHolder.enterStep)
                 }
             }
         }
@@ -181,12 +180,12 @@ extension BasePassCodeViewModel {
         validateIfNeeded()
 
         if shouldUpdateControllerState {
-            passCodeControllerStateVariable.value = passCodeHolder.enterStep
+            passCodeControllerStateVariable.accept(passCodeHolder.enterStep)
         }
     }
 
     private var shouldUpdateControllerState: Bool {
-        return !passCodeHolder.shouldValidate ||
+        !passCodeHolder.shouldValidate ||
             !(validationResultHolder.value?.isValid ?? true) ||
             validationResultHolder.value?.error?.isTooManyAttempts ?? false
     }
@@ -231,6 +230,6 @@ extension BasePassCodeViewModel {
             passCodeHolder.reset()
         }
 
-        validationResultHolder.value = validationResult
+        validationResultHolder.accept(validationResult)
     }
 }

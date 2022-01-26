@@ -1,7 +1,11 @@
 # Changelog
 
+### 0.4.0
+
+- **Update**: update libraries to build with Xcode 13.1
+
 ### 0.3.15
--**Update**: update LeadKit dependency
+- **Update**: update LeadKit dependency
 
 ### 0.3.14
 - **Update**: remove Carthage binary dependencies, update build scripts.

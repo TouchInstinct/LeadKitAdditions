@@ -26,15 +26,15 @@ import RxCocoa
 public extension PassCodeHolderProtocol {
 
     var passCodeHolderCreate: PassCodeHolderCreate? {
-        return self as? PassCodeHolderCreate
+        self as? PassCodeHolderCreate
     }
 
     var passCodeHolderEnter: PassCodeHolderEnter? {
-        return self as? PassCodeHolderEnter
+        self as? PassCodeHolderEnter
     }
 
     var passCodeHolderChange: PassCodeHolderChange? {
-        return self as? PassCodeHolderChange
+        self as? PassCodeHolderChange
     }
 }
 
@@ -55,7 +55,7 @@ public class PassCodeHolderCreate: PassCodeHolderProtocol {
     }
 
     public var shouldValidate: Bool {
-        return firstPassCode != nil && secondPassCode != nil
+        firstPassCode != nil && secondPassCode != nil
     }
 
     public var passCode: String? {
@@ -100,7 +100,7 @@ public class PassCodeHolderEnter: PassCodeHolderProtocol {
     public let enterStep: PassCodeControllerState = .enter
 
     public var shouldValidate: Bool {
-        return passCode != nil
+        passCode != nil
     }
 
     public var passCode: String?
@@ -153,7 +153,7 @@ public class PassCodeHolderChange: PassCodeHolderProtocol {
 
     public var passCode: String? {
         switch (oldPassCode, newFirstPassCode, newSecondPassCode) {
-        case (let oldPassCode?, nil, nil):
+        case let (oldPassCode?, nil, nil):
             return oldPassCode
 
         case (_, _?, nil):

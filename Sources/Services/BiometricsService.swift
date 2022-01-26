@@ -41,7 +41,7 @@ public final class BiometricsService {
     /// If the user unlocks the device using biometrics within the specified time interval,
     /// then authentication for the receiver succeeds automatically, without prompting the user for biometrics.
     /// Works only after device unlock event, no other apps authentications counts.
-    public var allowableReuseDuration: TimeInterval? = nil {
+    public var allowableReuseDuration: TimeInterval? {
         didSet {
             guard let duration = allowableReuseDuration else {
                 return
@@ -85,7 +85,7 @@ public final class BiometricsService {
     /// Indicates is it possible to authenticate on this device via any biometric.
     /// Returns false if not enrolled or lockedout.
     public var canAuthenticateWithBiometrics: Bool {
-        return laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+        laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 
     /**

@@ -99,7 +99,7 @@ public extension BaseTextFieldViewModelEvents {
                                        using offlineRules: [Rule] = [],
                                        validationClosure: @escaping OnlineValidationClosure) -> Driver<OnlineValidationState> {
 
-        return textDriver.flatMap { string -> Driver<OnlineValidationState> in
+        textDriver.flatMap { string -> Driver<OnlineValidationState> in
             guard let nonEmptyString = string, !nonEmptyString.isEmpty else {
                 return .just(.initial)
             }

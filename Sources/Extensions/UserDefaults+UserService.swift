@@ -32,7 +32,7 @@ public extension UserDefaults {
     /// Default place to store session id
     var sessionId: String? {
         get {
-            return string(forKey: Keys.sessionId)
+            string(forKey: Keys.sessionId)
         }
         set {
             set(newValue, forKey: Keys.sessionId)
@@ -42,7 +42,7 @@ public extension UserDefaults {
     /// Default place to store userLogin
     var userLogin: String? {
         get {
-            return string(forKey: Keys.userLogin)
+            string(forKey: Keys.userLogin)
         }
         set {
             set(newValue, forKey: Keys.userLogin)
